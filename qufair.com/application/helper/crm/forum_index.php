@@ -97,12 +97,14 @@ if (empty($this->Param['option'])) {
             //$data['cat_id'] = empty($this->Param['cat_id']) ? ErrorMsg::Debug('请选择所属版块') : $this->Param['cat_id'];
             $data['content'] = empty($this->Param['content']) ? ErrorMsg::Debug('请输入资讯内容') : $this->Param['content'];
             $data['cover'] = $this->Param['file'];
-			//$data['dateline'] = time();
-			//$data['member_id'] = $this->UserConfig['Id'];
+			$data['dateline'] = time();
+			$data['member_id'] = $this->UserConfig['Id'];
             $data['recommend'] = empty($this->Param['recommend']) ? 0 : 1;
             $tag = $this->Param['tag'];
 
             if($id > 0){//编辑文章
+                unset($data['member_id']);
+                //var_dump($data);exit();
                 $ForumHelper->forumSave($data,$id);
 
                 $ForumHelper->indexRemove(array(

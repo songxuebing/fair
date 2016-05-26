@@ -30,13 +30,13 @@
         $this->Assign('tag_id',$tagid);
 
         if($tagid == 'hot'){
-            $forum_row = $ForumHelper->forumPageList(array('`recommend` = ?' => 1,'`delete`= ?'=>0), $limit, $page, $this->Param);
+            $forum_row = $ForumHelper->forumPageList(array('`recommend` = ?' => 1,'`delete`= ?'=>0, '`is_show` = ?'=>1), $limit, $page, $this->Param);
             $this->Assign('forum_row',$forum_row);
         }
 
         if(!empty($tagid) && $tagid !='hot'){
             $tag_all = $ForumHelper->queryDetail('SELECT * FROM `dyhl_forum_tagindex` WHERE ctag_id = '.$tagid.' GROUP BY forum_id');
-            //$fWhere['`is_show` = ?'] = 1;
+            $fWhere['`is_show` = ?'] = 1;
             $fWhere['`delete` = ?'] = 0;
             if(!empty($tag_all)){
                 $forum_id = array();

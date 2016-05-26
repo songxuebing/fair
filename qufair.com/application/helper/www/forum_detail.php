@@ -27,6 +27,11 @@
         if(empty($data)){
             ErrorMsg::Debug('帖子已删除或未通过审核');
         }
+        //新增点击量
+        $clicks['clicks'] = $data['clicks'] + 1;
+
+        $click = $ForumHelper->clickUpdate($clicks , array('id' => $id));
+
         //统计关注数
         $fav_count = $FavoriteHelper->favCount(array(
             '`related_id` = ?' => $id,

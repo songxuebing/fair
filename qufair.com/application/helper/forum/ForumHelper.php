@@ -341,8 +341,16 @@ class ForumHelper extends Helper {
         ));
         return $count;
     }
-	
-	
+    //点击量
+    public function clickUpdate($data, $where = array()) {
+
+            if (is_numeric(($where))) {
+                $where = array(
+                    '`id` = ?' => $where
+                );
+            }
+            return $this->ForumModel->clickUpdate($data, $where);
+    }
 
     public function queryDetail($sql){
         return $this->ForumModel->queryAll($sql);

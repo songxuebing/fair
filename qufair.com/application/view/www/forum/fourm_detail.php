@@ -20,11 +20,15 @@
 
         <div class="mm_sqzx_renmen_left_fenxiang bdsharebuttonbox">
             <span style="font-size:12px !important;">发布时间：<?php echo date('Y-m-d H:i:s',$this->data['dateline']);?></span>
-            <ul>
+
+            <span style="padding-left: 50px; font-size:12px !important;">阅读量：<?php echo (500 + $this->data['clicks'] * 21);?></span>
+
+            <!--<ul>
                 <li class="mm_shoucang001 J-mm-guanzhu <?php echo $this->fav['check'] == 1 ? 'on' : '';?>" style="cursor:pointer"><img src="<?php echo STYLE_URL;?>/style/quzhan/images/<?php echo $this->fav['check'] == 1 ? 'mm_shoucang02.png' : 'mm_shoucang01.png';?>"><em><?php echo $this->data['favcount'];?></em></li>
                 <li><a href="#" style="height:19px;"><?php echo $this->eva['One'];?></a></li>
                 <li><a href="#" class="bds_more" data-cmd="more" style="height:18px;">分享</a></li>
-            </ul>
+            </ul>-->
+
         </div>
         <style type="text/css">
         	.mm_sqzx_detail_con p {

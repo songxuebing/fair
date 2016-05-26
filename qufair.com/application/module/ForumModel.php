@@ -155,8 +155,10 @@ class ForumModel extends Module {
 	public function praiseRemove($where) {
         return $this->Db->delete($this->_table . '_praise', $where);
     }
-
-	
+    //点击量
+    public function clickUpdate($data, $where, $output = false) {
+        return $this->Db->update($this->_table, $data, $where, $output);
+    }
 
     public function queryAll($sql){
         return $this->Db->FetchQuery($sql);

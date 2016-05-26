@@ -30,7 +30,8 @@
         //新增点击量
         $clicks['clicks'] = $data['clicks'] + 1;
 
-        $click = $ForumHelper->clickUpdate($clicks , array('id' => $id));
+
+        $click = $ForumHelper->clickUpdate($clicks , $id);
 
         //统计关注数
         $fav_count = $FavoriteHelper->favCount(array(

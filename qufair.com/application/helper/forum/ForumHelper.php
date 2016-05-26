@@ -342,13 +342,10 @@ class ForumHelper extends Helper {
         return $count;
     }
     //点击量
-    public function clickUpdate($data, $where = array()) {
-
-            if (is_numeric(($where))) {
+    public function clickUpdate($data, $id) {
                 $where = array(
-                    '`id` = ?' => $where
+                    '`id` = ?' => $id
                 );
-            }
             return $this->ForumModel->clickUpdate($data, $where);
     }
 

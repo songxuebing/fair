@@ -15,13 +15,14 @@
     
 <!-- 左边 -->
     <div class="mm_sqzx_detail fl mm_mar20">
-        <h2><?php echo $this->data['title'];?></h2>
-        <i>发&nbsp;&nbsp;布&nbsp;者 : <?php echo empty($this->member['company']) ? $this->member['username'] : $this->member['company'];?></i>
+        <h2 style="padding-bottom:20px !important;"><?php echo $this->data['title'];?></h2>
+        <!--<i>发&nbsp;&nbsp;布&nbsp;者 : <?php echo empty($this->member['company']) ? $this->member['username'] : $this->member['company'];?></i>-->
 
-        <div class="mm_sqzx_renmen_left_fenxiang bdsharebuttonbox">
-            <span style="font-size:12px !important;">发布时间：<?php echo date('Y-m-d H:i:s',$this->data['dateline']);?></span>
+        <div class="mm_sqzx_renmen_left_fenxiang bdsharebuttonbox" style="background: #fafdfc none repeat scroll 0 0;">
+        <span style="font-size:12px !important;">发布者 : <?php echo empty($this->member['company']) ? $this->member['username'] : $this->member['company'];?></span>
+            <span style="padding-left: 20px;font-size:12px !important;">发布时间：<?php echo date('Y-m-d H:i:s',$this->data['dateline']);?></span>
 
-            <span style="padding-left: 50px; font-size:12px !important;">阅读量：<?php echo (500 + $this->data['clicks'] * 21);?></span>
+            <span style="padding-left: 20px; font-size:12px !important;">阅读量：<?php echo (500 + $this->data['clicks'] * 21);?></span>
 
             <!--<ul>
                 <li class="mm_shoucang001 J-mm-guanzhu <?php echo $this->fav['check'] == 1 ? 'on' : '';?>" style="cursor:pointer"><img src="<?php echo STYLE_URL;?>/style/quzhan/images/<?php echo $this->fav['check'] == 1 ? 'mm_shoucang02.png' : 'mm_shoucang01.png';?>"><em><?php echo $this->data['favcount'];?></em></li>

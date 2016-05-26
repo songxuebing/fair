@@ -1,0 +1,7 @@
+#php_flag session.auto_start off
+
+RewriteEngine On
+#RewriteBase /
+
+RewriteRule ^urls\.php$ - [L]
+RewriteRule ^(.*)$ /wwwroot/$1 [L]

@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="description" content="" />
+<meta http-equiv="keywords" content="" />
+<title>行程合同</title>
+<style type="text/css">
+html{height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button,p{ font-family:"微软雅黑";margin:0;padding:0}  /* 初始化标签在所有浏览器中的margin、padding值 */
+fieldset,img {border:0 none;}  /* 重置fieldset（表单分组）、图片的边框为0*/
+dl,ul,ol,menu,li {list-style-type:none;}   /* 重置类表前导符号为onne,menu在HTML5中有效 */
+blockquote, q {quotes: none}   /* 重置嵌套引用的引号类型 */
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}  /* 重置嵌套引用*/
+input,select,textarea,button {vertical-align:middle;}  /* 重置表单控件垂直居中*/
+button {border:0 none;background-color:transparent;cursor:pointer;}  /* 重置表单button按钮效果 */
+body { background:#fff !important;}   /* 重置body 页面背景为白色 */
+body,th,td,input,select,textarea,button {font-size:14px;line-height:1 ;font-family:"微软雅黑", "黑体";color:#333;} /* 重置页面文字属性 */
+a {color:#666;text-decoration:none; font-family:"微软雅黑";}  /* 重置链接a标签 */ 
+a:active, a:hover {text-decoration:none;}   /* 重置链接a标签的鼠标滑动效果 */
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal;}  /* 重置样式标签的样式 */
+caption {display:none;}    /* 重置表格标题为隐藏 */
+table {width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}    /* 重置table属性 */
+img{vertical-align:middle;}  /* 图片在当前行内的垂直位置 */
+/* 取消a标签点击后的虚线框 */
+a {outline: none;}  
+a:active,a:link,a:visited {star:expression(this.onFocus=this.blur()); text-decoration:none !important;}
+/*清除浮动*/
+.clearfix:after {
+    content: '';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+}
+.fl{ float: left;}
+.fr{ float: right;}
+.mx_xieyi{ width: 850px; margin: 20px auto;padding: 20px;}
+.mx_tixing{ font-size: 14px; color: #f00; line-height: 22px;}
+.mx_con h1{ font-size: 20px; width: 100%; text-align: center; margin-top: 30px;}
+.mx_con p{ margin-bottom: 10px; line-height: 20px;}
+.mx_con_jia{ margin-bottom: 20px;}
+.mx_con_jia tr td{ height: 26px; line-height: 26px; font-size: 16px;}
+.mx_con_jia tr td i{ font-style: normal; font-size: 12px;}
+.mx_con_time{ line-height: 22px;}
+
+
+/*运输协议*/
+.mx_yunshu{ margin-top: 60px;}
+.mx_yunshu ul{ float: left; width: 300px;}
+.mx_yunshu ul li{ margin-bottom: 20px;}
+.w_qianzi td{ height: 30px; line-height: 30px;}
+.w_bge td{ height: 30px; line-height: 30px;}
+
+.table{ width: 100%; border: 1px solid #d9d9d9;}
+.table td{ height: 24px; line-height: 24px; border: 1px solid #d9d9d9; text-align: center;}
+.table td input{ width: 90%; border: none; text-align: center; outline: none;}
+</style>
+</head>
+
+<body>
+    <div class="mx_xieyi">
+        <div class="mx_tixing">
+        文件使用说明：<br>
+        1、本文件中凡是【】内的内容，均由各方自由协商后填入。<br>
+        2、黄色标注显示的部分，为提示性内容，由签约方注意内容即可。
+        </div>
+        <div class="mx_con">
+            <h1>展览品运输协议</h1>
+            <table class="mx_con_jia">
+                <tr>
+                    <td>甲方（委托方）：{buyer_name}</td>
+                </tr>
+                <tr>
+                    <td>甲方详细地址：{buyer_add}</td>
+                </tr>
+            </table>
+            <table class="mx_con_jia">
+                <tr>
+                    <td>乙方（受托方）：{saler_name}</td>
+                </tr>
+                <tr>
+                    <td>乙方详细地址：{saler_add}</td>
+                </tr>
+            </table>
+            <table class="mx_con_jia">
+                <tr>
+                    <td>展会名称：</td>
+                </tr>
+                <tr>
+                    <td>展会时间：</td>
+                </tr>
+                <tr>
+                    <td>展会地点：</td>
+                </tr>
+            </table>
+            <div class="mx_con_shixiang">
+                <div class="mx_con_time">
+                甲方决定委托乙方代理甲方参加【&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;】展览会展览会展品全程运输事宜。双方本着优势互补、权责明确的合作原则，经友好协商达成如下协议，以便共同遵守。                </div>
+                <p>一、合作关系</p>
+                <p>1、甲方委托乙方代理其赴【<span class="mx_con_time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>】展览会参展产品（以下简称“展品”）全程运输事宜。</p>
+                <p>2、乙方接受甲方之委托，负责代理甲方赴【<span class="mx_con_time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>】展览会展品全程监管报关运输等具体事宜，确保按照双方依本合同确认的服务内容、价格及条件严格履行。</p>
+                <p>二、双方的责任及义务</p>
+                <p>（一）甲方的责任及义务</p>
+                <p>1、甲方需要根据双方书面约定好的最晚文件截止时间和最晚货物截止时间前提交相应的文件和货物。依据不同贸易方式提供全部所需正本单证并书面通知乙方上门提货时间或是货物送达乙方指定仓库。（详见附件一：货物交接清单）</p>
+                <p>2、甲方需要保证所有经过乙方托运的货物均符合出口国及目的国的基本法律规范并保证所发运货物不存在侵犯知识产权或商标等问题，不得夹带易燃易爆物品及国家规定禁止出口之物品。所有发运物品均需要详细如实申报，不得私自携带未申报的物品，否则甲方自行承担可能引起的风险和额外支出，乙方只能尽全力帮助协调但不能做任何承诺。</p>
+                <p>3、甲方自行负责展品的包装，包装箱要适合长途运输、反复装卸和多次转运，必须采用坚固的材料包装，包装材料最好是免熏蒸或已熏蒸后的木质材料，装箱时须做好防潮、防震、防破等措施。特殊提示请遵循国际通用的标志和符号。</p>
+                <p>4、保证按照双方确认的付款方式、计划、金额及时将相关费用支付给乙方。</p>
+                <p>5、在全程合作过程中，甲方授权乙方购买货物的各类运输保险；除了乙方之外，甲方以及保险公司可将任何第三人作为行使代为求偿权的对象。受益人为甲方。 </p>
+                <p>6、 负责维护乙方的形象和利益。</p>
+                <p>7、甲方必须提供正确的箱单发票，如有隐瞒产生不能及时清关派送，乙方不承担任何责任和费用。</p>
+                <p>（二）乙方的责任及义务</p>
+                <p>1、负责及时办理甲方展览品全程运输的必要手续并向甲方及时反馈展品运输情况。</p>
+                <p>2、 在正常的操作环境下，按照甲方的指示，展品将于展会指定仓库收货日期之内，派送至【<span class="mx_con_time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>】展览会甲方指定展台。</p>
+                <p>3、 乙方公司指定展出国代理派相关人员负责协调所有和展览品运输报关相关工作。</p> 
+                <p>4、 在非乙方责任的情况下，因人力不可抗拒因素（如台风、海啸、战争、船坏、船事故等）而发生货物的破损、短少或灭失，乙方须提供相应的证明文件，并协助甲方向有关保险公司处理索赔事宜，否则，应由乙方赔偿甲方的损失。乙方应确保将展品送至甲方展台时，外包装完好无损。</p>
+                <p>5、乙方应负责维护甲方的形象和利益。</p>
+                <p>三、合同费用及付款方式</p>
+                <p>1、合同总费用：本合同运输费用总额为人民币【&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;】元，统一由甲方支付给乙方。</p>
+                <p>2、货物运输过程中的保险费用及展品清关费用以实际发生金额为准，甲乙双方沟通协商后，另行支付。</p>
+                <p>3、付款方式：甲方须在派送至展台前7个工作日内付清全额运输费及保险费用及清关费用到乙方指定公帐帐户。</p>
+                <p>4、乙方银行账户信息：</p>
+                <p>公司全名：</p>
+                <p>公司开户行：</p>
+                <p>人民币帐号：</p>
+                <p>四、货物在途风险及交货</p>
+                <p>1、根据双方约定，本协议项下货物将由承运人（乙方）代为办理运输保险手续，以防止货物运输过程中的风险。若乙方未办理相应运办理保险手续的，如货物在运输途中发生风险的，由乙方承担全部责任。</p>
+                <p>2、货物到达目的地如需办理清关手续的，由乙方负责办理。如额外发生不可预见费用的，由甲方承担。</p>
+                <p>3、货物运送至甲方指定位置，并经甲方现场接收人员检验后，双方签署交接清单，乙方交货完成。如甲方现场发现货物出现毁损的，应协同乙方一起共同向保险公司索赔，双方共同采取其他必要措施另行调运展品，费用另计。</p>
+                <p>第五条 合同变更与解除</p>
+                <p>1、本合同签署后，未经双方书面同意，不得变更或解除。</p>
+                <p>2、乙方将货物启运前，甲方可向乙方支付合同总费用的一半后，解除本合同。但乙方货物启运后，甲方不得解除合同，即使解除合同，也应向乙方支付本合同全部费用。</p>
+                <p>3、如遇不可抗力导致合同不能履行的，双方互不追究违约责任。乙方如产生实际运输成本的，甲方仅补偿乙方实际运输成本，不补偿利润及其他损失。</p>
+                <p>第六条 争议解决</p>
+                <p>1、未尽事宜，双方协商或共同申请去展平台（www.qufair.com)进行调解，调解不成的，任何一方均可将争议提交原告所在地人民法院处理。</p>
+                <p>2、本合同项下纠纷适用中华人民共和国法律。</p>
+                <p>第七条：其他、</p>
+                <p>1、本合同之附件是本合同不可分割的组成部分，与本合同具同等法律效力。正式签订确认后不得随意更改。未尽事宜或遇特殊情况需签补充合同时，须经双方协商签订，否则视为无效。</p>
+                <p>2、本合同一式两份，经双方代表签字盖章即生效。甲、乙双方各执一份，具有同等法律效力。</p>
+                <p>（以下无正文）</p>
+            </div>
+            <p>（本页为签署页）</p>
+            <div class="w_qianzi">
+<table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="20%" bgcolor="#FFFFFF">甲方：</td>
+                        <td width="30%" bgcolor="#FFFFFF"></td>
+                        <td width="20%" bgcolor="#FFFFFF">乙方：</td>
+                        <td width="30%" bgcolor="#FFFFFF"></td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF">&nbsp;</td>
+                        <td bgcolor="#FFFFFF">&nbsp;</td>
+                        <td bgcolor="#FFFFFF">&nbsp;</td>
+                        <td bgcolor="#FFFFFF">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF">签字盖章：</td>
+                        <td bgcolor="#FFFFFF"></td>
+                        <td bgcolor="#FFFFFF">签字盖章：</td>
+                        <td bgcolor="#FFFFFF"></td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF">&nbsp;</td>
+                        <td bgcolor="#FFFFFF">&nbsp;</td>
+                        <td bgcolor="#FFFFFF">&nbsp;</td>
+                        <td bgcolor="#FFFFFF">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFFFF">签订时间：</td>
+                        <td bgcolor="#FFFFFF">2015年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>
+                        <td bgcolor="#FFFFFF">签订时间：</td>
+                        <td bgcolor="#FFFFFF">2015年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>
+                    </tr>
+                </table>
+            </div>
+            <p>附件一、货物交接清单</p>
+            <div class="mx_yunshu_fujin">
+              <table class="table">
+                    <tr>
+                        <td>序号</td>
+                        <td>货物名称</td>
+                        <td>数量</td>
+                        <td>起运交接<br>截止期限</td>
+                        <td>起运点</td>
+                        <td>运输目的地</td>
+                        <td>到达时间</td>
+                        <td>备注</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+              </table>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

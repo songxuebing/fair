@@ -1,0 +1,7 @@
+#php_flag session.auto_start off
+
+RewriteEngine On
+#RewriteBase /
+
+RewriteRule ^urls\.php$ - [L]
+RewriteRule !\.(js|ico|gif|jpg|png|css|swf|bmp|rar|zip|txt|doc|html|xml|xsl)$ index.php

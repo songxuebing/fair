@@ -1,0 +1,64 @@
+.serviceBox {
+	width: 170px;
+	height: 280px;
+	position: absolute;
+	top: 250px;
+	z-index: 100;
+	background: url(../images/kefuda.png?v=201406231722) -275px 0 no-repeat
+}
+.serviceBox .serviceTitle {
+	position: absolute;
+	top: 72px;
+	right: 20px;
+	width: 90px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #013684;
+	text-decoration: none
+}
+.serviceBox .serviceTitle:hover {
+	color: #f30
+}
+.serviceBox .serviceText {
+	position: absolute;
+	top: 105px;
+	right: 0;
+	width: 130px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #013684;
+	cursor: pointer;
+	font-size: 14px
+}
+.serviceBox .oemServiceTitle {
+	position: absolute;
+	top: 212px;
+	right: 20px;
+	width: 90px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #013684;
+	text-decoration: none
+}
+.serviceBox .oemServiceTitle:hover {
+	color: #f30
+}
+.serviceBox .oemServiceText {
+	position: absolute;
+	top: 244px;
+	right: 0;
+	width: 130px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px
+}

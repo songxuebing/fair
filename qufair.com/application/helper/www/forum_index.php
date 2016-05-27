@@ -194,6 +194,7 @@
         echo $this->GetView('fourm_index.php');
     }else{
         switch ($this->Param['option']){
+
             case 'edit':
                 $this->LoadHelper('public/usercheck');
                 $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
@@ -456,7 +457,36 @@
                 }
 
                 break;
-			
+            case 'contribute':
+                echo $this->GetView('fourm_contribute.php');
+            case 'submit_contribute':
+                $data['title'] = empty($this->Param['title']) ? ErrorMsg::Debug('请输入资讯标题') : $this->Param['title'];
+                $data['content'] = empty($this->Param['title']) ? ErrorMsg::Debug('请输入资讯内容') : $this->Param['content'];
+                $data['member_id'] = empty($this->UserConfig['Id']) ? ErrorMsg::Debug('请登陆后发布') : $this->UserConfig['Id'];
+                $data['dateline'] = NOW_TIME;
+
+                $tag = $this->Param['tag'];
+                if(!empty($tag)){
+                    $tagArr = explode(' ',$tag);
+                }
+
+                $row = $ForumHelper->forumSave($data);
+
+                    if($row){
+
+                        if(!empty($tagArr)) foreach($tagArr as $key=>$val){
+                            $ForumHelper->tagSave(array(
+                                'forum_id' => $row,
+                                'tag_name' =>$val
+                            ));
+                        }
+
+                        ErrorMsg::Debug('发表成功，等待管理员审核',TRUE);
+                    }
+                    ErrorMsg::Debug('发表失败');
+
+                break;
         }
+
         
     }

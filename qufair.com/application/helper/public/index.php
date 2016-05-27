@@ -261,7 +261,8 @@ if(empty($this->Param['option'])){
                 $result[] = array(
                     'name' => StringCode::GetCsubStr($v['title'],0,12),
                     'image' => empty($v['cover']) ? Common::AttachUrl('') : $v['cover'].'!a200',
-                    'link' => '/forum/detail/id/' . $v['id'],
+                    //'link' => '/forum/detail/id/' . $v['id'],
+                    'link' => '/news/'.date('Y/m/d', $v['dateline']).'/'.$v['id'].'.shtml',
                     'desc' => StringCode::GetCsubStr($v['content'],0,10)
                 );
             }
@@ -290,7 +291,8 @@ if(empty($this->Param['option'])){
 					'id' => $v['id'],
                     'name' => StringCode::GetCsubStr($v['title'],0,20),
                     'image' => empty($v['cover']) ? Common::AttachUrl('') : $v['cover'].'!a200',
-                    'link' => '/forum/detail/id/' . $v['id'],
+                    //'link' => '/forum/detail/id/' . $v['id'],
+                    'link' => '/news/'.date('Y/m/d', $v['dateline']).'/'.$v['id'].'.shtml',
                     'desc' => StringCode::GetCsubStr($v['content'],0,10),
 					'comment'=>$v['comment'],
 					'username' => $username

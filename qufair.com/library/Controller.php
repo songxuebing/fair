@@ -365,6 +365,13 @@ class Controller{
 	public function RouteRegex($SpaceName,$Rule){
 		$this->_RouteRegex[$SpaceName]=$Rule;
 	}
+
+    public function RouteRegex2($array){
+        //var_dump($array);exit();
+        //$this->_RouteRegex[$SpaceName]=$Rule;
+    }
+
+
 	public function Assign($spec,$value=null){
 		$this->$spec=$value;
 	}

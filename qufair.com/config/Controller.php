@@ -44,8 +44,37 @@ try{
                         //1 => 'action',
                         //2 => 'id'
                      )
-                   ));        
-	}
+                   ));
+
+        $Controller->RouteRegex2(
+            array(
+            array("ForumIndex",array(
+            '\/news\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
+            array(
+                'controller' => 'forum',
+                'action'     => 'detail',
+            ),
+            array(
+                4 => 'id',
+                //1 => 'action',
+                //2 => 'id'
+            )
+        )),
+            array("ForumIndex",array(
+                '\/news\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
+                array(
+                    'controller' => 'forum',
+                    'action'     => 'detail',
+                ),
+                array(
+                    4 => 'id',
+                    //1 => 'action',
+                    //2 => 'id'
+                )
+            ))
+            )
+        );
+    }
 	$Controller->SetParam();
 	$Controller->run();
 	// $Controller->Info();

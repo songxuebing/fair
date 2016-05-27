@@ -76,7 +76,7 @@
                     	<?php
                         	if(!empty($this->entrust['All'])) foreach($this->entrust['All'] as $kk => $vv){
 						?>
-                        <li><a href="/forum/detail/id/<?php echo $vv['id'];?>" target="_blank"><?php echo StringCode::GetCsubStr($vv['title'],0,17);?></a><span><?php echo StringCode::GetCsubStr($vv['content'],0,25);?></span></li>
+                        <li><a href="/news/<?php echo date('Y/m/d', $vv['dateline']).'/'.$vv['id'].'.shtml';?>" target="_blank"><?php echo StringCode::GetCsubStr($vv['title'],0,17);?></a><span><?php echo StringCode::GetCsubStr($vv['content'],0,25);?></span></li>
                         <?php
 							}
 						?>
@@ -167,7 +167,7 @@
         <div class="mm_title clearfix">
             <h2>新闻资讯</h2>
             <span>已为50002658家企业提供装修服务</span>
-            <a href="/forum/index/">更多&gt;</a>
+            <a href="/news/">更多&gt;</a>
         </div>
         <div class="mm_shequ">
             <div class="mm_shequ_left fl">
@@ -202,7 +202,7 @@
 						if(!empty($this->new['All'])) foreach($this->new['All'] as $k=>$v){
 					?>
                     <li>
-                        <h5><a href="/forum/detail/id/<?php echo $v['id'];?>" style="color:#333" target="_blank"><?php echo $v['title'];?></a></h5>
+                        <h5><a href="/news/<?php echo date('Y/m/d', $v['dateline']).'/'.$v['id'].'.shtml';?>" style="color:#333" target="_blank"><?php echo $v['title'];?></a></h5>
                         <p><?php echo StringCode::GetCsubStr($v['content'],0,30);?></p>
                     </li>
 					<?php

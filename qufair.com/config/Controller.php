@@ -45,14 +45,15 @@ try{
                         //2 => 'id'
                      )
                    ));
-
+        //url伪静态
         $Controller->RouteRegex2(
             array(
-            array("ForumIndex",array(
-            '\/news\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
+            array("convention",array(
+            '\/convention\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
             array(
-                'controller' => 'forum',
-                'action'     => 'detail',
+                'controller' => 'convention',
+                'action'     => 'index',
+                'option'     => 'detail',
             ),
             array(
                 4 => 'id',
@@ -60,18 +61,51 @@ try{
                 //2 => 'id'
             )
         )),
-            array("ForumIndex",array(
-                '\/news\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
+            array("route",array(
+                '\/route\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
                 array(
-                    'controller' => 'forum',
-                    'action'     => 'detail',
+                    'controller' => 'route',
+                    'action'     => 'index',
+                    'option'     => 'detail',
                 ),
                 array(
                     4 => 'id',
-                    //1 => 'action',
-                    //2 => 'id'
                 )
             ))
+            ,
+            array("visa",array(
+                '\/visa\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
+                array(
+                    'controller' => 'visa',
+                    'action'     => 'index',
+                    'option'     => 'detail',
+                ),
+                array(
+                    4 => 'id',
+                )
+            )),
+                array("logistics",array(
+                    '\/logistics\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
+                    array(
+                        'controller' => 'logistics',
+                        'action'     => 'index',
+                        'option'     => 'detail',
+                    ),
+                    array(
+                        4 => 'id',
+                    )
+                )),
+                array("decoration",array(
+                    '\/decoration\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.shtml',
+                    array(
+                        'controller' => 'decoration',
+                        'action'     => 'index',
+                        'option'     => 'detail',
+                    ),
+                    array(
+                        4 => 'id',
+                    )
+                ))
             )
         );
     }

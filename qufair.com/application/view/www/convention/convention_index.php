@@ -171,9 +171,12 @@
 			?>
             <div class="mm_zhanhui_list_left clearfix">
                 <dl>
-                    <dt><a href="/convention/index/option/detail/id/<?php echo $v['id'];?>"><img src="<?php echo Common::AttachUrl($v['cover']);?>!a200" width="160" height="160"></a></dt>
+                    <dt><a href="/convention/<?php echo date('Y/m/d', $v['update_dateline']).'/'.$v['id'];?>.shtml"><img src="<?php echo Common::AttachUrl($v['cover']);?>!a200" width="160" height="160"></a></dt>
                     <dd>
-                        <h4><a href="/convention/index/option/detail/id/<?php echo $v['id'];?>" style="color:#333;"><?php echo $v['name'];?></a></h4>
+                        <h4>
+<!--                            <a href="/convention/index/option/detail/id/--><?php //echo $v['id'];?><!--" style="color:#333;">-->
+                                <a href="/convention/<?php echo date('Y/m/d', $v['update_dateline']).'/'.$v['id'];?>.shtml" style="color:#333;">
+                                <?php echo $v['name'];?></a></h4>
                         <p>展会场馆：<?php echo $v['pavilion'];?></p>
                         <p>展会标签：<?php echo $v['label'];?></p>
                         <p>行业分类：<?php echo $v['industry'];?></p>

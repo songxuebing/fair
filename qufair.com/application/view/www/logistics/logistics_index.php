@@ -194,9 +194,14 @@
 			?>
             <div class="mm_zhanhui_list_left clearfix">
                 <dl>
-                    <dt><a href="/logistics/index/option/detail/id/<?php echo $v['log_id'];?>"><img src="<?php echo Common::AttachUrl($v['log_cover']);?>!a200" width="160" height="160"></a></dt>
+                    <dt>
+                        <a href="/logistics/<?php echo date('Y/m/d', $v['log_time']).'/'.$v['log_id'];?>.shtml">
+                            <img src="<?php echo Common::AttachUrl($v['log_cover']);?>!a200" width="160" height="160"></a></dt>
                     <dd class="mm_guojiwuliu1">
-                        <h4><a href="/logistics/index/option/detail/id/<?php echo $v['log_id'];?>" style="color:#333;"><?php echo $v['log_title'];?></a></h4>
+                        <h4>
+<!--                            <a href="/logistics/index/option/detail/id/--><?php //echo $v['log_id'];?><!--" style="color:#333;">-->
+                            <a href="/logistics/<?php echo date('Y/m/d', $v['log_time']).'/'.$v['log_id'];?>.shtml" style="color:#333;">
+                            <?php echo $v['log_title'];?></a></h4>
                         <p>公司名称：<span><?php echo $v['company'];?></span></p>
                         <p>物流集散地：<?php echo $v['log_location'];?></p>
                         <p>物流方式：
@@ -213,7 +218,7 @@
                 </dl>
                 <div class="mm_zhanhui_jiage1">
                     <span><em>￥<?php echo $v['log_price'];?></em>/<?php echo $v['log_unit'];?></span>
-                    <a href="/logistics/index/option/detail/id/<?php echo $v['log_id'];?>" class="mm_tezhuangfuwu_a1">立即下单</a>
+                    <a href="/logistics/<?php echo date('Y/m/d', $v['log_time']).'/'.$v['log_id'];?>.shtml" class="mm_tezhuangfuwu_a1">立即下单</a>
                 </div>
             </div>
             <?php

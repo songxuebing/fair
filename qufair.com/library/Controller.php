@@ -126,6 +126,11 @@ class Controller{
 					}else{
 						$str.="/{action}";
 					}
+
+                    if(!empty($value[1]['option'])){
+                        $str.="/option/{$value[1]['option']}";
+                    }
+
 					foreach($value[2] as $k=>$v){
 						if($v=='module'||$v=='controller'||$v=='action'){
 							$str=str_replace('{'.$v.'}','\\'.$k,$str);
@@ -367,8 +372,9 @@ class Controller{
 	}
 
     public function RouteRegex2($array){
-        //var_dump($array);exit();
-        //$this->_RouteRegex[$SpaceName]=$Rule;
+        foreach($array as $kk => $vv){
+            $this->_RouteRegex[$vv[0]]=$vv[1];
+        }
     }
 
 

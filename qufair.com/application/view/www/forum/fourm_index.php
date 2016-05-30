@@ -8,9 +8,33 @@
 <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/quzhan/js/baiduTemplate.js"></script>
 <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/js/artdialog/artDialog.js?skin=default"></script>
 <script src="<?php echo STYLE_URL;?>/style/js/artdialog/iframeTools.js"></script>
+<script type="text/javascript">
+    var mt = 0;
+    window.onload = function () {
+        var mydiv = document.getElementById("mydiv");
+        var myimg = document.getElementById("myimg");
+        var mt = mydiv.offsetTop;
+        window.onscroll = function () {
+            var t = document.documentElement.scrollTop || document.body.scrollTop;
+            if (t > mt) {
+                mydiv.style.position = "fixed";
+                mydiv.style.margin = "0";
+                mydiv.style.top = "0";
+                mydiv.style.width = "100%";
+                myimg.style.display = "none";
+            }
+            else {
+                //mydiv.style.margin = "20px 0";
+                mydiv.style.position = "static";
+                myimg.style.display = "block";
+                //mydiv.style.background = "#ff4a00 none repeat scroll 0 0"
+            }
+        }
+    }
 
+</script>
 <!--------------新-------------------->
-<div class="tag-box">
+<div class="tag-box" id="mydiv">
 	<div class="tag-list">
     	<ul class="J-tag-list">
             <li><a href="/news" class="<?php echo $this->fid == 'hot' ? 'on' :'';?>">会展资讯</a></li>
@@ -33,7 +57,7 @@
 				}
 			?>
 
-            <img class="J-down" src="<?php echo STYLE_URL;?>/style/quzhan/images/20160202/ico_down.png" style="position:absolute; right:20px; top:22px; cursor:pointer;" />
+            <img class="J-down" id="myimg" src="<?php echo STYLE_URL;?>/style/quzhan/images/20160202/ico_down.png" style="position:absolute; right:20px; top:22px; cursor:pointer;" />
             
         </ul>
     </div>
@@ -356,7 +380,7 @@
                     <div class="new-list-c">
 
                     	<div class="new-list-c-right" style="width:236px; height:155px; overflow:hidden; float:left;">
-                            <a href="/news/<?php echo date('Y/m/d', $val['dateline']).'/'.$val['id'];?>" target="_blank" title="<?php echo $val['title'];?>"><img src="<?php echo empty($val['cover']) ? STYLE_URL.'/style/quzhan/images/20160202/test_01.png' :$val['cover'].'!a200';?>" width="236" height="155" alt="<?php echo $val['title'];?>" /></a>
+                            <a href="/news/<?php echo date('Y/m/d', $val['dateline']).'/'.$val['id'].'.shtml';?>" target="_blank" title="<?php echo $val['title'];?>"><img src="<?php echo empty($val['cover']) ? STYLE_URL.'/style/quzhan/images/20160202/test_01.png' :$val['cover'].'!a200';?>" width="236" height="155" alt="<?php echo $val['title'];?>" /></a>
                         </div>
                     	<div class="new-list-c-left" style="float:right;">
                             <h3><a href="/news/<?php echo date('Y/m/d', $val['dateline']).'/'.$val['id'].'.shtml';?>" target="_blank" title="<?php echo $val['title'];?>"><?php echo StringCode::GetCsubStr($val['title'],0,24);?></a></h3>

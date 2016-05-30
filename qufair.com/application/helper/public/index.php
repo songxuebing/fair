@@ -114,7 +114,8 @@ if(empty($this->Param['option'])){
                         $result[] = array(
                             'name' => StringCode::GetCsubStr($v['name'],0,12),
                             'image' => Common::AttachUrl($v['cover']),
-                            'link' => '/route/index/option/detail/id/' . $v['id'],
+                            //'link' => '/route/index/option/detail/id/' . $v['id'],
+                            'link' => '/route/'.date('Y/m/d', $v['dateline']).'/'.$v['id'].'.shtml',
                             'desc' => StringCode::GetCsubStr($v['description'],0,10)
                         );
                     }
@@ -156,7 +157,8 @@ if(empty($this->Param['option'])){
                         $result[] = array(
                             'name' => StringCode::GetCsubStr($v['visa_title'],0,12),
                             'image' => Common::AttachUrl($v['visa_cover']),
-                            'link' => '/visa/index/option/detail/id/' . $v['visa_id'],
+                            //'link' => '/visa/index/option/detail/id/' . $v['visa_id'],
+                            'link' => '/visa/'.date('Y/m/d', $v['visa_time']).'/'.$v['visa_id'].'.shtml',
                             'desc' => StringCode::GetCsubStr($v['visa_msg'],0,10)
                         );
                     }
@@ -198,7 +200,8 @@ if(empty($this->Param['option'])){
                         $result[] = array(
                             'name' => StringCode::GetCsubStr($v['log_title'],0,12),
                             'image' => Common::AttachUrl($v['log_cover']),
-                            'link' => '/logistics/index/option/detail/' . $v['log_id'],
+                            //'link' => '/logistics/index/option/detail/' . $v['log_id'],
+                            'link' => '/logistics/'.date('Y/m/d', $v['log_time']).'/'.$v['log_id'].'.shtml',
                             'desc' => StringCode::GetCsubStr($v['log_remarks'],0,10)
                         );
                     }
@@ -240,7 +243,8 @@ if(empty($this->Param['option'])){
                         $result[] = array(
                             'name' => StringCode::GetCsubStr($v['title'],0,12),
                             'image' => Common::AttachUrl($v['cover']),
-                            'link' => '/decoration/index/option/detail/id/' . $v['id'],
+                            //'link' => '/decoration/index/option/detail/id/' . $v['id'],
+                            'link' => '/decoration/'.date('Y/m/d', $v['de_time']).'/'.$v['id'].'.shtml',
                             'desc' => StringCode::GetCsubStr($v['msg'],0,10)
                         );
                     }

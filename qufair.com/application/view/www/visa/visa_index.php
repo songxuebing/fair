@@ -196,9 +196,15 @@
 			?>
             <div class="mm_zhanhui_list_left clearfix">
                 <dl>
-                    <dt><a href="/visa/index/option/detail/id/<?php echo $v['visa_id'];?>"><img src="<?php echo Common::AttachUrl($v['visa_cover']);?>!a200" width="160" height="160"></a></dt>
+                    <dt>
+<!--                        <a href="/visa/index/option/detail/id/--><?php //echo $v['visa_id'];?><!--">-->
+                            <a href="/visa/<?php echo date('Y/m/d', $v['visa_time']).'/'.$v['visa_id'];?>.shtml">
+                            <img src="<?php echo Common::AttachUrl($v['visa_cover']);?>!a200" width="160" height="160"></a></dt>
                     <dd class="mm_guojiwuliu1">
-                        <h4><a href="/visa/index/option/detail/id/<?php echo $v['visa_id'];?>" style="color:#333;"><?php echo $v['visa_title'];?></a></h4>
+                        <h4>
+<!--                            <a href="/visa/index/option/detail/id/--><?php //echo $v['visa_id'];?><!--" style="color:#333;">-->
+                            <a href="/visa/<?php echo date('Y/m/d', $v['visa_time']).'/'.$v['visa_id'];?>.shtml" style="color:#333;">
+                                <?php echo $v['visa_title'];?></a></h4>
                         <p>签证成功率：<span><?php echo $v['visa_probability'];?></span></p>
                         <p>公司名称：<?php echo $v['company'];?></p>
                         <p>签证领区：<?php echo $v['visa_area'];?></p>
@@ -213,7 +219,7 @@
                 </dl>
                 <div class="mm_zhanhui_jiage1">
                     <span><em>￥<?php echo $v['visa_price'];?></em>/人</span>
-                    <a href="/visa/index/option/detail/id/<?php echo $v['visa_id'];?>" class="mm_tezhuangfuwu_a1">立即签证</a>
+                    <a href="/visa/<?php echo date('Y/m/d', $v['visa_time']).'/'.$v['visa_id'];?>.shtml" class="mm_tezhuangfuwu_a1">立即签证</a>
                 </div>
             </div>
             <?php

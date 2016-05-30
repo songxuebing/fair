@@ -233,9 +233,16 @@
             
             <div class="mm_zhanhui_list_left clearfix">
                 <dl>
-                    <dt><a href="/decoration/index/option/detail/id/<?php echo $v['id'];?>"><img src="<?php echo Common::AttachUrl($v['cover']);?>!a200" width="160" height="160"></a></dt>
+                    <dt>
+<!--                        <a href="/decoration/index/option/detail/id/--><?php //echo $v['id'];?><!--">-->
+                        <a href="/decoration/<?php echo date('Y/m/d', $v['de_time']).'/'.$v['id'];?>.shtml">
+
+                            <img src="<?php echo Common::AttachUrl($v['cover']);?>!a200" width="160" height="160"></a></dt>
                     <dd>
-                        <h4><a href="/decoration/index/option/detail/id/<?php echo $v['id'];?>" style="color:#333;"><?php echo $v['title'];?></a></h4>
+                        <h4>
+<!--                            <a href="/decoration/index/option/detail/id/--><?php //echo $v['id'];?><!--" style="color:#333;">-->
+                            <a href="/decoration/<?php echo date('Y/m/d', $v['de_time']).'/'.$v['id'];?>.shtml" style="color:#333;">
+                                <?php echo $v['title'];?></a></h4>
                         <p>公司名称：<?php echo $v['company'];?></p>
                         <p>服务城市：<?php echo $v['de_city'];?></p>
                         <p>面积大小：<?php echo $v['proportion'];?>平方</p>
@@ -251,7 +258,8 @@
                 </dl>
                 <div class="mm_zhanhui_jiage1">
                     <span><em>￥<?php echo $v['de_price'];?></em>/套</span>
-                    <a href="/decoration/index/option/detail/id/<?php echo $v['id'];?>" class="mm_tezhuangfuwu_a1">立即下单</a> 
+                    <a href="/decoration/<?php echo date('Y/m/d', $v['de_time']).'/'.$v['id'];?>.shtml" class="mm_tezhuangfuwu_a1">
+                        立即下单</a>
                 </div>
             </div>
 

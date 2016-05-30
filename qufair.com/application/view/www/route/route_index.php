@@ -196,9 +196,15 @@
 			?>
             <div class="mm_zhanhui_list_left clearfix">
                 <dl>
-                    <dt><a href="/route/index/option/detail/id/<?php echo $v['id'];?>"><img src="<?php echo Common::AttachUrl($v['cover']);?>!a200" width="160" height="160"></a></dt>
+                    <dt>
+<!--                        <a href="/route/index/option/detail/id/--><?php //echo $v['id'];?><!--">-->
+                        <a href="/route/<?php echo date('Y/m/d', $v['dateline']).'/'.$v['id'];?>.shtml">
+                            <img src="<?php echo Common::AttachUrl($v['cover']);?>!a200" width="160" height="160"></a></dt>
                     <dd class="mm_guojiwuliu1">
-                        <h4><a href="/route/index/option/detail/id/<?php echo $v['id'];?>" style="color:#333;"><?php echo $v['name'];?></a></h4>
+                        <h4>
+<!--                            <a href="/route/index/option/detail/id/--><?php //echo $v['id'];?><!--" style="color:#333;">-->
+                            <a href="/route/<?php echo date('Y/m/d', $v['dateline']).'/'.$v['id'];?>.shtml" style="color:#333;">
+                                <?php echo $v['name'];?></a></h4>
                         <p>行程时间：<i><?php echo date('Y-m-d',$v['leave_time']);?>至<?php echo date('Y-m-d',$v['end_time']);?></i></p>
                         <p>出发地点：<?php echo $v['leave_area'];?></p>
                         <p>服务包含：<span><?php echo $v['hotel_star'];?></span></p>

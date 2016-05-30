@@ -146,7 +146,8 @@ class OrderHelper extends Helper {
                 $params['route_order'] = $detail;
                 $params['pay_url'] = WEB_URL . '/route/order/option/pay/sn/' . $params['order_sn'];
                 $params['goods_name'] = $detail['goods_name'];
-                $params['url'] = '/route/index/option/detail/id/' . $detail['route_id'];
+                //$params['url'] = '/route/index/option/detail/id/' . $detail['route_id'];
+                $params['url'] = '/route/'.date('Y/m/d', $detail['dateline']).'/'.$detail['route_id'].'.shtml';
                 $params['pay_return'] = '/route/order/option/payreturn/sn/' . $params['order_sn'];
                 break;
             case 'visa':
@@ -161,7 +162,8 @@ class OrderHelper extends Helper {
                 $params['visa_order'] = $detail;
                 $params['pay_url'] = WEB_URL . '/visa/order/option/pay/sn/' . $params['order_sn'];
                 $params['goods_name'] = $detail['visa_name'];
-                $params['url'] = '/visa/index/option/detail/id/' . $detail['visa_id'];
+                //$params['url'] = '/visa/index/option/detail/id/' . $detail['visa_id'];
+                $params['url'] = '/visa/'.date('Y/m/d', $detail['datetime']).'/'.$detail['visa_id'].'.shtml';
                 $params['pay_return'] = '/visa/order/option/payreturn/sn/' . $params['order_sn'];
                 break;
             case 'logistics':
@@ -178,7 +180,8 @@ class OrderHelper extends Helper {
                 $params['pay_url'] = WEB_URL . '/logistics/order/option/pay/sn/' . $params['order_sn'];
                 $params['goods_name'] = $detail['log_detail']['log_title'];
 
-                $params['url'] = '/logistics/index/option/detail/id/' . $detail['log_id'];
+                //$params['url'] = '/logistics/index/option/detail/id/' . $detail['log_id'];
+                $params['url'] = '/logistics/'.date('Y/m/d', $detail['datetime']).'/'.$detail['log_id'].'.shtml';
                 $params['pay_return'] = '/logistics/order/option/payreturn/sn/' . $params['order_sn'];
                 break;
             case 'decoration':
@@ -193,7 +196,8 @@ class OrderHelper extends Helper {
                 $params['pay_url'] = WEB_URL . '/decoration/order/option/pay/sn/' . $params['order_sn'];
                 $params['goods_name'] = $detail['de_title'];
 
-                $params['url'] = '/decoration/index/option/detail/id/' . $detail['de_id'];
+                //$params['url'] = '/decoration/index/option/detail/id/' . $detail['de_id'];
+                $params['url'] = '/decoration/'.date('Y/m/d', $detail['datetime']).'/'.$detail['de_id'].'.shtml';
                 $params['pay_return'] = '/decoration/order/option/payreturn/sn/' . $params['order_sn'];
                 break;
             default :

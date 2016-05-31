@@ -13,9 +13,13 @@
 	<div class="table_div_01">
 	  <ul>
 		<li class="li_5">ID</li>
-		<li class="li_35">标签名称</li>
-		<li class="li_25">是否显示</li>
-		<li class="li_15">操作</li>
+		<li class="li_15">标签名称</li>
+		<li class="li_5">是否显示</li>
+          <li class="li_15">英文名称</li>
+          <li class="li_15">网站title</li>
+          <li class="li_15">网站keywords</li>
+          <li class="li_15">网站description</li>
+		<li class="li_10">操作</li>
 	  </ul>
 	</div>
 	<!--列表-->
@@ -26,11 +30,16 @@
 	  <div class="list_info">
 		<ul class="row">
 		  <li class="li_5"><?php echo $v['ctag_id'];?></li>
-          <li class="li_35"><?php echo $v['ctag_name'];?></li>
-		  <li class="li_25">
-		  		<?php echo $v['is_open'] == 1 ? '显示' : '不显示';?>
-		  </li>
-		  <li class="li_15"><a href="/forum/tag/option/edit/id/<?php echo $v['ctag_id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $v['ctag_id'];?>" data-title="修改">编辑</a><a href="#" class="RemoveLink btn_05" data-id="<?php echo $v['ctag_id'];?>" data-url="/forum/tag/">删除</a></li>
+          <li class="li_15"><?php echo $v['ctag_name'];?></li>
+            <li class="li_5">
+                <?php echo $v['is_open'] == 1 ? '显示' : '不显示';?>
+            </li>
+            <li class="li_15"><?php echo $v['name_en'];?></li>
+            <li class="li_15"><?php echo $v['title'];?></li>
+            <li class="li_15"><?php echo $v['keywords'];?></li>
+            <li class="li_15"><?php echo $v['description'];?></li>
+
+		  <li class="li_10"><a href="/forum/tag/option/edit/id/<?php echo $v['ctag_id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $v['ctag_id'];?>" data-title="修改">编辑</a><a href="#" class="RemoveLink btn_05" data-id="<?php echo $v['ctag_id'];?>" data-url="/forum/tag/">删除</a></li>
 		</ul>
 	  </div>
 	  <!--/条-->

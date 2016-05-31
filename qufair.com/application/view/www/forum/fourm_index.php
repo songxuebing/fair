@@ -1,6 +1,25 @@
 <?php
+if(!empty($this->web_information))
+{
+    if(!empty($this->web_information['0']['title']))
+    {
+        $webtitle = $this->web_information['0']['title'];
+    }
+    else{
         $webtitle = "提供2016国内外最新展览会资讯,2016最全展会报道,外贸行业资讯".' - 去展网';
+    }
+    if(!empty($this->web_information['0']['description']))
+    {
+        $webdescription = $this->web_information['0']['description'];
+    }
+    else{
         $webdescription = "提供2016最新的国际国内外展览报道，涉及五金，礼品，汽配，建材，工业，服装等展会行业资讯。同时提供2016最新国际外贸出口的最新政策及新闻报道";
+    }
+}
+else {
+    $webtitle = "提供2016国内外最新展览会资讯,2016最全展会报道,外贸行业资讯".' - 去展网';
+    $webdescription = "提供2016最新的国际国内外展览报道，涉及五金，礼品，汽配，建材，工业，服装等展会行业资讯。同时提供2016最新国际外贸出口的最新政策及新闻报道";
+}
 ?>
 
 <?php include $this->Render('header_fourm.php'); ?>

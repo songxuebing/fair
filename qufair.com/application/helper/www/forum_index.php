@@ -35,7 +35,15 @@
         }
 
         if(!empty($tagid) && $tagid !='hot'){
+
+            //echo $tagid;exit();
+
             $tag_all = $ForumHelper->queryDetail('SELECT * FROM `dyhl_forum_tagindex` WHERE ctag_id = '.$tagid.' GROUP BY forum_id');
+
+            $tag_information = $ForumHelper->queryDetail('SELECT * FROM `dyhl_forum_cattag` where ctag_id = '.$tagid);
+            $this->Assign('web_information',$tag_information);
+
+            //var_dump($tag_information);exit();
             $fWhere['`is_show` = ?'] = 1;
             $fWhere['`delete` = ?'] = 0;
             if(!empty($tag_all)){

@@ -13,7 +13,7 @@ class ForumModel extends Module {
         $this->_catfield = array('id', 'name', 'parent_id', 'icon', 'is_hot');
         $this->_tagfield = array('tag_id', 'forum_id','mytag_id', 'tag_name');//帖子tag
         $this->_indexfield = array('index_id', 'forum_id', 'ctag_id');//标签索引表
-        $this->_ctagfield = array('ctag_id', 'ctag_name', 'is_open','is_delete','sort','name_en');//默认tag
+        $this->_ctagfield = array('ctag_id', 'ctag_name', 'is_open','is_delete','sort','name_en', 'title', 'keywords', 'description');//默认tag
 		 $this->_praisefield = array('id', 'member_id', 'forum_id','dateline');//点赞
     }
     

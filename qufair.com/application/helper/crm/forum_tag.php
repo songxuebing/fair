@@ -31,6 +31,10 @@ if (empty($this->Param['option'])) {
         case 'submit':
             $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
             $data['ctag_name'] = empty($this->Param['name']) ? ErrorMsg::Debug('请输入名称') : $this->Param['name'];
+            $data['name_en'] = empty($this->Param['name_en']) ? ErrorMsg::Debug('请输入名称') : $this->Param['name_en'];
+            $data['title'] =  $this->Param['title'];
+            $data['keywords'] =  $this->Param['keywords'];
+            $data['description'] =  $this->Param['description'];
             $data['sort'] = $this->Param['sort'];
             $data['is_open'] = $this->Param['RadioGroup'];
 

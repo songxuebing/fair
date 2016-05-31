@@ -28,7 +28,29 @@
         
     </td>
   </tr>
-  
+    <!--新增-->
+    <tr>
+        <td height="45" align="right">英文名称：</td>
+        <td style=" padding-top:5px; padding-bottom:5px;"><input name="name_en" type="text" style="width:300px;" value="<?php echo($this->data['name_en']);?>" class="input_01"></td>
+    </tr>
+
+    <tr>
+        <td height="45" align="right">网站title：</td>
+        <td style=" padding-top:5px; padding-bottom:5px;"><input name="title" type="text" style="width:300px;" value="<?php echo($this->data['title']);?>" class="input_01"></td>
+    </tr>
+
+
+    <tr>
+        <td height="45" align="right">网站keywords：</td>
+        <td style=" padding-top:5px; padding-bottom:5px;"><input name="keywords" type="text" style="width:300px;" value="<?php echo($this->data['keywords']);?>" class="input_01"></td>
+    </tr>
+
+    <tr>
+        <td height="45" align="right">网站description：</td>
+        <td style=" padding-top:5px; padding-bottom:5px;"><input name="description" type="text" style="width:300px;" value="<?php echo($this->data['description']);?>" class="input_01"></td>
+    </tr>
+
+
   <tr>
   	<td height="45" align="right">&nbsp;&nbsp;排序：</td>
     <td>

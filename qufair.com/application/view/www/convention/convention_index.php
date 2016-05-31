@@ -1,6 +1,25 @@
 <?php
-        $webtitle = "2016最新国外展会|提供汽配展|礼品展|五金展|服装展等展会信息".' - 去展网';
-        $webdescription = "提供最新2016德国展会、香港展会、上海展会等全球展会及行业信息。包含最全汽配展|礼品展|服装展|五金展等展览资讯";
+if(!empty($this->web_information))
+{
+    if(!empty($this->web_information['title']))
+    {
+        $webtitle = $this->web_information['title'];
+    }
+    else{
+        $webtitle = "2016最新国外展会|提供汽配展|礼品展|五金展|服装展等展会信息" . ' - 去展网';
+    }
+    if(!empty($this->web_information['description']))
+    {
+        $webdescription = $this->web_information['description'];
+    }
+    else{
+        $webdescription = "2016最新国外展会|提供汽配展|礼品展|五金展|服装展等展会信息" . ' - 去展网';
+    }
+}
+else {
+    $webtitle = "2016最新国外展会|提供汽配展|礼品展|五金展|服装展等展会信息" . ' - 去展网';
+    $webdescription = "提供最新2016德国展会、香港展会、上海展会等全球展会及行业信息。包含最全汽配展|礼品展|服装展|五金展等展览资讯";
+}
 ?>
 <?php include $this->Render('header.php'); ?>
 <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/js/artdialog/artDialog.js?skin=default"></script>

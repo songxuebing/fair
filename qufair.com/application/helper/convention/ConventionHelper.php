@@ -6,6 +6,7 @@ class ConventionHelper extends Helper {
 
     public function __construct() {
         $this->ConventionModel = $this->LoadModel('Convention');
+        $this->IndustryModel = $this->LoadModel('Industry');
     }
 
     public function GetId($Id = '0') {
@@ -18,6 +19,10 @@ class ConventionHelper extends Helper {
 
     public function getRow($where) {
         return $this->ConventionModel->GetRow($where);
+    }
+
+    public function GetInWhere($where) {
+        return $this->IndustryModel->industryRow($where);
     }
 
     public function GetAllWhere($where, $limit, $page, $Param) {

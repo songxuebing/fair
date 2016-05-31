@@ -51,8 +51,9 @@ if(empty($this->Param['option'])){
     $where = array('`id` > ?' => 0);
 
     if(!empty($this->Param['industry'])){
-        echo urldecode($this->Param['industry']);exit();
         $where['locate(?,`industry`)>0'] = urldecode($this->Param['industry']);
+        $where_in['locate(?,`name`)>0'] = urldecode($this->Param['industry']);
+        $data_industry = $ConventionHelper->GetInWhere($where_in);
     }
     if(!empty($this->Param['delta'])){
         $where['locate(?,`regional`)>0'] = urldecode($this->Param['delta']);
@@ -86,6 +87,7 @@ if(empty($this->Param['option'])){
     $data['attr'] = array('industry' =>$this->Param['industry'],'delta' => $this->Param['delta'],'countries'=>$this->Param['countries'],'city'=>$this->Param['city']);
 
     $this->Assign('menberInfo',$memberRow);
+    $this->Assign('web_information',$data_industry);
     $this->Assign('data', $data);
     $this->Assign('param', $this->Param);
     echo $this->GetView('convention_index.php');

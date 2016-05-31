@@ -244,6 +244,10 @@ class Controller{
         {
             $url = "/forum";
         }
+        elseif($url == "/name_en11")
+        {
+            $url = "/convention/index/industry/%E7%BA%BA%E7%BB%87%E6%9C%8D%E9%A5%B0%E9%9E%8B%E9%9D%A9";
+        }
 
         $p=explode("?",$url);
 		$Module=explode('/',empty($p[0]) ? '' : $p[0]);

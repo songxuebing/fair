@@ -245,7 +245,6 @@ class Controller{
             $url = "/forum";
         }
 
-
         $p=explode("?",$url);
 		$Module=explode('/',empty($p[0]) ? '' : $p[0]);
 		$j=1;

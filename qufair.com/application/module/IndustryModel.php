@@ -5,7 +5,7 @@ class IndustryModel extends Module {
     public function __construct() {
         parent::__construct();
         $this->_table = 'industry';
-        $this->_field = array('id', 'name', 'parent_id');
+        $this->_field = array('id', 'name', 'parent_id', 'name_en', 'title', 'keywords', 'description');
     }
     
     public function industryOne($where, $output = false) {

@@ -13,9 +13,13 @@
 	<div class="table_div_01">
 	  <ul>
 		<li class="li_5">ID</li>
-		<li class="li_50">行业名称</li>
-		<li class="li_25">子行业</li>
-		<li class="li_15">操作</li>
+		<li class="li_15">行业名称</li>
+          <li class="li_10">行业英文名称</li>
+          <li class="li_15">网站title</li>
+          <li class="li_15">网站keywords</li>
+          <li class="li_15">网站description</li>
+		<li class="li_5">子行业</li>
+		<li class="li_10">操作</li>
 	  </ul>
 	</div>
 	<!--列表-->
@@ -26,8 +30,12 @@
 	  <div class="list_info">
 		<ul class="row">
 		  <li class="li_5"><?php echo $v['id'];?></li>
-          <li class="li_50"><?php echo $v['name'];?></li>
-		  <li class="li_25">
+          <li class="li_15"><?php echo $v['name'];?></li>
+            <li class="li_10"><?php echo $v['name_en'];?></li>
+            <li class="li_15"><?php echo $v['title'];?></li>
+            <li class="li_15"><?php echo $v['keywords'];?></li>
+            <li class="li_15"><?php echo $v['description'];?></li>
+		  <li class="li_5">
 		  <a href="javascript:;" class="J-nextclick on"><?php echo count($v['next']);?></a>
 		  </li>
 		  <li class="li_15"><a href="/other/industry/option/edit/id/<?php echo $v['id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $v['id'];?>" data-title="修改">编辑</a><a href="#" class="RemoveLink btn_05" data-id="<?php echo $v['id'];?>" data-url="/other/industry/">删除</a></li>
@@ -39,8 +47,12 @@
 	  <div class="list_info J-next fn-hiden">
 		<ul class="row">
 		  <li class="li_5"></li>
-          <li class="li_50">&nbsp;|-<?php echo $val['name'];?></li>
-		  <li class="li_25"></li>
+          <li class="li_15">&nbsp;|-<?php echo $val['name'];?></li>
+            <li class="li_10"><?php echo $val['name_en'];?></li>
+            <li class="li_15"><?php echo $val['title'];?></li>
+            <li class="li_15"><?php echo $val['keywords'];?></li>
+            <li class="li_15"><?php echo $val['description'];?></li>
+		  <li class="li_5"></li>
 		  <li class="li_15"><a href="/other/industry/option/edit/id/<?php echo $val['id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $val['id'];?>" data-title="修改">编辑</a><a href="#" class="RemoveLink btn_05" data-id="<?php echo $val['id'];?>" data-url="/other/industry/">删除</a></li>
 		</ul>
 	  </div>

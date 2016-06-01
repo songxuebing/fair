@@ -5,6 +5,18 @@
 <?php include $this->Render('header.php'); ?>
 <?php include $this->Render('nav.php'); ?>
 <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/quzhan/js/baiduTemplate.js"></script>
+<!--<script src="http://www.platform.com/public/js/jquery-1.11.3.min.js"></script>-->
+<script>
+    var title = "<?php echo $this->data['title']?>";
+    var alt = "<?php echo $this->data['title']?>";
+    jQuery(document).ready(function(){
+        jQuery(".mm_sqzx_detail_con img").each(function(){
+            jQuery(this).attr('alt',alt);
+            jQuery(this).attr('title',title);
+        });
+    });
+</script>
+
 <!-- 内容 -->
 <div class="mm_mid clearfix mm_mar20">
     <div class="mm_zhanhui_fnav">

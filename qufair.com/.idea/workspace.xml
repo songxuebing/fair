@@ -25,61 +25,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ForumController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controller/crm/ForumController.php">
+      <file leaf-file-name="fourm_index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/view/www/forum/fourm_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.3" vertical-offset="0" max-vertical-offset="1092">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForumModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/module/ForumModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.5" vertical-offset="0" max-vertical-offset="3612">
-              <caret line="15" column="131" selection-start-line="15" selection-start-column="131" selection-end-line="15" selection-end-column="131" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forum_tag.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/helper/crm/forum_tag.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.4" vertical-offset="252" max-vertical-offset="1323">
-              <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forum_tag.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/view/crm/forum/forum_tag.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85450345" vertical-offset="457" max-vertical-offset="1323">
-              <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forum_tag_edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/view/crm/forum/forum_tag_edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1666665" vertical-offset="394" max-vertical-offset="1848">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.38277513" vertical-offset="1318" max-vertical-offset="9639">
+              <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="42" />
               <folding>
-                <element signature="e#616#636#0#HTML" expanded="true" />
-                <element signature="e#1642#1687#0#HTML" expanded="true" />
-                <element signature="e#1722#1742#0#HTML" expanded="true" />
-                <element signature="e#1896#1941#0#HTML" expanded="true" />
-                <element signature="e#1974#1994#0#HTML" expanded="true" />
-                <element signature="e#2150#2195#0#HTML" expanded="true" />
-                <element signature="e#2231#2251#0#HTML" expanded="true" />
-                <element signature="e#2412#2457#0#HTML" expanded="true" />
-                <element signature="e#2496#2516#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#ul#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fourm_detail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/view/www/forum/fourm_detail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.6" vertical-offset="0" max-vertical-offset="10353">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forum_detail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/helper/www/forum_detail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-28.7" vertical-offset="0" max-vertical-offset="2772">
+              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+              <folding>
+                <marker date="1464770346370" expanded="true" signature="2353:2478" placeholder="SELECT * FRO..." />
+                <marker date="1464770346370" expanded="true" signature="2972:3097" placeholder="SELECT * FRO..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header_fourm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/view/www/common/header_fourm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.8" vertical-offset="945" max-vertical-offset="3948">
+              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forum_index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/helper/www/forum_index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.5" vertical-offset="0" max-vertical-offset="10626">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <marker date="1464767871666" expanded="true" signature="1336:1416" placeholder="SELECT * FRO..." />
+                <marker date="1464767871666" expanded="true" signature="1479:1529" placeholder="SELECT * FRO..." />
+                <marker date="1464767871666" expanded="true" signature="3277:3327" placeholder="SELECT * FRO..." />
+                <marker date="1464767871666" expanded="true" signature="3846:3879" placeholder="SELECT * FRO..." />
+                <marker date="1464767871666" expanded="true" signature="4331:4381" placeholder="SELECT * FRO..." />
+                <marker date="1464767871666" expanded="true" signature="4520:4597" placeholder="SELECT * FRO..." />
               </folding>
             </state>
           </provider>
@@ -94,8 +114,6 @@
         <option value="$PROJECT_DIR$/application/helper/comment/CommentHelper.php" />
         <option value="$PROJECT_DIR$/application/module/MemberModel.php" />
         <option value="$PROJECT_DIR$/application/helper/crm/forum_index.php" />
-        <option value="$PROJECT_DIR$/application/view/www/forum/fourm_detail.php" />
-        <option value="$PROJECT_DIR$/application/helper/www/forum_detail.php" />
         <option value="$PROJECT_DIR$/application/helper/forum/ForumHelper.php" />
         <option value="$PROJECT_DIR$/wwwroot/prototype.html" />
         <option value="$PROJECT_DIR$/application/view/www/forum/fourm_contribute.php" />
@@ -118,11 +136,13 @@
         <option value="$PROJECT_DIR$/library/Controller.php" />
         <option value="$PROJECT_DIR$/application/view/www/convention/convention_index.php" />
         <option value="$PROJECT_DIR$/application/helper/www/forum_index.php" />
-        <option value="$PROJECT_DIR$/application/view/www/forum/fourm_index.php" />
         <option value="$PROJECT_DIR$/application/module/ForumModel.php" />
         <option value="$PROJECT_DIR$/application/view/crm/forum/forum_tag_edit.php" />
         <option value="$PROJECT_DIR$/application/helper/crm/forum_tag.php" />
         <option value="$PROJECT_DIR$/application/view/crm/forum/forum_tag.php" />
+        <option value="$PROJECT_DIR$/application/view/www/forum/fourm_index.php" />
+        <option value="$PROJECT_DIR$/application/view/www/forum/fourm_detail.php" />
+        <option value="$PROJECT_DIR$/application/helper/www/forum_detail.php" />
       </list>
     </option>
   </component>
@@ -157,7 +177,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -189,8 +208,26 @@
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="qufair.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qufair.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -208,56 +245,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qufair.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qufair.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qufair.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qufair.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
+              <option name="myItemId" value="helper" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -317,7 +311,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1045" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -369,24 +363,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/forum/fourm_detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5819861" vertical-offset="126" max-vertical-offset="10080">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controller/www/ForumController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="651" max-vertical-offset="1050">
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/forum_detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="2772">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -481,13 +461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/common/header_fourm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.3648963" vertical-offset="0" max-vertical-offset="3948">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/helper/public/ueditor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.1" vertical-offset="693" max-vertical-offset="6888">
@@ -527,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="909">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -542,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="909">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -550,7 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="909">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -582,14 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/forum/ForumHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="7581">
-          <caret line="54" column="42" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/Pagination.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1041" max-vertical-offset="3255">
@@ -608,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="630">
           <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -616,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="3990">
           <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21501707" vertical-offset="0" max-vertical-offset="9891">
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -632,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70323324" vertical-offset="1260" max-vertical-offset="4599">
           <caret line="89" column="34" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -640,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42662117" vertical-offset="633" max-vertical-offset="1512">
           <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -648,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.76450515" vertical-offset="126" max-vertical-offset="1470">
           <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -656,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7274827" vertical-offset="483" max-vertical-offset="2058">
           <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7883959" vertical-offset="0" max-vertical-offset="879">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -672,100 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="9912">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/forum/fourm_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.4" vertical-offset="0" max-vertical-offset="9639">
-          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1464683475894" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/forum_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6408776" vertical-offset="348" max-vertical-offset="10626">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="42" />
-          <folding>
-            <marker date="1464683388051" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1464683388051" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1464683388051" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1464683388051" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1464683388051" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1464683388051" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -773,57 +633,124 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37883958" vertical-offset="1872" max-vertical-offset="3087">
           <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/crm/forum/forum_tag_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="394" max-vertical-offset="1848">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controller/crm/ForumController.php">
+    <entry file="file://$PROJECT_DIR$/application/view/crm/forum/forum_tag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.3" vertical-offset="0" max-vertical-offset="1092">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/module/ForumModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.5" vertical-offset="0" max-vertical-offset="3612">
-          <caret line="15" column="131" selection-start-line="15" selection-start-column="131" selection-end-line="15" selection-end-column="131" />
+        <state vertical-scroll-proportion="0.12124711" vertical-offset="378" max-vertical-offset="1323">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/helper/crm/forum_tag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.4" vertical-offset="252" max-vertical-offset="1323">
+        <state vertical-scroll-proportion="0.5255973" vertical-offset="252" max-vertical-offset="1323">
           <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/crm/forum/forum_tag_edit.php">
+    <entry file="file://$PROJECT_DIR$/application/module/ForumModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1666665" vertical-offset="394" max-vertical-offset="1848">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="3612">
+          <caret line="15" column="131" selection-start-line="15" selection-start-column="131" selection-end-line="15" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controller/crm/ForumController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21160409" vertical-offset="213" max-vertical-offset="1092">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/forum/ForumHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2901024" vertical-offset="0" max-vertical-offset="7581">
+          <caret line="54" column="42" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/common/header_fourm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8" vertical-offset="945" max-vertical-offset="3948">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/forum/fourm_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.6" vertical-offset="0" max-vertical-offset="10353">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/www/forum_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.7" vertical-offset="0" max-vertical-offset="2772">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
           <folding>
-            <element signature="e#616#636#0#HTML" expanded="true" />
-            <element signature="e#1642#1687#0#HTML" expanded="true" />
-            <element signature="e#1722#1742#0#HTML" expanded="true" />
-            <element signature="e#1896#1941#0#HTML" expanded="true" />
-            <element signature="e#1974#1994#0#HTML" expanded="true" />
-            <element signature="e#2150#2195#0#HTML" expanded="true" />
-            <element signature="e#2231#2251#0#HTML" expanded="true" />
-            <element signature="e#2412#2457#0#HTML" expanded="true" />
-            <element signature="e#2496#2516#0#HTML" expanded="true" />
+            <marker date="1464770346370" expanded="true" signature="2353:2478" placeholder="SELECT * FRO..." />
+            <marker date="1464770346370" expanded="true" signature="2972:3097" placeholder="SELECT * FRO..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/crm/forum/forum_tag.php">
+    <entry file="file://$PROJECT_DIR$/application/helper/www/forum_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85450345" vertical-offset="457" max-vertical-offset="1323">
-          <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-          <folding />
+        <state vertical-scroll-proportion="-10.5" vertical-offset="0" max-vertical-offset="10626">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <marker date="1464767871666" expanded="true" signature="1336:1416" placeholder="SELECT * FRO..." />
+            <marker date="1464767871666" expanded="true" signature="1479:1529" placeholder="SELECT * FRO..." />
+            <marker date="1464767871666" expanded="true" signature="3277:3327" placeholder="SELECT * FRO..." />
+            <marker date="1464767871666" expanded="true" signature="3846:3879" placeholder="SELECT * FRO..." />
+            <marker date="1464767871666" expanded="true" signature="4331:4381" placeholder="SELECT * FRO..." />
+            <marker date="1464767871666" expanded="true" signature="4520:4597" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/forum/fourm_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38277513" vertical-offset="1318" max-vertical-offset="9639">
+          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ul#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#span#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

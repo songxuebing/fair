@@ -37,7 +37,8 @@
         if(!empty($adv_row)){
             $script.='';
             foreach($adv_row as $key => $val){
-                $script .= "<li style=\"background: url(".$val['file'].")\"><a href=\"".$val['url']."\" title=\"".$val['title']."\" target=\"_blank\"></a></li>'";
+                //$script .= "<li style=\"background: url(".$val['file'].")\"><a href=\"".$val['url']."\" title=\"".$val['title']."\" target=\"_blank\"></a></li>'";
+                $script .="<li><div class=\"img\"><a href=\"".$val['url']."\" target=\"_blank\"><img src=\"".$val['file']."\" title=\"".$val['title']."\"  alt=\"\" /></a></div></li>";
             }
         }
     }
@@ -61,14 +62,20 @@
                 '`related_id` = ?' => $v['detail_id'],
                 '`sort` = ?' => 2
             ));
+            //获取价格2016-06-03
+            $area = $ConventionHelper->getAreaRow(array('`detail_id` = ?' =>$v['detail_id']));
+            $hot_conven['All'][$k]['area'] = $area;
+
             $hot_conven['All'][$k]['focus_number'] = $fav_count;
         }
         $this->Assign('hot_con',$hot_conven);
+        //var_dump($hot_conven);exit();
         //获取热销商户
         $hot_con_men = $OrderHelper->getHostMer(array(
             'type' => 'convention',
             'limit' => 4
         ));
+
         $this->Assign('hot_con_men',$hot_con_men);
         
         $hot_con_route = $OrderHelper->getHostMer(array(
@@ -145,7 +152,7 @@
         	$this->Assign('entrust',$entrust);
 		}
 		
-        echo $this->GetView('index_index.php');
+        echo $this->GetView('index_index_no2.php');
     }else{
 
         

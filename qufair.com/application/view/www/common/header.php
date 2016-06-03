@@ -91,7 +91,7 @@
 </div>
 <!-- 搜索 -->
 <div class="mm_mid clearfix">
-    <div class="mm_logo fl"><a href="<?php echo WEB_URL;?>"><img src="<?php echo STYLE_URL;?>/style/quzhan/images/mm_logo.png" alt="去展网LOGO"></a></div>
+    <div class="mm_logo fl"><a href="<?php echo WEB_URL;?>"><img src="<?php echo STYLE_URL;?>/style/quzhan/images/logo.png" alt="去展网LOGO"></a></div>
      
     <div class="fl">
         <div class="search">

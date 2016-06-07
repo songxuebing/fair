@@ -2,12 +2,45 @@
 <html>
 <head>
     <meta charset="utf-8">
+
+    <?php
+    if(empty($webtitle)){
+        ?>
+        <title>2016年国际展会_国外展览会平台-去展网</title>
+    <?php
+    }else{
+        ?>
+        <title><?php echo $webtitle?></title>
+    <?php
+    }
+    ?>
+    <?php
+    if(empty($webkeywords)){
+        ?>
+        <meta name="keywords" content="国际展览会|国外展览会|外贸展览会|国内展览会|行业展览会" />
+    <?php
+    }else{
+        ?>
+        <meta name="keywords" content="<?php echo $webkeywords?>"/>
+    <?php
+    }
+    ?>
+    <?php
+    if(empty($webdescription)){
+        ?>
+        <meta name="description" content="去展网_提供国际国外展会|行程|签证|物流|展览装修设计|展览订展一站式服务,提供2016最新最全的国际汽配展，电子展，五金展，服装展，礼品展等行业展览会资讯" />
+    <?php
+    }else{
+        ?>
+        <meta name="description" content="<?php echo $webdescription?>"/>
+    <?php
+    }
+    ?>
     <link type="text/css" href="<?php echo STYLE_URL;?>/style/no2/css/style.css" rel="stylesheet" />
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/main.js"></script>
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/slider.js"></script>
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/jcarousellite_1.0.1.js"></script>
-    <title>首页</title>
 </head>
 
 <body>
@@ -20,14 +53,26 @@
         </li>
         <li class="fr">
             <i>嗨，欢迎您！</i>
-            <a href="#" target="_blank" class="font01">请登录!</a>
-            <a href="##" target="_blank">免费注册</a>
+            <?php
+            if(empty($this->UserConfig['Id'])){
+                ?>
+                <a href="/login/index/" target="_blank" class="font01">请登录!</a>&nbsp;
+                <a href="/register/index" target="_blank">免费注册</a>
+            <?php
+            }else{
+                ?>
+                <a href="<?php echo MEMBER_URL;?>/user/index/" class="font01">
+                    <?php echo $this->UserConfig['Name'];?></a>&nbsp;
+                <a href="/login/Logout/option/refer">退出</a>
+            <?php
+            }
+            ?>
             <span>|</span>
             <a href="javascript:void(0)" target="_self" class="bg01">商户入驻</a>
             <span>|</span>
             <i>咨询热线：40006-2345-1</i>
             <span>|</span>
-            <a href="##" target="_blank">帮助中心</a>
+            <a href="/about/index/id/4" target="_blank">帮助中心</a>
         </li>
     </ul>
 </div>
@@ -36,7 +81,11 @@
 <!--搜索satrt-->
 <div class="header-search">
     <ul class="wrap">
-        <li class="logo fl"><a href="##" title=""><img src="<?php echo STYLE_URL;?>/style/no2/images/LOGO.jpg" alt="" /></a></li>
+        <li class="logo fl">
+            <a href="/" title="">
+                <img src="<?php echo STYLE_URL;?>/style/no2/images/LOGO.jpg" alt="" />
+            </a>
+        </li>
 
         <li class="search-type fr">
             <div class="con01">
@@ -48,26 +97,32 @@
             </div>
 
             <div class="con02">
-                <input type="text" value=""  class="fl" placeholder="输入关键词内容" id="type" onClick="searchs(true)"/>
-                <input type="button" value="搜  索" class="fr" />
+                <form class="J-search-box" action="/convention/index/" method="post">
+                <input type="text" value=""  class="fl" name="key" placeholder="输入关键词内容" id="type" onClick="searchs(true)"/>
+                <input type="submit" value="搜  索" class="fr" />
+                <input type="hidden" name="type" value="convention" />
                 <div id="type-list">
                     <p pl="美国食品科技展IFT">美国食品科技展IFT</p>
                     <p pl="美国夏季特色食品展">美国夏季特色食品展</p>
                     <p pl="美国安全及劳保用品博览会">美国安全及劳保用品博览会</p>
                 </div>
+                </form>
             </div>
 
             <div class="con03">
                 <p>
                     <span>热门搜索：</span>
-                    <a href="##" target="_blank">港展</a>
-                    <a href="##" target="_blank" class="font01">礼品展</a>
-                    <a href="##" target="_blank">广交会</a>
-                    <a href="##" target="_blank">世博</a>
-                    <a href="##" target="_blank">德国玩具展</a>
-                    <a href="##" target="_blank" class="font01">日本性文化展</a>
-                    <a href="##" target="_blank">韩国服装展</a>
-                    <a href="##" target="_blank">家居展</a>
+                    <?php
+                    if(!empty($this->keyword)){
+                        ?>
+                        <?php
+                        foreach($this->keyword as $key => $val){
+                            ?>
+                            <a href="javascript:;" class="J-hot-key"><?php echo $val['keyword'];?></a>
+                        <?php
+                        }
+                    }
+                    ?>
                 </p>
             </div>
 
@@ -75,8 +130,67 @@
 
     </ul>
 </div>
-<!--搜索end-->
+<script type="text/javascript">
+    $(document).ready(function(e) {
 
+        $(".J-hot-key").on('click',function(){
+            var $this = $(this);
+            $("input[name='key']").val($this.html());
+            $(".fr").click();
+        });
+
+        $(".nav p").click(function(){
+            var ul=$(".new");
+            if(ul.css("display")=="none"){
+                ul.slideDown();
+            }else{
+                ul.slideUp();
+            }
+        });
+
+        $(".set").click(function(){
+            var _name = $(this).attr("name");
+            if( $("[name="+_name+"]").length > 1 ){
+                $("[name="+_name+"]").removeClass("select");
+                $(this).addClass("select");
+            } else {
+                if( $(this).hasClass("select") ){
+                    $(this).removeClass("select");
+                } else {
+                    $(this).addClass("select");
+                }
+            }
+        });
+
+        $(".nav li").click(function(){
+            var li=$(this).text();
+            $(".nav p").html(li);
+            $(".new").hide();
+            /*$(".set").css({background:'none'});*/
+            $("p").removeClass("select") ;
+            //获取搜索类型
+            var searchType = $(this).data('id');
+            $('input[name="type"]').val(searchType);
+
+            //构建搜索地址
+            $(".J-search-box").attr({"action":"/"+searchType+"/index/"});
+
+
+        });
+
+        $(".mm_dianji img").click(function(){
+            if($(this).hasClass('on')){
+                $(this).closest('.J-mm_zhanhui_list_fenlei1').find('.J-mm_zhanhui_list_xuanze:not(:eq(0))').addClass('mm_show');
+                $(this).removeClass('on');
+            }else{
+                $(this).closest('.J-mm_zhanhui_list_fenlei1').find('.J-mm_zhanhui_list_xuanze').removeClass('mm_show');
+                $(this).addClass('on');
+            }
+        });
+    });
+
+</script>
+<!--搜索end-->
 <script>
     function searchs(f) {
         document.getElementById('type-list').style.visibility= f ? 'visible' : 'hidden';
@@ -96,15 +210,13 @@
                 document.getElementById('type').value = this.getAttribute('pl');
                 document.getElementById('type-list').style.visibility='hidden';
                 document.getElementById('type').onclick = function () {searchs(true)};
-            }
+            },
             lis[i].onmouseover = function () {
                 c_cleanLiA1(this.liIdx);
             }
         }
     }
 </script>
-
-
 <!--main start-->
 <div class="wrap">
 
@@ -112,13 +224,13 @@
     <div class="nav">
         <span>热门行业</span>
         <ul class="fr">
-            <li><a href="##" target="_self" class="current">首页</a></li>
-            <li><a href="##" target="_blank">展会</a></li>
-            <li><a href="##" target="_blank">行程</a></li>
-            <li><a href="##" target="_blank">签证</a></li>
-            <li><a href="##" target="_blank">物流</a></li>
-            <li><a href="##" target="_blank">特装</a></li>
-            <li><a href="##" target="_blank">社区资讯</a></li>
+            <li><a href="/" target="_self" class="current">首页</a></li>
+            <li><a href="/convention" target="_blank">展会</a></li>
+            <li><a href="/route" target="_blank">行程</a></li>
+            <li><a href="/visa" target="_blank">签证</a></li>
+            <li><a href="/logistics" target="_blank">物流</a></li>
+            <li><a href="/decoration" target="_blank">特装</a></li>
+            <li><a href="/news" target="_blank">社区资讯</a></li>
         </ul>
     </div>
     <!--导航end-->
@@ -2297,6 +2409,7 @@
                 <!--幻灯片start-->
                 <div id="demo01" class="flexslider">
                     <ul class="slides">
+                        <?php echo $this->script;?>
                         <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/10.jpg" alt="" /></a></div></li>
                         <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/10.jpg" alt="" /></a></div></li>
                         <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/10.jpg" alt="" /></a></div></li>
@@ -2314,33 +2427,17 @@
                     <img src="<?php echo STYLE_URL;?>/style/no2/images/8.png" alt="" class="next" />
                     <div class="sroll-img">
                         <ul>
-                            <li>
-                                <div class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/11.jpg" alt="" /></div>
-                                <h4><a href="##" target="_blank">美国夏季特色食品展</a></h4>
-                                <p>开展时间:2016-06-01 09</p>
-                                <div class="order clearfix">
-                                    <b>￥:80980<i>起</i></b>
-                                    <a href="##" target="_blank">立即订阅</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/12.jpg" alt="" /></div>
-                                <h4><a href="##" target="_blank">美国夏季特色食品展</a></h4>
-                                <p>开展时间:2016-06-01 09</p>
-                                <div class="order clearfix">
-                                    <b>￥:80980<i>起</i></b>
-                                    <a href="##" target="_blank">立即订阅</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/13.jpg" alt="" /></div>
-                                <h4><a href="##" target="_blank">美国夏季特色食品展</a></h4>
-                                <p>开展时间:2016-06-01 09</p>
-                                <div class="order clearfix">
-                                    <b>￥:80980<i>起</i></b>
-                                    <a href="##" target="_blank">立即订阅</a>
-                                </div>
-                            </li>
+                            <?php if(!empty($this->hot_con['All'])) foreach($this->hot_con['All'] as $key=>$val_hot){?>
+                                <li>
+                                    <div class="img"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" /></div>
+                                    <h4><a href="##" target="_blank"><?php echo $val_hot['name']?></a></h4>
+                                    <p>时间:<?php echo date('Y-m-d',$val_hot['start_time'])?> - <?php echo date('Y-m-d',$val_hot['end_titme'])?></p>
+                                    <div class="order clearfix">
+                                        <b>￥:<?php echo $val_hot['area']['group_price']?></b>
+                                        <a href="##" target="_blank">立即订阅</a>
+                                    </div>
+                                </li>
+                            <?php }?>
                         </ul>
                     </div>
                 </div>
@@ -2352,6 +2449,9 @@
             <li class="right fr">
 
                 <!--登录start-->
+                <?php
+                if(empty($this->UserConfig['Id'])){
+                ?>
                 <div class="login">
                     <ul class="img01">
                         <li class="fl"><img src="<?php echo STYLE_URL;?>/style/no2/images/5.jpg" alt="" /></li>
@@ -2361,20 +2461,53 @@
                         </li>
                     </ul>
                     <ul class="login-resiger">
-                        <a href="##" target="_blank">免费注册</a>
-                        <a href="##" target="_blank">登录</a>
+                        <a href="/register" target="_blank">免费注册</a>
+                        <a href="/login" target="_blank">登录</a>
                     </ul>
                 </div>
+                <?php
+                }else{
+                    ?>
+                    <!-- 登陆后 -->
+
+                    <div class="mm_user">
+                        <ul class="img01">
+                            <li class="fl"><img src="<?php echo Common::AttachUrl($this->enberInfo['avatar']);?>!a200" width="66" onclick="window.location.href='<?php echo MEMBER_URL;?>/user/index/';" style="cursor:pointer"></li>
+                            <li class="fr">Hi!<?php echo $this->UserConfig['Name'];?></li>
+                        </ul>
+                        <ul class="login-resiger">
+                            <a href="<?php echo MEMBER_URL;?>/user/index/" target="_blank">个人中心</a>
+                            <a href="/login/Logout/option/refer">退出</a>
+                        </ul>
+
+                    </div>
+                <?php
+                }
+                ?>
                 <!--登录end-->
 
                 <!--最新资讯start-->
                 <div class="news-new">
                     <h2>最新资讯</h2>
                     <ul>
-                        <li><a href="##" target="_blank">2016年墨西哥国际照明展..</a></li>
-                        <li><a href="##" target="_blank">大批国际知名珠宝企业..</a></li>
-                        <li><a href="##" target="_blank">国际文玩珠宝展中国文玩..</a></li>
-                        <li><a href="##" target="_blank">2016年墨西国际照明展..</a></li>
+                        <ul class="list">
+                            <?php
+                            $a = 0;
+                            if(!empty($this->entrust['All'])) foreach($this->entrust['All'] as $kk => $vv){
+                                ?>
+                                <li>
+                                        <a href="/news/<?php echo date('Y/m/d', $vv['dateline']).'/'.$vv['id'].'.shtml';?>" target="_blank">
+                                            <?php echo StringCode::GetCsubStr($vv['title'],0,14);?>
+                                        </a>
+                                </li>
+                            <?php
+                                if($a >= 3 )
+                                {
+                                    break;
+                                }
+                                $a++;
+                            }
+                            ?>
                     </ul>
                 </div>
                 <!--最新资讯end-->
@@ -2465,15 +2598,11 @@
                 <div class="news">
                     <ul class="title">
                         <h2 class="fl">新闻资讯</h2>
-                        <p class="fr">
-                            <a href="##" target="_blank">在线课程</a>
-                            <a href="##" target="_blank">讲师</a>
-                            <a href="##" target="_blank">商友圈</a>
-                            <a href="##" target="_blank">更多</a>
-                            <a href="##" target="_blank">在线课程</a>
-                            <a href="##" target="_blank">讲师</a>
-                            <a href="##" target="_blank">商友圈</a>
-                            <a href="##" target="_blank" class="mores">更多</a>
+                        <p class="">
+                            <?php if(!empty($this->new_tag)) foreach($this->new_tag as $key => $val_new){?>
+                            <a href="/<?php echo $val_new['name_en']?>" target="_blank"><?php echo $val_new['ctag_name']?></a>
+                            <?php }?>
+                            <a href="/news" target="_blank" class="mores">更多</a>
                         </p>
                     </ul>
                 </div>
@@ -2481,6 +2610,13 @@
                 <!--幻灯片start-->
                 <div id="demo02" class="flexslider flexslider01">
                     <ul class="slides">
+                        <?php
+                        if(!empty($this->loop_adv)) foreach($this->loop_adv as $k=>$v){
+                            ?>
+                            <li><div class="img"><a href="<?php echo $v['url'];?>" target="_blank"><img src="<?php echo $v['file'];?>" alt="" width="470" height="260" /></a></div></li>
+                        <?php
+                        }
+                        ?>
                         <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/18.jpg" alt="" /></a></div></li>
                         <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/18.jpg" alt="" /></a></div></li>
                         <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/18.jpg" alt="" /></a></div></li>
@@ -2525,13 +2661,26 @@
                 <div class="new-news">
                     <ul class="title">
                         <h2 class="fl">最新资讯</h2>
-                        <p class="fr"><a href="##" target="_blank">更多 ></a></p>
+                        <p class="fr"><a href="/news" target="_blank">更多 ></a></p>
                     </ul>
                     <ul class="list">
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
-                        <li><p><a href="##" target="_blank">会员中心能为大家带来什么？</a></p></li>
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
+                        <?php
+                        if(!empty($this->entrust['All'])) foreach($this->entrust['All'] as $kk => $vv){
+                            ?>
+                            <li>
+                                <p>
+                                    <a href="/news/<?php echo date('Y/m/d', $vv['dateline']).'/'.$vv['id'].'.shtml';?>" target="_blank">
+                                        <?php echo StringCode::GetCsubStr($vv['title'],0,17);?>
+                                    </a>
+                                </p>
+                            </li>
+                        <?php
+                        }
+                        ?>
+<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
+<!--                        <li><p><a href="##" target="_blank">会员中心能为大家带来什么？</a></p></li>-->
+<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
+<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
                     </ul>
                 </div>
                 <!--最新资讯end-->
@@ -2550,23 +2699,22 @@
                 </div>
                 <!--最新政策end-->
                 <!--最新评论start-->
-                <div class="new-news">
-                    <ul class="title">
-                        <h2 class="fl">最新评论</h2>
-                        <p class="fr"><a href="##" target="_blank">更多 ></a></p>
-                    </ul>
-                    <ul class="list">
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
-                        <li><p><a href="##" target="_blank">会员中心能为大家带来什么？</a></p></li>
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
-                    </ul>
-                </div>
+<!--                <div class="new-news">-->
+<!--                    <ul class="title">-->
+<!--                        <h2 class="fl">最新评论</h2>-->
+<!--                        <p class="fr"><a href="##" target="_blank">更多 ></a></p>-->
+<!--                    </ul>-->
+<!--                    <ul class="list">-->
+<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
+<!--                        <li><p><a href="##" target="_blank">会员中心能为大家带来什么？</a></p></li>-->
+<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
+<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
                 <!--最新评论end-->
 
             </li>
             <!--中栏目start-->
-
 
             <!--右栏目start-->
             <li class="news-list-right fr">
@@ -2649,242 +2797,105 @@
                             <li class="detial-review fr" id="detial-review01">
                                 <!--欧洲start-->
                                 <div>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典1-1</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典1-2</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                <ul class="clearfix">
+                                <?php foreach($this->delta['0']['next'] as $k => $val_de){?>
+                                <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                <?php }?>
+                                </ul>
+                                    <?php
+                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--欧洲end-->
+
                                 <!--美洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['1']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--美洲end-->
+
                                 <!--亚洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['2']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--亚洲end-->
+
                                 <!--非洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['3']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--非洲end-->
                                 <!--大洋洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['4']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--大洋洲end-->
                             </li>
@@ -2907,241 +2918,101 @@
                                 <!--欧洲start-->
                                 <div>
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典2-1</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['0']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典2-2</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--欧洲end-->
                                 <!--美洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['1']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--美洲end-->
                                 <!--亚洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['2']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--亚洲end-->
                                 <!--非洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['3']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--非洲end-->
                                 <!--大洋洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
+                                        <?php foreach($this->delta['4']['next'] as $k => $val_de){?>
+                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php }?>
                                     </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul class="clearfix">
-                                        <li><a href="##" target="_blank">瑞典</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank">法国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                        <li><a href="##" target="_blank" class="font01">日本</a></li>
-                                        <li><a href="##" target="_blank">丹麦</a></li>
-                                        <li><a href="##" target="_blank" class="font01">中国</a></li>
-                                        <li><a href="##" target="_blank">加拿大</a></li>
-                                    </ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/26.jpg" alt="" /></a></ul>
-                                    <ul><a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/29.jpg" alt="" /></a></ul>
+                                   <?php
+                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+                                        ?>
+                                        <ul>
+                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
+                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
+                                            </a>
+                                        </ul>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                                 <!--大洋洲end-->
                             </li>
@@ -3168,31 +3039,14 @@
                         <p class="fr"><a href="##" target="_blank">更多>></a></p>
                     </ul>
                     <ul class="list clearfix">
+                        <?php if(!empty($this->hot_route)) foreach($this->hot_route as $kk => $val_route){?>
+
                         <li>
-                            <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/21.jpg" alt="" /></a></div>
-                            <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                            <h4><a href="##" target="_blank">加拿大温哥华国际建材展6天行程安排</a></h4>
+                            <div><a href="/route/<?php echo date('Y/m/d',$val_route['dateline']).'/'.$val_route['id'].'.shtml';?>" target="_blank"><img src="<?php echo Common::AttachUrl($val_route['cover']);?>" alt="<?php echo $val_route['name']?>" height="240px;" /></a></div>
+                            <p><a href="/route/<?php echo date('Y/m/d',$val_route['dateline']).'/'.$val_route['id'].'.shtml';?>" target="_blank">搭建价格</a><i><?php echo $val_route['price']?>元</i>起</p>
+                            <h4><a href="/route/<?php echo date('Y/m/d',$val_route['dateline']).'/'.$val_route['id'].'.shtml';?>" target="_blank"><?php echo $val_route['name']?></a></h4>
                         </li>
-                        <li>
-                            <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/22.jpg" alt="" /></a></div>
-                            <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                            <h4><a href="##" target="_blank">加拿大温哥华国际建材展6天行程安排</a></h4>
-                        </li>
-                        <li>
-                            <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/23.jpg" alt="" /></a></div>
-                            <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                            <h4><a href="##" target="_blank">加拿大温哥华国际建材展6天行程安排</a></h4>
-                        </li>
-                        <li>
-                            <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/24.jpg" alt="" /></a></div>
-                            <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                            <h4><a href="##" target="_blank">加拿大温哥华国际建材展6天行程安排</a></h4>
-                        </li>
-                        <li>
-                            <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/25.jpg" alt="" /></a></div>
-                            <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                            <h4><a href="##" target="_blank">加拿大温哥华国际建材展6天行程安排</a></h4>
-                        </li>
+                        <?php }?>
                     </ul>
                 </div>
             </li>
@@ -3213,34 +3067,20 @@
             <p class="fr">热门效果图：<a href="##" target="_blank">电子展</a><span>|</span><a href="##" target="_blank">法国五金展</a><span>|</span><a href="##" target="_blank">韩国美发展</a></p>
         </ul>
         <ul class="list clearfix">
+            <?php
+            if(!empty($this->recommend)) foreach($this->recommend as $k=>$v){
+            ?>
             <li>
-                <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/30.jpg" alt="" /></a></div>
+                <div><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank">
+                    <img src="<?php echo Common::AttachUrl($v['cover']);?>" alt="" height="280px" width="280px;"/>
+                    </a>
+                </div>
                 <div class="info">
-                    <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                    <h4><a href="##" target="_blank">旅游行业|安徽馆展台经典效果图</a></h4>
+                    <p><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank">搭建价格</a><i><?php echo $v['de_price']?>元</i>起</p>
+                    <h4><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank"><?php echo $v['title']?></a></h4>
                 </div>
             </li>
-            <li>
-                <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/31.jpg" alt="" /></a></div>
-                <div class="info">
-                    <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                    <h4><a href="##" target="_blank">旅游行业|安徽馆展台经典效果图</a></h4>
-                </div>
-            </li>
-            <li>
-                <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/32.jpg" alt="" /></a></div>
-                <div class="info">
-                    <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                    <h4><a href="##" target="_blank">旅游行业|安徽馆展台经典效果图</a></h4>
-                </div>
-            </li>
-            <li>
-                <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/33.jpg" alt="" /></a></div>
-                <div class="info">
-                    <p><a href="##" target="_blank">搭建价格</a><i>9850.88元</i>起</p>
-                    <h4><a href="##" target="_blank">旅游行业|安徽馆展台经典效果图</a></h4>
-                </div>
-            </li>
+            <?php }?>
         </ul>
     </div>
     <!--展装商城end-->
@@ -3301,67 +3141,5 @@
 
 </div>
 <!--main end-->
-
-
-<!--友情链接start-->
-<div class="friendly-link">
-    <ul class="wrap">
-        <h2><i>友情链接</i></h2>
-        <div>
-            <ul class="clearfix">
-                <li><a href="##" target="_blank">杭州写字楼网 </a></li>
-                <li><a href="##" target="_blank">杭州本地宝</a></li>
-                <li><a href="##" target="_blank">杭州房产网</a></li>
-                <li><a href="##" target="_blank">杭州租房网</a></li>
-                <li><a href="##" target="_blank">杭州分类信息</a></li>
-                <li><a href="##" target="_blank">杭州房产网</a></li>
-                <li><a href="##" target="_blank">杭州装修公司</a></li>
-                <li><a href="##" target="_blank">杭州租房</a></li>
-                <li><a href="##" target="_blank">杭州厂房网</a></li>
-                <li><a href="##" target="_blank">杭州信息网</a></li>
-                <li><a href="##" target="_blank">杭州装修网</a></li>
-                <li><a href="##" target="_blank">杭州拓展公司</a></li>
-                <li><a href="##" target="_blank">杭州邮编网</a></li>
-                <li><a href="##" target="_blank">杭州写字楼网 </a></li>
-                <li><a href="##" target="_blank">杭州本地宝</a></li>
-                <li><a href="##" target="_blank">杭州房产网</a></li>
-                <li><a href="##" target="_blank">杭州租房网</a></li>
-                <li><a href="##" target="_blank">杭州分类信息</a></li>
-                <li><a href="##" target="_blank">杭州房产网</a></li>
-                <li><a href="##" target="_blank">杭州装修公司</a></li>
-                <li><a href="##" target="_blank">杭州租房</a></li>
-                <li><a href="##" target="_blank">杭州厂房网</a></li>
-                <li><a href="##" target="_blank">杭州信息网</a></li>
-                <li><a href="##" target="_blank">杭州装修网</a></li>
-                <li><a href="##" target="_blank">杭州拓展公司</a></li>
-                <li><a href="##" target="_blank">杭州邮编网</a></li>
-            </ul>
-        </div>
-    </ul>
-</div>
-<!--友情链接end-->
-
-<!--底部start-->
-<div class="footer">
-    <ul class="wrap">
-        <p>
-            <a href="##" target="_blank">关于我们</a><span>|</span>
-            <a href="##" target="_blank">联系我们</a><span>|</span>
-            <a href="##" target="_blank">友情链接</a><span>|</span>
-            <a href="##" target="_blank">帮助中心</a><span>|</span>
-            <a href="##" target="_blank">意见反馈</a><span>|</span>
-            <a href="##" target="_blank">高薪聘请</a><span>|</span>
-            <a href="##" target="_blank">法律声明</a><span>|</span>
-        </p>
-        <p>© 2015 quzhan.com 去展互联网展会领导者 保留所有权利</p>
-        <p>去展互联网展会领导者 浙ICP备08125558号</p>
-        <p><img src="<?php echo STYLE_URL;?>/style/no2/images/27.jpg" alt="" /></p>
-        <div>
-            <img src="<?php echo STYLE_URL;?>/style/no2/images/code.jpg" alt="" />
-            <p>下载去展APP</p>
-        </div>
-    </ul>
-</div>
-<!--底部start-->
-</body>
-</html>
+<?php include $this->Render('links2.php'); ?>
+<?php include $this->Render('footer2.php'); ?>

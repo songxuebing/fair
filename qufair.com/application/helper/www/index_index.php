@@ -23,6 +23,9 @@
     $this->LoadHelper('adv/AdvHelper');
     $AdvHelper = new AdvHelper();
 
+    $this->LoadHelper('route/RouteHelper');
+    $RouteHelper = new RouteHelper();
+
     $id = 9;
     $pos_row = $AdvHelper->posRow($id);
     if(empty($pos_row)){
@@ -70,6 +73,17 @@
         }
         $this->Assign('hot_con',$hot_conven);
         //var_dump($hot_conven);exit();
+
+
+        $where_route = array(
+            '`delete` = ?' => 0,
+            '`is_sale` = ?' =>1
+        );
+
+        $data_route = $RouteHelper->routeAll($where_route,array(1,5),NULL,array('up_time desc','dateline desc'));
+
+        $this->Assign('hot_route',$data_route);
+
         //获取热销商户
         $hot_con_men = $OrderHelper->getHostMer(array(
             'type' => 'convention',
@@ -131,6 +145,25 @@
         );
         $loop_adv = $AdvHelper->advAll($adv_where,array(1,4),NULL,array('id DESC'));
         $this->Assign('loop_adv',$loop_adv);
+
+        //首页行程广告
+        $route_adv_where = array(
+            '`start_time` <= ?' => NOW_TIME,
+            '`end_time` >= ?' => NOW_TIME,
+            '`pos_id` = ?' => 41
+        );
+        $route_adv = $AdvHelper->advAll($route_adv_where,array(1,2),NULL,array('id DESC'));
+        $this->Assign('route_adv',$route_adv);
+
+        //首页签证广告
+        $visa_adv_where = array(
+            '`start_time` <= ?' => NOW_TIME,
+            '`end_time` >= ?' => NOW_TIME,
+            '`pos_id` = ?' => 42
+        );
+        $visa_adv = $AdvHelper->advAll($visa_adv_where,array(1,2),NULL,array('id DESC'));
+        $this->Assign('visa_adv',$visa_adv);
+
         //调取最新资讯
         $new = $ForumHelper->forumPageList(array('`delete` = ?' => 0,'`is_show` = ?' => 1), 4, 1 ,$this->Param);
         $this->Assign('new',$new);
@@ -138,6 +171,7 @@
 		//获取最新需求
 		
 		$dataCat = $ForumHelper->catAll(array(),null,null,array('parent_id asc'));
+        $dataTag = $ForumHelper->cTagAll(array(),array(1,6),null,array('sort asc'));
 		$i=0;
 		if(!empty($dataCat)){
 			foreach($dataCat as $kk=>$vv){
@@ -148,10 +182,12 @@
 			}
 
 			$catWhere['`cat_id` IN(?)'] = $catArr;
-			$entrust = $ForumHelper->forumPageList($catWhere, 100, 0, $this->Param);
+			$entrust = $ForumHelper->forumPageList($catWhere, 10, 0, $this->Param);
         	$this->Assign('entrust',$entrust);
 		}
-		
+
+        $this->Assign('new_tag',$dataTag);
+
         echo $this->GetView('index_index_no2.php');
     }else{
 

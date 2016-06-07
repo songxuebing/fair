@@ -46,7 +46,7 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 
 .con02{ height:60px; position:relative;}
 .con02 input[type="text"]{ width:505px; height:56px; line-height:56px; display:block; padding-left:60px; border:2px #fe6703 solid; background:url(../images/1.jpg) no-repeat 25px center; font-size:15px; color:#b8b8b8; font-family:"宋体";}
-.con02 input[type="button"]{ display:block; border:0; width:130px; height:60px; background-color:#fe6703; font-family:"宋体"; font-size:16px; color:#fff; cursor:pointer;}
+.con02 input[type="submit"]{ display:block; border:0; width:130px; height:60px; background-color:#fe6703; font-family:"宋体"; font-size:16px; color:#fff; cursor:pointer;}
 
 .con02 div{ position:absolute; left:0; top:60px; z-index:9999; border:1px #f8f8f8 solid; background-color:#fff; width:567px; visibility:hidden;}
 .con02 div p{ line-height:40px; height:40px; font-size:15px; color:#666; font-family:"宋体"; padding:0 30px;}

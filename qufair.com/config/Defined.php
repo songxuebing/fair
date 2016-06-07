@@ -14,9 +14,9 @@ defined('WEB_URL') || define('WEB_URL', 'http://'.WEB_DOMAIN);
 //网站样式路径
 defined('STYLE_URL') || define('STYLE_URL', 'http://cdn.qufair.com');
 //附件路径
-//defined('ATTACH_IMAGE') || define('ATTACH_IMAGE', 'http://qzweb.b0.upaiyun.com');
+defined('ATTACH_IMAGE') || define('ATTACH_IMAGE', 'http://qzweb.b0.upaiyun.com');
 
-defined('ATTACH_IMAGE') || define('ATTACH_IMAGE', '');
+//defined('ATTACH_IMAGE') || define('ATTACH_IMAGE', '');
 
 //用户中心域名
 defined('MEMBER_URL') || define('MEMBER_URL', 'http://home.'.WEB_DOMAIN);

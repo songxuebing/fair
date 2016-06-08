@@ -402,7 +402,8 @@ else {
                     <div class="new-list-c">
 
                     	<div class="new-list-c-right" style="width:236px; height:155px; overflow:hidden; float:left;">
-                            <a href="/news/<?php echo date('Y/m/d', $val['dateline']).'/'.$val['id'].'.shtml';?>" target="_blank" title="<?php echo $val['title'];?>"><img src="<?php echo empty($val['cover']) ? STYLE_URL.'/style/quzhan/images/20160202/test_01.png' :$val['cover'].'!a200';?>" width="236" height="155" alt="<?php echo $val['title'];?>" /></a>
+                            <a href="/news/<?php echo date('Y/m/d', $val['dateline']).'/'.$val['id'].'.shtml';?>" target="_blank" title="<?php echo $val['title'];?>">
+                                <img src="<?php echo empty($val['cover']) ? STYLE_URL.'/style/quzhan/images/20160202/test_01.png' :$val['cover'].'!a200';?>" width="236" height="155" alt="<?php echo $val['title'];?>" /></a>
                         </div>
                     	<div class="new-list-c-left" style="float:right;">
                             <h3><a href="/news/<?php echo date('Y/m/d', $val['dateline']).'/'.$val['id'].'.shtml';?>" target="_blank" title="<?php echo $val['title'];?>"><?php echo StringCode::GetCsubStr($val['title'],0,24);?></a></h3>

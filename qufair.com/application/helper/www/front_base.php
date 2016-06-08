@@ -29,8 +29,17 @@ if(!empty($one_level)) foreach($one_level as $k=>$v){
         '`parent_id` = ?' => $v['id']
     ),array(0,50));
     $one_level[$k]['next'] = $next_all;
+
+
+    if(!empty($one_level[$k]['next'])) foreach($one_level[$k]['next'] as $kk=>$v2) {
+        $next2 = $IndustryHelper->industryAll(array(
+            '`parent_id` = ?' => $v2['id']
+        ));
+        $one_level[$k]['next'][$kk]['next2'] = $next2;
+    }
 }
 $this->Assign('nav',$one_level);
+
 //
 $this->LoadHelper('region/RegionHelper');
 $RegionHelper = new RegionHelper();

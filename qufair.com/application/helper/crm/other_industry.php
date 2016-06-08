@@ -15,9 +15,16 @@ if (empty($this->Param['option'])) {
             '`parent_id` = ?' => $v['id']
         ));
         $data['All'][$k]['next'] = $next;
+        if(!empty($data['All'][$k]['next'])) foreach($data['All'][$k]['next'] as $kk=>$v2) {
+            $next2 = $IndustryHelper->industryAll(array(
+                '`parent_id` = ?' => $v2['id']
+            ));
+            $data['All'][$k]['next'][$kk]['next2'] = $next2;
+        }
     }
+    //var_dump($data);exit();
     $this->Assign('data', $data);
-    
+
     $this->Assign('param', $this->Param);
     echo $this->GetView('industry_index.php');
 } else {
@@ -30,9 +37,15 @@ if (empty($this->Param['option'])) {
             $one_level = $IndustryHelper->industryAll(array(
                 '`parent_id` = ?' => 0
             ));
+            //所有一级跟二级分类
+
             if(!empty($one_level)) foreach($one_level as $k=>$v){
                 $one_level[$k]['name'] = StringCode::getfirstchar($v['name']) .'-'. $v['name'];
+                $one_level[$k]['next'] = $IndustryHelper->industryAll(array(
+                    '`parent_id` = ?' => $v['id']
+                ));
             }
+
             $this->Assign('data',$data);
             $this->Assign('parent',$one_level);
             echo $this->GetView('industry_edit.php');

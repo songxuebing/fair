@@ -17,6 +17,10 @@
 				if(!empty($this->parent)) foreach($this->parent as $k=>$v){
 					$select = $v['id'] == $this->data['parent_id'] ? ' selected="selected"' : '';
 					echo '<option value="'.$v['id'].'"'.$select.'>'.$v['name'].'</option>';
+                    if(!empty($v['next'])) foreach($v['next'] as $k=>$val){
+                        $select = $val['id'] == $this->data['parent_id'] ? ' selected="selected"' : '';
+                        echo '<option value="'.$val['id'].'"'.$select.'>&nbsp;&nbsp;'.$val['name'].'</option>';
+                    }
 				}
 			?>
 		</select>

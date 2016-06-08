@@ -44,6 +44,8 @@
 	  <?php
 	  	if(!empty($v['next'])) foreach($v['next'] as $key=>$val){
  	  ?>
+            <?php //var_dump($val['next2']);exit();?>
+            <div class="ttt">
 	  <div class="list_info J-next fn-hiden">
 		<ul class="row">
 		  <li class="li_5"></li>
@@ -52,10 +54,27 @@
             <li class="li_15"><?php echo $val['title'];?></li>
             <li class="li_15"><?php echo $val['keywords'];?></li>
             <li class="li_15"><?php echo $val['description'];?></li>
-		  <li class="li_5"></li>
+		  <li class="li_5"><a href="javascript:;" class="J-nextclick2 on2"><?php echo count($val['next2']);?></a></li>
 		  <li class="li_15"><a href="/other/industry/option/edit/id/<?php echo $val['id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $val['id'];?>" data-title="修改">编辑</a><a href="#" class="RemoveLink btn_05" data-id="<?php echo $val['id'];?>" data-url="/other/industry/">删除</a></li>
 		</ul>
-	  </div>
+	  </div><?php
+                if(!empty($val['next2'])) foreach($val['next2'] as $key=>$va){
+                ?>
+                <div class="list_info2 J-next2 fn-hiden">
+                    <ul class="row">
+                        <li class="li_5"></li>
+                        <li class="li_15">&nbsp;&nbsp;&nbsp;|-|-<?php echo $va['name'];?></li>
+                        <li class="li_10"><?php echo $va['name_en'];?></li>
+                        <li class="li_15"><?php echo $va['title'];?></li>
+                        <li class="li_15"><?php echo $va['keywords'];?></li>
+                        <li class="li_15"><?php echo $va['description'];?></li>
+                        <li class="li_5"></li>
+                        <li class="li_15"><a href="/other/industry/option/edit/id/<?php echo $va['id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $va['id'];?>" data-title="修改">编辑</a><a href="#" class="RemoveLink btn_05" data-id="<?php echo $va['id'];?>" data-url="/other/industry/">删除</a></li>
+                    </ul>
+                </div>
+                <?php }?>
+                </div>
+
 	  <?php
 	  	}
 	  ?>
@@ -87,6 +106,27 @@
 		});
 	
 	});
+
+
+    jQuery(document).ready(function(){
+        jQuery(".J-nextclick2").on('click',function(){
+            var $this = jQuery(this);
+
+            if($this.hasClass("on2")){
+                $this.closest(".ttt").find(".J-next2").removeClass('fn-hiden');
+                $this.closest(".ttt").siblings().find(".J-next2").addClass('fn-hiden');
+                $this.removeClass("on2");
+
+            }else{
+                $this.closest(".ttt").find(".J-next2").addClass('fn-hiden');
+                $this.closest(".ttt").siblings().find(".J-next2").addClass('fn-hiden');
+                $this.addClass("on2");
+            }
+
+        });
+
+    });
+
 	function removelink(_obj){
 		_obj.parents('.list_info').fadeOut('fast',function(){jQuery(this).remove();});
 	}

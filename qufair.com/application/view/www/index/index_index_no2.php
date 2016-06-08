@@ -268,14 +268,11 @@
                                                     <b><a href="##" target="_blank"><?php echo $val['name'];?></a></b>
                                                 </ul>
                                                 <ul class="list clearfix">
-                                                    <li><a href="##" target="_blank">连衣裙</a></li>
-                                                    <li><a href="##" target="_blank">衬衫</a></li>
-                                                    <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                    <li><a href="##" target="_blank">T恤</a></li>
-                                                    <li><a href="##" target="_blank">针织衫</a></li>
-                                                    <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                    <li><a href="##" target="_blank">打底裤</a></li>
-                                                    <li><a href="##" target="_blank">休闲裤</a></li>
+                                                    <?php
+                                                    if(!empty($val['next2'])) foreach($val['next2'] as $key=>$val_next2){
+                                                    ?>
+                                                    <li><a href="##" target="_blank"><?php echo $val_next2['name']?></a></li>
+                                                    <?php }?>
                                                 </ul>
                                             </div>
                                             <?php }?>
@@ -349,18 +346,16 @@
                                                                 <b><a href="##" target="_blank"><?php echo $val['name'];?></a></b>
                                                             </ul>
                                                             <ul class="list clearfix">
-                                                                <li><a href="##" target="_blank">连衣裙</a></li>
-                                                                <li><a href="##" target="_blank">衬衫</a></li>
-                                                                <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                                <li><a href="##" target="_blank">T恤</a></li>
-                                                                <li><a href="##" target="_blank">针织衫</a></li>
-                                                                <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                                <li><a href="##" target="_blank">打底裤</a></li>
-                                                                <li><a href="##" target="_blank">休闲裤</a></li>
+                                                                <?php
+                                                                if(!empty($val['next2'])) foreach($val['next2'] as $key=>$val_next2){
+                                                                    ?>
+                                                                    <li><a href="##" target="_blank"><?php echo $val_next2['name']?></a></li>
+                                                                <?php }?>
                                                             </ul>
                                                         </div>
                                                     <?php }?>
-                                                    </li>
+
+                                                </li>
                                                 <!--左end-->
                                                 <!--右start-->
                                                 <li class="type-list fl">

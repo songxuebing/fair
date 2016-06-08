@@ -220,7 +220,11 @@
         <div class="Read">
             <ul>
                 <?php
-                foreach($this->relevant_eva as $key=>$value_re){?>
+                                        foreach($this->relevant_eva as $key=>$value_re){
+                                            $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg]))[\'|\"].*?[\/]?>/";
+                                                                    preg_match_all($pattern,$value_re['content'],$match);
+                                                                    $value_re['cover'] = empty($match[1][0]) ? '' : $match[1][0];
+                        ?>
                 <li>
                     <a href="/news/<?php echo date('Y/m/d', $value_re['dateline']).'/'.$value_re['id'];?>.shtml" target="_blank">
                         <img src="<?php echo $value_re['cover']?>">

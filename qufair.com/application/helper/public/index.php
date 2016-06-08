@@ -262,6 +262,9 @@ if(empty($this->Param['option'])){
             $limit = empty($this->Param['limit']) ? 5 : $this->Param['limit'];
             $recommend = $ForumHelper->forumPageList(array('`recommend` = ?' => 1,'`is_show` = ?' => 1,'`delete` = ?' =>0), $limit, 1, $this->Param);
             if(!empty($recommend['All'])) foreach($recommend['All'] as $k=>$v){
+                $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg]))[\'|\"].*?[\/]?>/";
+                preg_match_all($pattern,$v['content'],$match);
+                $v['cover'] = empty($match[1][0]) ? '' : $match[1][0];
                 $result[] = array(
                     'name' => StringCode::GetCsubStr($v['title'],0,12),
                     'image' => empty($v['cover']) ? Common::AttachUrl('') : $v['cover'].'!a200',

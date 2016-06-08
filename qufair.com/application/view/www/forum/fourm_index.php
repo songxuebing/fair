@@ -393,7 +393,10 @@ else {
             <div class="new-tag-main-left J-new-tag-main-left">
             	<?php
                 	if(!empty($this->forum_row['All'])) foreach($this->forum_row['All'] as $key => $val){
-				?>
+                        $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg]))[\'|\"].*?[\/]?>/";
+                        preg_match_all($pattern,$val['content'],$match);
+                        $val['cover'] = empty($match[1][0]) ? '' : $match[1][0];
+                        ?>
             	<div class="new-tag-left-list J-new-tag-left-list">
                 	<p class="new-list-bgxq"><span class="new-list-bgxq-txt">不感兴趣</span>&nbsp;&nbsp;<img src="<?php echo STYLE_URL;?>/style/quzhan/images/20160202/ico_close.png" class="J-close" /></p>
                     <div class="new-list-c">

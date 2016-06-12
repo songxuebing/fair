@@ -59,7 +59,7 @@ class ConventionHelper extends Helper {
         return $data;
     }
     
-    public function conventionAll($where,$limit = null, $group = null, $order = null, $output = false) {
+    public function conventionAll($where,$limit = null, $group = null, $order = null, $output = true) {
         if (is_numeric($where)) {
             $where = array(
                 '`id` = ?' => $where

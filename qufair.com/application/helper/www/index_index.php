@@ -23,6 +23,9 @@
     $this->LoadHelper('adv/AdvHelper');
     $AdvHelper = new AdvHelper();
 
+    $this->LoadHelper('industry/IndustryHelper');
+    $IndustryHelper = new IndustryHelper();
+
     $this->LoadHelper('route/RouteHelper');
     $RouteHelper = new RouteHelper();
 
@@ -53,7 +56,7 @@
         $hot_conven = $ConventionHelper->GetAllDetailWhere(array(
             '`is_index` = ?' => 1,
             '`is_delete` = ?' => 0
-        ),3,1,$this->Param);
+        ),10,1,$this->Param);
         if(!empty($hot_conven['All'])) foreach($hot_conven['All'] as $k=>$v){
             $conven = $ConventionHelper->getRow(array(
                 '`id` = ?' => $v['con_id']
@@ -73,6 +76,11 @@
         }
         $this->Assign('hot_con',$hot_conven);
         //var_dump($hot_conven);exit();
+
+        //获取最新展会
+        $new_con = $ConventionHelper->getAllRow(array('name','id','update_dateline'),1,10,NULL,NULl);
+        //var_dump($new_con);exit();
+        $this->Assign('new_con',$new_con);
 
 
         $where_route = array(
@@ -164,11 +172,49 @@
         $visa_adv = $AdvHelper->advAll($visa_adv_where,array(1,2),NULL,array('id DESC'));
         $this->Assign('visa_adv',$visa_adv);
 
+        //首页行业广告
+        $industry_adv_where = array(
+            '`start_time` <= ?' => NOW_TIME,
+            '`end_time` >= ?' => NOW_TIME,
+            '`industry_id` > ?' => 0
+        );
+        $industry_adv = $IndustryHelper->advAll($industry_adv_where,NULL,NULL,array('id DESC'));
+        //var_dump($industry_adv);exit();
+        $this->Assign('industry_adv',$industry_adv);
+
         //调取最新资讯
-        $new = $ForumHelper->forumPageList(array('`delete` = ?' => 0,'`is_show` = ?' => 1), 4, 1 ,$this->Param);
+        $new = $ForumHelper->forumPageList(array('`delete` = ?' => 0,'`is_show` = ?' => 1), 8, 1 ,$this->Param);
+        //var_dump($new);exit();
         $this->Assign('new',$new);
-		
-		//获取最新需求
+        //调用知识百科的新闻
+
+        $new_ke = $ForumHelper->queryDetail('SELECT id,title,dateline FROM `dyhl_forum` JOIN dyhl_forum_tagindex WHERE dyhl_forum.id = dyhl_forum_tagindex.forum_id and dyhl_forum_tagindex.ctag_id = 22 and dyhl_forum.is_show = 1 and dyhl_forum.delete = 0 ORDER BY `dyhl_forum`.`id` DESC LIMIT 7 ');
+        //var_dump($new_ke);exit();
+        $this->Assign('new_ke',$new_ke);
+
+        //调用点击量高的新闻
+        $new_hot = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  JOIN dyhl_forum_tagindex WHERE dyhl_forum.id = dyhl_forum_tagindex.forum_id and dyhl_forum.is_show = 1 and dyhl_forum.delete = 0 and dyhl_forum.recommend = 0 ORDER BY `dyhl_forum`.`clicks` DESC LIMIT 5');
+        //var_dump($new_ke);exit();
+        foreach($new_hot as $k => $val_hot)
+        {
+            $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg]))[\'|\"].*?[\/]?>/";
+            preg_match_all($pattern,$val_hot['content'],$match);
+            $new_hot[$k]['cover'] = empty($match[1][0]) ? '' : $match[1][0];
+        }
+        $this->Assign('new_hot',$new_hot);
+
+        //调用推荐的新闻
+        $new_re = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  WHERE dyhl_forum.is_show = 1 and dyhl_forum.delete = 0  and dyhl_forum.recommend = 1 ORDER BY `dyhl_forum`.`clicks` DESC LIMIT 3');
+        //var_dump($new_re);exit();
+        foreach($new_re as $k_re => $val_re)
+        {
+            $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg]))[\'|\"].*?[\/]?>/";
+            preg_match_all($pattern,$val_re['content'],$match);
+            $new_re[$k_re]['cover'] = empty($match[1][0]) ? '' : $match[1][0];
+        }
+        $this->Assign('new_re',$new_re);
+
+        //获取最新需求
 		
 		$dataCat = $ForumHelper->catAll(array(),null,null,array('parent_id asc'));
         $dataTag = $ForumHelper->cTagAll(array(),array(1,6),null,array('sort asc'));

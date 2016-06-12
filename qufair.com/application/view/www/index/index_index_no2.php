@@ -283,28 +283,21 @@
                                         <!--左end-->
                                         <!--右start-->
                                         <li class="type-list fl">
-                                            <div class="type">
-                                                <ul class="title">
-                                                    <b><a href="##" target="_blank">纺织</a></b>
-                                                    <p><a href="##" target="_blank">女装</a></p>
-                                                </ul>
-                                                <ul class="list clearfix">
-                                                    <li><a href="##" target="_blank">连衣裙</a></li>
-                                                    <li><a href="##" target="_blank">衬衫</a></li>
-                                                    <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                    <li><a href="##" target="_blank">T恤</a></li>
-                                                    <li><a href="##" target="_blank">针织衫</a></li>
-                                                    <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                    <li><a href="##" target="_blank">打底裤</a></li>
-                                                    <li><a href="##" target="_blank">休闲裤</a></li>
-                                                </ul>
-                                            </div>
 
                                             <div class="img-list">
                                                 <ul>
-                                                    <li><a  href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt="" /></a></li>
-                                                    <li><a  href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt="" /></a></li>
-                                                    <li><a  href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt="" /></a></li>
+                                                    <?php
+                                                    $adv_i = 0;
+                                                    if(!empty($this->industry_adv)) foreach($this->industry_adv as $k => $val_in_adv){?>
+                                                    <?php if(($v['id'] == $val_in_adv['industry_id']) && $adv_i < 4){?>
+                                                        <li>
+                                                        <a href="<?php echo $val_in_adv['url'];?>" target="_blank">
+                                                            <img src="<?php echo $val_in_adv['file'];?>" alt="<?php echo $val_in_adv['title'];?>" width="330" height="140" />
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                        $adv_i++;}}
+                                                    ?>
                                                 </ul>
                                             </div>
                                         </li>
@@ -361,28 +354,20 @@
                                                 <!--左end-->
                                                 <!--右start-->
                                                 <li class="type-list fl">
-                                                    <div class="type">
-                                                        <ul class="title">
-                                                            <b><a href="##" target="_blank">纺织</a></b>
-                                                            <p><a href="##" target="_blank">女装</a></p>
-                                                        </ul>
-                                                        <ul class="list clearfix">
-                                                            <li><a href="##" target="_blank">连衣裙</a></li>
-                                                            <li><a href="##" target="_blank">衬衫</a></li>
-                                                            <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                            <li><a href="##" target="_blank">T恤</a></li>
-                                                            <li><a href="##" target="_blank">针织衫</a></li>
-                                                            <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                            <li><a href="##" target="_blank">打底裤</a></li>
-                                                            <li><a href="##" target="_blank">休闲裤</a></li>
-                                                        </ul>
-                                                    </div>
-
                                                     <div class="img-list">
                                                         <ul>
-                                                            <li><a  href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt="" /></a></li>
-                                                            <li><a  href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt="" /></a></li>
-                                                            <li><a  href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt="" /></a></li>
+                                                            <?php
+                                                            $adv_i = 0;
+                                                            if(!empty($this->industry_adv)) foreach($this->industry_adv as $k => $val_in_adv){?>
+                                                                <?php if(($v['id'] == $val_in_adv['industry_id']) && $adv_i < 4){?>
+                                                                    <li>
+                                                                        <a href="<?php echo $val_in_adv['url'];?>" target="_blank">
+                                                                            <img src="<?php echo $val_in_adv['file'];?>" alt="<?php echo $val_in_adv['title'];?>" width="330" height="140" />
+                                                                        </a>
+                                                                    </li>
+                                                                    <?php
+                                                                    $adv_i++;}}
+                                                            ?>
                                                         </ul>
                                                     </div>
                                                 </li>
@@ -487,26 +472,31 @@
 
                 <!--最新资讯start-->
                 <div class="news-new">
-                    <h2>最新资讯</h2>
+                    <h2>最新展会</h2>
                     <ul>
                         <ul class="list">
-                            <?php
-                            $a = 0;
-                            if(!empty($this->entrust['All'])) foreach($this->entrust['All'] as $kk => $vv){
-                                ?>
+                            <?php if(!empty($this->new_con)) foreach($this->new_con as $key=>$v_new_con){?>
                                 <li>
-                                        <a href="/news/<?php echo date('Y/m/d', $vv['dateline']).'/'.$vv['id'].'.shtml';?>" target="_blank">
-                                            <?php echo StringCode::GetCsubStr($vv['title'],0,14);?>
-                                        </a>
+                                    <a href="convention/<?php echo date('Y/m/d', $v_new_con['update_dateline']).'/'.$v_new_con['id'];?>.shtml" target="_blank"><?php echo $v_new_con['name']?></a>
                                 </li>
-                            <?php
-                                if($a >= 3 )
-                                {
-                                    break;
-                                }
-                                $a++;
-                            }
-                            ?>
+                            <?php }?>
+<!--                            --><?php
+//                            $a = 0;
+//                            if(!empty($this->entrust['All'])) foreach($this->entrust['All'] as $kk => $vv){
+//                                ?>
+<!--                                <li>-->
+<!--                                        <a href="/news/--><?php //echo date('Y/m/d', $vv['dateline']).'/'.$vv['id'].'.shtml';?><!--" target="_blank">-->
+<!--                                            --><?php //echo StringCode::GetCsubStr($vv['title'],0,14);?>
+<!--                                        </a>-->
+<!--                                </li>-->
+<!--                            --><?php
+//                                if($a >= 3 )
+//                                {
+//                                    break;
+//                                }
+//                                $a++;
+//                            }
+//                            ?>
                     </ul>
                 </div>
                 <!--最新资讯end-->
@@ -627,26 +617,21 @@
 
                 <!--实力商友start-->
                 <div class="honor">
-                    <h2>实力商友</h2>
+                    <h2>热门推荐</h2>
                     <ul class="clearfix">
+                        <?php
+                        if(!empty($this->new_re)) foreach($this->new_re as $kk => $vv_re){
+                            ?>
                         <li>
-                            <a href="##" target="">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/19.jpg" alt="" />
-                                <p>赚心电子让你的产品成为霸屏明星</p>
+                            <a href="/news/<?php echo date('Y/m/d', $vv_re['dateline']).'/'.$vv_re['id'].'.shtml';?>" target="">
+                                <img src="<?php echo empty($vv_re['cover']) ? STYLE_URL.'/style/quzhan/images/20160202/test_01.png' :$vv_re['cover'];?>" alt="<?php echo $vv_re['title']?>" height="100" width="150" />
+                                <p><?php echo $vv_re['title']?></p>
                             </a>
                         </li>
-                        <li>
-                            <a href="##" target="">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/19.jpg" alt="" />
-                                <p>赚心电子让你的产品成为霸屏明星</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##" target="">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/19.jpg" alt="" />
-                                <p>赚心电子让你的产品成为霸屏明星</p>
-                            </a>
-                        </li>
+                        <?php
+                        }
+                        ?>
+
                     </ul>
                 </div>
                 <!--实力商友end-->
@@ -664,7 +649,7 @@
                     </ul>
                     <ul class="list">
                         <?php
-                        if(!empty($this->entrust['All'])) foreach($this->entrust['All'] as $kk => $vv){
+                        if(!empty($this->new['All'])) foreach($this->new['All'] as $kk => $vv){
                             ?>
                             <li>
                                 <p>
@@ -686,14 +671,23 @@
                 <!--最新政策start-->
                 <div class="new-news">
                     <ul class="title">
-                        <h2 class="fl">最新政策</h2>
-                        <p class="fr"><a href="##" target="_blank">更多 ></a></p>
+                        <h2 class="fl">知识百科</h2>
+                        <p class="fr"><a href="/knowledge" target="_blank">更多 ></a></p>
                     </ul>
                     <ul class="list">
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
-                        <li><p><a href="##" target="_blank">会员中心能为大家带来什么？</a></p></li>
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
-                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>
+                        <?php
+                        if(!empty($this->new_ke)) foreach($this->new_ke as $kk => $vv_ke){
+                            ?>
+                            <li>
+                                <p>
+                                    <a href="/news/<?php echo date('Y/m/d', $vv_ke['dateline']).'/'.$vv_ke['id'].'.shtml';?>" target="_blank">
+                                        <?php echo StringCode::GetCsubStr($vv_ke['title'],0,17);?>
+                                    </a>
+                                </p>
+                            </li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </div>
                 <!--最新政策end-->
@@ -722,36 +716,22 @@
                         <h2>直播展览会</h2>
                     </ul>
                     <ul class="list">
+                    <?php
+                        if(!empty($this->new_hot)) foreach($this->new_hot as $kk => $vv_hot){
+                    ?>
                         <li>
-                            <a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/20.jpg" alt="" /></a>
-                            <h4><a href="###" target="_blank">慧聪商铺排名百度首..</a></h4>
-                            <p>创建者:张山峰</p>
-                            <p>2016-06-01 12:54:41</p>
+                            <a href="/news/<?php echo date('Y/m/d', $vv_hot['dateline']).'/'.$vv_hot['id'].'.shtml';?>" target="_blank" class="img">
+                                <img src="<?php echo empty($vv_hot['cover']) ? STYLE_URL.'/style/quzhan/images/20160202/test_01.png' :$vv_hot['cover'];?>" alt="<?php echo $vv_hot['title']?>" height="80" width="150" />
+                            </a>
+                            <h4>
+                                <a href="/news/<?php echo date('Y/m/d', $vv_hot['dateline']).'/'.$vv_hot['id'].'.shtml';?>" target="_blank">
+                                    <?php echo StringCode::GetCsubStr($vv_hot['title'],0,17);?>
+                                </a>
+                            </h4>
+<!--                            <p>创建者:张山峰</p>-->
+                            <p><?php  echo date('Y-m-d H:i:s', $vv_hot['dateline'])?></p>
                         </li>
-                        <li>
-                            <a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/20.jpg" alt="" /></a>
-                            <h4><a href="###" target="_blank">慧聪商铺排名百度首..</a></h4>
-                            <p>创建者:张山峰</p>
-                            <p>2016-06-01 12:54:41</p>
-                        </li>
-                        <li>
-                            <a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/20.jpg" alt="" /></a>
-                            <h4><a href="###" target="_blank">慧聪商铺排名百度首..</a></h4>
-                            <p>创建者:张山峰</p>
-                            <p>2016-06-01 12:54:41</p>
-                        </li>
-                        <li>
-                            <a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/20.jpg" alt="" /></a>
-                            <h4><a href="###" target="_blank">慧聪商铺排名百度首..</a></h4>
-                            <p>创建者:张山峰</p>
-                            <p>2016-06-01 12:54:41</p>
-                        </li>
-                        <li>
-                            <a href="##" target="_blank" class="img"><img src="<?php echo STYLE_URL;?>/style/no2/images/20.jpg" alt="" /></a>
-                            <h4><a href="###" target="_blank">慧聪商铺排名百度首..</a></h4>
-                            <p>创建者:张山峰</p>
-                            <p>2016-06-01 12:54:41</p>
-                        </li>
+                        <?php }?>
 
                     </ul>
                 </div>

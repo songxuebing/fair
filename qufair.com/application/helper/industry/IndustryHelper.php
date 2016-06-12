@@ -155,4 +155,13 @@ class IndustryHelper extends Helper {
             '`id` = ?' => $id
         ));
     }
+
+    public function advAll($where, $limit = null, $group = null, $order = null, $output = false){
+        if(is_numeric($where)){
+            $where = array(
+                '`id` = ?' => $where
+            );
+        }
+        return $this->IndustryModel->advAll($where, $limit, $group, $order, $output);
+    }
 }

@@ -117,6 +117,12 @@ if (empty($this->Param['option'])) {
             ErrorMsg::Debug('删除成功', TRUE);
             break;
 
+        case 'uploadimg':
+            $this->LoadHelper('upload/EditorUploadHelper');
+            $EditorUploadHelper = new EditorUploadHelper($this->UserConfig['Id']);
+            $EditorUploadHelper->ImageUpload($this->Param['filebox'],'adv');
+            break;
+
         case 'submit':
             $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
             $data['name'] = empty($this->Param['name']) ? ErrorMsg::Debug('请输入名称') : $this->Param['name'];

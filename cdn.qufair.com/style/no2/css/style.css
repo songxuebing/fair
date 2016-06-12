@@ -141,7 +141,7 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 .login-resiger a:last-child{ border-right:none;}
 
 .news-new{ margin-top:5px; height:155px; border:1px #e5e5e5 solid; overflow:hidden; padding:0 12px; background-color:#fff;}
-.news-new h2{ display:block; font-size:15px; color:#565656; font-weight:normal; line-height:30px; padding-top:8px;}
+.news-new h2{ display:block; font-size:15px; color:#565656; font-weight:normal; line-height:30px; padding-top:10px;}
 .news-new li{ height:27px; line-height:27px; font-size:14px; overflow:hidden;}
 .news-new li a{ color:#565656;}
 

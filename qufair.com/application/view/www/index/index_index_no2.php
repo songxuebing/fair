@@ -1,3 +1,5 @@
+<?php //var_dump(($this->hot_con['All']))?>
+
 <!doctype html>
 <html>
 <head>
@@ -228,7 +230,7 @@
             <li><a href="/convention" target="_blank">展会</a></li>
             <li><a href="/route" target="_blank">行程</a></li>
             <li><a href="/visa" target="_blank">签证</a></li>
-            <li><a href="/logistics" target="_blank">物流</a></li>
+<!--            <li><a href="/logistics" target="_blank">物流</a></li>-->
             <li><a href="/decoration" target="_blank">特装</a></li>
             <li><a href="/news" target="_blank">社区资讯</a></li>
         </ul>
@@ -426,12 +428,12 @@
                         <ul>
                             <?php if(!empty($this->hot_con['All'])) foreach($this->hot_con['All'] as $key=>$val_hot){?>
                                 <li>
-                                    <div class="img"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" /></div>
-                                    <h4><a href="##" target="_blank"><?php echo $val_hot['name']?></a></h4>
+                                    <div class="img"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" height="195" width="195" /></div>
+                                    <h4><a href="convention/<?php echo date('Y/m/d', $val_hot['add_time']).'/'.$val_hot['con_id'];?>.shtml" target="_blank"><?php echo $val_hot['name']?></a></h4>
                                     <p>时间:<?php echo date('Y-m-d',$val_hot['start_time'])?> - <?php echo date('Y-m-d',$val_hot['end_titme'])?></p>
                                     <div class="order clearfix">
                                         <b>￥:<?php echo $val_hot['area']['group_price']?></b>
-                                        <a href="##" target="_blank">立即订阅</a>
+                                        <a href="convention/<?php echo date('Y/m/d', $val_hot['add_time']).'/'.$val_hot['con_id'];?>.shtml" target="_blank">立即订阅</a>
                                     </div>
                                 </li>
                             <?php }?>

@@ -78,7 +78,34 @@ jQuery.noConflict();
 					}
 				});				
 			});
-			
+
+            jQuery(".RemoveLink_adv").on('click',function(e){
+                var obj	= jQuery(this);
+                var url = obj.attr('data-url');
+                var id = obj.attr('data-id');
+                var alt = obj.attr('data-alt');
+                if(alt==null){alt='确定要删除吗';}
+                if(!window.confirm(alt)){return false;}
+                url = url + 'option/remove_adv/id/'+id;
+                jQuery.ajax({
+                    type:"POST",
+                    url:url,
+                    dataType:"json",
+                    success:function(data){
+                        if(typeof(data) == 'object'){
+                            if(data.success == true){
+                                removelink(obj);
+                            }else{
+                                alert(data.msg);
+                            }
+                        }else if(typeof(jsontxt) != 'undefined'){
+                            alert('系统返回错误，请联系管理员');
+                        }
+                    }
+                });
+            });
+
+
 			jQuery(".AjaxWindow").on('click',function(e){
 				var url,href_id,href_title;
 				url=jQuery(this).attr('href');

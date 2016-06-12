@@ -3,10 +3,12 @@ $this->LoadHelper('adv/AdvHelper');
 $AdvHelper = new AdvHelper();
 
 if (empty($this->Param['option'])) {
+
     $limit = 10;
     $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
     $where = array();
     $where = array('`id` > ?' => 0);
+
     $data = $AdvHelper->advPageList($where,$limit,$page,$this->Param);
     if(!empty($data['All'])) foreach($data['All'] as $k=>$v){
         $pos_row = $AdvHelper->posRow($v['pos_id']);

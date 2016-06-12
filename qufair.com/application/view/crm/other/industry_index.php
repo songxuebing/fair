@@ -8,7 +8,12 @@
 </style>
 <body class="font_14px">
 	<div class="clear_15px"></div>
-	<div class="table_div_05"><span class="float_left"><a href="#">其他管理</a>&nbsp;&gt;&nbsp;<a href="#">行业管理</a></span><span class="float_right"><a href="/other/industry/option/edit/" class="AjaxWindow btn_05" href-id="0" data-title="添加行业">添加行业</a></span></div>
+	<div class="table_div_05"><span class="float_left"><a href="#">其他管理</a>&nbsp;&gt;&nbsp;<a href="#">行业管理</a></span>
+        <span class="float_right"><a href="/other/industry/option/edit/" class="AjaxWindow btn_05" href-id="0" data-title="添加行业">添加行业</a></span>
+        <span class="float_right"><a href="/other/industry/option/add_adv/" class="AjaxWindow btn_05" href-id="0" data-title="添加行业">添加行业广告</a></span>
+        <span class="float_right"><a href="/other/industry/option/adv/" class="btn_05" href-id="0" data-title="添加行业">行业广告</a></span>
+
+    </div>
 	<div class="clear_15px"></div>
 	<div class="table_div_01">
 	  <ul>

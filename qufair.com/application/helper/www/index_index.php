@@ -193,7 +193,7 @@
         $this->Assign('new_ke',$new_ke);
 
         //调用点击量高的新闻
-        $new_hot = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  JOIN dyhl_forum_tagindex WHERE dyhl_forum.id = dyhl_forum_tagindex.forum_id and dyhl_forum.is_show = 1 and dyhl_forum.delete = 0 and dyhl_forum.recommend = 0 ORDER BY `dyhl_forum`.`clicks` DESC LIMIT 5');
+        $new_hot = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  JOIN dyhl_forum_tagindex WHERE dyhl_forum.id = dyhl_forum_tagindex.forum_id and dyhl_forum.is_show = 1 and dyhl_forum.delete = 0 and dyhl_forum.recommend = 0 ORDER BY rand() DESC LIMIT 5');
         //var_dump($new_ke);exit();
         foreach($new_hot as $k => $val_hot)
         {

@@ -135,7 +135,7 @@
         }
         $this->Assign('intelligent',$intelligent);
         //特装推荐
-        $recommend = $DecorationHelper->GroupAllRow('*', array('`is_online` = ?' => 0,'`is_delete` = ?' => 0,'`is_index` = ?' => 1), 3, 1,NULL);
+        $recommend = $DecorationHelper->GroupAllRow('*', array('`is_online` = ?' => 0,'`is_delete` = ?' => 0,'`is_index` = ?' => 1), 4, 1,NULL);
         if(!empty($recommend)) foreach($recommend as $k=>$v){
             $recommend[$k]['style_type'] = unserialize($v['style_type']);
             $member = $MemberDetailHelper->GetId($v['member_id']);

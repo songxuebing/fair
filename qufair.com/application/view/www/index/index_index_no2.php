@@ -256,7 +256,7 @@
                             foreach($new_nav['0'] as $k=>$v){
                         ?>
                         <div class="nav-item">
-                            <a href="javascript:void(0);" title="" class="nav-link"><?php echo $v['name'];?><i class="ico"></i></a>
+                            <a href="/<?php echo $v['name_en']?>" title="" class="nav-link"><?php echo $v['name'];?><i class="ico"></i></a>
                             <div class="nav-dropdown" style="display:none;">
                                 <div class="jjjz">
                                     <ul class="clearfix">
@@ -267,13 +267,13 @@
                                             ?>
                                             <div class="type">
                                                 <ul class="title">
-                                                    <b><a href="##" target="_blank"><?php echo $val['name'];?></a></b>
+                                                    <b><a href="/<?php echo $val['name_en']?>" target="_blank"><?php echo $val['name'];?></a></b>
                                                 </ul>
                                                 <ul class="list clearfix">
                                                     <?php
                                                     if(!empty($val['next2'])) foreach($val['next2'] as $key=>$val_next2){
                                                     ?>
-                                                    <li><a href="##" target="_blank"><?php echo $val_next2['name']?></a></li>
+                                                    <li><a href="<?php echo $val['name_en']?>" target="_blank"><?php echo $val_next2['name']?></a></li>
                                                     <?php }?>
                                                 </ul>
                                             </div>
@@ -532,45 +532,47 @@
         <ul class="clearfix">
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="##" target="_blank">五金展览会</a>
+                <a href="##" target="_blank">礼品展览会</a>
+                <a href="##" target="_blank">服装展览会</a>
+                <a href="##" target="_blank">建材展览会</a>
+            </li>
+
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">美国展览会</a>
+                <a href="##" target="_blank">德国展览会</a>
+                <a href="##" target="_blank">日本展览会</a>
+                <a href="##" target="_blank">南非展览会</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="##" target="_blank">上海展览会</a>
+                <a href="##" target="_blank">北京展览会</a>
+                <a href="##" target="_blank">广州展览会</a>
+                <a href="##" target="_blank">深圳展览会</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="##" target="_blank">汽配展览会</a>
+                <a href="##" target="_blank">电子展览会</a>
+                <a href="##" target="_blank">玩具展览会</a>
+                <a href="##" target="_blank">汽车展览会</a>
+            </li>
+
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">英国展览会</a>
+                <a href="##" target="_blank">印度展览会</a>
+                <a href="##" target="_blank">巴西展览会</a>
+                <a href="##" target="_blank">中东展览会</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="##" target="_blank">香港展览会</a>
+                <a href="##" target="_blank">科隆展览会</a>
+                <a href="##" target="_blank">迪拜展览会</a>
+                <a href="##" target="_blank">土耳其展览会</a>
             </li>
         </ul>
     </div>
@@ -617,7 +619,7 @@
 
                 <!--实力商友start-->
                 <div class="honor">
-                    <h2>热门推荐</h2>
+                    <h2>相关推荐</h2>
                     <ul class="clearfix">
                         <?php
                         if(!empty($this->new_re)) foreach($this->new_re as $kk => $vv_re){
@@ -713,7 +715,7 @@
             <li class="news-list-right fr">
                 <div class="video">
                     <ul class="title">
-                        <h2>直播展览会</h2>
+                        <h2>热门资讯</h2>
                     </ul>
                     <ul class="list">
                     <?php
@@ -746,6 +748,58 @@
 
     <div class="line10"></div>
 
+    <!--热门start-->
+    <div class="hot">
+        <ul class="clearfix">
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">五金展览会</a>
+                <a href="##" target="_blank">礼品展览会</a>
+                <a href="##" target="_blank">服装展览会</a>
+                <a href="##" target="_blank">建材展览会</a>
+            </li>
+
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">美国展览会</a>
+                <a href="##" target="_blank">德国展览会</a>
+                <a href="##" target="_blank">日本展览会</a>
+                <a href="##" target="_blank">南非展览会</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">上海展览会</a>
+                <a href="##" target="_blank">北京展览会</a>
+                <a href="##" target="_blank">广州展览会</a>
+                <a href="##" target="_blank">深圳展览会</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">汽配展览会</a>
+                <a href="##" target="_blank">电子展览会</a>
+                <a href="##" target="_blank">玩具展览会</a>
+                <a href="##" target="_blank">汽车展览会</a>
+            </li>
+
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">英国展览会</a>
+                <a href="##" target="_blank">印度展览会</a>
+                <a href="##" target="_blank">巴西展览会</a>
+                <a href="##" target="_blank">中东展览会</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">香港展览会</a>
+                <a href="##" target="_blank">科隆展览会</a>
+                <a href="##" target="_blank">迪拜展览会</a>
+                <a href="##" target="_blank">土耳其展览会</a>
+            </li>
+        </ul>
+    </div>
+    <!--热门end-->
+
+    <div class="line10"></div>
     <!--旅行start-->
     <div class="travel">
         <ul class="clearfix">
@@ -1036,7 +1090,58 @@
     <!--旅行end-->
 
     <div class="line10"></div>
+    <!--热门start-->
+    <div class="hot">
+        <ul class="clearfix">
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">五金展览会</a>
+                <a href="##" target="_blank">礼品展览会</a>
+                <a href="##" target="_blank">服装展览会</a>
+                <a href="##" target="_blank">建材展览会</a>
+            </li>
 
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">美国展览会</a>
+                <a href="##" target="_blank">德国展览会</a>
+                <a href="##" target="_blank">日本展览会</a>
+                <a href="##" target="_blank">南非展览会</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">上海展览会</a>
+                <a href="##" target="_blank">北京展览会</a>
+                <a href="##" target="_blank">广州展览会</a>
+                <a href="##" target="_blank">深圳展览会</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">汽配展览会</a>
+                <a href="##" target="_blank">电子展览会</a>
+                <a href="##" target="_blank">玩具展览会</a>
+                <a href="##" target="_blank">汽车展览会</a>
+            </li>
+
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">英国展览会</a>
+                <a href="##" target="_blank">印度展览会</a>
+                <a href="##" target="_blank">巴西展览会</a>
+                <a href="##" target="_blank">中东展览会</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="##" target="_blank">香港展览会</a>
+                <a href="##" target="_blank">科隆展览会</a>
+                <a href="##" target="_blank">迪拜展览会</a>
+                <a href="##" target="_blank">土耳其展览会</a>
+            </li>
+        </ul>
+    </div>
+    <!--热门end-->
+
+    <div class="line10"></div>
     <!--展装商城start-->
     <div class="supper">
         <ul class="title">

@@ -245,6 +245,31 @@ class Controller{
             $url = "/forum";
         }
 
+        //展会url
+        $this->LoadHelper('industry/IndustryHelper');
+        $IndustryHelper =  new IndustryHelper();
+        $industry = $IndustryHelper->industryAll(array(
+            '`parent_id` = ?' => 0
+        ),array(0,100));
+        if(!empty($industry)) foreach($industry as $k=>$v){
+            $next_all = $IndustryHelper->industryAll(array(
+                '`parent_id` = ?' => $v['id']
+            ),array(0,50));
+            $industry[$k]['next'] = $next_all;
+        }
+        foreach($industry as $key => $val_in)
+        {
+            if(!empty($val_in['name_en']) && ($url === "/".$val_in['name_en']))
+                $url = "/convention/index/industry/".$val_in['name'];
+            if(!empty($val_in['next']))
+                foreach($val_in['next'] as $k => $val_ne)
+                {
+                    if(!empty($val_ne['name_en']) && ($url === "/".$val_ne['name_en']))
+                        $url = "/convention/index/industry/".$val_ne['name'];
+                }
+        }
+        //var_dump($industry);exit();
+
         $p=explode("?",$url);
 		$Module=explode('/',empty($p[0]) ? '' : $p[0]);
 		$j=1;

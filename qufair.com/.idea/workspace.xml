@@ -25,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index_index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index_index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/helper/www/index_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3325359" vertical-offset="2599" max-vertical-offset="5187">
+            <state vertical-scroll-proportion="-4.633333" vertical-offset="2599" max-vertical-offset="5187">
               <caret line="137" column="134" selection-start-line="137" selection-start-column="134" selection-end-line="137" selection-end-column="134" />
               <folding>
                 <marker date="1465812213515" expanded="true" signature="4377:4477" placeholder="SELECT * FRO..." />
@@ -60,14 +60,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index_index_no2.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index_index_no2.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index_no2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.1044774" vertical-offset="23825" max-vertical-offset="25914">
-              <caret line="1154" column="29" selection-start-line="1154" selection-start-column="29" selection-end-line="1154" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.5862485" vertical-offset="6696" max-vertical-offset="25914">
+              <caret line="342" column="86" selection-start-line="342" selection-start-column="86" selection-end-line="342" selection-end-column="86" />
               <folding>
                 <element signature="e#8682#8703#0#HTML" expanded="true" />
-                <element signature="e#22555#22601#0#PHP" expanded="true" />
+                <element signature="e#22619#22665#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,8 +144,8 @@
         <option value="$PROJECT_DIR$/application/helper/convention/ConventionHelper.php" />
         <option value="$PROJECT_DIR$/config/Controller.php" />
         <option value="$PROJECT_DIR$/library/Controller.php" />
-        <option value="$PROJECT_DIR$/application/view/www/index/index_index_no2.php" />
         <option value="$PROJECT_DIR$/application/helper/www/index_index.php" />
+        <option value="$PROJECT_DIR$/application/view/www/index/index_index_no2.php" />
       </list>
     </option>
   </component>
@@ -735,26 +735,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index_no2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.1044774" vertical-offset="23825" max-vertical-offset="25914">
-          <caret line="1154" column="29" selection-start-line="1154" selection-start-column="29" selection-end-line="1154" selection-end-column="38" />
-          <folding>
-            <element signature="e#8682#8703#0#HTML" expanded="true" />
-            <element signature="e#22555#22601#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/helper/www/index_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325359" vertical-offset="2599" max-vertical-offset="5187">
+        <state vertical-scroll-proportion="-4.633333" vertical-offset="2599" max-vertical-offset="5187">
           <caret line="137" column="134" selection-start-line="137" selection-start-column="134" selection-end-line="137" selection-end-column="134" />
           <folding>
             <marker date="1465812213515" expanded="true" signature="4377:4477" placeholder="SELECT * FRO..." />
             <marker date="1465812213515" expanded="true" signature="7270:7518" placeholder="SELECT id,ti..." />
             <marker date="1465812213515" expanded="true" signature="7667:7911" placeholder="SELECT id,ti..." />
             <marker date="1465812213515" expanded="true" signature="8353:8539" placeholder="SELECT id,ti..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index_no2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5862485" vertical-offset="6696" max-vertical-offset="25914">
+          <caret line="342" column="86" selection-start-line="342" selection-start-column="86" selection-end-line="342" selection-end-column="86" />
+          <folding>
+            <element signature="e#8682#8703#0#HTML" expanded="true" />
+            <element signature="e#22619#22665#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

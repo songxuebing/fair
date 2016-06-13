@@ -327,7 +327,7 @@
                                 foreach($new_nav['1'] as $k=>$v){
                                 ?>
                                 <div class="nav-item">
-                                    <a href="javascript:void(0);" title="" class="nav-link"><?php echo $v['name'];?><i class="ico"></i></a>
+                                    <a href="/<?php echo $v['name_en'];?>" title="" class="nav-link"><?php echo $v['name'];?><i class="ico"></i></a>
                                     <div class="nav-dropdown" style="display:none;">
                                         <div class="jjjz">
                                             <ul class="clearfix">
@@ -338,13 +338,13 @@
                                                         ?>
                                                         <div class="type">
                                                             <ul class="title">
-                                                                <b><a href="##" target="_blank"><?php echo $val['name'];?></a></b>
+                                                                <b><a href="/<?php echo $val['name_en'];?>" target="_blank"><?php echo $val['name'];?></a></b>
                                                             </ul>
                                                             <ul class="list clearfix">
                                                                 <?php
                                                                 if(!empty($val['next2'])) foreach($val['next2'] as $key=>$val_next2){
                                                                     ?>
-                                                                    <li><a href="##" target="_blank"><?php echo $val_next2['name']?></a></li>
+                                                                    <li><a href="<?php echo $val['name_en'];?>" target="_blank"><?php echo $val_next2['name']?></a></li>
                                                                 <?php }?>
                                                             </ul>
                                                         </div>

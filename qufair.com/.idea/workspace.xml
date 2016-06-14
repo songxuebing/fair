@@ -65,9 +65,11 @@
       <file leaf-file-name="convention_index_detail.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention_index_detail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3325359" vertical-offset="52369" max-vertical-offset="54348">
-              <caret line="2507" column="195" selection-start-line="2507" selection-start-column="195" selection-end-line="2507" selection-end-column="195" />
-              <folding />
+            <state vertical-scroll-proportion="0.7595694" vertical-offset="52117" max-vertical-offset="54348">
+              <caret line="2512" column="210" selection-start-line="2512" selection-start-column="210" selection-end-line="2512" selection-end-column="210" />
+              <folding>
+                <element signature="e#166451#166495#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -812,9 +814,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention_index_detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325359" vertical-offset="52369" max-vertical-offset="54348">
-          <caret line="2507" column="195" selection-start-line="2507" selection-start-column="195" selection-end-line="2507" selection-end-column="195" />
-          <folding />
+        <state vertical-scroll-proportion="0.7595694" vertical-offset="52117" max-vertical-offset="54348">
+          <caret line="2512" column="210" selection-start-line="2512" selection-start-column="210" selection-end-line="2512" selection-end-column="210" />
+          <folding>
+            <element signature="e#166451#166495#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -5,7 +5,7 @@ class ConventionModel extends Module {
     public function __construct() {
         parent::__construct();
         $this->_table = 'convention';
-        $this->_field = array('id', 'name', 'regional', 'countries', 'city', 'industry', 'cycle', 'first_held', 'pavilion', 'address', 'area', 'exhibitors_number', 'audience_size', 'scope', 'label', 'organizer', 'undertake', 'describe', 'review', 'cover', 'imgurl', 'update_dateline', 'focus_number', 'rating_number');
+        $this->_field = array('id', 'name', 'regional', 'countries', 'city', 'industry', 'cycle', 'first_held', 'pavilion', 'address', 'area', 'exhibitors_number', 'audience_size', 'scope', 'label', 'organizer', 'undertake', 'describe', 'review', 'cover', 'imgurl', 'update_dateline', 'focus_number', 'rating_number','start_time','end_time','price');
         $this->_detailField = array('detail_id', 'con_id', 'member_id', 'start_time', 'end_titme', 'qq', 'app_id', 'description', 'add_time', 'is_online', 'rating_number', 'focus_number','is_delete','is_index');
         $this->_orderField = array('id','order_sn','con_id','member_id','saler_id','con_cover','con_name','detail','price','money','is_group','receiving','address_id','remarks','datetime','is_delete');
         $this->_areaField = array('area_id', 'detail_id', 'area_name', 'booth_no', 'booth_type', 'opening', 'booth_price', 'group_price', 'advance_payment', 'add_time', 'is_rent','con_area','con_standard');

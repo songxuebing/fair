@@ -83,7 +83,7 @@ $(document).ready(function(){
   btnNext: ".next",
   btnPrev: ".prev",
   visible:3,
-  speed:1000,
+  speed:1000, 
   scroll:1
   });
   $(".sroll-img").bind('mouseover', function (event) {

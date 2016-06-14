@@ -2505,7 +2505,7 @@ $webtitle = $this->data['info']['name'].' - 去展网'
 
                         <li>
                             <div><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>" target="_blank">
-                                    <img src="<?php echo Common::AttachUrl($val_con['imgarr_1']);?>" alt="<?php echo $val_con['name']?>" title="<?php echo $val_con['name']?>" style="max-height: 350px; max-width: 232px;" /></a></div>
+                                    <img src="<?php echo Common::AttachUrl($val_con['imgarr_1']);?>" alt="<?php echo $val_con['name']?>" title="<?php echo $val_con['name']?>" style="max-height: 300px; max-width: 232px;" /></a></div>
                             <div class="list-total">
                                 <i>摊位特价</i>
                                 <p><em><?php echo $val_con['price']?>元</em>起</p>
@@ -2568,60 +2568,16 @@ $webtitle = $this->data['info']['name'].' - 去展网'
         <h2><i>友情链接</i></h2>
         <div>
             <ul class="clearfix">
-                <li><a href="##" target="_blank">杭州写字楼网 </a></li>
-                <li><a href="##" target="_blank">杭州本地宝</a></li>
-                <li><a href="##" target="_blank">杭州房产网</a></li>
-                <li><a href="##" target="_blank">杭州租房网</a></li>
-                <li><a href="##" target="_blank">杭州分类信息</a></li>
-                <li><a href="##" target="_blank">杭州房产网</a></li>
-                <li><a href="##" target="_blank">杭州装修公司</a></li>
-                <li><a href="##" target="_blank">杭州租房</a></li>
-                <li><a href="##" target="_blank">杭州厂房网</a></li>
-                <li><a href="##" target="_blank">杭州信息网</a></li>
-                <li><a href="##" target="_blank">杭州装修网</a></li>
-                <li><a href="##" target="_blank">杭州拓展公司</a></li>
-                <li><a href="##" target="_blank">杭州邮编网</a></li>
-                <li><a href="##" target="_blank">杭州写字楼网 </a></li>
-                <li><a href="##" target="_blank">杭州本地宝</a></li>
-                <li><a href="##" target="_blank">杭州房产网</a></li>
-                <li><a href="##" target="_blank">杭州租房网</a></li>
-                <li><a href="##" target="_blank">杭州分类信息</a></li>
-                <li><a href="##" target="_blank">杭州房产网</a></li>
-                <li><a href="##" target="_blank">杭州装修公司</a></li>
-                <li><a href="##" target="_blank">杭州租房</a></li>
-                <li><a href="##" target="_blank">杭州厂房网</a></li>
-                <li><a href="##" target="_blank">杭州信息网</a></li>
-                <li><a href="##" target="_blank">杭州装修网</a></li>
-                <li><a href="##" target="_blank">杭州拓展公司</a></li>
-                <li><a href="##" target="_blank">杭州邮编网</a></li>
+                <?php
+                if(!empty($this->link)) foreach($this->link as $k=>$v_link){
+                    if($v['type'] == "1")
+                    echo '<li><a href="'.$v_link['url'].'" target="_blank">'.$v['title'].'</a></li>';
+                }
+                ?>
             </ul>
         </div>
     </ul>
 </div>
 <!--友情链接end-->
 
-
-<!--底部start-->
-<div class="footer">
-    <ul class="wrap">
-        <p>
-            <a href="##" target="_blank">关于我们</a><span>|</span>
-            <a href="##" target="_blank">联系我们</a><span>|</span>
-            <a href="##" target="_blank">友情链接</a><span>|</span>
-            <a href="##" target="_blank">帮助中心</a><span>|</span>
-            <a href="##" target="_blank">意见反馈</a><span>|</span>
-            <a href="##" target="_blank">高薪聘请</a><span>|</span>
-            <a href="##" target="_blank">法律声明</a><span>|</span>
-        </p>
-        <p>© 2015 quzhan.com 去展互联网展会领导者 保留所有权利</p>
-        <p>去展互联网展会领导者 浙ICP备08125558号</p>
-        <p><img src="<?php echo STYLE_URL;?>/style/no2/images/27.jpg" alt="" /></p>
-        <div>
-            <img src="<?php echo STYLE_URL;?>/style/no2/images/code.jpg" alt="" />
-            <p>下载去展APP</p>
-        </div>
-    </ul>
-</div>
-<!--底部start-->
-</body>
-</html>
+<?php include $this->Render('footer2.php'); ?>

@@ -2510,7 +2510,7 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                                 <i>摊位特价</i>
                                 <p><em><?php echo $val_con['price']?>元</em>起</p>
                             </div>
-                            <h4><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>" target="_blank"><?php echo StringCode::GetCsubStr($val_con['name'],0,14);?></a></h4>
+                            <h4><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>" target="_blank"><?php echo StringCode::GetCsubStr($val_con['name'],0,13);?></a></h4>
                         </li>
                         <?php }?>
                     </ul>

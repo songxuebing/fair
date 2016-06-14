@@ -13,6 +13,9 @@ $MemberAvatarHelper = new MemberAvatarHelper();
 
 $this->LoadHelper('region/RegionHelper');
 $RegionHelper = new RegionHelper();
+
+$this->LoadHelper('forum/ForumHelper');
+$ForumHelper = new ForumHelper();
 //获取用户信息
 $UserInfo = $this->UserConfig;
 
@@ -139,6 +142,30 @@ if(empty($this->Param['option'])){
                 '`member_id` = ?' => $this->UserConfig['Id']
             ));
             $this->Assign('fav',array('count'=>$fav_count,'check'=>$fav_check));
+
+            //相关展会
+            $where_con['locate(?,`industry`)>0'] = urldecode($data['info']['industry']);
+            $where_con['`id` != ?'] = $id;
+            $data_con = $ConventionHelper->GetAllWhere($where_con, 3, 1, array());
+            if(empty($data_con['All'])) {
+                $data_con = $ConventionHelper->GetAllWhere(array(), 3, 1, array());
+            }
+            foreach($data_con['All'] as $k => $val_con)
+            {
+                $data_con['All'][$k]['imgarr_1'] = unserialize($val_con['imgurl'])['0'];
+                //echo $data_con['All'][$k]['imgarr_1'];exit();
+            }
+            //var_dump($data_con);//exit();
+            $this->Assign('data_con', $data_con);
+
+            //相关资讯
+            $where_ctag['locate(?,`ctag_name`)>0'] = urldecode($data['info']['industry']);
+            //var_dump($where_ctag);
+            $ctag_row = $ForumHelper->cTagRow($where_ctag);
+            $ctag_id = $ctag_row['ctag_id'];
+            $new_all = $ForumHelper->queryDetail('SELECT * FROM `dyhl_forum` join `dyhl_forum_tagindex` on dyhl_forum.id = dyhl_forum_tagindex.forum_id WHERE is_show = 1 and `delete` = 0 and dyhl_forum_tagindex.ctag_id= '.$ctag_id.' and dyhl_forum.id != '.$id.'  GROUP BY dyhl_forum_tagindex.forum_id order by dyhl_forum.dateline desc limit 0,4 ');
+            //var_dump($tag_all);exit();
+            $this->Assign('new_all', $new_all);
 
             $this->Assign('eva', $eva);
             $this->Assign('data', $data);

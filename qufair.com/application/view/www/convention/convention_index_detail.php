@@ -2419,7 +2419,11 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                 <!--展会介绍start-->
                 <div class="detial-intro" id="1">
                     <ul>
-                        <p>拉丁美洲电子消费品展（Latin American Consumer Electronics Expo）由Latin Auto Parts ExpoLLC主办，巴拿马是一个航空和海上交通枢纽的地区和无结的贸易区，是在西半球最大的自由贸易区。巴拿马为国际消费电子行业提供了一个独特的地理位置，你可以在这个展会上直接接触那些来自拉丁美洲和加勒比地区电子产品制造商，分销商和零售商，在这些地区你可以不断扩大你的市场。拉丁美洲消费电子博览会是一个B2B的展会，不向公众开放。拉丁美洲电子消费品展（Latin American Consumer Electronics Expo）由Latin Auto Parts ExpoLLC主办，巴拿马是一个航空和海上交通枢纽的地区和无结的贸易区，是在西半球最大的自由贸易区。</p>
+                        <p>
+                            <?php
+                            echo $this->data['info']['describe'];
+                            ?>
+                        </p>
                     </ul>
                 </div>
                 <!--展会介绍end-->
@@ -2429,9 +2433,8 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                 <div class="detial-intro" id="2">
                     <h3>主办单位</h3>
                     <ul>
-                        <p>中国对外贸易经济合作企业协会</p>
-                        <p>中国健康产业发展联盟</p>
-                        <p>亚洲有机产业发展促进会</p>
+                        <p><?php echo $this->data['info']['organizer'];?></p>
+
                     </ul>
                 </div>
                 <!--主办单位end-->
@@ -2441,13 +2444,11 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                 <div class="detial-intro" id="3">
                     <h3>展品范围</h3>
                     <ul>
-                        <p>1、消费类电子产品：液晶、卫星及数码电视、蓝牙产品、扬声器、耳机、音响、电子礼品、电子书、各种灯具、电子娱乐产品等；</p>
-                        <p>2、 广播电视及配套设备；</p>
-                        <p>3、 通讯产品及配件：移动电话、软件、硬件、智能通讯产品、卫星通讯技术等；</p>
-                        <p>4、 电脑及周边产品；</p>
-                        <p>5、汽车电子产品：导航产品、影音产品等相关产品；</p>
-                        <p>6、相关电子元器件及电子材料：电源、电池、插座、元器件、组件、电线、电缆等；</p>
-                        <p>7、PMA@CES(摄影器材)：数码相机、摄像机、专业非专业照相机、摄像机、摄录一体机、照相手机；软件洗印器材、激光照排，照片冲印设备、彩扩机、数码片夹、打印机、打印耗材、扫描仪等。件洗印器材、激光照排，照片冲印设备、彩扩机、数码片夹、打印机、打印耗材、扫描仪等。</p>
+                        <p>
+                        <?php
+                        echo $this->data['info']['scope'];
+                        ?>
+                        </p>
                     </ul>
                 </div>
                 <!--展品范围end-->
@@ -2457,14 +2458,12 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                 <div class="detial-intro" id="4">
                     <h3>上届回顾</h3>
                     <ul>
-                        <p>1、消费类电子产品：液晶、卫星及数码电视、蓝牙产品、扬声器、耳机、音响、电子礼品、电子书、各种灯具、电子娱乐产品等；</p>
-                        <p>2、 广播电视及配套设备；</p>
-                        <p>3、 通讯产品及配件：移动电话、软件、硬件、智能通讯产品、卫星通讯技术等；</p>
-                        <p>4、 电脑及周边产品；</p>
-                        <p>5、汽车电子产品：导航产品、影音产品等相关产品；</p>
-                        <p>6、相关电子元器件及电子材料：电源、电池、插座、元器件、组件、电线、电缆等；</p>
-                        <p>7、PMA@CES(摄影器材)：数码相机、摄像机、专业非专业照相机、摄像机、摄录一体机、照相手机；软件洗印器材、激光照排，照片冲印设备、彩扩机、数码片夹、打印机、打印耗材、扫描仪等。件洗印器材、激光照排，照片冲印设备、彩扩机、数码片夹、打印机、打印耗材、扫描仪等。</p>
-                    </ul>
+                        <p>
+                            <?php
+                            echo $this->data['info']['review'];
+                            ?>
+                        </p>
+                        </ul>
                 </div>
                 <!--上届回顾end-->
 
@@ -2476,30 +2475,18 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                     </ul>
 
                     <ul class="clearfix read-list">
+                        <?php if(!empty($this->new_all)) foreach($this->new_all as $k_new => $v_new){
+                            $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg]))[\'|\"].*?[\/]?>/";
+                            preg_match_all($pattern,$v_new['content'],$match);
+                            $v_new['cover'] = empty($match[1][0]) ? '' : $match[1][0];
+                            ?>
                         <li>
-                            <a href="##" target="_blank">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/46.jpg" alt="" />
-                                <h4>2016虚拟现实大会巨头频发力，VR迎来爆发年</h4>
+                            <a href="/news/<?php echo date('Y/m/d', $v_new['dateline']).'/'.$v_new['id'].'.shtml';?>" target="_blank">
+                                <img src="<?php echo empty($v_new['cover']) ? STYLE_URL.'/style/quzhan/images/20160202/test_01.png' :$v_new['cover'].'!a200';?>" alt="<?php echo $v_new['title']?>" title="<?php echo $v_new['title']?>" />
+                                <h4><?php echo StringCode::GetCsubStr($v_new['title'],0,20);?></h4>
                             </a>
                         </li>
-                        <li>
-                            <a href="##" target="_blank">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/46.jpg" alt="" />
-                                <h4>2016虚拟现实大会巨头频发力，VR迎来爆发年</h4>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##" target="_blank">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/46.jpg" alt="" />
-                                <h4>2016虚拟现实大会巨头频发力，VR迎来爆发年</h4>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##" target="_blank">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/46.jpg" alt="" />
-                                <h4>2016虚拟现实大会巨头频发力，VR迎来爆发年</h4>
-                            </a>
-                        </li>
+                        <?php }?>
                     </ul>
 
                 </div>
@@ -2514,30 +2501,18 @@ $webtitle = $this->data['info']['name'].' - 去展网'
 
                 <div class="list-picture">
                     <ul>
+                        <?php if(!empty($this->data_con['All'])) foreach($this->data_con['All'] as $key => $val_con){?>
+
                         <li>
-                            <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/48.jpg" alt="" /></a></div>
+                            <div><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>" target="_blank">
+                                    <img src="<?php echo Common::AttachUrl($val_con['imgarr_1']);?>" alt="<?php echo $val_con['name']?>" title="<?php echo $val_con['name']?>" style="max-height: 350px; max-width: 232px;" /></a></div>
                             <div class="list-total">
                                 <i>摊位特价</i>
-                                <p><em>9850.88元</em>起</p>
+                                <p><em><?php echo $val_con['price']?>元</em>起</p>
                             </div>
-                            <h4><a href="##" target="_blank">易展宝国内国外布展便携式特装</a></h4>
+                            <h4><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>" target="_blank"><?php echo $val_con['name']?></a></h4>
                         </li>
-                        <li>
-                            <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/48.jpg" alt="" /></a></div>
-                            <div class="list-total">
-                                <i>摊位特价</i>
-                                <p><em>9850.88元</em>起</p>
-                            </div>
-                            <h4><a href="##" target="_blank">易展宝国内国外布展便携式特装</a></h4>
-                        </li>
-                        <li>
-                            <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/48.jpg" alt="" /></a></div>
-                            <div class="list-total">
-                                <i>摊位特价</i>
-                                <p><em>9850.88元</em>起</p>
-                            </div>
-                            <h4><a href="##" target="_blank">易展宝国内国外布展便携式特装</a></h4>
-                        </li>
+                        <?php }?>
                     </ul>
                 </div>
 

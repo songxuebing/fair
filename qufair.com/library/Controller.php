@@ -270,6 +270,45 @@ class Controller{
         }
         //var_dump($industry);exit();
 
+        //行程国家url
+        $this->LoadHelper('region/RegionHelper');
+        $RegionHelper = new RegionHelper();
+        $delta = array("欧洲","亚洲","中东","东欧","北美","南美","中北美","非洲","大洋洲","中国");
+        foreach($delta as $k=>$v){
+            $country = $RegionHelper->regionAll(array(
+                '`delta` = ?' => $v,
+                '`parent_id` = ?' => 0
+            ));
+            if(!empty($country)){
+                foreach($country as $key=>$val){
+                    $country[$key]['letter'] = StringCode::getfirstchar($val['name']);
+                }
+            }
+            $country = StringCode::array_sort($country,'letter','asc');
+            $delta[$k] = array(
+                'name' => $v,
+                'next' => $country
+            );
+        }
+        //var_dump($delta);exit();
+        foreach($delta as $key => $val_delta)
+        {
+            if(!empty($val_delta['next']))
+                foreach($val_delta['next'] as $k => $val_ne)
+                {
+                    if(!empty($val_ne['name_en']) && ($url === "/route-".$val_ne['name_en']))
+                        $url = "/route/index/country/".$val_ne['name'];
+
+                    if(!empty($val_ne['name_en']) && ($url === "/convention-".$val_ne['name_en']))
+                            $url = "/convention/index/?industry=&delta=%E6%AC%A7%E6%B4%B2&countries=&city=";
+                }
+        }
+        echo $url;
+
+        var_dump($this->Param);
+
+        exit();
+
         $p=explode("?",$url);
 		$Module=explode('/',empty($p[0]) ? '' : $p[0]);
 		$j=1;

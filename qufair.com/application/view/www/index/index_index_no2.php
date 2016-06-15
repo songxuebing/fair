@@ -832,7 +832,7 @@
                                 <div>
                                 <ul class="clearfix">
                                 <?php foreach($this->delta['0']['next'] as $k => $val_de){?>
-                                <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                 <?php }?>
                                 </ul>
                                     <?php

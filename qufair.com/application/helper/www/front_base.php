@@ -40,6 +40,15 @@ if(!empty($one_level)) foreach($one_level as $k=>$v){
 }
 $this->Assign('nav',$one_level);
 
+//首页行业广告
+$industry_adv_where = array(
+    '`start_time` <= ?' => NOW_TIME,
+    '`end_time` >= ?' => NOW_TIME,
+    '`industry_id` > ?' => 0
+);
+$industry_adv = $IndustryHelper->advAll($industry_adv_where,NULL,NULL,array('id DESC'));
+//var_dump($industry_adv);exit();
+$this->Assign('industry_adv',$industry_adv);
 //
 $this->LoadHelper('region/RegionHelper');
 $RegionHelper = new RegionHelper();

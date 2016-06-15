@@ -48,6 +48,7 @@ if(empty($pos_row)){
 $this->Assign('script',$script);
 
 if(empty($this->Param['option'])){
+    var_dump($_GET);exit();
     $limit = 10;
     $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
     $where = array();
@@ -68,7 +69,7 @@ if(empty($this->Param['option'])){
         $where['locate(?,`city`)>0'] = urldecode($this->Param['city']);
     }
     //获取展会列表
-    //var_dump($where);exit();
+    var_dump($where);//exit();
     $data = $ConventionHelper->GetAllWhere($where, $limit, $page, $this->Param);
     $country_where = array('`parent_id` = ?' =>0);
     if(!empty($this->Param['delta'])){

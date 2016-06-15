@@ -303,11 +303,11 @@ class Controller{
                             $url = "/convention/index/?industry=&delta=%E6%AC%A7%E6%B4%B2&countries=&city=";
                 }
         }
-        echo $url;
+        //  echo $url;
 
-        var_dump($this->Param);
+        //var_dump($this->Param);
 
-        exit();
+        //exit();
 
         $p=explode("?",$url);
 		$Module=explode('/',empty($p[0]) ? '' : $p[0]);

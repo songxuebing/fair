@@ -77,7 +77,7 @@ $webtitle = $this->data['info']['name'].' - 去展网'
 
             <div class="con02">
                 <input type="text" value=""  class="fl" placeholder="输入关键词内容" id="type" onClick="searchs(true)"/>
-                <input type="button" value="搜  索" class="fr" />
+                <input type="submit" value="搜  索" class="fr" />
                 <div id="type-list">
                     <p pl="美国食品科技展IFT">美国食品科技展IFT</p>
                     <p pl="美国夏季特色食品展">美国夏季特色食品展</p>

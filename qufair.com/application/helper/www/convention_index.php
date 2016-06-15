@@ -48,7 +48,7 @@ if(empty($pos_row)){
 $this->Assign('script',$script);
 
 if(empty($this->Param['option'])){
-    var_dump($_GET);exit();
+    //var_dump($_GET);exit();
     $limit = 10;
     $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
     $where = array();
@@ -69,7 +69,7 @@ if(empty($this->Param['option'])){
         $where['locate(?,`city`)>0'] = urldecode($this->Param['city']);
     }
     //获取展会列表
-    var_dump($where);//exit();
+    //var_dump($where);//exit();
     $data = $ConventionHelper->GetAllWhere($where, $limit, $page, $this->Param);
     $country_where = array('`parent_id` = ?' =>0);
     if(!empty($this->Param['delta'])){
@@ -163,7 +163,7 @@ if(empty($this->Param['option'])){
             $where_ctag['locate(?,`ctag_name`)>0'] = urldecode($data['info']['industry']);
             //var_dump($where_ctag);
             $ctag_row = $ForumHelper->cTagRow($where_ctag);
-            $ctag_id = $ctag_row['ctag_id'];
+            $ctag_id = empty($ctag_row['ctag_id']) ? 22 : $ctag_row['ctag_id'];
             $new_all = $ForumHelper->queryDetail('SELECT * FROM `dyhl_forum` join `dyhl_forum_tagindex` on dyhl_forum.id = dyhl_forum_tagindex.forum_id WHERE is_show = 1 and `delete` = 0 and dyhl_forum_tagindex.ctag_id= '.$ctag_id.' and dyhl_forum.id != '.$id.'  GROUP BY dyhl_forum_tagindex.forum_id order by dyhl_forum.dateline desc limit 0,4 ');
             //var_dump($tag_all);exit();
             $this->Assign('new_all', $new_all);

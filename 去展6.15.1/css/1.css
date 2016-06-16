@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+.line05{ height:5px; overflow:hidden;}
+.hot{ padding:12px; background-color:#fff;}
+.hot ul li{ height:28px; overflow:hidden; float:left; width:33.33%; line-height:28px;}
+.hot ul li span{ display:block; float:left; width:48px; padding-right:6px; background:url(../images/16.jpg) no-repeat right center; text-align:center; font-size:16px; color:#222;}
+.hot ul li a{ display:block; float:left; height:28px; line-height:28px; font-size:14px; color:#333; margin:0 13px;}
+#hot-position.on{ position:fixed; left:50%; top:0; margin-left:-600px; z-index:999; width:1174px;}
+
+.order-step{ height:80px; background:url(../images/52.jpg) no-repeat; overflow:hidden;}
+.order-step ul{ height:80px;}
+.order-step ul.fl{ width:236px; padding-left:76px; background:url(../images/27.png) no-repeat 21px 20px;}
+.order-step ul.fl b{ display:block; width:100%; line-height:40px; padding-top:6px; font-size:25px; color:#ff4b06; font-weight:normal;}
+.order-step ul.fl p{ font-size:16px; color:#8f8f8f; line-height:25px;}
+
+.order-step ul.fr{ width:888px; line-height:80px; font-size:22px; color:#81828b;}
+.order-step ul.fr li{ width:33.33%; overflow:hidden; text-align:center; background-repeat:no-repeat; background-position:70px center;}
+.order-step ul.fr li p{ padding-left:20px;}
+.ico01{ background-image:url(../images/53.jpg);}
+.ico02{ background-image:url(../images/54.jpg);}
+.ico03{ background-image:url(../images/55.jpg);}
+
+.spin{ padding:0 15px 10px; border:1px #e6e6e6 solid; background-color:#fff; overflow:hidden;}
+.spin-left{ width:896px; overflow:hidden;}
+.spin-right{ width:253px; overflow:hidden;}
+.spin-title{ height:68px; border-bottom:1px #eee solid; overflow:hidden;}
+.spin-title h2{ font-size:18px; color:#333; line-height:68px; font-weight:normal; padding-left:15px; background:url(../images/45.jpg) no-repeat left center;}
+.spin-list .spin-title h2 i{ color:#dc2926; padding-right:5px;}
+.spin-list .spin-title p{ font-size:15px; line-height:68px;}
+.spin-list .spin-title p a{ color:#888; margin-left:10px;}
+
+.spin-list-info{ padding-top:22px; height:430px; overflow:hidden;}
+.spin-list-info li{ float:left; width:290px; overflow:hidden; height:430px; margin-right:13px;}
+.spin-list-info li div.spin-img{ height:290px; overflow:hidden; position:relative;}
+.spin-total{ height:34px; padding:0 17px; padding-top:15px; overflow:hidden;}
+.spin-total i{ display:block; float:left; height:34px; line-height:34px; font-size:15px; color:#fff; width:80px; text-align:center; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; background-color:#19d19a;}
+.spin-total b{ display:block; font-weight:normal; font-size:20px; color:#000; line-height:34px; float:right;}
+.spin-total b em{ color:#fd4d0a; padding-right:5px;}
+.spin-list-info li h4{ font-size:20px; height:35px; line-height:35px; overflow:hidden; font-weight:normal; padding:10px 17px 0; display:block; text-align:center;}
+.spin-list-info li h4 a{ color:#000;}
+.spin-list-info li p{ font-size:17px; color:#939393; line-height:30px; height:30px; overflow:hidden; padding:0 17px; text-align:center;}
+
+.spin-img ul{ display:none; width:100%; text-align:center; height:270px; overflow:hidden; background:url(../images/15.png) repeat; overflow:hidden; position:absolute; left:0; top:0; padding-top:20px;}
+.spin-img ul p{ font-size:20px; text-align:center; color:#fff; line-height:40px; height:40px;}
+.spin-img ul p em{ color:#2f9aff; padding:0 19px;}
+.spin-img ul p i{ color:#bfbfbf;}
+.spin-img ul span{ display:block; width:100%; font-size:18px; color:#f4f4f4; line-height:50px;}
+.spin-img ul b{ display:block; width:100%; text-align:center; font-weight:normal; color:#f4f4f4; font-size:25px; line-height:45px;}
+.spin-img ul  div { padding-top:15px;}
+.spin-img ul  div a{ display:block; width:217px; height:52px; line-height:52px; text-align:center; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; background-color:#fc6424; overflow:hidden; font-size:22px; color:#f4f4f4; margin:0 auto;}
+.spin-img ul  div a:hover{ color:#fff !important;}
+
+.spin-list-info li:hover .spin-img ul{ display:block;}
+
+.spin-list-news ul.img-con{ padding-top:10px;}
+.spin-list-news ul li{ height:35px; overflow:hidden; line-height:35px; font-size:16px;}
+.spin-list-news ul li a{ color:#4a4a4a;}
+.spin-list-news ul li i{ color:#fc6424;}
+.spin-news-img li{ padding:7px 0;}
+

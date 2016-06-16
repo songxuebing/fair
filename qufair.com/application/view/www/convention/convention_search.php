@@ -34,7 +34,6 @@
 <!--头部end-->
 
 
-
 <!--搜索satrt-->
 <div class="header-search">
     <ul class="wrap">
@@ -416,8 +415,6 @@
                                            <li><a href="##" target="_blank">雪纺纱</a></li>
                                            <li><a href="##" target="_blank">T恤</a></li>
                                            <li><a href="##" target="_blank">针织衫</a></li>
-
-
                                            <li><a href="##" target="_blank">牛仔裤</a></li>
                                            <li><a href="##" target="_blank">打底裤</a></li>
                                            <li><a href="##" target="_blank">休闲裤</a></li>
@@ -2287,58 +2284,156 @@
     <!--导航end-->
     <div class="line10"></div>
 
-    <!--当前位置start-->
+    <!--展会头部start-->
     <div class="project-top">
+
+        <!--当前位置start-->
         <div class="location">
             <ul>
-                <li><a href="/" title="">首页</a><span>&gt;</span><a href="##" title="">展会</a></li>
+                <li><a href="##" title="">首页</a><span>&gt;</span><i>展会</i></li>
             </ul>
         </div>
-    </div>
-    <!--当前位置end-->
+        <!--当前位置end-->
 
-    <div class="line10"></div>
-    <!--热门start-->
-    <div class="hot hot01" id="hot-position">
-        <?php $industry = array_chunk($this->industry, 4, true);
-        //echo count($industry);exit();
-        ?>
-            <ul class="clearfix">
-                <?php foreach($industry as $k_ii => $v_i){?>
-                <li>
-                    <?php if($k_ii == 0 || $k_ii == 1 || $k_ii == 2){?>
-                    <span>热门</span>
-                    <?php }
-                    else{
-                    ?>
-                    <span>行业</span>
-                    <?php }?>
-                    <?php foreach($v_i as $k_i_1 => $v_i_1){?>
-                    <a href="##" target="_blank"><?php echo $v_i_1['name']?></a>
-                    <?php }?>
+        <!--筛选内容start-->
+        <div class="all-select">
+            <ul>
+                <span>全部内容 ></span>
+                <a href="javascript:void(0)">纺织机械设备<img src="<?php echo STYLE_URL;?>/style/no2/images/19.png" alt="" /></a>
+                <a href="javascript:void(0)">美洲<img src="<?php echo STYLE_URL;?>/style/no2/images/19.png" alt="" /></a>
+                <a href="javascript:void(0)">丹麦<img src="<?php echo STYLE_URL;?>/style/no2/images/19.png" alt="" /></a>
+                <em>收起筛选</em>
+            </ul>
+        </div>
+        <!--筛选内容end-->
+
+        <!--筛选条件start-->
+        <div class="case">
+            <ul class="list_product_con_nav">
+                <li class="clearfix">
+                    <span>选择行业：</span>
+                    <a href="javascript:void(0)" class="all fl current">不限</a>
+                    <div class="detial-case" id="detial-case01">
+                        <ul class="clearfix">
+                            <?php foreach($this->industry as $key => $val_in){?>
+                                <li><a value="-1" title="<?php echo $val_in['name'];?>" href="javascript:void(0);">
+                                        <span><?php echo $val_in['name'];?></span>
+                                        <em></em></a>
+                                </li>
+                            <?php }?>
+<!--                            <li><a href="##" title="">安防劳保公共</a></li>-->
+<!--                            <li><a href="##" title="">酒店及旅游</a></li>-->
+<!--                            <li><a href="##" title="">品饮料烟洋洲酒</a></li>-->
+<!--                            <li><a href="##" title="">食品机械及包装</a></li>-->
+<!--                            <li><a href="##" title="">纺织纺织机</a></li>-->
+<!--                            <li><a href="##" title="">大牌云集</a></li>-->
+<!--                            <li><a href="##" title="">旅游用品</a></li>-->
+<!--                            <li><a href="##" title="">饮料烟酒洋洲</a></li>-->
+<!--                            <li><a href="##" title="">机械及包装</a></li>-->
+<!--                            <li><a href="##" title="">食品机械及包装</a></li>-->
+                        </ul>
+                    </div>
                 </li>
-                <?php }?>
+                <li class="list_product_tpar" id="list_product_tpar01"><a href="javascript:void(0)">+</a></li>
             </ul>
 
-    </div>
-    <!--热门end-->
+            <ul class="list_product_con_nav">
+                <li class="clearfix">
+                    <span>选择洲际：</span>
+                    <a href="javascript:void(0)" class="all fl current">不限</a>
+                    <div class="detial-case" id="detial-case02">
+                        <ul class="clearfix">
+<!--                            <li><a href="##" title="">美洲</a></li>-->
+<!--                            <li><a href="##" title="">亚洲</a></li>-->
+<!--                            <li><a href="##" title="">非洲</a></li>-->
+<!--                            <li><a href="##" title="">大洋洲</a></li>-->
+<!--                            <li><a href="##" title="">北美洲</a></li>-->
+<!--                            <li><a href="##" title="">南美洲</a></li>-->
+                            <?php
+                            foreach($this->delta as $k => $v){
+                                ?>
+                                <li><a value="-1" title="<?php echo $v['name'];?>" href="javascript:void(0);">
+                                        <span><?php echo $v['name'];?></span>
+                                        <em></em></a>
+                                    </li>
+                            <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list_product_tpar"  id="list_product_tpar02"><a href="javascript:void(0)">+</a></li>
+            </ul>
 
-    <div class="line10"></div>
-    <!--订展流程start-->
-    <div class="order-step">
-        <ul class="fl">
-            <b>订展流程</b>
-            <p>轻松搞定,跨境参展</p>
-        </ul>
-        <ul class="fr">
-            <li class="fl ico01"><p>搜索需求</p></li>
-            <li class="fl ico02"><p>客服联系</p></li>
-            <li class="fl ico03"><p>预订完成</p></li>
-        </ul>
+
+            <ul class="list_product_con_nav">
+                <li class="clearfix">
+                    <span>选择国家：</span>
+                    <a href="javascript:void(0)" class="all fl current">不限</a>
+                    <div class="detial-case bt" id="detial-case03">
+                        <ul class="clearfix">
+<!--                            <li><a href="##" title="">丹麦</a></li>-->
+<!--                            <li><a href="##" title="">韩国</a></li>-->
+<!--                            <li><a href="##" title="">日本</a></li>-->
+<!--                            <li><a href="##" title="">法国</a></li>-->
+<!--                            <li><a href="##" title="">法国</a></li>-->
+<!--                            <li><a href="##" title="">意大利</a></li>-->
+<!--                            <li><a href="##" title="">丹麦</a></li>-->
+<!--                            <li><a href="##" title="">韩国</a></li>-->
+<!--                            <li><a href="##" title="">日本</a></li>-->
+<!--                            <li><a href="##" title="">法国</a></li>-->
+<!--                            <li><a href="##" title="">法国</a></li>-->
+<!--                            <li><a href="##" title="">意大利</a></li>-->
+                            <?php
+                            if(!empty($this->country_all)) foreach($this->country_all as $k => $v){
+                                ?>
+                                    <?php
+                                    foreach($v as $key => $val){
+                                        ?>
+                                        <li>
+                                            <a value="-1" title="<?php echo $val['name'];?>" href="javascript:void(0);">
+                                                <span><?php echo $val['name'];?></span>
+                                                <em></em>
+                                            </a>
+                                        </li>
+                                    <?php
+                                    }}
+                                    ?>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="list_product_tpar" id="list_product_tpar03"><a href="javascript:void(0)">+</a></li>
+            </ul>
+
+
+        </div>
+        <!--筛选条件end-->
+
     </div>
-    <!--订展流程end-->
-    <div class="line10"></div>
-    <!--纺织服饰start-->
+    <!--展会头部end-->
+
+    <div class="line9"></div>
+    <!--排行start-->
+    <div class="charts">
+        <ul class="fl charts-tar fl">
+            <a href="javascript:void(0)" class="current">综合排序</a>
+            <a href="javascript:void(0)">热门</a>
+            <a href="javascript:void(0)">价格</a>
+        </ul>
+        <ul class="charts-money fl">
+            <input type="text" value="" placeholder="￥" />
+            <span>-</span>
+            <input type="text" value="" placeholder="￥"  />
+        </ul>
+
+<!--        <ul class="charts-page fr">-->
+<!--            <a href="javascript:void(0)"><img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/17.png" alt="" /></a>-->
+<!--            <span><i>2</i>/100</span>-->
+<!--            <a href="javascript:void(0)"><img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/18.png" alt="" /></a>-->
+<!--        </ul>-->
+    </div>
+    <!--排行end-->
     <script language="javascript" type="text/javascript">
 
         $(function() {
@@ -2386,124 +2481,174 @@
         }
     </script>
 
-    <?php
-    if(!empty($this->data))
-    foreach($this->data as $k => $v){?>
-    <div class="spin" style="<?php if($k>0){?>border:none;<?php }?>">
+    <!--展会列表start-->
+    <div class="list-project spin">
         <ul class="clearfix">
-
-            <!--左栏目start-->
-            <li class="spin-left fl">
-                <div class="spin-list">
-                    <ul class="spin-title">
-                        <h2 class="fl"><i>F<?php echo $k+1;?></i><?php echo $v['name']?></h2>
-                        <p class="fr">
-                            <a href="##" target="_blank">韩国</a>
-                            <a href="##" target="_blank">德国</a>
-                            <a href="##" target="_blank">法国</a>
-                            <a href="##" target="_blank">英国</a>
-                            <a href="##" target="_blank">澳大利亚</a>
-                        </p>
+            <?php
+            if(!empty($this->data['All'])) foreach($this->data['All'] as $k => $v){
+                if(strtotime($v['start_time'])-time() < 0)
+                {
+                    //break;
+                }
+                else{
+            ?>
+            <li>
+                <div class="project01">
+                    <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
+                    <ul class="detial-total">
+                        <i>展会价格</i>
+                        <b><em><?php echo $v['price']?>元</em>起</b>
                     </ul>
-
-                    <ul class="spin-list-info">
-                        <?php
-                        if(!empty($v['All'])) {
-                            //$i = count($v['All']) - 7;
-                            $v['All'] = array_chunk($v['All'], 7, true);
-                        }
-                        foreach($v['All']['0'] as $key=> $val){
-                            $val['cover'] = unserialize($val['imgurl'])['0'];
-                            if(strtotime($val['start_time'])-time() < 0)
-                                break;
-                            ?>
-                        <li>
-                            <div class="spin-img">
-                                <img src="<?php echo Common::AttachUrl($val['cover']);?>" style="max-height: 290px; max-width: 290px;" alt="<?php echo $val['name']?>" />
-                                <ul>
-                                    <p>距离展会开幕时间</p>
-<!--                                    <p><i><em style="padding-left: 0px;">126</em>天<em>8</em>小时<em>32</em>分</i></p>-->
-                                    <div data-type="order_expire_time" class="top_countdown">
-                                        <p class="time" left_time_int="<?php echo strtotime($val['start_time'])-time();?>"></p>
-                                    </div>
-                                    <span><?php echo $val['start_time']?> 至 <?php echo $val['end_time']?> </span>
-                                    <b><?php echo StringCode::GetCsubStr($val['name'],0,10);?></b>
-                                    <div><a href="/convention/<?php echo date('Y/m/d', $val['update_dateline']).'/'.$val['id'];?>.shtml" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                            <div class="spin-total">
-                                <i>展会价格</i>
-                                <b><em><?php echo $val['price']?>元</em>起</b>
-                            </div>
-                            <h4><a href="/convention/<?php echo date('Y/m/d', $val['update_dateline']).'/'.$val['id'];?>.shtml" target="_blank"><?php echo $val['name']?></a></h4>
-                            <p>时间:<?php echo $val['start_time']?>至<?php echo $val['end_time']?></p>
-                        </li>
-                        <?php }?>
-
-                    </ul>
-
+                    <h4><a href="/convention/<?php echo date('Y/m/d', $v['update_dateline']).'/'.$v['id'];?>.shtml" target="_blank"><?php echo $v['name'];?></a></h4>
+                    <p>时间:<?php echo $v['start_time']?>至<?php echo $v['end_tome']?></p>
                 </div>
-            </li>
-
-            <!--左栏目end-->
-            <!--右栏目start-->
-            <li class="spin-right fr">
-                <div class="spin-list-news">
-                    <ul class="spin-title">
-                        <h2>最近展会</h2>
-                    </ul>
-                    <ul class="img-con">
-                        <?php
-                        foreach($v['All']['1'] as $key1=> $val1){?>
-                        <li><p><i>[展览]</i><a href="/convention/<?php echo date('Y/m/d', $val['update_dateline']).'/'.$val['id'];?>.shtml" target="_blank"><?php echo $val1['name']?></a></p></li>
-                        <?php }?>
-                    </ul>
-                </div>
-
-                <div class="spin-news-img">
+                <div class="project02">
                     <ul>
-                        <li><a href="#" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/58.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/59.jpg" alt="" /></a></li>
+                        <p>距离展会开幕时间</p>
+<!--                        <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>-->
+                        <div data-type="order_expire_time" class="top_countdown" style="padding-top: 0px;">
+                            <p class="time" left_time_int="<?php echo strtotime($v['start_time'])-time();?>"></p>
+                        </div>
+
+                        <span>2016-06-06 至 2016-06-08 </span>
+                        <b><?php echo StringCode::GetCsubStr($v['name'],0,10);?></b>
+                        <div><a href="/convention/<?php echo date('Y/m/d', $v['update_dateline']).'/'.$v['id'];?>.shtml" target="_blank">立即订购</a></div>
                     </ul>
                 </div>
             </li>
-            <!--右栏目end-->
+            <?php
+            }}
+            ?>
+
         </ul>
+
+        <ul class="img-banner"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/37.jpg" alt="" /></a></ul>
+
+
+<style>
+    /**分页样式**/
+    .input_box_05{
+        color:#4c6581;
+        border:1px solid #b0b9ca;
+        font-size:14px;
+        height:22px;
+        line-height:22px;
+        background-repeat: repeat-x;
+        background-position: left top; font-size:12px; padding:0 8px; margin-right:10px;
+    }
+    .display_box{
+        display:none;
+    }
+    .pagination li{
+        float:left;
+        width:auto;
+        margin-right:8px;
+    }
+    .pagination li a{
+        border:1px solid #ccc;
+        padding-top:2px;
+        padding-bottom:2px;
+        padding-left:8px;
+        padding-right:8px;
+        text-decoration:none;
+    }
+    .display_none{
+        display:none;
+    }
+    .disabled a{
+        cursor:default;
+        color:#CC0000;
+    }
+    </style>
+        <!--加载更多start-->
+<!--        <ul class="more-project">-->
+<!--            <a href="##" title="">正在加载...</a>-->
+<!--        </ul>-->
+
+
     </div>
-        <div class="line10"></div>
-        <!--广告位start-->
-        <div>
-            <a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/56.jpg" alt="" /></a>
-        </div>
-        <!--广告位end-->
-
-        <div class="line10"></div>
-    <?php }?>
-    <!--纺织服饰end-->
-
-    <div class="line10"></div>
+    <!--展会列表end-->
+    <!-- 页码 -->
+    <div style="width:100%; height:35px; margin-top:35px; text-align:right;">
+        <?php echo empty($this->data['Page']) ? '' : $this->data['Page'];?>
+    </div>
+    <!--加载更多end-->
     <div class="line20"></div>
-    <div class="line20"></div>
-
 </div>
 <!--main end-->
-<link type="text/css" href="<?php echo STYLE_URL;?>/style/no2/css/1.css" rel="stylesheet" />
-<script>
-    $(".spin-img ul p em:nth-child(3n+1)").css("padding-left","0");
-    $(".spin-list-info li:nth-child(3n+3)").css("margin-right","0");
-</script>
 
 <script>
-    $(window).scroll(function(){
-        if($(this).scrollTop()>341)
-        {
-            $("#hot-position").addClass("on");
+    $(".list-project ul li:nth-child(4n+4)").css("margin-right","0");
+    $(".project02 p em:nth-child(3n+1)").css("padding-left","0");
+
+    $(".hot-product").hover(function(){
+        $(this).addClass("on");
+    },function(){
+        $(this).removeClass("on");
+    });
+
+    $(".list-project ul li").hover(function(){
+        $(this).addClass("on")
+    },function(){
+        $(this).removeClass("on");
+    });
+
+
+    var i=1;
+    $(".all-select em").click(function(){
+        $(".case").toggle();
+        if(i==1){
+            $(this).text("展开筛选");
+            i=0;
+        }else{
+            $(this).text("收起筛选");
+            i=1;
         }
-        else{
-            $("#hot-position").removeClass("on");
+    });
+
+
+    var a=1;
+    $("#list_product_tpar01").click(function(){
+        if(a==1){
+            $(this).find("a").text("-");
+            $("#detial-case01 ul").animate({height:"160"},500);
+            a=0;
+        }else{
+            $(this).find("a").text("+");
+            $("#detial-case01 ul").animate({height:"40"},500);
+            a=1;
+        }
+    });
+
+
+    var b=1;
+    $("#list_product_tpar02").click(function(){
+        if(b==1){
+            $(this).find("a").text("-");
+            $("#detial-case02 ul").animate({height:"80"},500);
+            b=0;
+        }else{
+            $(this).find("a").text("+");
+            $("#detial-case02 ul").animate({height:"40"},500);
+            b=1;
+        }
+    });
+
+    var c=1;
+    $("#list_product_tpar03").click(function(){
+        if(c==1){
+            $(this).find("a").text("-");
+            $("#detial-case03 ul").animate({height:"1120"},500);
+            c=0;
+        }else{
+            $(this).find("a").text("+");
+            $("#detial-case03 ul").animate({height:"40"},500);
+            c=1;
         }
     });
 </script>
+
+
 
 <!--友情链接start-->
 <div class="friendly-link">
@@ -2511,12 +2656,32 @@
         <h2><i>友情链接</i></h2>
         <div>
             <ul class="clearfix">
-                <?php
-                if(!empty($this->link)) foreach($this->link as $k=>$v){
-                    if($v['type'] == "1")
-                        echo '<li><a href="'.$v['url'].'" target="_blank">'.$v['title'].'</a></li>';
-                }
-                ?>
+                <li><a href="##" target="_blank">杭州写字楼网 </a></li>
+                <li><a href="##" target="_blank">杭州本地宝</a></li>
+                <li><a href="##" target="_blank">杭州房产网</a></li>
+                <li><a href="##" target="_blank">杭州租房网</a></li>
+                <li><a href="##" target="_blank">杭州分类信息</a></li>
+                <li><a href="##" target="_blank">杭州房产网</a></li>
+                <li><a href="##" target="_blank">杭州装修公司</a></li>
+                <li><a href="##" target="_blank">杭州租房</a></li>
+                <li><a href="##" target="_blank">杭州厂房网</a></li>
+                <li><a href="##" target="_blank">杭州信息网</a></li>
+                <li><a href="##" target="_blank">杭州装修网</a></li>
+                <li><a href="##" target="_blank">杭州拓展公司</a></li>
+                <li><a href="##" target="_blank">杭州邮编网</a></li>
+                <li><a href="##" target="_blank">杭州写字楼网 </a></li>
+                <li><a href="##" target="_blank">杭州本地宝</a></li>
+                <li><a href="##" target="_blank">杭州房产网</a></li>
+                <li><a href="##" target="_blank">杭州租房网</a></li>
+                <li><a href="##" target="_blank">杭州分类信息</a></li>
+                <li><a href="##" target="_blank">杭州房产网</a></li>
+                <li><a href="##" target="_blank">杭州装修公司</a></li>
+                <li><a href="##" target="_blank">杭州租房</a></li>
+                <li><a href="##" target="_blank">杭州厂房网</a></li>
+                <li><a href="##" target="_blank">杭州信息网</a></li>
+                <li><a href="##" target="_blank">杭州装修网</a></li>
+                <li><a href="##" target="_blank">杭州拓展公司</a></li>
+                <li><a href="##" target="_blank">杭州邮编网</a></li>
             </ul>
         </div>
     </ul>
@@ -2524,4 +2689,27 @@
 <!--友情链接end-->
 
 
-<?php include $this->Render('footer2.php');die();?>
+<!--底部start-->
+<div class="footer">
+    <ul class="wrap">
+        <p>
+            <a href="##" target="_blank">关于我们</a><span>|</span>
+            <a href="##" target="_blank">联系我们</a><span>|</span>
+            <a href="##" target="_blank">友情链接</a><span>|</span>
+            <a href="##" target="_blank">帮助中心</a><span>|</span>
+            <a href="##" target="_blank">意见反馈</a><span>|</span>
+            <a href="##" target="_blank">高薪聘请</a><span>|</span>
+            <a href="##" target="_blank">法律声明</a><span>|</span>
+        </p>
+        <p>© 2015 quzhan.com 去展互联网展会领导者 保留所有权利</p>
+        <p>去展互联网展会领导者 浙ICP备08125558号</p>
+        <p><img src="<?php echo STYLE_URL;?>/style/no2/images/27.jpg" alt="" /></p>
+        <div>
+            <img src="<?php echo STYLE_URL;?>/style/no2/images/code.jpg" alt="" />
+            <p>下载去展APP</p>
+        </div>
+    </ul>
+</div>
+<!--底部start-->
+</body>
+</html>

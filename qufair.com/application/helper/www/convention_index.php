@@ -62,7 +62,7 @@ if(empty($this->Param['option'])){
         $one_level[$k]['next'] = $next_all;
         foreach($one_level[$k]['next'] as $kk => $val_in) {
             //var_dump($val_in);echo "<br />".$kk."<br />";
-            $limit = 10;
+            $limit = 20;
             $page  = 0;
             $where = array();
             $where[$k] = array('`id` > ?' => 0);
@@ -77,6 +77,7 @@ if(empty($this->Param['option'])){
         }
         }
     //var_dump($data);exit();
+    $this->Assign('industry', $one_level);
     $this->Assign('data', $data);
     //var_dump($_GET);exit();
 //    $limit = 10;

@@ -2300,50 +2300,26 @@
     <div class="line10"></div>
     <!--热门start-->
     <div class="hot hot01" id="hot-position">
-        <ul class="clearfix">
-            <li>
-                <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-            </li>
-        </ul>
+        <?php $industry = array_chunk($this->industry, 4, true);
+        //echo count($industry);exit();
+        ?>
+            <ul class="clearfix">
+                <?php foreach($industry as $k_ii => $v_i){?>
+                <li>
+                    <?php if($k_ii == 0 || $k_ii == 1 || $k_ii == 2){?>
+                    <span>热门</span>
+                    <?php }
+                    else{
+                    ?>
+                    <span>行业</span>
+                    <?php }?>
+                    <?php foreach($v_i as $k_i_1 => $v_i_1){?>
+                    <a href="##" target="_blank"><?php echo $v_i_1['name']?></a>
+                    <?php }?>
+                </li>
+                <?php }?>
+            </ul>
+
     </div>
     <!--热门end-->
 
@@ -2433,13 +2409,17 @@
                     <ul class="spin-list-info">
                         <?php
                         if(!empty($v['All'])) {
-                            $i = count($v['All']) - 3;
-                            $v['All'] = array_chunk($v['All'], $i, true);
+                            //$i = count($v['All']) - 7;
+                            $v['All'] = array_chunk($v['All'], 7, true);
                         }
-                        foreach($v['All']['1'] as $key=> $val){?>
+                        foreach($v['All']['0'] as $key=> $val){
+                            $val['cover'] = unserialize($val['imgurl'])['0'];
+                            if(strtotime($val['start_time'])-time() < 0)
+                                break;
+                            ?>
                         <li>
                             <div class="spin-img">
-                                <img src="<?php echo Common::AttachUrl($val['cover']);?>" style="max-height: 290px; max-width: 290px;" alt="" />
+                                <img src="<?php echo Common::AttachUrl($val['cover']);?>" style="max-height: 290px; max-width: 290px;" alt="<?php echo $val['name']?>" />
                                 <ul>
                                     <p>距离展会开幕时间</p>
 <!--                                    <p><i><em style="padding-left: 0px;">126</em>天<em>8</em>小时<em>32</em>分</i></p>-->
@@ -2452,7 +2432,7 @@
                                 </ul>
                             </div>
                             <div class="spin-total">
-                                <i>搭建价格</i>
+                                <i>展会价格</i>
                                 <b><em><?php echo $val['price']?>元</em>起</b>
                             </div>
                             <h4><a href="/convention/<?php echo date('Y/m/d', $val['update_dateline']).'/'.$val['id'];?>.shtml" target="_blank"><?php echo $val['name']?></a></h4>
@@ -2474,7 +2454,7 @@
                     </ul>
                     <ul class="img-con">
                         <?php
-                        foreach($v['All']['0'] as $key1=> $val1){?>
+                        foreach($v['All']['1'] as $key1=> $val1){?>
                         <li><p><i>[展览]</i><a href="/convention/<?php echo date('Y/m/d', $val['update_dateline']).'/'.$val['id'];?>.shtml" target="_blank"><?php echo $val1['name']?></a></p></li>
                         <?php }?>
                     </ul>

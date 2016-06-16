@@ -329,7 +329,13 @@ $webtitle = $this->data['info']['name'].' - 去展网'
             <li class="detial-left fl">
                 <div class="detial-scroll" id="demo04">
                     <ul class="slides">
-                        <?php
+                            <?php
+                              if(!empty($this->data['info']['cover'])){
+                            ?>
+                                <li><div><a href="##" target="_blank">
+                                <img src="<?php echo Common::AttachUrl($this->data['info']['cover']);?>" alt="" /></a></div></li>
+                            <?php }?>
+                    <?php
                         if(!empty($this->data['info']['imgarr'])) foreach($this->data['info']['imgarr'] as $k => $v){
 
                         if(!empty($v)){

@@ -32,6 +32,7 @@ class ConventionHelper extends Helper {
                 $where['LOCATE("'.$v.'",`name`) > ?'] = 0;
             }
         }
+        //var_dump($where);
         $data['One'] = $this->ConventionModel->GetOne($where);
 
         if (!empty($data['One'])) {
@@ -41,7 +42,26 @@ class ConventionHelper extends Helper {
         }
         return $data;
     }
-	
+
+
+    public function GetAll_new_Where($where, $limit, $page, $Param) {
+        if(!empty($Param['key'])){
+            $key = explode(' ', $Param['key']);
+            if(!empty($key)) foreach($key as $k=>$v){
+                $where['LOCATE("'.$v.'",`name`) > ?'] = 0;
+            }
+        }
+        //var_dump($where);
+        $data['One'] = $this->ConventionModel->GetOne($where);
+
+        if (!empty($data['One'])) {
+            $data['All'] = $this->ConventionModel->GetAll($where, array($page, $limit), NULL, array('cover desc','id desc'));
+            //Pagination::SetUrl($Param);
+            //$data['Page'] = Pagination::GetHtml($limit, $page, $data['One']);
+        }
+        return $data;
+    }
+
 	public function GetAllHouWhere($where, $limit, $page, $Param) {
         if(!empty($Param['key'])){
             $key = explode(' ', $Param['key']);
@@ -156,6 +176,11 @@ class ConventionHelper extends Helper {
 
     public function orderSave($data) {
         return $this->ConventionModel->addOrder($data);
+    }
+
+    //
+    public function new_orderSave($data) {
+        return $this->ConventionModel->newaddOrder($data);
     }
     public function orderRow($where) {
         return $this->ConventionModel->getOrderRow($where);

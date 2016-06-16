@@ -16,6 +16,9 @@ $RegionHelper = new RegionHelper();
 
 $this->LoadHelper('forum/ForumHelper');
 $ForumHelper = new ForumHelper();
+
+$this->LoadHelper('industry/IndustryHelper');
+$IndustryHelper = new IndustryHelper();
 //获取用户信息
 $UserInfo = $this->UserConfig;
 
@@ -48,53 +51,82 @@ if(empty($pos_row)){
 $this->Assign('script',$script);
 
 if(empty($this->Param['option'])){
-    //var_dump($_GET);exit();
-    $limit = 10;
-    $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
-    $where = array();
-    $where = array('`id` > ?' => 0);
 
-    if(!empty($this->Param['industry'])){
-        $where['locate(?,`industry`)>0'] = urldecode($this->Param['industry']);
-        $where_in['locate(?,`name`)>0'] = urldecode($this->Param['industry']);
-        $data_industry = $ConventionHelper->GetInWhere($where_in);
-    }
-    if(!empty($this->Param['delta'])){
-        $where['locate(?,`regional`)>0'] = urldecode($this->Param['delta']);
-    }
-    if(!empty($this->Param['countries'])){
-        $where['locate(?,`countries`)>0'] = urldecode($this->Param['countries']);
-    }
-    if(!empty($this->Param['city'])){
-        $where['locate(?,`city`)>0'] = urldecode($this->Param['city']);
-    }
-    //获取展会列表
-    //var_dump($where);//exit();
-    $data = $ConventionHelper->GetAllWhere($where, $limit, $page, $this->Param);
-    $country_where = array('`parent_id` = ?' =>0);
-    if(!empty($this->Param['delta'])){
-        $country_where['`delta` = ?'] = $this->Param['delta'];
-    }
-    $country_all = $RegionHelper->regionAll($country_where);
-    $country_all = Common::arrayExplode($country_all, 8);
-    $this->Assign('country_all',$country_all);
-
-    if(!empty($this->Param['countries'])){
-        $country_row = $RegionHelper->regionRow(array('`name` = ?' => urldecode($this->Param['countries'])));
-        $city_where['`parent_id` = ?'] = $country_row['id'];
-
-        $city_all = $RegionHelper->regionAll($city_where,array(0,100));
-        $city_all = Common::arrayExplode($city_all, 8);
-        $this->Assign('city_all',$city_all);
-    }
-
-    $data['attr'] = array('industry' =>$this->Param['industry'],'delta' => $this->Param['delta'],'countries'=>$this->Param['countries'],'city'=>$this->Param['city']);
-
-    $this->Assign('menberInfo',$memberRow);
-    $this->Assign('web_information',$data_industry);
+    $one_level = $IndustryHelper->industryAll(array(
+        '`parent_id` = ?' => 0
+    ),array(0,100));
+    if(!empty($one_level)) foreach($one_level as $k=>$v){
+        $next_all = $IndustryHelper->industryAll(array(
+            '`parent_id` = ?' => $v['id']
+        ),array(0,50));
+        $one_level[$k]['next'] = $next_all;
+        foreach($one_level[$k]['next'] as $kk => $val_in) {
+            //var_dump($val_in);echo "<br />".$kk."<br />";
+            $limit = 10;
+            $page  = 0;
+            $where = array();
+            $where[$k] = array('`id` > ?' => 0);
+            $where[$k]['locate(?,`industry`)>0'] = urldecode($val_in['name']);
+            $data[$k] = $ConventionHelper->GetAll_new_Where($where[$k], $limit, $page, $this->Param);
+            $data[$k]['name'] = $v['name'];
+            $data[$k]['name_en'] = $v['name_en'];
+            //var_dump($data);echo "<br />";
+            break;
+            //$data[$kk] = $ConventionHelper->GetAllWhere($where, $limit, $page, $this->Param);
+            //var_dump($data);exit();
+        }
+        }
+    //var_dump($data);exit();
     $this->Assign('data', $data);
-    $this->Assign('param', $this->Param);
-    echo $this->GetView('convention_index.php');
+    //var_dump($_GET);exit();
+//    $limit = 10;
+//    $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
+//    $where = array();
+//    $where = array('`id` > ?' => 0);
+//
+//    if(!empty($this->Param['industry'])){
+//        $where['locate(?,`industry`)>0'] = urldecode($this->Param['industry']);
+//        $where_in['locate(?,`name`)>0'] = urldecode($this->Param['industry']);
+//        $data_industry = $ConventionHelper->GetInWhere($where_in);
+//    }
+//    if(!empty($this->Param['delta'])){
+//        $where['locate(?,`regional`)>0'] = urldecode($this->Param['delta']);
+//    }
+//    if(!empty($this->Param['countries'])){
+//        $where['locate(?,`countries`)>0'] = urldecode($this->Param['countries']);
+//    }
+//    if(!empty($this->Param['city'])){
+//        $where['locate(?,`city`)>0'] = urldecode($this->Param['city']);
+//    }
+//    //获取展会列表
+//    var_dump($where);//exit();
+//    $data = $ConventionHelper->GetAllWhere($where, $limit, $page, $this->Param);
+//    $country_where = array('`parent_id` = ?' =>0);
+//    if(!empty($this->Param['delta'])){
+//        $country_where['`delta` = ?'] = $this->Param['delta'];
+//    }
+//    $country_all = $RegionHelper->regionAll($country_where);
+//    $country_all = Common::arrayExplode($country_all, 8);
+//    $this->Assign('country_all',$country_all);
+//
+//    if(!empty($this->Param['countries'])){
+//        $country_row = $RegionHelper->regionRow(array('`name` = ?' => urldecode($this->Param['countries'])));
+//        $city_where['`parent_id` = ?'] = $country_row['id'];
+//
+//        $city_all = $RegionHelper->regionAll($city_where,array(0,100));
+//        $city_all = Common::arrayExplode($city_all, 8);
+//        $this->Assign('city_all',$city_all);
+//    }
+//
+//    $data['attr'] = array('industry' =>$this->Param['industry'],'delta' => $this->Param['delta'],'countries'=>$this->Param['countries'],'city'=>$this->Param['city']);
+//
+//    $this->Assign('menberInfo',$memberRow);
+//    $this->Assign('web_information',$data_industry);
+//    $this->Assign('data', $data);
+//    $this->Assign('param', $this->Param);
+//    echo $this->GetView('convention_index.php');
+
+    echo $this->GetView('convention.php');
 }else{
     switch($this->Param['option']){
         case 'detail':

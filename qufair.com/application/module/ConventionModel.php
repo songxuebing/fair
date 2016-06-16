@@ -103,6 +103,13 @@ class ConventionModel extends Module {
         return $this->Db->insert($this->_table . '_order', $data, $returnid, $output);
     }
 
+    //新的展会订单表
+
+    public function newaddOrder($data, $returnid = true, $output = false) {
+        return $this->Db->insert($this->_table . '_order_new', $data, $returnid, $output);
+    }
+
+
     public function getOrderRow($where, $group = null, $order = null, $output = false) {
         return $this->Db->FetchRow($this->_table . '_order', $this->_orderField, $where, $group, $order, $output);
     }

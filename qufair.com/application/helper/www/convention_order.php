@@ -16,8 +16,9 @@
 
     //获取用户信息
     $UserInfo = $this->UserConfig;
-
+    //var_dump($this->Param);
     if(empty($this->Param['option'])){
+        //echo "123";exit();
         
         $this->LoadHelper('public/usercheck');
         
@@ -51,113 +52,29 @@
     }else{
         switch($this->Param['option']){
             case 'submit':
+                $id = $ConventionHelper->new_orderSave(
+                    array(
+                        'booth_type' => $this->Param['p1'],
+                        'opening' => $this->Param['p2'],
+                        'area' => $this->Param['p3'],
+                        'is_group' => ($this->Param['p4'] == "是") ? 1 : 0,
+                        'con_name' => $this->Param['p5'],
 
-                //定制信息
-                $company_name = empty($this->Param['company_name']) ? ErrorMsg::Debug('请填写单位名称') : $this->Param['company_name'];
-                $company_address = empty($this->Param['company_address']) ? ErrorMsg::Debug('请填写单位地址') : $this->Param['company_address'];
-                $address_user_name = empty($this->Param['address_user_name']) ? ErrorMsg::Debug('请填写联系人') : $this->Param['address_user_name'];
-                $address_mobile = empty($this->Param['address_mobile']) ? ErrorMsg::Debug('请填写电话') : $this->Param['address_mobile'];
-                $address_tel = empty($this->Param['address_tel']) ? ErrorMsg::Debug('请填写手机') : $this->Param['address_tel'];
-                $address_email = empty($this->Param['address_email']) ? ErrorMsg::Debug('请填写电子邮件') : $this->Param['address_email'];
-                $fax = empty($this->Param['fax']) ? ErrorMsg::Debug('请填写传真') : $this->Param['fax'];
-                $website = $this->Param['website'];
-                $area_id = empty($this->Param['area_id']) ? 0 : $this->Param['area_id'];
-
-                //下单前判断展位是否已经出售
-                $area_row = $ConventionHelper->getAreaRow(array(
-                    '`area_id` = ?' => $area_id
-                ));
-
-                if($area_row['is_rent'] == 1){
-                    ErrorMsg::Debug('展位已经被其他用户预定了！');
-                }
-
-                $receiving = array(
-                    'company_name' => $company_name,
-                    'company_address' => $company_address,
-                    'address_user_name' => $address_user_name,
-                    'address_mobile' => $address_mobile,
-                    'address_tel' => $address_tel,
-                    'address_email' => $address_email,
-                    'fax' => $fax,
-                    'website' => $website
+                        'company' => $this->Param['wd01'],
+                        'contacts' => $this->Param['wd02'],
+                        'phone' => $this->Param['wd03'],
+                        //'company' => $this->Param['wd04'],
+                        'email' => $this->Param['wd05'],
+                        'content' => $this->Param['wd06'],
+                        'update_time' => NOW_TIME,
+                    )
                 );
-                //
-                $member_id = $UserInfo['Id'];
-                $remarks = $this->Param['remarks'];
-
-
-                $is_group = $this->Param['is_group'];
-                $sn = NOW_TIME . StringCode::RandomCode(3, 'num');
-
-                $detail_id = empty($this->Param['id']) ? 0 : $this->Param['id'];
-
-                //获取商家发布的展会信息
-                $detail_row = $ConventionHelper->getDetailRow(array( '`detail_id` = ?' => $detail_id));
-		
-				unset($detail_row['description']);
-				unset($detail_row[7]);
-
-                //获取展会
-                $con_row = $ConventionHelper->getRow(array(
-                    '`id` = ?' => $detail_row['con_id']
-                ));
-
-                $detailArr['con_detail'] =  $detail_row;
-
-                $detailArr['con_detail']['con_detail'] = $con_row;
-				
-                $detailArr['con_detail']['detail_area'] = $area_row;
-
-                if($is_group == '1'){//是否采用跟团价格
-                    $price = $area_row['group_price'];
-                }else{
-                    $price = $area_row['booth_price'];
-                }
-				
-			
-
-                //展会订单入库
-                $id = $ConventionHelper->orderSave(array(
-                    'order_sn' =>$sn,
-                    'con_id' => $detail_row['con_id'],
-                    'member_id' => $UserInfo['Id'],
-                    'saler_id' => $detail_row['member_id'],
-                    'con_cover' => $con_row['cover'],
-                    'con_name' => $con_row['name'],
-                    'detail' => serialize($detailArr),
-                    'price' => $price,
-                    'money' => $price,
-                    'is_group' => $is_group,
-                    'receiving' => serialize($receiving),
-                    'remarks' => $remarks,
-                    'datetime' => NOW_TIME
-                ));
-
-
-                $order_data = array(
-                    'order_sn' => $sn,
-                    'member_id' => $UserInfo['Id'],
-                    'seller_id' => $detail_row['member_id'],
-                    'price' => $price,
-                    'is_type' => 'convention',
-                    'addtime' => NOW_TIME,
-                    'show_price' => $price
-                );
-                if($id){
-                    $do = $OrderHelper->save($order_data);
-
-                    $ConventionHelper->areaUpdate(array(
-                        'is_rent' => 1
-                    ),array(
-                        '`area_id` = ?' => $area_id
-                    ));
-
-                    if($do){
-                        ErrorMsg::Debug($sn,TRUE);
-                    }
-                }
-                ErrorMsg::Debug('保存失败');
+                if($id)
+                $info['status']='y';
+                $info['info']='数据不存在';
+                $data=json_encode($info);
+                echo $data;
+                //$this->Assign('data', $data);
                 break;
             case 'pay':
                 $sn = empty($this->Param['sn']) ? ErrorMsg::Debug('参数错误') : $this->Param['sn'];

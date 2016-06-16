@@ -140,6 +140,7 @@ if (empty($this->Param['option'])) {
             break;
         case 'remove':
             $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
+
             $next_count = $IndustryHelper->industryOne(array(
                 '`parent_id` = ?' => $id
             ));

@@ -74,7 +74,8 @@
                         <li class="li_15"><?php echo $va['keywords'];?></li>
                         <li class="li_15"><?php echo $va['description'];?></li>
                         <li class="li_5"></li>
-                        <li class="li_15"><a href="/other/industry/option/edit/id/<?php echo $va['id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $va['id'];?>" data-title="修改">编辑</a><a href="#" class="RemoveLink btn_05" data-id="<?php echo $va['id'];?>" data-url="/other/industry/">删除</a></li>
+                        <li class="li_15"><a href="/other/industry/option/edit/id/<?php echo $va['id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $va['id'];?>" data-title="修改">编辑</a>
+                            <a href="#" class="RemoveLink btn_05" data-id="<?php echo $va['id'];?>" data-url="/other/industry/">删除</a></li>
                     </ul>
                 </div>
                 <?php }?>

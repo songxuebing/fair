@@ -205,9 +205,8 @@
             if(!empty($this->data['All'])) foreach($this->data['All'] as $k => $v){
                 if(strtotime($v['start_time'])-time() < 0)
                 {
-                    //break;
+                    unset($this->data['All'][$k]);
                 }
-                else{
             ?>
             <li>
                 <div class="project01">
@@ -234,7 +233,7 @@
                 </div>
             </li>
             <?php
-            }}
+            }
             ?>
 
         </ul>

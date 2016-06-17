@@ -126,10 +126,12 @@
                             //$i = count($v['All']) - 7;
                             $v['All'] = array_chunk($v['All'], 7, true);
                         }
+                        foreach($v['All']['0'] as $key=> $vall){
+                            if(strtotime($vall['start_time'])-time() < 0)
+                                unset($v['All']['0'][$key]);
+                        }
                         foreach($v['All']['0'] as $key=> $val){
                             $val['cover'] = unserialize($val['imgurl'])['0'];
-                            if(strtotime($val['start_time'])-time() < 0)
-                                break;
                             ?>
                         <li>
                             <div class="spin-img">

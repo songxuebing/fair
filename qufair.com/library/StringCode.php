@@ -453,7 +453,7 @@ class StringCode {
     }
 
     //获取首字母
-    public function getfirstchar($s0) {
+    public static function getfirstchar($s0) {
         $firstchar_ord = ord(strtoupper($s0{0}));
         if (($firstchar_ord >= 65 and $firstchar_ord <= 91) or ($firstchar_ord >= 48 and $firstchar_ord <= 57))
             return $s0{0};

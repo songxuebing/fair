@@ -2454,23 +2454,23 @@
                 <ul class="add-pinfo">
                     <li class="clearfix">
                         <label class="fl">企业名称：</label>
-                        <input type="text" class="wd01" placeholder="杭州去展网络科技有限公司" value="">
+                        <input type="text" class="wd01" placeholder="请输入企业名称" value="">
                     </li>
                     <li class="clearfix">
                         <label class="fl">联系人：</label>
-                        <input type="text" class="wd02" placeholder="张山峰" value="">
+                        <input type="text" class="wd02" placeholder="请输入联系人" value="">
                     </li>
                     <li class="clearfix">
                         <label class="fl">联系手机：</label>
-                        <input type="text" class="wd03" placeholder="1366647400560" value="">
+                        <input type="text" class="wd03" placeholder="请输入联系手机" value="">
                     </li>
                     <li class="clearfix">
                         <label class="fl">联系电话：</label>
-                        <input type="text" class="wd04" placeholder="0567-5225006" value="">
+                        <input type="text" class="wd04" placeholder="请输入联系电话" value="">
                     </li>
                     <li class="clearfix">
                         <label class="fl">电子邮箱：</label>
-                        <input type="text" class="wd05" placeholder="454564@qq.com" value="">
+                        <input type="text" class="wd05" placeholder="请输入电子邮箱" value="">
                     </li>
                 </ul>
             </div>
@@ -2668,7 +2668,7 @@
             $("#box01").hide();
             if(p1 = null || p1 == '')
             {
-                alert("不能为空");
+                alert("企业名称不能为空");
                 $("#HOverlay").hide();
                 return false;
             }

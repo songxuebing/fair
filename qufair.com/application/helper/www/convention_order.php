@@ -20,7 +20,7 @@
     if(empty($this->Param['option'])){
         //echo "123";exit();
         
-        $this->LoadHelper('public/usercheck');
+        //$this->LoadHelper('public/usercheck');
         
         $detailid = empty($this->Param['detailid']) ? 0 : $this->Param['detailid'];
         $areaid = empty($this->Param['areaid']) ? 0 :$this->Param['areaid'];

@@ -202,15 +202,17 @@
     <div class="list-project spin">
         <ul class="clearfix">
             <?php
-            if(!empty($this->data['All'])) foreach($this->data['All'] as $k => $v){
-                if(strtotime($v['start_time'])-time() < 0)
+            if(!empty($this->data['All'])) foreach($this->data['All'] as $k1 => $v_l){
+                if(strtotime($v_l['start_time'])-time() < 0)
                 {
-                    unset($this->data['All'][$k]);
+                    unset($this->data['All'][$k1]);
                 }
+                foreach($this->data['All'] as $k => $v){
+                    $v['cover'] = unserialize($v['imgurl'])['0'];
             ?>
             <li>
                 <div class="project01">
-                    <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
+                    <img src="<?php echo Common::AttachUrl($v['cover']);?>" alt="<?php echo $v['name'];?>" style="max-height: 290px; max-height:290px;"/>
                     <ul class="detial-total">
                         <i>展会价格</i>
                         <b><em><?php echo $v['price']?>元</em>起</b>
@@ -233,7 +235,7 @@
                 </div>
             </li>
             <?php
-            }
+            }}
             ?>
 
         </ul>

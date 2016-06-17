@@ -72,8 +72,8 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 
 #nav{ border:1px #ececec solid; height:638px; background-color:#fff; position:relative;}
 .nav-item{ height:38px; line-height:38px;}
-.nav-link{ display:block; height:38px; line-height:38px; padding-left:63px; background:url(../images/4.png) no-repeat 29px center; font-size:14px; color:#222; position:relative;}
-.nav-link:hover,#nav .nav-item-open .nav-link{ background:#f7fafb url(../images/4.png) no-repeat 29px center; color:#222 !important; text-decoration:none;}
+.nav-link{ display:block; height:38px; line-height:38px; padding-left:63px; /*background:url(../images/4.png) no-repeat 29px center;*/ font-size:14px; color:#222; position:relative;}
+.nav-link:hover,#nav .nav-item-open .nav-link{ /*background:#f7fafb url(../images/4.png) no-repeat 29px center;*/ color:#222 !important; text-decoration:none;}
 .ico{ display:none; width:7px; height:15px; background:url(../images/5.png) no-repeat; position:absolute; right:-1px; top:12px;}
 #nav .nav-item-open .nav-link .ico{ display:block;}
 

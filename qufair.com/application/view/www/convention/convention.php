@@ -122,9 +122,10 @@
 
                     <ul class="spin-list-info">
                         <?php
+
                         if(!empty($v['All'])) {
-                            //$i = count($v['All']) - 7;
-                            $v['All'] = array_chunk($v['All'], 7, true);
+                            $i = count($v['All']) - 7;
+                            $v['All'] = array_chunk($v['All'], $i, true);
                         }
                         foreach($v['All']['0'] as $key=> $vall){
                             if(strtotime($vall['start_time'])-time() < 0)

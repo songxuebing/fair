@@ -44,7 +44,7 @@
             $script.='';
             foreach($adv_row as $key => $val){
                 //$script .= "<li style=\"background: url(".$val['file'].")\"><a href=\"".$val['url']."\" title=\"".$val['title']."\" target=\"_blank\"></a></li>'";
-                $script .="<li><div class=\"img\"><a href=\"".$val['url']."\" target=\"_blank\"><img src=\"".$val['file']."\" title=\"".$val['title']."\"  alt=\"\" /></a></div></li>";
+                $script .="<li><div class=\"img\"><a href=\"".$val['url']."\" target=\"_blank\"><img src=\"".$val['file']."\" title=\"".$val['title']."\"  alt=\"".$val['title']."\" width=\"760px\" height=\"320px\" /></a></div></li>";
             }
         }
     }

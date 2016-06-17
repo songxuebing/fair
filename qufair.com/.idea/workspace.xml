@@ -28,31 +28,71 @@
       <file leaf-file-name="convention_index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/helper/www/convention_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.1" vertical-offset="504" max-vertical-offset="5880">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state vertical-scroll-proportion="-19.7" vertical-offset="3882" max-vertical-offset="6048">
+              <caret line="213" column="74" selection-start-line="213" selection-start-column="74" selection-end-line="213" selection-end-column="74" />
               <folding>
-                <marker date="1466070399249" expanded="true" signature="8214:8339" placeholder="SELECT * FRO..." />
+                <marker date="1466153870893" expanded="true" signature="8613:8738" placeholder="SELECT * FRO..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front_base.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/helper/www/front_base.php">
+      <file leaf-file-name="convention_order.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention_order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5677966" vertical-offset="896" max-vertical-offset="1764">
-              <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+            <state vertical-scroll-proportion="-38.533333" vertical-offset="50756" max-vertical-offset="59346">
+              <caret line="2472" column="87" selection-start-line="2472" selection-start-column="87" selection-end-line="2472" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StringCode.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/StringCode.php">
+      <file leaf-file-name="index_index_no2.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index_no2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.666667" vertical-offset="9085" max-vertical-offset="13923">
-              <caret line="455" column="39" selection-start-line="455" selection-start-column="27" selection-end-line="455" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.43665436" vertical-offset="1703" max-vertical-offset="25746">
+              <caret line="98" column="30" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+              <folding>
+                <element signature="e#8822#8843#0#HTML" expanded="true" />
+                <element signature="e#13105#13126#0#HTML" expanded="true" />
+                <element signature="e#20209#20231#0#HTML" expanded="true" />
+                <element signature="e#21992#22038#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.933332" vertical-offset="500" max-vertical-offset="2583">
+              <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.333333" vertical-offset="5921" max-vertical-offset="11445">
+              <caret line="301" column="69" selection-start-line="301" selection-start-column="69" selection-end-line="301" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index_index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/helper/www/index_index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.516667" vertical-offset="695" max-vertical-offset="5187">
+              <caret line="46" column="211" selection-start-line="46" selection-start-column="211" selection-end-line="46" selection-end-column="211" />
+              <folding>
+                <marker date="1466153292498" expanded="true" signature="4427:4527" placeholder="SELECT * FRO..." />
+                <marker date="1466153292498" expanded="true" signature="7320:7568" placeholder="SELECT id,ti..." />
+                <marker date="1466153292498" expanded="true" signature="7717:7961" placeholder="SELECT id,ti..." />
+                <marker date="1466153292498" expanded="true" signature="8403:8589" placeholder="SELECT id,ti..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,30 +129,30 @@
         <option value="$PROJECT_DIR$/application/helper/industry/IndustryHelper.php" />
         <option value="$PROJECT_DIR$/application/module/IndustryModel.php" />
         <option value="$PROJECT_DIR$/config/Controller.php" />
-        <option value="$PROJECT_DIR$/application/helper/www/index_index.php" />
         <option value="$PROJECT_DIR$/application/view/www/convention/convention_index_detail-2016-06-14.php" />
-        <option value="$PROJECT_DIR$/application/view/www/index/index_index_no2.php" />
         <option value="$PROJECT_DIR$/application/module/RegionModel.php" />
         <option value="$PROJECT_DIR$/application/view/www/convention/convention_index_detail.php" />
         <option value="$PROJECT_DIR$/application/view/www/convention/convntio_order.php" />
-        <option value="$PROJECT_DIR$/library/Controller.php" />
         <option value="$PROJECT_DIR$/library/ErrorMsg.php" />
         <option value="$PROJECT_DIR$/application/view/crm/other/industry_index.php" />
         <option value="$PROJECT_DIR$/application/helper/crm/other_industry.php" />
-        <option value="$PROJECT_DIR$/application/helper/www/convention_order.php" />
-        <option value="$PROJECT_DIR$/application/view/www/convention/convention_order.php" />
         <option value="$PROJECT_DIR$/application/helper/crm/convention_index.php" />
         <option value="$PROJECT_DIR$/application/module/ConventionModel.php" />
         <option value="$PROJECT_DIR$/application/helper/convention/ConventionHelper.php" />
-        <option value="$PROJECT_DIR$/application/helper/www/convention_index.php" />
         <option value="$PROJECT_DIR$/application/view/www/convention/conventio_search.php" />
         <option value="$PROJECT_DIR$/application/view/www/convention/convention_index.php" />
-        <option value="$PROJECT_DIR$/application/helper/www/convention_search.php" />
-        <option value="$PROJECT_DIR$/application/view/www/common/header_no2.php" />
-        <option value="$PROJECT_DIR$/application/view/www/convention/convention_search.php" />
-        <option value="$PROJECT_DIR$/application/view/www/convention/convention.php" />
         <option value="$PROJECT_DIR$/library/StringCode.php" />
         <option value="$PROJECT_DIR$/application/helper/www/front_base.php" />
+        <option value="$PROJECT_DIR$/application/view/www/convention/convention_search.php" />
+        <option value="$PROJECT_DIR$/application/helper/www/convention_search.php" />
+        <option value="$PROJECT_DIR$/application/view/www/convention/convention.php" />
+        <option value="$PROJECT_DIR$/application/view/www/common/header_no2.php" />
+        <option value="$PROJECT_DIR$/application/helper/www/convention_order.php" />
+        <option value="$PROJECT_DIR$/application/view/www/convention/convention_order.php" />
+        <option value="$PROJECT_DIR$/application/helper/www/index_index.php" />
+        <option value="$PROJECT_DIR$/application/helper/www/convention_index.php" />
+        <option value="$PROJECT_DIR$/library/Controller.php" />
+        <option value="$PROJECT_DIR$/application/view/www/index/index_index_no2.php" />
       </list>
     </option>
   </component>
@@ -175,11 +215,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -194,46 +230,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qufair.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qufair.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qufair.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qufair.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helper" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,13 +351,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4732143" vertical-offset="3083" max-vertical-offset="49413">
-          <caret line="167" column="23" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/helper/crm/adv_index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6784452" vertical-offset="684" max-vertical-offset="1533">
@@ -509,24 +498,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2058">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/module/RegionModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="630">
           <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/index_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3397" max-vertical-offset="5187">
-          <caret line="174" column="16" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -537,24 +512,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5814" max-vertical-offset="11235">
-          <caret line="305" column="10" selection-start-line="305" selection-start-column="10" selection-end-line="305" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/ErrorMsg.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.1" vertical-offset="0" max-vertical-offset="1743">
           <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index_no2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.1" vertical-offset="567" max-vertical-offset="25914">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -576,13 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.8729792" vertical-offset="756" max-vertical-offset="17178">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1845">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -621,25 +575,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/convention_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-47.6" vertical-offset="0" max-vertical-offset="2541">
-          <caret line="68" column="36" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/helper/crm/other_industry.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8122867" vertical-offset="2268" max-vertical-offset="3339">
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09699769" vertical-offset="0" max-vertical-offset="59346">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,61 +606,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention.php">
+    <entry file="file://$PROJECT_DIR$/library/StringCode.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17437722" vertical-offset="2352" max-vertical-offset="5208">
-          <caret line="119" column="28" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.5575326" vertical-offset="9085" max-vertical-offset="13923">
+          <caret line="455" column="39" selection-start-line="455" selection-start-column="27" selection-end-line="455" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/common/header_no2.php">
+    <entry file="file://$PROJECT_DIR$/application/helper/www/front_base.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96559906" vertical-offset="47129" max-vertical-offset="48069">
-          <caret line="2283" column="16" selection-start-line="2283" selection-start-column="16" selection-end-line="2283" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.4915254" vertical-offset="854" max-vertical-offset="1722">
+          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2058">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention_search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49822065" vertical-offset="3948" max-vertical-offset="8211">
-          <caret line="208" column="17" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="-7.7" vertical-offset="4263" max-vertical-offset="8253">
+          <caret line="214" column="103" selection-start-line="214" selection-start-column="103" selection-end-line="214" selection-end-column="103" />
+          <folding>
+            <element signature="e#9862#9906#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/helper/www/convention_search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4483986" vertical-offset="1008" max-vertical-offset="2520">
-          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        <state vertical-scroll-proportion="-7.7" vertical-offset="882" max-vertical-offset="2520">
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/StringCode.php">
+    <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.666667" vertical-offset="9085" max-vertical-offset="13923">
-          <caret line="455" column="39" selection-start-line="455" selection-start-column="27" selection-end-line="455" selection-end-column="39" />
+        <state vertical-scroll-proportion="-10.816667" vertical-offset="2018" max-vertical-offset="5229">
+          <caret line="127" column="65" selection-start-line="127" selection-start-column="65" selection-end-line="127" selection-end-column="65" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/common/header_no2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="739.65" vertical-offset="46605" max-vertical-offset="47985">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/www/convention_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.9" vertical-offset="819" max-vertical-offset="2541">
+          <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10983">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-38.533333" vertical-offset="50756" max-vertical-offset="59346">
+          <caret line="2472" column="87" selection-start-line="2472" selection-start-column="87" selection-end-line="2472" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/www/index_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.516667" vertical-offset="695" max-vertical-offset="5187">
+          <caret line="46" column="211" selection-start-line="46" selection-start-column="211" selection-end-line="46" selection-end-column="211" />
+          <folding>
+            <marker date="1466153292498" expanded="true" signature="4427:4527" placeholder="SELECT * FRO..." />
+            <marker date="1466153292498" expanded="true" signature="7320:7568" placeholder="SELECT id,ti..." />
+            <marker date="1466153292498" expanded="true" signature="7717:7961" placeholder="SELECT id,ti..." />
+            <marker date="1466153292498" expanded="true" signature="8403:8589" placeholder="SELECT id,ti..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/helper/www/convention_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1" vertical-offset="504" max-vertical-offset="5880">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state vertical-scroll-proportion="-19.7" vertical-offset="3882" max-vertical-offset="6048">
+          <caret line="213" column="74" selection-start-line="213" selection-start-column="74" selection-end-line="213" selection-end-column="74" />
           <folding>
-            <marker date="1466070399249" expanded="true" signature="8214:8339" placeholder="SELECT * FRO..." />
+            <marker date="1466153870893" expanded="true" signature="8613:8738" placeholder="SELECT * FRO..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/front_base.php">
+    <entry file="file://$PROJECT_DIR$/config/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5677966" vertical-offset="896" max-vertical-offset="1764">
-          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+        <state vertical-scroll-proportion="-16.933332" vertical-offset="500" max-vertical-offset="2583">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333" vertical-offset="5921" max-vertical-offset="11445">
+          <caret line="301" column="69" selection-start-line="301" selection-start-column="69" selection-end-line="301" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index_no2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43665436" vertical-offset="1703" max-vertical-offset="25746">
+          <caret line="98" column="30" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+          <folding>
+            <element signature="e#8822#8843#0#HTML" expanded="true" />
+            <element signature="e#13105#13126#0#HTML" expanded="true" />
+            <element signature="e#20209#20231#0#HTML" expanded="true" />
+            <element signature="e#21992#22038#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

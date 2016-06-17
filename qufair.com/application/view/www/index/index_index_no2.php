@@ -39,6 +39,7 @@
     }
     ?>
     <link type="text/css" href="<?php echo STYLE_URL;?>/style/no2/css/style.css" rel="stylesheet" />
+    <link type="text/css" href="<?php echo STYLE_URL;?>/style/no2/css/fltb.css" rel="stylesheet" />
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/main.js"></script>
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/slider.js"></script>
@@ -91,11 +92,11 @@
 
         <li class="search-type fr">
             <div class="con01">
-                <a href="##" target="_blank" class="current">全球展会</a>
-                <a href="##" target="_blank">行程</a>
-                <a href="##" target="_blank">签证</a>
-                <a href="##" target="_blank">特装</a>
-                <a href="##" target="_blank">新闻资讯</a>
+                <a href="/convention" target="_blank" class="current">全球展会</a>
+                <a href="/route" target="_blank">行程</a>
+                <a href="/visa" target="_blank">签证</a>
+                <a href="/decoration" target="_blank">特装</a>
+                <a href="/news" target="_blank">新闻资讯</a>
             </div>
 
             <div class="con02">
@@ -256,7 +257,7 @@
                             foreach($new_nav['0'] as $k=>$v){
                         ?>
                         <div class="nav-item">
-                            <a href="/<?php echo $v['name_en']?>" title="" class="nav-link"><?php echo $v['name'];?><i class="ico"></i></a>
+                            <a href="/convention" title="" class="nav-link <?php echo $v['name_en'];?>"><?php echo $v['name'];?><i class="ico"></i></a>
                             <div class="nav-dropdown" style="display:none;">
                                 <div class="jjjz">
                                     <ul class="clearfix">
@@ -327,7 +328,7 @@
                                 foreach($new_nav['1'] as $k=>$v){
                                 ?>
                                 <div class="nav-item">
-                                    <a href="/<?php echo $v['name_en'];?>" title="" class="nav-link"><?php echo $v['name'];?><i class="ico"></i></a>
+                                    <a href="/convention" title="" class="nav-link <?php echo $v['name_en'];?>"><?php echo $v['name'];?><i class="ico"></i></a>
                                     <div class="nav-dropdown" style="display:none;">
                                         <div class="jjjz">
                                             <ul class="clearfix">
@@ -394,12 +395,7 @@
                 <div id="demo01" class="flexslider">
                     <ul class="slides">
                         <?php echo $this->script;?>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/10.jpg" alt="" /></a></div></li>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/10.jpg" alt="" /></a></div></li>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/10.jpg" alt="" /></a></div></li>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/10.jpg" alt="" /></a></div></li>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/10.jpg" alt="" /></a></div></li>
-                    </ul>
+                        </ul>
                 </div>
                 <!--幻灯片end-->
 
@@ -417,8 +413,8 @@
                                     <h4><a href="convention/<?php echo date('Y/m/d', $val_hot['add_time']).'/'.$val_hot['con_id'];?>.shtml" target="_blank"><?php echo $val_hot['name']?></a></h4>
                                     <p>时间:<?php echo date('Y-m-d',$val_hot['start_time'])?> - <?php echo date('Y-m-d',$val_hot['end_titme'])?></p>
                                     <div class="order clearfix">
-                                        <b>￥:<?php echo $val_hot['area']['group_price']?></b>
-                                        <a href="convention/<?php echo date('Y/m/d', $val_hot['add_time']).'/'.$val_hot['con_id'];?>.shtml" target="_blank">立即订阅</a>
+                                        <b>￥:<?php echo $val_hot['area']['group_price']?><i>起</i></b>
+                                        <a href="convention/<?php echo date('Y/m/d', $val_hot['add_time']).'/'.$val_hot['con_id'];?>.shtml" target="_blank">展会价格</a>
                                     </div>
                                 </li>
                             <?php }?>
@@ -504,7 +500,7 @@
                 <div class="line9"></div>
                 <div class="help">
                     <ul class="img">
-                        <a href="###" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/6.jpg" alt="" /></a>
+                        <a href="/" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/banner/no1.png" alt="去展" /></a>
                     </ul>
                     <ul class="img02">
                         <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/7.jpg" alt="" /></a></li>
@@ -532,47 +528,47 @@
         <ul class="clearfix">
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">五金展览会</a>
-                <a href="##" target="_blank">礼品展览会</a>
-                <a href="##" target="_blank">服装展览会</a>
-                <a href="##" target="_blank">建材展览会</a>
+                <a href="http://www.qufair.com/convention/index/industry/%E4%BA%94%E9%87%91" target="_blank">五金展览会</a>
+                <a href="http://www.qufair.com/convention/index/industry/%E7%A4%BC%E5%93%81" target="_blank">礼品展览会</a>
+                <a href="http://www.qufair.com/convention/index/industry/%E6%9C%8D%E8%A3%85" target="_blank">服装展览会</a>
+                <a href="http://www.qufair.com/convention/index/industry/%E5%BB%BA%E6%9D%90" target="_blank">建材展览会</a>
             </li>
 
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">美国展览会</a>
-                <a href="##" target="_blank">德国展览会</a>
-                <a href="##" target="_blank">日本展览会</a>
-                <a href="##" target="_blank">南非展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E7%BE%8E%E5%9B%BD&city=" target="_blank">美国展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E5%BE%B7%E5%9B%BD&city=" target="_blank">德国展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E6%97%A5%E6%9C%AC&city=" target="_blank">日本展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E5%8D%97%E9%9D%9E&city=" target="_blank">南非展览会</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">上海展览会</a>
-                <a href="##" target="_blank">北京展览会</a>
-                <a href="##" target="_blank">广州展览会</a>
-                <a href="##" target="_blank">深圳展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E4%B8%8A%E6%B5%B7" target="_blank">上海展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E5%8C%97%E4%BA%AC" target="_blank">北京展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E5%B9%BF%E5%B7%9E" target="_blank">广州展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E6%B7%B1%E5%9C%B3" target="_blank">深圳展览会</a>
             </li>
             <li>
-                <span>热门</span>
-                <a href="##" target="_blank">汽配展览会</a>
-                <a href="##" target="_blank">电子展览会</a>
-                <a href="##" target="_blank">玩具展览会</a>
-                <a href="##" target="_blank">汽车展览会</a>
+                <span>展会</span>
+                <a href="http://www.qufair.com/convention/index/industry/%E6%B1%BD%E6%91%A9%E9%85%8D" target="_blank">汽配展览会</a>
+                <a href="http://www.qufair.com/convention/index/industry/%E7%94%B5%E5%AD%90" target="_blank">电子展览会</a>
+                <a href="http://www.qufair.com/convention/index/industry/%E7%8E%A9%E5%85%B7" target="_blank">玩具展览会</a>
+                <a href="http://www.qufair.com/convention/index/industry/%E6%B1%BD%E8%BD%A6" target="_blank">汽车展览会</a>
             </li>
 
             <li>
-                <span>热门</span>
-                <a href="##" target="_blank">英国展览会</a>
-                <a href="##" target="_blank">印度展览会</a>
-                <a href="##" target="_blank">巴西展览会</a>
-                <a href="##" target="_blank">中东展览会</a>
+                <span>展会</span>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E8%8B%B1%E5%9B%BD&city=" target="_blank">英国展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E5%8D%B0%E5%BA%A6&city=" target="_blank">印度展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E5%B7%B4%E8%A5%BF&city=" target="_blank">巴西展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E4%B8%AD%E4%B8%9C&city=" target="_blank">中东展览会</a>
             </li>
             <li>
-                <span>热门</span>
-                <a href="##" target="_blank">香港展览会</a>
-                <a href="##" target="_blank">科隆展览会</a>
-                <a href="##" target="_blank">迪拜展览会</a>
-                <a href="##" target="_blank">土耳其展览会</a>
+                <span>展会</span>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E9%A6%99%E6%B8%AF" target="_blank">香港展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E7%A7%91%E9%9A%86" target="_blank">科隆展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E8%BF%AA%E6%8B%9C&city=" target="_blank">迪拜展览会</a>
+                <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E5%9C%9F%E8%80%B3%E5%85%B6&city=" target="_blank">土耳其展览会</a>
             </li>
         </ul>
     </div>
@@ -608,12 +604,7 @@
                         <?php
                         }
                         ?>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/18.jpg" alt="" /></a></div></li>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/18.jpg" alt="" /></a></div></li>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/18.jpg" alt="" /></a></div></li>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/18.jpg" alt="" /></a></div></li>
-                        <li><div class="img"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/18.jpg" alt="" /></a></div></li>
-                    </ul>
+                      </ul>
                 </div>
                 <!--幻灯片end-->
 
@@ -753,47 +744,47 @@
         <ul class="clearfix">
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">五金展览会</a>
-                <a href="##" target="_blank">礼品展览会</a>
-                <a href="##" target="_blank">服装展览会</a>
-                <a href="##" target="_blank">建材展览会</a>
+                <a href="/knowledge" target="_blank">外贸百科</a>
+                <a href="/textile" target="_blank">纺织面料</a>
+                <a href="/jewelry" target="_blank">饰品珠宝</a>
+                <a href="/food" target="_blank">食品饮料</a>
             </li>
 
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">美国展览会</a>
-                <a href="##" target="_blank">德国展览会</a>
-                <a href="##" target="_blank">日本展览会</a>
-                <a href="##" target="_blank">南非展览会</a>
+                <a href="/gift" target="_blank">礼品玩具</a>
+                <a href="/cloth" target="_blank">成衣配饰</a>
+                <a href="/cosmetology" target="_blank">美容美发</a>
+                <a href="/mechanics" target="_blank">机械工业</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">上海展览会</a>
-                <a href="##" target="_blank">北京展览会</a>
-                <a href="##" target="_blank">广州展览会</a>
-                <a href="##" target="_blank">深圳展览会</a>
+                <a href="/home" target="_blank">家居消费</a>
+                <a href="/hotel" target="_blank">酒店旅游</a>
+                <a href="/safe" target="_blank">安防劳保</a>
+                <a href="/hardware" target="_blank">五金工具</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">汽配展览会</a>
-                <a href="##" target="_blank">电子展览会</a>
-                <a href="##" target="_blank">玩具展览会</a>
-                <a href="##" target="_blank">汽车展览会</a>
+                <a href="/print" target="_blank">印刷包装</a>
+                <a href="/medical" target="_blank">医疗保健</a>
+                <a href="/building" target="_blank">建材暖通</a>
+                <a href="/vessel" target="_blank">海洋船舶</a>
             </li>
 
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">英国展览会</a>
-                <a href="##" target="_blank">印度展览会</a>
-                <a href="##" target="_blank">巴西展览会</a>
-                <a href="##" target="_blank">中东展览会</a>
+                <a href="/chemical" target="_blank">化工环保</a>
+                <a href="/sport" target="_blank">体育户外</a>
+                <a href="/electron" target="_blank">电子通讯</a>
+                <a href="/aerospace" target="_blank">航天航空</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">香港展览会</a>
-                <a href="##" target="_blank">科隆展览会</a>
-                <a href="##" target="_blank">迪拜展览会</a>
-                <a href="##" target="_blank">土耳其展览会</a>
+                <a href="/computer" target="_blank">电脑软件</a>
+                <a href="/accessories" target="_blank">汽摩配件</a>
+                <a href="/power" target="_blank">电力能源</a>
+                <a href="/lighting" target="_blank">灯光照明</a>
             </li>
         </ul>
     </div>
@@ -852,8 +843,8 @@
                                 <!--美洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['1']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta['4']['next'] as $k => $val_de){?>
+                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -873,8 +864,8 @@
                                 <!--亚洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['2']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta['1']['next'] as $k => $val_de){?>
+                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -894,8 +885,8 @@
                                 <!--非洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['3']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta['7']['next'] as $k => $val_de){?>
+                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -914,8 +905,8 @@
                                 <!--大洋洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['4']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta['8']['next'] as $k => $val_de){?>
+                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -952,7 +943,7 @@
                                 <div>
                                     <ul class="clearfix">
                                         <?php foreach($this->delta['0']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                            <li><a href="/visa-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -971,8 +962,8 @@
                                 <!--美洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['1']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta['4']['next'] as $k => $val_de){?>
+                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -991,8 +982,8 @@
                                 <!--亚洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['2']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta['1']['next'] as $k => $val_de){?>
+                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -1011,8 +1002,8 @@
                                 <!--非洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['3']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta['7']['next'] as $k => $val_de){?>
+                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -1031,8 +1022,8 @@
                                 <!--大洋洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['4']['next'] as $k => $val_de){?>
-                                            <li><a href="##" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta['8']['next'] as $k => $val_de){?>
+                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
                                    <?php
@@ -1063,11 +1054,11 @@
                 <div class="travel-img">
                     <ul class="title">
                         <p class="fl">
-                            <a href="##" target="_blank">国际跟团展</a>
+                            <a href="/route" target="_blank">国际跟团展</a>
                             <span>|</span>
-                            <a href="##" target="_blank">法国五金展</a>
+                            <a href="/route" target="_blank">法国五金展</a>
                             <span>|</span>
-                            <a href="##" target="_blank">韩国美发展</a>
+                            <a href="/route" target="_blank">韩国美发展</a>
                         </p>
                         <p class="fr"><a href="/route" target="_blank">更多>></a></p>
                     </ul>
@@ -1076,7 +1067,7 @@
 
                         <li>
                             <div><a href="/route/<?php echo date('Y/m/d',$val_route['dateline']).'/'.$val_route['id'].'.shtml';?>" target="_blank"><img src="<?php echo Common::AttachUrl($val_route['cover']);?>" alt="<?php echo $val_route['name']?>" height="240px;" /></a></div>
-                            <p><a href="/route/<?php echo date('Y/m/d',$val_route['dateline']).'/'.$val_route['id'].'.shtml';?>" target="_blank">搭建价格</a><i><?php echo $val_route['price']?>元</i>起</p>
+                            <p><a href="/route/<?php echo date('Y/m/d',$val_route['dateline']).'/'.$val_route['id'].'.shtml';?>" target="_blank">行程价格</a><i><?php echo $val_route['price']?>元</i>起</p>
                             <h4><a href="/route/<?php echo date('Y/m/d',$val_route['dateline']).'/'.$val_route['id'].'.shtml';?>" target="_blank"><?php echo $val_route['name']?></a></h4>
                         </li>
                         <?php }?>
@@ -1095,47 +1086,47 @@
         <ul class="clearfix">
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">五金展览会</a>
-                <a href="##" target="_blank">礼品展览会</a>
-                <a href="##" target="_blank">服装展览会</a>
-                <a href="##" target="_blank">建材展览会</a>
+                <a href="##" target="_blank">商务旅游</a>
+                <a href="##" target="_blank">商务考察</a>
+                <a href="##" target="_blank">商务旅行</a>
+                <a href="##" target="_blank">商务差旅</a>
             </li>
 
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">美国展览会</a>
-                <a href="##" target="_blank">德国展览会</a>
-                <a href="##" target="_blank">日本展览会</a>
-                <a href="##" target="_blank">南非展览会</a>
+                <a href="##" target="_blank">德国展团</a>
+                <a href="##" target="_blank">美国展团</a>
+                <a href="##" target="_blank">香港展团</a>
+                <a href="##" target="_blank">日本展团</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">上海展览会</a>
-                <a href="##" target="_blank">北京展览会</a>
-                <a href="##" target="_blank">广州展览会</a>
-                <a href="##" target="_blank">深圳展览会</a>
+                <a href="##" target="_blank">美国签证</a>
+                <a href="##" target="_blank">德国签证</a>
+                <a href="##" target="_blank">日本签证</a>
+                <a href="##" target="_blank">韩国签证</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">汽配展览会</a>
-                <a href="##" target="_blank">电子展览会</a>
-                <a href="##" target="_blank">玩具展览会</a>
-                <a href="##" target="_blank">汽车展览会</a>
+                <a href="##" target="_blank">出国考察</a>
+                <a href="##" target="_blank">旅游签证</a>
+                <a href="##" target="_blank">商务签证</a>
+                <a href="##" target="_blank">签证查询</a>
             </li>
 
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">英国展览会</a>
-                <a href="##" target="_blank">印度展览会</a>
-                <a href="##" target="_blank">巴西展览会</a>
-                <a href="##" target="_blank">中东展览会</a>
+                <a href="##" target="_blank">印度展团</a>
+                <a href="##" target="_blank">迪拜展团</a>
+                <a href="##" target="_blank">法国展团</a>
+                <a href="##" target="_blank">英国展团</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">香港展览会</a>
-                <a href="##" target="_blank">科隆展览会</a>
-                <a href="##" target="_blank">迪拜展览会</a>
-                <a href="##" target="_blank">土耳其展览会</a>
+                <a href="##" target="_blank">申请签证</a>
+                <a href="##" target="_blank">英国签证</a>
+                <a href="##" target="_blank">法国签证</a>
+                <a href="##" target="_blank">巴西签证</a>
             </li>
         </ul>
     </div>
@@ -1146,9 +1137,9 @@
     <div class="supper">
         <ul class="title">
             <h2 class="fl">
-                <a href="##" target="_blank" class="current">展装商城</a><span>|</span><a href="##" target="_blank">已有装修图，需找展装公司?</a>
+                <a href="/decoration" target="_blank" class="current">展装商城</a><span>|</span><a href="/decoration" target="_blank">已有装修图，需找展装公司?</a>
             </h2>
-            <p class="fr">热门效果图：<a href="##" target="_blank">电子展</a><span>|</span><a href="##" target="_blank">法国五金展</a><span>|</span><a href="##" target="_blank">韩国美发展</a></p>
+            <p class="fr">热门展装：<a href="/decoration" target="_blank">电子展</a><span>|</span><a href="/decoration" target="_blank">法国五金展</a><span>|</span><a href="/decoration" target="_blank">韩国美发展</a></p>
         </ul>
         <ul class="list clearfix">
             <?php
@@ -1176,45 +1167,46 @@
         <ul class="clearfix">
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="/decoration" target="_blank">展览设计</a>
+                <a href="/decoration" target="_blank">展会设计</a>
+                <a href="/decoration" target="_blank">会展设计</a>
+                <a href="/decoration" target="_blank">展会展示</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="/decoration" target="_blank">上海设计</a>
+                <a href="/decoration" target="_blank">北京设计</a>
+                <a href="/decoration" target="_blank">深圳设计</a>
+                <a href="/decoration" target="_blank">广州设计</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="/decoration" target="_blank">上海搭建</a>
+                <a href="/decoration" target="_blank">北京搭建</a>
+                <a href="/decoration" target="_blank">深圳搭建</a>
+                <a href="/decoration" target="_blank">广州搭建</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="/decoration" target="_blank">展会搭建</a>
+                <a href="/decoration" target="_blank">展览搭建</a>
+                <a href="/decoration" target="_blank">会展搭建</a>
+                <a href="/decoration" target="_blank">展览展示</a>
             </li>
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="/decoration" target="_blank">美国设计</a>
+                <a href="/decoration" target="_blank">德国设计</a>
+                <a href="/decoration" target="_blank">香港设计</a>
+                <a href="/decoration" target="_blank">迪拜设计</a>
             </li>
+
             <li>
                 <span>热门</span>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
-                <a href="##" target="_blank">样品超市</a>
+                <a href="/decoration" target="_blank">美国搭建</a>
+                <a href="/decoration" target="_blank">德国搭建</a>
+                <a href="/decoration" target="_blank">香港搭建</a>
+                <a href="/decoration" target="_blank">迪拜搭建</a>
             </li>
         </ul>
     </div>

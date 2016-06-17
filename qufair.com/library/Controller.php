@@ -299,17 +299,25 @@ class Controller{
                     if(!empty($val_ne['name_en']) && ($url === "/route-".$val_ne['name_en']))
                         $url = "/route/index/country/".$val_ne['name'];
 
+                    if(!empty($val_ne['name_en']) && ($url === "/visa-".$val_ne['name_en']))
+                        $url = "/visa/index/country/".$val_ne['name'];
+
                     if(!empty($val_ne['name_en']) && ($url === "/convention-".$val_ne['name_en']))
-                            $url = "/convention/index/?industry=&delta=%E6%AC%A7%E6%B4%B2&countries=&city=";
+                    {
+                        $url = "/convention/search/?industry=&delta=%E6%AC%A7%E6%B4%B2&countries=%E4%B8%B9%E9%BA%A6&city=";
+                        if(empty($this->Param['countries']))
+                        $this->Param['countries'] = $val_ne['name'];
+                    }
                 }
         }
-        //echo $url;
+        //echo $url.'<br />';//exit();
 
-        //var_dump($this->Param);
 
+        //var_dump($this->Param);exit();
         //exit();
 
         $p=explode("?",$url);
+
 		$Module=explode('/',empty($p[0]) ? '' : $p[0]);
 		$j=1;
 		if(!empty($this->_Directory)&&!empty($Module[$j])&&array_key_exists($Module[$j],$this->_Directory)){
@@ -337,8 +345,10 @@ class Controller{
 				$i++;
 			}
 		}
+
 		$this->Controller=$this->Param['controller'];
 		$this->Action=$this->Param['action'];
+        //var_dump($this->Param);exit();
 	}
 	public function GetParam($key){
 		return $this->$key;

@@ -34,7 +34,7 @@ preObj.removeClass(opts.openedClass).find(opts.dropdownEl).hide();
 })(jQuery);
 //下拉菜单
 (function(jq) {
-jq('#nav .nav-item').dropdown({dropdownEl:'.nav-dropdown',openedClass:'nav-item-open'});
+//jq('#nav .nav-item').dropdown({dropdownEl:'.nav-dropdown',openedClass:'nav-item-open'});
 })(jQuery);
 	
 })

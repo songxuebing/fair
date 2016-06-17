@@ -42,15 +42,11 @@
         <li class="search-type fr">
             <div class="con01">
                 <a href="##" target="_blank" class="current">全球展会</a>
-                <a href="##" target="_blank">行程</a>
-                <a href="##" target="_blank">签证</a>
-                <a href="##" target="_blank">特装</a>
-                <a href="##" target="_blank">新闻资讯</a>
             </div>
 
             <div class="con02">
                 <input type="text" value=""  class="fl" placeholder="输入关键词内容" id="type" onClick="searchs(true)"/>
-                <input type="button" value="搜  索" class="fr" />
+                <input type="submit" value="搜  索" class="fr" />
                 <div id="type-list">
                     <p pl="美国食品科技展IFT">美国食品科技展IFT</p>
                     <p pl="美国夏季特色食品展">美国夏季特色食品展</p>
@@ -2276,7 +2272,7 @@
             <li><a href="##" target="_blank">展会</a></li>
             <li><a href="##" target="_blank">行程</a></li>
             <li><a href="##" target="_blank">签证</a></li>
-            <li><a href="##" target="_blank">物流</a></li>
+<!--            <li><a href="##" target="_blank">物流</a></li>-->
             <li><a href="##" target="_blank">特装</a></li>
             <li><a href="##" target="_blank">社区资讯</a></li>
         </ul>

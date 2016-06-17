@@ -51,7 +51,7 @@ if(empty($pos_row)){
 $this->Assign('script',$script);
 
 if(empty($this->Param['option'])){
-
+    //var_dump($this->Param);exit();
     $one_level = $IndustryHelper->industryAll(array(
         '`parent_id` = ?' => 0
     ),array(0,100));

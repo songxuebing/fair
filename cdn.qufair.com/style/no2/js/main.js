@@ -139,7 +139,7 @@ $(document).ready(function(){
   $(".travel-img .list li:nth-child(5n+1)").css("width","490px");
   $(".travel-img .list li:nth-child(5n+2)").css("margin-right","0");
   $(".travel-img .list li:nth-child(5n+5)").css("margin-right","0");
-  $(".travel-img .list li:nth-child(5n+5) p a").css("background","#4697f6");
+  //$(".travel-img .list li:nth-child(5n+5) p a").css("background","#4697f6");
   $(".supper .list li:last").css("padding-right","0");
   $(".supper .list li:nth-child(2) p a").css("background","#4697f6");
   $(".supper .list li:nth-child(3) p a").css("background","#24cf1c");

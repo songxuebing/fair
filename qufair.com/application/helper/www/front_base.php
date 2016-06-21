@@ -53,7 +53,7 @@ $this->Assign('industry_adv',$industry_adv);
 $this->LoadHelper('region/RegionHelper');
 $RegionHelper = new RegionHelper();
 
-$delta = array("欧洲","亚洲","中东","东欧","北美","南美","中北美","非洲","大洋洲","中国");
+$delta = array("欧洲","亚洲","中东","东欧","美洲","北美","南美","中北美","非洲","大洋洲","中国");
 foreach($delta as $k=>$v){
     $country = $RegionHelper->regionAll(array(
         '`delta` = ?' => $v,

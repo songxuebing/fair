@@ -409,7 +409,7 @@
                         <ul>
                             <?php if(!empty($this->hot_con['All'])) foreach($this->hot_con['All'] as $key=>$val_hot){?>
                                 <li>
-                                    <div class="img"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" height="195" width="195" /></div>
+                                    <div class="img"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" height="235" width="235" /></div>
                                     <h4><a href="convention/<?php echo date('Y/m/d', $val_hot['add_time']).'/'.$val_hot['con_id'];?>.shtml" target="_blank"><?php echo $val_hot['name']?></a></h4>
                                     <p>时间:<?php echo date('Y-m-d',$val_hot['start_time'])?> - <?php echo date('Y-m-d',$val_hot['end_titme'])?></p>
                                     <div class="order clearfix">
@@ -585,7 +585,7 @@
                 <div class="news">
                     <ul class="title">
                         <h2 class="fl">新闻资讯</h2>
-                        <p class="">
+                        <p class="new_title">
                             <?php if(!empty($this->new_tag)) foreach($this->new_tag as $key => $val_new){?>
                             <a href="/<?php echo $val_new['name_en']?>" target="_blank"><?php echo $val_new['ctag_name']?></a>
                             <?php }?>
@@ -822,21 +822,22 @@
                                 <!--欧洲start-->
                                 <div>
                                 <ul class="clearfix">
+                                    <?php //var_dump($this->delta);exit();?>
                                 <?php foreach($this->delta['0']['next'] as $k => $val_de){?>
                                 <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                 <?php }?>
                                 </ul>
-                                    <?php
-                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--广告图                                   --><?php
+//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--欧洲end-->
 
@@ -847,17 +848,17 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--美洲end-->
 
@@ -868,38 +869,38 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--亚洲end-->
 
                                 <!--非洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['7']['next'] as $k => $val_de){?>
+                                        <?php foreach($this->delta['8']['next'] as $k => $val_de){?>
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--非洲end-->
                                 <!--大洋洲start-->
@@ -909,17 +910,17 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--大洋洲end-->
                             </li>
@@ -946,17 +947,17 @@
                                             <li><a href="/visa-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--欧洲end-->
                                 <!--美洲start-->
@@ -966,17 +967,17 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--美洲end-->
                                 <!--亚洲start-->
@@ -986,37 +987,37 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--亚洲end-->
                                 <!--非洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['7']['next'] as $k => $val_de){?>
+                                        <?php foreach($this->delta['8']['next'] as $k => $val_de){?>
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--非洲end-->
                                 <!--大洋洲start-->
@@ -1026,17 +1027,17 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-                                   <?php
-                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-                                        ?>
-                                        <ul>
-                                            <a href="<?php echo $v['url'];?>" target="_blank"  class="img">
-                                                <img src="<?php echo $v['file'];?>" width="310" height="90" />
-                                            </a>
-                                        </ul>
-                                    <?php
-                                    }
-                                    ?>
+<!--                                   --><?php
+//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
+//                                        ?>
+<!--                                        <ul>-->
+<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
+<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    --><?php
+//                                    }
+//                                    ?>
                                 </div>
                                 <!--大洋洲end-->
                             </li>
@@ -1063,6 +1064,12 @@
                         <p class="fr"><a href="/route" target="_blank">更多>></a></p>
                     </ul>
                     <ul class="list clearfix">
+
+                        <li>
+                            <div><a target="_blank" href="##"><img alt="" src="http://cdn.qufair.com/style/no2/images/route/8.jpg"></a></div>
+                            <p><a target="_blank" href="##">搭建价格</a><i>9850.88元</i>起</p>
+                            <h4><a target="_blank" href="##">加拿大温哥华国际建材展6天行程安排</a></h4>
+                        </li>
                         <?php if(!empty($this->hot_route)) foreach($this->hot_route as $kk => $val_route){?>
 
                         <li>
@@ -1134,82 +1141,82 @@
 
     <div class="line10"></div>
     <!--展装商城start-->
-    <div class="supper">
-        <ul class="title">
-            <h2 class="fl">
-                <a href="/decoration" target="_blank" class="current">展装商城</a><span>|</span><a href="/decoration" target="_blank">已有装修图，需找展装公司?</a>
-            </h2>
-            <p class="fr">热门展装：<a href="/decoration" target="_blank">电子展</a><span>|</span><a href="/decoration" target="_blank">法国五金展</a><span>|</span><a href="/decoration" target="_blank">韩国美发展</a></p>
-        </ul>
-        <ul class="list clearfix">
-            <?php
-            if(!empty($this->recommend)) foreach($this->recommend as $k=>$v){
-            ?>
-            <li>
-                <div><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank">
-                    <img src="<?php echo Common::AttachUrl($v['cover']);?>" alt="" height="280px" width="280px;"/>
-                    </a>
-                </div>
-                <div class="info">
-                    <p><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank">搭建价格</a><i><?php echo $v['de_price']?>元</i>起</p>
-                    <h4><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank"><?php echo $v['title']?></a></h4>
-                </div>
-            </li>
-            <?php }?>
-        </ul>
-    </div>
+<!--    <div class="supper">-->
+<!--        <ul class="title">-->
+<!--            <h2 class="fl">-->
+<!--                <a href="/decoration" target="_blank" class="current">展装商城</a><span>|</span><a href="/decoration" target="_blank">已有装修图，需找展装公司?</a>-->
+<!--            </h2>-->
+<!--            <p class="fr">热门展装：<a href="/decoration" target="_blank">电子展</a><span>|</span><a href="/decoration" target="_blank">法国五金展</a><span>|</span><a href="/decoration" target="_blank">韩国美发展</a></p>-->
+<!--        </ul>-->
+<!--        <ul class="list clearfix">-->
+<!--            --><?php
+//            if(!empty($this->recommend)) foreach($this->recommend as $k=>$v){
+//            ?>
+<!--            <li>-->
+<!--                <div><a href="/decoration/--><?php //echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?><!--" target="_blank">-->
+<!--                    <img src="--><?php //echo Common::AttachUrl($v['cover']);?><!--" alt="" height="280px" width="280px;"/>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="info">-->
+<!--                    <p><a href="/decoration/--><?php //echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?><!--" target="_blank">搭建价格</a><i>--><?php //echo $v['de_price']?><!--元</i>起</p>-->
+<!--                    <h4><a href="/decoration/--><?php //echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?><!--" target="_blank">--><?php //echo $v['title']?><!--</a></h4>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--            --><?php //}?>
+<!--        </ul>-->
+<!--    </div>-->
     <!--展装商城end-->
 
     <div class="line10"></div>
 
     <!--热门start-->
-    <div class="hot">
-        <ul class="clearfix">
-            <li>
-                <span>热门</span>
-                <a href="/decoration" target="_blank">展览设计</a>
-                <a href="/decoration" target="_blank">展会设计</a>
-                <a href="/decoration" target="_blank">会展设计</a>
-                <a href="/decoration" target="_blank">展会展示</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="/decoration" target="_blank">上海设计</a>
-                <a href="/decoration" target="_blank">北京设计</a>
-                <a href="/decoration" target="_blank">深圳设计</a>
-                <a href="/decoration" target="_blank">广州设计</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="/decoration" target="_blank">上海搭建</a>
-                <a href="/decoration" target="_blank">北京搭建</a>
-                <a href="/decoration" target="_blank">深圳搭建</a>
-                <a href="/decoration" target="_blank">广州搭建</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="/decoration" target="_blank">展会搭建</a>
-                <a href="/decoration" target="_blank">展览搭建</a>
-                <a href="/decoration" target="_blank">会展搭建</a>
-                <a href="/decoration" target="_blank">展览展示</a>
-            </li>
-            <li>
-                <span>热门</span>
-                <a href="/decoration" target="_blank">美国设计</a>
-                <a href="/decoration" target="_blank">德国设计</a>
-                <a href="/decoration" target="_blank">香港设计</a>
-                <a href="/decoration" target="_blank">迪拜设计</a>
-            </li>
-
-            <li>
-                <span>热门</span>
-                <a href="/decoration" target="_blank">美国搭建</a>
-                <a href="/decoration" target="_blank">德国搭建</a>
-                <a href="/decoration" target="_blank">香港搭建</a>
-                <a href="/decoration" target="_blank">迪拜搭建</a>
-            </li>
-        </ul>
-    </div>
+<!--    <div class="hot">-->
+<!--        <ul class="clearfix">-->
+<!--            <li>-->
+<!--                <span>热门</span>-->
+<!--                <a href="/decoration" target="_blank">展览设计</a>-->
+<!--                <a href="/decoration" target="_blank">展会设计</a>-->
+<!--                <a href="/decoration" target="_blank">会展设计</a>-->
+<!--                <a href="/decoration" target="_blank">展会展示</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span>热门</span>-->
+<!--                <a href="/decoration" target="_blank">上海设计</a>-->
+<!--                <a href="/decoration" target="_blank">北京设计</a>-->
+<!--                <a href="/decoration" target="_blank">深圳设计</a>-->
+<!--                <a href="/decoration" target="_blank">广州设计</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span>热门</span>-->
+<!--                <a href="/decoration" target="_blank">上海搭建</a>-->
+<!--                <a href="/decoration" target="_blank">北京搭建</a>-->
+<!--                <a href="/decoration" target="_blank">深圳搭建</a>-->
+<!--                <a href="/decoration" target="_blank">广州搭建</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span>热门</span>-->
+<!--                <a href="/decoration" target="_blank">展会搭建</a>-->
+<!--                <a href="/decoration" target="_blank">展览搭建</a>-->
+<!--                <a href="/decoration" target="_blank">会展搭建</a>-->
+<!--                <a href="/decoration" target="_blank">展览展示</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span>热门</span>-->
+<!--                <a href="/decoration" target="_blank">美国设计</a>-->
+<!--                <a href="/decoration" target="_blank">德国设计</a>-->
+<!--                <a href="/decoration" target="_blank">香港设计</a>-->
+<!--                <a href="/decoration" target="_blank">迪拜设计</a>-->
+<!--            </li>-->
+<!---->
+<!--            <li>-->
+<!--                <span>热门</span>-->
+<!--                <a href="/decoration" target="_blank">美国搭建</a>-->
+<!--                <a href="/decoration" target="_blank">德国搭建</a>-->
+<!--                <a href="/decoration" target="_blank">香港搭建</a>-->
+<!--                <a href="/decoration" target="_blank">迪拜搭建</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
     <!--热门end-->
 
 

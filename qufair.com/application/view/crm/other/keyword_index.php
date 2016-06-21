@@ -5,6 +5,8 @@
 	<div class="clear_15px"></div>
 	<div class="table_div_05"><span class="float_left"><a href="#">其他关联</a>&nbsp;&gt;&nbsp;<a href="#">关键词设置</a></span><span class="float_right">
 	  <input type="button" class="btn_05 AjaxWindow"  value="新增关键词" href="/other/keyword/option/edit/" href-id="0" data-title="新增关键词" />
+      <a class="btn_05" data-title="添加行业" href-id="0" href="/other/keyword/option/hot_index/">首页热门</a>
+      <a class="btn_05" data-title="添加行业" href-id="0" href="/other/keyword/option/route_index/">首页行程大图指定</a>
 	  </span>
 	</div>
 	<div class="clear_15px"></div>

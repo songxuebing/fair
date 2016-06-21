@@ -35,7 +35,7 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 .header li.fl a{ display:inline-block; padding-left:30px; background:url(../images/1.png) no-repeat left center;}
 
 /*搜索*/
-.header-search{ width:100%; height:200px;  min-width:1200px;}
+/*.header-search{ width:100%; height:200px;  min-width:1200px;}
 .header-search .wrap{ overflow:inherit;}
 .logo{ padding-top:33px;}
 
@@ -52,6 +52,25 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 .con02 div p{ line-height:40px; height:40px; font-size:15px; color:#666; font-family:"宋体"; padding:0 30px;}
 
 .con03{ height:60px; overflow:hidden; line-height:60px; font-size:13px; color:#747474;}
+.con03 a{ color:#747474; margin-right:11px;}*/
+/*搜索*/
+.header-search{ width:100%; height:200px;  min-width:1200px;}
+.header-search .wrap{ overflow:inherit;}
+.logo{ padding-top:33px;}
+
+.search-type{ width:622px; padding-top:44px; font-family:"宋体";}
+.con01{ height:36px; overflow:hidden;}
+.con01 a{ display:inline-block; float:left; padding:0 10px; height:36px; line-height:36px; border-top-left-radius:5px; -webkit-border-top-left-radius:5px; -moz-border-top-left-radius:5px; border-top-right-radius:5px; -webkit-border-top-right-radius:5px; -moz-border-top-right-radius:5px; font-size:15px; color:#333; margin-right:15px;}
+.con01 a:hover,.con01 a.current{ color:#fff !important; background-color:#fc6908; text-decoration:none;}
+
+.con02{ height:50px; position:relative;}
+.con02 input[type="text"]{ width:415px; height:46px; line-height:46px; display:block; padding-left:50px; border:2px #fe6703 solid; background:url(../images/1.jpg) no-repeat 15px center; font-size:15px; color:#b8b8b8; font-family:"宋体";}
+.con02 input[type="submit"]{ display:block; border:0; width:130px; height:50px; background-color:#fe6703; font-family:"宋体"; font-size:16px; color:#fff; cursor:pointer;}
+
+.con02 div{ position:absolute; left:0; top:50px; z-index:9999; border:1px #f8f8f8 solid; background-color:#fff; width:467px; visibility:hidden;}
+.con02 div p{ line-height:40px; height:40px; font-size:15px; color:#666; font-family:"宋体"; padding:0 30px;}
+
+.con03{ height:37px; overflow:hidden; line-height:37px; font-size:13px; color:#747474;}
 .con03 a{ color:#747474; margin-right:11px;}
 
 
@@ -182,7 +201,7 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 .honor li p{ text-align:center; font-size:12px; color:#3d3d3d; line-height:23px; height:46px; overflow:hidden; padding:6px 13px 0;}
 .honor li:last-child{ margin-right:0;}
 .honor li a:hover p{ color:#cb1b1b;}
-
+.new_title {float: right;}
 
 .news-list-center{ width:275px; margin-left:32px; *margin-left:32px; overflow:hidden;}
 .new-news{ margin-bottom:15px;}

@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+.stroke-type ul{ height:48px; border:1px #ececec solid;}
+.stroke-type ul a{ display:block; float:left; width:238px; height:48px; line-height:48px; border-right:1px #ececec solid; text-align:center; font-size:18px; color:#6a6362;}
+.stroke-type ul a:hover,.stroke-type ul a.current{ color:#fd4d0a !important; border-bottom:2px #fd4d0a solid; height:46px !important;}
+
+.stroke{ border:1px #ececec solid; overflow:hidden; background-color:#fff;}
+.stroke .titles{ height:58px; border-bottom:1px #ececec solid; overflow:hidden; line-height:58px; padding:0 17px;}
+.stroke .titles h2{ font-weight:normal; font-size:18px; color:#333; padding-left:13px; background:url(../images/45.jpg) no-repeat left center;}
+.stroke .titles h2 i{ color:#dc2926; letter-spacing:1.5px;}
+
+.stroke-list{ padding:0 30px 30px;}
+.stroke-list li{ float:left; width:260px; height:70px; overflow:hidden; margin-top:30px; margin-left:30px;}
+.stroke-list li img{ display:block; border:1px #ececec solid;}
+.stroke-list li div.fr{ width:140px;}
+.stroke-list li div.fr b{ display:block; width:100%; font-size:18px; color:#333; line-height:25px; height:25px; overflow:hidden; font-weight:400;}
+.stroke-list li div.fr p{ font-size:14px; color:#333; line-height:23px;}
+.stroke-list li div.fr p i{ color:#ff4b05;}
+
+#stroke-type.on{ position:fixed; left:50%; top:0; margin-left:-600px; background-color:#fff; z-index:999;}

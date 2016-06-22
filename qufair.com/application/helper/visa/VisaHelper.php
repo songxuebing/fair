@@ -197,4 +197,15 @@ class VisaHelper extends Helper {
     public function VisanewSave($data) {
         return $this->VisaModel->VisanewSave($data);
     }
+
+    public function GetAllnewVisa($id='all'){
+        $where=array();
+        if($id=='all'){
+            $where['`visa_id` > ?'] = 0;
+        }
+        return $this->VisaModel->GetnewAll($where,NULL,NULL,array('visa_id desc'));
+    }
+    public function getnewRow($where) {
+        return $this->VisaModel->GetnewRow($where);
+    }
 }

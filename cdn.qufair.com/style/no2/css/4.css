@@ -1,0 +1,78 @@
+/*展会订单*/
+.step{ border:1px #eaeaea solid; overflow:hidden; padding:0 12px; margin-bottom:1px;}
+.step ul{ height:118px; background:url(../images/49.jpg) no-repeat 0 39px; overflow:hidden;}
+.step ul li{ float:left; height:99px; padding-top:19px; position:relative; width:74px; padding-left:238px;}
+.step ul li em{ display:none; position:absolute; left:-13px; width:262px; top:39px; height:10px; background-color:#acd856; overflow:hidden;}
+.step ul li div{ width:74px;text-align:center; }
+.step ul li div i{ display:block; margin:0 auto; width:52px; height:52px; background:url(../images/23.png) no-repeat; line-height:52px; font-size:30px; color:#add852;}
+.step ul li div p{ font-size:16px; color:#86b228; line-height:48px;}
+.step ul li.current em{ display:block;}
+.step ul li.current i{ background-image:url(../images/24.png); color:#fff;}
+
+.case-list{ border:1px #ebebeb solid;}
+.case-list ul{ padding:0 23px;}
+.case-list ul.title-case{ height:36px; padding:12px 23px; background-color:#eee;}
+.case-list ul.title-case li.fl{ padding-right:19px;}
+.case-list ul.title-case li.fl div{ border:1px #cfcfcf solid; background-color:#fff;}
+.case-list ul.title-case li.fl div input,.case-list ul.title-case li.fl div select{ border:0; display:block; font-size:15px; color:#7f7f7f;}
+.select01 div{ padding-top:7px; padding-right:10px; height:27px; overflow:hidden;}
+/*.select01 div:before{ content:""; font-size:15px; position:absolute; background:url(../images/51.jpg) no-repeat center center; width:20px; height:34px; top:0; right:0; background-color:#fff;}*/
+.case-list ul.title-case li.fl div select{ -webkit-appearance:none; -moz-appearance:none; appearance:none; background:url(../images/51.jpg) no-repeat no-repeat right center transparent; font-family:"微软雅黑";}
+select::-ms-expand{ display:none; }
+.select01 select{ width:128px; text-align:center;}
+.select02 select{ width:98px; text-align:center;}
+.case-list ul.title-case li.fl div input[type="text"]{ width:167px; height:34px; line-height:34px; text-align:center;}
+.case-list ul.title-case li.fl input[type="button"]{ border:0; width:90px; height:36px; color:#fff; background-color:#e97103; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; cursor:pointer;}
+.case-list ul.title-case li.fl input[type="button"]:hover{ background-color:#ec6104;}
+.case-list ul.title-case li.fr{ padding-top:8px;}
+.case-list-title{ height:44px; background-color:#fcfcfc; overflow:hidden; font-size:15px; color:#555; line-height:44px;}
+.case-list-title p{ float:left; overflow:hidden; text-align:center; width:135px;}
+.case-list-info{ padding:0 !important;}
+.case-list-info li{ height:38px; border-top:1px #ebebeb solid; overflow:hidden; padding:0 23px;}
+.case-list-info li p{ float:left; width:135px; text-align:center; font-size:12px; color:#888; line-height:38px; overflow:hidden;}
+.case-list-info li span{ display:block; line-height:38px; width:95px; text-align:center}
+.case-list-info li span a{ color:#3a6ac6;}
+
+.add-company-info{ border:1px #eaeaea solid; overflow:hidden;}
+.add-info{ position:relative; padding:20px 0;}
+.add-info h3{ font-size:18px; color:#686868; font-weight:normal; line-height:40px; padding-left:17px; background:url(../images/45.jpg) no-repeat 3px  center;}
+.add-info b{ display:block; font-size:16px; color:#888; font-weight:normal; line-height:35px; padding-left:17px; padding-bottom:10px;}
+.add-info b img{ display:inline-block; margin-left:10px;}
+.add-info b a{ display:inline-block; font-size:14px; color:#8bb72d; margin-left:30px;}
+.add-info p{ font-size:16px; color:#888; line-height:30px; padding-left:17px;}
+.add-info p em{ padding-left:1em;}
+#add{ display:inline-block; position:absolute; right:30px; top:20px; font-size:16px; color:#ff9012;}
+
+.notice{ padding:17px; overflow:hidden; border-top:1px #eaeaea  solid;}
+.notice textarea{ border:0; width:100%; line-height:30px; font-size:16px; color:#888;}
+.submit input{ display:block; width:150px; height:50px; margin:0 auto; border:0; background-color:#fc6908; color:#fff; font-size:18px; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; cursor:pointer;}
+.submit input:hover{ background-color:#ec6104;}
+
+/*提交成功*/
+.success{ text-align:center; padding:70px 0 60px;}
+.success b{ width:100%; display:block; font-size:23px; font-weight:normal; color:#877c7c; line-height:45px;}
+.success p{ font-size:20px; color:#877c7c; line-height:35px;}
+.success ul{ padding-top:40px;}
+.success ul input{ display:block; border:0; width:150px; height:50px; margin:0 auto; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px;  background-color:#fc6908; color:#fff; font-size:18px;cursor:pointer;}
+.success ul input:hover{ background-color:#ec6104;}
+
+.boxbg01{ width:650px; height:560px; padding:10px; background:url(../images/26.png);}
+.add-con{ width:650px;}
+.add-con ul.titles{ padding:0 20px; height:95px; border-bottom:1px #dae0ca solid;}
+.add-con ul.titles li{ padding-top:15px;}
+.add-con ul.titles b{display:block; margin-left:20px; padding-left:20px; font-size:23px; color:#877c7c; font-weight:normal; height:55px; overflow:hidden; line-height:65px; background:url(../images/34.jpg) no-repeat 0 19px;}
+
+.add-pinfo{ padding-top:43px;}
+.add-pinfo li{ padding-top:9px;}
+.add-pinfo li label{ display:block; float:left; width:155px; height:40px; text-align:right; line-height:40px; font-size:16px; color:#7f7f7f;}
+.add-pinfo li input[type="text"]{ height:38px; float:left; border:1px #e2e2e2 solid; line-height:38px; font-size:16px; color:#7f7f7f; padding-left:20px;}
+.wd01{ width:397px;}
+.wd02{ width:129px;}
+.add-pinfo li input[type="button"]{ display:block; border:0; width:150px; height:50px; font-size:18px; color:#fff; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px;  background-color:#fc6908; margin:0 auto; margin-top:49px; cursor:pointer;}
+.add-pinfo li input[type="button"]:hover{ background-color:#ec6104;}
+
+.wd03{ width:95px !important; text-align:left !important; padding-left:13px;}
+.wd04{ width:265px !important; text-align:left !important; padding-left:13px;}
+.wd05{ text-align:left !important; width:200px !important; padding-left:20px;}
+
+.total-money p{ font-size:18px; color:#ff4b05; text-align:right; line-height:40px; padding-top:10px;}

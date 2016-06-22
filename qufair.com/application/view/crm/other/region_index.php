@@ -19,7 +19,10 @@
 		?>
 	</select>
 	&nbsp;&nbsp;
-	<a href="/other/region/option/edit/" class="AjaxWindow btn_05" href-id="0" data-title="添加区域">添加区域</a> 
+	<a href="/other/region/option/edit/" class="AjaxWindow btn_05" href-id="0" data-title="添加区域">添加展会区域</a>
+    <a href="/other/region/option/route/" class="btn_05" href-id="0" data-title="添加区域">行程区域管理</a>
+    <a href="/other/region/option/visa/" class="btn_05" href-id="0" data-title="添加区域">签证区域管理</a>
+
 	</span></div>
 	<div class="clear_15px"></div>
 	<div class="table_div_01">

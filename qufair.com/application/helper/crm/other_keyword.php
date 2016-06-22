@@ -118,7 +118,7 @@ if (empty($this->Param['option'])) {
             $data['url'] = empty($this->Param['url']) ? ErrorMsg::Debug('请输入链接url') : $this->Param['url'];
 
             if($id > 0){
-                echo "1";exit();
+                //echo "1";exit();
                 $KeywordHelper->route_Save($data,$id);
             }else{
                 echo "0";exit();

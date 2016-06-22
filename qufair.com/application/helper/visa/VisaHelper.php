@@ -172,5 +172,29 @@ class VisaHelper extends Helper {
         return $this->VisaModel->visaMemberRow($where);
     }
 
+    //签证新的2016-06-22
 
+    public function GetAllnewWhere($where, $limit, $page, $Param, $order=array('visa_cover desc','visa_id desc')) {
+        $data['One'] = $this->VisaModel->GetnewOne($where);
+
+        if (!empty($data['One'])) {
+            $data['All'] = $this->VisaModel->GetnewAll($where, array($page, $limit), NULL, $order);
+            Pagination::SetUrl($Param);
+            $data['Page'] = Pagination::GetHtml($limit, $page, $data['One']);
+        }
+        return $data;
+    }
+    public function GetnewId($Id = '0') {
+        $where = array();
+        $where['`visa_id` = ?'] = $Id;
+        $VisaRow = $this->VisaModel->GetnewRow($where);
+
+        return $VisaRow;
+    }
+    public function newUpdate($data, $where) {
+        return $this->VisaModel->newupdate($data, $where);
+    }
+    public function VisanewSave($data) {
+        return $this->VisaModel->VisanewSave($data);
+    }
 }

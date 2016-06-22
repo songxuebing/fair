@@ -167,6 +167,93 @@ if (empty($this->Param['option'])) {
                 ErrorMsg::Debug('操作失败');
             }
             break;
+        case 'new_visa':
+            //echo "12";exit();
+            $limit = 10;
+
+            $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
+            $list = empty($this->Param['list']) ? 'all' : $this->Param['list'];
+            $where = array();
+            $where = array('`is_delete` = ?' => 0);
+            switch($list){
+                case 'all':
+                    break;
+                case 'onsale':
+                    $where['`is_online` = ?'] = 0;
+                    break;
+                case 'nosale':
+                    $where['`is_online` = ?'] = 1;
+                    break;
+            }
+
+            if (!empty($this->Param['key'])) {
+                $where['locate(?,`visa_title`)>0'] = $this->Param['key'];
+            }
+
+            if(!empty($this->Param['st'])){
+                $where['`visa_time` >= ?'] = strtotime($this->Param['st']);
+            }
+
+            if(!empty($this->Param['et'])){
+                $where['`visa_time` < ?'] = strtotime($this->Param['et']);
+            }
+
+            $data = $VisaHelper->GetAllnewWhere($where, $limit, $page, $this->Param);
+            //var_dump($data);exit();
+
+            $this->Assign('data', $data);
+            $this->Assign('param', $this->Param);
+            echo $this->GetView('visa_new_index.php');
+            break;
+        case 'new_edit':
+            $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
+            $data = $VisaHelper->GetnewId($id);
+            //var_dump($data);exit();
+
+
+            $this->Assign('id', $id);
+            $this->Assign('data', $data);
+            echo $this->GetView('visa_new_edit.php');
+            break;
+
+        case 'new_submit':
+            $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
+            //var_dump($this->Param);exit();
+            $data['visa_title'] = $this->Param['title'];
+            $data['visa_state'] = $this->Param['visa_state'];
+            $data['visa_countries'] = $this->Param['visa_countries'];
+            $data['visa_price'] = $this->Param['visa_price'];
+            $data['visa_lasts'] = $this->Param['visa_lasts'];
+            $data['visa_book'] = $this->Param['visa_book'];
+            $data['visa_stay'] = $this->Param['visa_stay'];
+            $data['visa_place'] = $this->Param['visa_place'];
+            $data['visa_handle'] = $this->Param['visa_handle'];
+            $data['visa_type'] = $this->Param['visa_type'];
+            $data['visa_introduce'] = $this->Param['visa_introduce'];
+            $data['price_introduce'] = $this->Param['price_introduce'];
+            $data['visa_explain'] = $this->Param['visa_explain'];
+            $data['visa_notice'] = $this->Param['visa_notice'];
+            $data['visa_cover'] = $this->Param['file'];
+            //var_dump($data);exit();
+
+            if ($id > 0) {
+                $VisaHelper->newUpdate($data, array('`visa_id` = ?' => $id));
+                //Cache::deldir();
+                ErrorMsg::Debug('保存成功', TRUE);
+            }
+            else{
+                $VisaHelper->VisanewSave($data);
+                //Cache::deldir();
+                ErrorMsg::Debug('保存成功', TRUE);
+            }
+
+            ErrorMsg::Debug('保存失败');
+            break;
+        case 'uploadimg':
+            $this->LoadHelper('upload/EditorUploadHelper');
+            $EditorUploadHelper = new EditorUploadHelper($this->UserConfig['Id']);
+            $EditorUploadHelper->ImageUpload($this->Param['filebox'],'forum');
+            break;
         default :
     }
 }

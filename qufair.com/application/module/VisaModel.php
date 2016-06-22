@@ -10,6 +10,9 @@ class VisaModel extends Module {
         $this->_typeField = array('visa_id','parent_id','visa_name','is_open','datetime','is_delete','sort_order');
         $this->_orderField = array('id','order_sn','visa_id','member_id','saler_id','visa_cover','visa_name','pro_type','visa_type','visa_price','money','num','visa_area','receiving','address_id','remarks','datetime','is_delete');
         $this->_memberField = array('id','order_id','username','tel','cert_type','cert_msg','datetime','is_delete');
+
+        $this->_field_new = array('visa_id', 'visa_cover', 'visa_title', 'visa_state', 'visa_countries', 'visa_price', 'visa_lasts', 'visa_book', 'visa_stay', 'visa_place', 'visa_handle','visa_type','visa_introduce','price_introduce','visa_explain','visa_notice','update_time','is_delete','is_online','is_index');
+
     }
 
     public function GetOne($where, $output = false) {
@@ -131,9 +134,25 @@ class VisaModel extends Module {
 
 
 
+    //签证新的2016-06-22
+    public function GetnewOne($where, $output = false) {
+        return $this->Db->FetchOne($this->_table.'_new', $where, 'COUNT(1)', $output);
+    }
+
+    public function GetnewRow($where, $group = null, $order = null, $output = false) {
+        return $this->Db->FetchRow($this->_table.'_new', $this->_field_new, $where, $group, $order, $output);
+    }
 
 
+    public function GetnewAll($where, $limit = null, $group = null, $order = null, $output = false) {
+        return $this->Db->FetchAll($this->_table.'_new', $this->_field_new, $where, $limit, $group, $order, $output);
+    }
+    public function newUpdate($data, $where, $output = false) {
+        return $this->Db->update($this->_table.'_new', $data, $where, $output);
+    }
 
-
+    public function VisanewSave($data,$returnid=TRUE,$output=false){
+        return $this->Db->insert($this->_table.'_new',$data,$returnid,$output);
+    }
 
 }

@@ -137,7 +137,7 @@ class KeywordHelper extends Helper {
                 $where = array(
                     '`id` = ?' => $where
                 );
-                return $this->KeywordModel->route_Save($data,$where);
+                return $this->KeywordModel->route_Update($data,$where);
             }
         }
     }

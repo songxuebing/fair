@@ -4,7 +4,10 @@
 <script src="<?php echo STYLE_URL;?>/style/js/My97DatePicker/WdatePicker.js"></script>
 <body class="font_14px">
 	<div class="clear_15px"></div>
-	<div class="table_div_05"><span class="float_left"><a href="#">签证管理</a>&nbsp;&gt;&nbsp;<a href="#">签证列表</a></span><span class="float_right"></span></div>
+	<div class="table_div_05"><span class="float_left"><a href="#">签证管理</a>&nbsp;&gt;&nbsp;<a href="#">签证列表</a></span><span class="float_right"></span>
+        <span class="float_right"><a data-title="添加文章" href-id="0" class="btn_05" href="/visa/index/option/new_visa/">新的签证签证</a></span>
+
+    </div>
 	<div class="clear_15px"></div>
 	<div class="table_div_04" style="padding-left:5px;">
     <form action="/visa/index/" method="post" name="search" autocomplete="off">

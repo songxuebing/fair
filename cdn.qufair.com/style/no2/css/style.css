@@ -133,7 +133,7 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 .flex-control-paging li a.flex-active{ background-color:#fff;}
 
 .scroll{ height:311px; position:relative; background-color:#fff;}
-.scroll img.prev,.scroll img.next{ display:block; position:absolute; top:50%; margin-top:-30px; cursor:pointer; z-index:999;}
+.scroll img.prev,.scroll img.next{ display:block; position:absolute; top:34%; margin-top:-30px; cursor:pointer; z-index:999;}
 .scroll img.prev{ left:0;}
 .scroll img.next{ right:0;}
 
@@ -153,7 +153,7 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 /*登录*/
 .login{ height:157px; border:1px #e5e5e5 solid; overflow:hidden; background-color:#fff;}
 .img01{ padding:16px 6px 0; height:93px; overflow:hidden;}
-.img01 li.fr{ width:111px; overflow:hidden; padding-top:10px;}
+.img01 li.fr{ width:112px; overflow:hidden; padding-top:10px;}
 .img01 li.fr p{ font-size:16px; color:#4d4d4d; line-height:27px;}
 
 .login-resiger{ height:48px; border-top:1px #e5e5e5 solid; overflow:hidden;}
@@ -162,7 +162,7 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 
 .news-new{ margin-top:5px; height:154px; border:1px #e5e5e5 solid; overflow:hidden; padding:0 12px; background-color:#fff;}
 .news-new h2{ display:block; font-size:15px; color:#565656; font-weight:normal; line-height:30px; padding-top:8px;}
-.news-new li{ height:27px; line-height:27px; font-size:14px; overflow:hidden;}
+.news-new li{ height:25px; line-height:27px; font-size:14px; overflow:hidden;}
 .news-new li a{ color:#565656;}
 
 .help{ border:1px #e5e5e5 solid; height:309px; background-color:#fff; overflow:hidden;}
@@ -228,7 +228,7 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 
 .travel-img .title{ height:58px; line-height:58px; font-size:16px;}
 .travel-img .title p.fr a,.tab i a{ font-size:16px; color:#a1a1a1; font-family:"宋体";}
-.travel-img .title span{ color:#dadada; padding:0 2px;}
+.travel-img .title span{ color:#dadada; padding:0 5px;}
 .travel-img .list li{ float:left; overflow:hidden; width:240px; margin-right:12px; *margin-right:12px; padding-bottom:8px;}
 .travel-img .list li h4,.supper .list li h4{ white-space:pre-wrap; height:24px; line-height:24px; overflow:hidden; font-size:16px; color:#000; font-weight:normal; margin:8px 0;}
 .travel-img .list li p,.supper .list li p{ height:34px; line-height:34px; overflow:hidden; padding-top:22px; font-size:20px; color:#000;}

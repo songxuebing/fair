@@ -437,7 +437,7 @@
                         <li class="fl"><img src="<?php echo STYLE_URL;?>/style/no2/images/5.jpg" alt="" /></li>
                         <li class="fr">
                             <p>Hi，下午好，</p>
-                            <p>欢迎来到去展</p>
+                            <p>欢迎来到去展网</p>
                         </li>
                     </ul>
                     <ul class="login-resiger">
@@ -468,7 +468,7 @@
 
                 <!--最新资讯start-->
                 <div class="news-new">
-                    <h2>最新展会</h2>
+<!--                    <h2>最新展会</h2>-->
                     <ul>
                         <ul class="list">
                             <?php if(!empty($this->new_con)) foreach($this->new_con as $key=>$v_new_con){?>
@@ -549,7 +549,7 @@
                 <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E6%B7%B1%E5%9C%B3" target="_blank">深圳展览会</a>
             </li>
             <li>
-                <span>展会</span>
+                <span>行业</span>
                 <a href="http://www.qufair.com/convention/index/industry/%E6%B1%BD%E6%91%A9%E9%85%8D" target="_blank">汽配展览会</a>
                 <a href="http://www.qufair.com/convention/index/industry/%E7%94%B5%E5%AD%90" target="_blank">电子展览会</a>
                 <a href="http://www.qufair.com/convention/index/industry/%E7%8E%A9%E5%85%B7" target="_blank">玩具展览会</a>
@@ -557,14 +557,14 @@
             </li>
 
             <li>
-                <span>展会</span>
+                <span>国家</span>
                 <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E8%8B%B1%E5%9B%BD&city=" target="_blank">英国展览会</a>
                 <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E5%8D%B0%E5%BA%A6&city=" target="_blank">印度展览会</a>
                 <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E5%B7%B4%E8%A5%BF&city=" target="_blank">巴西展览会</a>
                 <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E4%B8%AD%E4%B8%9C&city=" target="_blank">中东展览会</a>
             </li>
             <li>
-                <span>展会</span>
+                <span>地区</span>
                 <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E9%A6%99%E6%B8%AF" target="_blank">香港展览会</a>
                 <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=&city=%E7%A7%91%E9%9A%86" target="_blank">科隆展览会</a>
                 <a href="http://www.qufair.com/convention/index/?industry=&delta=&countries=%E8%BF%AA%E6%8B%9C&city=" target="_blank">迪拜展览会</a>
@@ -586,9 +586,8 @@
                     <ul class="title">
                         <h2 class="fl">新闻资讯</h2>
                         <p class="new_title">
-                            <?php if(!empty($this->new_tag)) foreach($this->new_tag as $key => $val_new){?>
-                            <a href="/<?php echo $val_new['name_en']?>" target="_blank"><?php echo $val_new['ctag_name']?></a>
-                            <?php }?>
+                            <a href="/agriculture" target="_blank">农林牧渔</a>
+                            <a href="/transport" target="_blank">物流交通</a>
                             <a href="/news" target="_blank" class="mores">更多</a>
                         </p>
                     </ul>
@@ -637,12 +636,13 @@
                 <!--最新资讯start-->
                 <div class="new-news">
                     <ul class="title">
-                        <h2 class="fl">最新资讯</h2>
+                        <h2 class="fl">热门资讯</h2>
                         <p class="fr"><a href="/news" target="_blank">更多 ></a></p>
                     </ul>
                     <ul class="list">
                         <?php
-                        if(!empty($this->new['All'])) foreach($this->new['All'] as $kk => $vv){
+                        if(!empty($this->new_hot)) foreach($this->new_hot as $kk => $vv){
+
                             ?>
                             <li>
                                 <p>
@@ -706,12 +706,11 @@
             <li class="news-list-right fr">
                 <div class="video">
                     <ul class="title">
-                        <h2>热门资讯</h2>
+                        <h2>最新资讯</h2>
                     </ul>
                     <ul class="list">
                     <?php
-                        if(!empty($this->new_hot)) foreach($this->new_hot as $kk => $vv_hot){
-                    ?>
+                    if(!empty($this->new['All'])) foreach($this->new['All'] as $kk => $vv_hot){                    ?>
                         <li>
                             <a href="/news/<?php echo date('Y/m/d', $vv_hot['dateline']).'/'.$vv_hot['id'].'.shtml';?>" target="_blank" class="img">
                                 <img src="<?php echo empty($vv_hot['cover']) ? STYLE_URL.'/style/quzhan/images/20160202/test_01.png' :$vv_hot['cover'];?>" alt="<?php echo $vv_hot['title']?>" height="80" width="150" />
@@ -743,7 +742,7 @@
     <div class="hot">
         <ul class="clearfix">
             <li>
-                <span>热门</span>
+                <span>行业</span>
                 <a href="/knowledge" target="_blank">外贸百科</a>
                 <a href="/textile" target="_blank">纺织面料</a>
                 <a href="/jewelry" target="_blank">饰品珠宝</a>
@@ -751,21 +750,21 @@
             </li>
 
             <li>
-                <span>热门</span>
+                <span>行业</span>
                 <a href="/gift" target="_blank">礼品玩具</a>
                 <a href="/cloth" target="_blank">成衣配饰</a>
                 <a href="/cosmetology" target="_blank">美容美发</a>
                 <a href="/mechanics" target="_blank">机械工业</a>
             </li>
             <li>
-                <span>热门</span>
+                <span>行业</span>
                 <a href="/home" target="_blank">家居消费</a>
                 <a href="/hotel" target="_blank">酒店旅游</a>
                 <a href="/safe" target="_blank">安防劳保</a>
                 <a href="/hardware" target="_blank">五金工具</a>
             </li>
             <li>
-                <span>热门</span>
+                <span>资讯</span>
                 <a href="/print" target="_blank">印刷包装</a>
                 <a href="/medical" target="_blank">医疗保健</a>
                 <a href="/building" target="_blank">建材暖通</a>
@@ -773,14 +772,14 @@
             </li>
 
             <li>
-                <span>热门</span>
+                <span>资讯</span>
                 <a href="/chemical" target="_blank">化工环保</a>
                 <a href="/sport" target="_blank">体育户外</a>
                 <a href="/electron" target="_blank">电子通讯</a>
                 <a href="/aerospace" target="_blank">航天航空</a>
             </li>
             <li>
-                <span>热门</span>
+                <span>资讯</span>
                 <a href="/computer" target="_blank">电脑软件</a>
                 <a href="/accessories" target="_blank">汽摩配件</a>
                 <a href="/power" target="_blank">电力能源</a>
@@ -1114,7 +1113,7 @@
                 <a href="##" target="_blank">韩国签证</a>
             </li>
             <li>
-                <span>热门</span>
+                <span>查询</span>
                 <a href="##" target="_blank">出国考察</a>
                 <a href="##" target="_blank">旅游签证</a>
                 <a href="##" target="_blank">商务签证</a>
@@ -1122,14 +1121,14 @@
             </li>
 
             <li>
-                <span>热门</span>
+                <span>展团</span>
                 <a href="##" target="_blank">印度展团</a>
                 <a href="##" target="_blank">迪拜展团</a>
                 <a href="##" target="_blank">法国展团</a>
                 <a href="##" target="_blank">英国展团</a>
             </li>
             <li>
-                <span>热门</span>
+                <span>签证</span>
                 <a href="##" target="_blank">申请签证</a>
                 <a href="##" target="_blank">英国签证</a>
                 <a href="##" target="_blank">法国签证</a>

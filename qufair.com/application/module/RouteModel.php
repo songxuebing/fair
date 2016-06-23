@@ -9,6 +9,7 @@ class RouteModel extends Module {
         $this->_orderField = array('id', 'order_sn', 'goods_name', 'goods_detail', 'route_id', 'member_id', 'address_id', 'receiving', 'nums', 'price', 'money', 'remarks', 'dateline');
 		
 		$this->_typeField = array('visa_id','parent_id','visa_name','is_open','datetime','is_delete','sort_order');
+        $this->_field_new = array('id','title','regional','countries','city','price','introduce','price_explain','visa_explain','reserve_notice','update_time');
     }
     
     public function routeOne($where, $output = false) {
@@ -73,5 +74,10 @@ class RouteModel extends Module {
     public function GetGroupTypeAll($field, $where, $limit = null, $group = null, $order = null, $output = false) {
         return $this->Db->FetchAll($this->_table.'_type', $field, $where, $limit, $group, $order, $output);
     }
-    
+
+    //新的
+
+    public function routenewAll($where, $limit = null, $group = null, $order = null, $output = false) {
+        return $this->Db->FetchAll($this->_table.'_new' , $this->_field_new, $where, $limit, $group, $order, $output);
+    }
 }

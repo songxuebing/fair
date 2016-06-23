@@ -9,7 +9,7 @@ $webdescription = "2016年最新国内外展会行程，包含展会行程出发
     <div class="project-top">
         <div class="location">
             <ul>
-                <li><a href="##" title="">首页</a><span>&gt;</span><i>展会</i></li>
+                <li><a href="/" title="">首页</a><span>&gt;</span><i>行程</i></li>
             </ul>
         </div>
     </div>
@@ -98,6 +98,20 @@ $webdescription = "2016年最新国内外展会行程，包含展会行程出发
                     <a href="javascript:void(0)" class="btn btn-right"><img src="<?php echo STYLE_URL;?>/style/no2/images/8.png" alt="" /></a>
                     <div class="list-project list-project01" id="list-project01">
                         <ul class="clearfix">
+                            <?php foreach($this->data_all as $k_all => $val_all){?>
+                            <li class="m_l">
+                                <div class="project01">
+                                    <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
+                                    <ul class="detial-total">
+                                        <i>行程价格</i>
+                                        <b><em><?php echo $val_all['price']?>元</em>起</b>
+                                    </ul>
+                                    <h4><a href="##" target="_blank"><?php echo $val_all['title']?></a></h4>
+<!--                                    <p>时间:2016-06-06至2016-06-08</p>-->
+                                </div>
+                            </li>
+                            <?php }?>
+                            <!--
                             <li class="m_l">
                                 <div class="project01">
                                     <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
@@ -120,17 +134,7 @@ $webdescription = "2016年最新国内外展会行程，包含展会行程出发
                                     <p>时间:2016-06-06至2016-06-08</p>
                                 </div>
                             </li>
-                            <li class="m_l">
-                                <div class="project01">
-                                    <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                    <ul class="detial-total">
-                                        <i>搭建价格</i>
-                                        <b><em>9850.88元</em>起</b>
-                                    </ul>
-                                    <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                    <p>时间:2016-06-06至2016-06-08</p>
-                                </div>
-                            </li>
+                            -->
                         </ul>
                     </div>
                     <script src="<?php echo STYLE_URL;?>/style/no2/js/scroll.js"></script>
@@ -221,23 +225,25 @@ $webdescription = "2016年最新国内外展会行程，包含展会行程出发
 
     <div class="line10"></div>
     <!--国家start-->
+    <?php foreach($this->delta as $key => $val){?>
     <div class="state">
-        <h2>欧洲国家</h2>
+        <h2><?php echo $val;?>国家</h2>
         <ul class="clearfix">
             <!--左栏目start-->
             <li class="left fl">
                 <div>
                     <ul class="clearfix">
-                        <li><a href="##" target="_blank" class="current">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
+                        <?php
+                        $i = 0;
+                        foreach($this->delta_route[$key] as $k1 => $val_de){
+                            if($i < 10){?>
+                                <li>
+                                    <a href="##" target="_blank"><?php echo $val_de['name']?></a>
+                                </li>
+                            <?php }
+                            $i++;
+                        }?>
+
                     </ul>
                 </div>
             </li>
@@ -247,69 +253,28 @@ $webdescription = "2016年最新国内外展会行程，包含展会行程出发
             <li class="right fr">
                 <div class="list-project list-project01" id="list-project02">
                     <ul class="clearfix">
+                        <?php foreach($this->delta_reg[$key] as $k_reg => $val_reg){?>
                         <li class="m_l">
                             <div class="project01">
                                 <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
                                 <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
+                                    <i>行程价格</i>
+                                    <b><em><?php echo $val_reg['price']?>元</em>起</b>
                                 </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
+                                <h4><a href="##" target="_blank"><?php echo $val_reg['title']?></a></h4>
                             </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离启程时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>南非约翰内斯堡8天行程</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
+<!--                            <div class="project02">-->
+<!--                                <ul>-->
+<!--                                    <p>距离启程时间</p>-->
+<!--                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>-->
+<!--                                    <span>2016-06-06 至 2016-06-08 </span>-->
+<!--                                    <b>南非约翰内斯堡8天行程</b>-->
+<!--                                    <span>服务包含：机票+酒店+餐饮</span>-->
+<!--                                    <div><a href="##" target="_blank">立即订购</a></div>-->
+<!--                                </ul>-->
+<!--                            </div>-->
                         </li>
-                        <li class="m_l">
-                            <div class="project01">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
-                                </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
-                            </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离展会开幕时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>韩国光大会展中心</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="m_l">
-                            <div class="project01">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
-                                </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
-                            </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离展会开幕时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>韩国光大会展中心</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                        </li>
+                        <?php }?>
                     </ul>
                 </div>
             </li>
@@ -318,208 +283,10 @@ $webdescription = "2016年最新国内外展会行程，包含展会行程出发
         </ul>
     </div>
     <!--国家end-->
+<?php }?>
 
     <div class="line10"></div>
-    <!--国家start-->
-    <div class="state">
-        <h2>欧洲国家</h2>
-        <ul class="clearfix">
-            <!--左栏目start-->
-            <li class="left fl">
-                <div>
-                    <ul class="clearfix">
-                        <li><a href="##" target="_blank" class="current">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                    </ul>
-                </div>
-            </li>
-            <!--左栏目end-->
 
-            <!--右栏目start-->
-            <li class="right fr">
-                <div class="list-project list-project01" id="list-project02">
-                    <ul class="clearfix">
-                        <li class="m_l">
-                            <div class="project01">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
-                                </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
-                            </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离启程时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>南非约翰内斯堡8天行程</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="m_l">
-                            <div class="project01">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
-                                </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
-                            </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离展会开幕时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>韩国光大会展中心</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="m_l">
-                            <div class="project01">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
-                                </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
-                            </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离展会开幕时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>韩国光大会展中心</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <!--右栏目end-->
-
-        </ul>
-    </div>
-    <!--国家end-->
-
-    <div class="line10"></div>
-    <!--国家start-->
-    <div class="state">
-        <h2>欧洲国家</h2>
-        <ul class="clearfix">
-            <!--左栏目start-->
-            <li class="left fl">
-                <div>
-                    <ul class="clearfix">
-                        <li><a href="##" target="_blank" class="current">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                        <li><a href="##" target="_blank">德国</a></li>
-                        <li><a href="##" target="_blank">奥地利</a></li>
-                    </ul>
-                </div>
-            </li>
-            <!--左栏目end-->
-
-            <!--右栏目start-->
-            <li class="right fr">
-                <div class="list-project list-project01" id="list-project02">
-                    <ul class="clearfix">
-                        <li class="m_l">
-                            <div class="project01">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
-                                </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
-                            </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离启程时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>南非约翰内斯堡8天行程</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="m_l">
-                            <div class="project01">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
-                                </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
-                            </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离展会开幕时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>韩国光大会展中心</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="m_l">
-                            <div class="project01">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/36.jpg" alt="" />
-                                <ul class="detial-total">
-                                    <i>搭建价格</i>
-                                    <b><em>9850.88元</em>起</b>
-                                </ul>
-                                <h4><a href="##" target="_blank">泰国国际水处理化工及环保展</a></h4>
-                                <p>时间:2016-06-06至2016-06-08</p>
-                            </div>
-                            <div class="project02">
-                                <ul>
-                                    <p>距离展会开幕时间</p>
-                                    <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>
-                                    <span>2016-06-06 至 2016-06-08 </span>
-                                    <b>韩国光大会展中心</b>
-                                    <span>服务包含：机票+酒店+餐饮</span>
-                                    <div><a href="##" target="_blank">立即订购</a></div>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <!--右栏目end-->
-
-        </ul>
-    </div>
-    <!--国家end-->
-
-    <div class="line10"></div>
     <div class="line10"></div>
     <div class="line10"></div>
 

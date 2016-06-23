@@ -47,6 +47,9 @@ $this->Assign('script',$script);
 if (empty($this->Param['option'])) {
     //获取行程下的国家
     $delta_route = array("欧洲","美洲","亚洲","非洲","大洋洲");
+
+    $this->Assign('delta',$delta_route);
+
     $data_ro = $RegionHelper->routeAll(null);
     //var_dump($data_ro);exit();
     foreach($delta_route as $k => $v) {
@@ -58,6 +61,17 @@ if (empty($this->Param['option'])) {
         }
     }
     //var_dump($da_ro);exit();
+    //获取最新的10个行程
+    $data_all = $RouteHelper->routenewList(array(),10,0);
+    $this->Assign('data_all',$data_all);
+
+    //获取每个州的3个行程
+    foreach($delta_route as $key => $val) {
+        $reg_where['`regional` = ?'] = $val;
+        $data_re[$key] = $RouteHelper->routenewList($reg_where,3,0);
+    }
+    $this->Assign('delta_reg',$data_re);
+
     $this->Assign('delta_route',$da_ro);
     echo $this->GetView('route.php');
 

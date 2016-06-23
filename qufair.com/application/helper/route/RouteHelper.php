@@ -160,5 +160,9 @@ class RouteHelper extends Helper {
         return $this->RouteModel->GetGroupTypeAll($field, $where, array($page, $limit), $group, array('visa_id desc'));
     }
 
-    
+    public function routenewList($where, $limit, $page) {
+
+        $data= $this->RouteModel->routenewAll($where, array($page, $limit), NULL, array('id desc'));
+        return $data;
+    }
 }

@@ -421,7 +421,8 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 .list-project01 ul li{ height:395px; margin-top:0; width:282px; margin-right:6px;}
 .list-project01 ul li img{ width:282px;}
 .list-project01 .project01 .detial-total{ padding-top:10px;}
-.list-project01 .project01 h4{ padding:8px 17px 0; line-height:25px; height:25px; font-size:17px;}
+/*.list-project01 .project01 h4{ padding:8px 17px 0; line-height:25px; height:25px; font-size:17px;}*/
+.list-project01 .project01 h4{ padding:8px 17px 0; line-height:25px; height:50px; font-size:17px;}
 .list-project01 .project01 p{ font-size:16px;}
 .list-project01 .project02{ height:395px; width:100%;}
 .list-project01 .project02 ul{ padding-top:50px;}

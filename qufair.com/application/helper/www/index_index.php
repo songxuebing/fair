@@ -29,6 +29,9 @@
     $this->LoadHelper('route/RouteHelper');
     $RouteHelper = new RouteHelper();
 
+    $this->LoadHelper('visa/VisaHelper');
+    $VisaHelper = new VisaHelper();
+
     $id = 9;
     $pos_row = $AdvHelper->posRow($id);
     if(empty($pos_row)){
@@ -260,7 +263,19 @@
 		}
 
         $this->Assign('new_tag',$dataTag);
-
+        //获取签证下的国家
+        $delta_visa = array("欧洲","美洲","亚洲","非洲","大洋洲");
+        $data = $VisaHelper->GetAllnewVisa($id='all');
+        foreach($delta_visa as $k => $v) {
+            foreach ($data as $key => $val) {
+                if ($val['visa_state'] == $v)
+                {
+                    $da[$k][$key] = $data[$key];
+                }
+            }
+        }
+        //var_dump($da);exit();
+        $this->Assign('delta_visa',$da);
         echo $this->GetView('index_index_no2.php');
     }else{
 

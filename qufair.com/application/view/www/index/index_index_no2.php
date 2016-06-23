@@ -942,8 +942,8 @@
                                 <!--欧洲start-->
                                 <div>
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['0']['next'] as $k => $val_de){?>
-                                            <li><a href="/visa-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta_visa['0'] as $k => $val_de){?>
+                                            <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
 <!--                                   --><?php
@@ -962,8 +962,8 @@
                                 <!--美洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['4']['next'] as $k => $val_de){?>
-                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta_visa['1'] as $k => $val_de){?>
+                                            <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
 <!--                                   --><?php
@@ -982,8 +982,8 @@
                                 <!--亚洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['1']['next'] as $k => $val_de){?>
-                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta_visa['2'] as $k => $val_de){?>
+                                            <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
 <!--                                   --><?php
@@ -1002,8 +1002,8 @@
                                 <!--非洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['8']['next'] as $k => $val_de){?>
-                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta_visa['3'] as $k => $val_de){?>
+                                            <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
 <!--                                   --><?php
@@ -1022,8 +1022,8 @@
                                 <!--大洋洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['8']['next'] as $k => $val_de){?>
-                                            <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
+                                        <?php foreach($this->delta_visa['4'] as $k => $val_de){?>
+                                            <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
 <!--                                   --><?php

@@ -80,4 +80,8 @@ class RouteModel extends Module {
     public function routenewAll($where, $limit = null, $group = null, $order = null, $output = false) {
         return $this->Db->FetchAll($this->_table.'_new' , $this->_field_new, $where, $limit, $group, $order, $output);
     }
+
+    public function routenewRow($where, $group = null, $order = null, $output = false) {
+        return $this->Db->FetchRow($this->_table , $this->_field, $where, $group, $order, $output);
+    }
 }

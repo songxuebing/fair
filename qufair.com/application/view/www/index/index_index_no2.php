@@ -405,14 +405,14 @@
                     <img src="<?php echo STYLE_URL;?>/style/no2/images/8.png" alt="" class="next" />
                     <div class="sroll-img">
                         <ul>
-                            <?php if(!empty($this->hot_con['All'])) foreach($this->hot_con['All'] as $key=>$val_hot){?>
+                            <?php if(!empty($this->hot_conven['All'])) foreach($this->hot_conven['All'] as $key=>$val_hot){?>
                                 <li>
                                     <div class="img"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" height="235" width="235" /></div>
-                                    <h4><a href="convention/<?php echo date('Y/m/d', $val_hot['add_time']).'/'.$val_hot['con_id'];?>.shtml" target="_blank"><?php echo $val_hot['name']?></a></h4>
-                                    <p>时间:<?php echo date('Y-m-d',$val_hot['start_time'])?> - <?php echo date('Y-m-d',$val_hot['end_titme'])?></p>
+                                    <h4><a href="convention/<?php echo date('Y/m/d', $val_hot['update_dateline']).'/'.$val_hot['id'];?>.shtml" target="_blank"><?php echo $val_hot['name']?></a></h4>
+                                    <p>时间:<?php echo $val_hot['start_time']?> - <?php echo $val_hot['end_time']?></p>
                                     <div class="order clearfix">
-                                        <b>￥:<?php echo $val_hot['area']['group_price']?><i>起</i></b>
-                                        <a href="convention/<?php echo date('Y/m/d', $val_hot['add_time']).'/'.$val_hot['con_id'];?>.shtml" target="_blank">展会价格</a>
+                                        <b>￥:<?php echo $val_hot['price']?><i>起</i></b>
+                                        <a href="convention/<?php echo date('Y/m/d', $val_hot['update_dateline']).'/'.$val_hot['id'];?>.shtml" target="_blank">展会价格</a>
                                     </div>
                                 </li>
                             <?php }?>

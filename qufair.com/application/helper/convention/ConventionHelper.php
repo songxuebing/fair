@@ -207,4 +207,15 @@ class ConventionHelper extends Helper {
     }
 
 
+
+    //新的展会
+    public function GetAllnewWhere($where, $limit, $page, $Param,$group = NULL) {
+        $data['One'] = $this->ConventionModel->GetOne($where);
+        if (!empty($data['One'])) {
+            $data['All'] = $this->ConventionModel->GetAll($where, array($page, $limit), $group, array('id desc'));
+            Pagination::SetUrl($Param);
+            $data['Page'] = Pagination::GetHtml($limit, $page, $data['One']);
+        }
+        return $data;
+    }
 }

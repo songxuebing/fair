@@ -165,4 +165,22 @@ class RouteHelper extends Helper {
         $data= $this->RouteModel->routenewAll($where, array($page, $limit), NULL, array('id desc'));
         return $data;
     }
+
+    public function routenewRow($where) {
+        if (is_numeric($where)) {
+            $where = array(
+                '`id` = ?' => $where
+            );
+        }
+        return $this->RouteModel->routenewRow($where);
+    }
+
+    public function routenewAll($where,$limit = null, $group = null, $order = null, $output = false) {
+        if (is_numeric($where)) {
+            $where = array(
+                '`id` = ?' => $where
+            );
+        }
+        return $this->RouteModel->routenewAll($where,array(0,$limit), $group, $order, $output);
+    }
 }

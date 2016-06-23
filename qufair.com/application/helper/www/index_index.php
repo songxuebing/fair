@@ -59,35 +59,41 @@
 
     if(empty($this->Param['option'])){
         //获取热门展位
-        $hot_conven = $ConventionHelper->GetAllDetailWhere(array(
-            //'`is_index` = ?' => 1,
-            '`is_delete` = ?' => 0
-        ),20,1,$this->Param);
-        if(!empty($hot_conven['All'])) foreach($hot_conven['All'] as $k=>$v){
-            $conven = $ConventionHelper->getRow(array(
-                '`id` = ?' => $v['con_id']
-            ));
-            $conven['cover'] = unserialize($conven['imgurl'])['0'];
+//        $hot_conven = $ConventionHelper->GetAllDetailWhere(array(
+//            //'`is_index` = ?' => 1,
+//            '`is_delete` = ?' => 0
+//        ),20,1,$this->Param);
+//        if(!empty($hot_conven['All'])) foreach($hot_conven['All'] as $k=>$v){
+//            $conven = $ConventionHelper->getRow(array(
+//                '`id` = ?' => $v['con_id']
+//            ));
+//            $conven['cover'] = unserialize($conven['imgurl'])['0'];
+//
+//            $hot_conven['All'][$k]['cover'] = $conven['cover'];
+//            $hot_conven['All'][$k]['name'] = $conven['name'];
+//            //获取关注数量
+//            $fav_count = $FavoriteHelper->favCount(array(
+//                '`related_id` = ?' => $v['detail_id'],
+//                '`sort` = ?' => 2
+//            ));
+//            //获取价格2016-06-03
+//            $area = $ConventionHelper->getAreaRow(array('`detail_id` = ?' =>$v['detail_id']));
+//            $hot_conven['All'][$k]['area'] = $area;
+//
+//            $hot_conven['All'][$k]['focus_number'] = $fav_count;
+//            if($hot_conven['All'][$k]['start_time'] - time() < 0)
+//            {
+//                unset($hot_conven['All'][$k]);
+//            }
 
-            $hot_conven['All'][$k]['cover'] = $conven['cover'];
-            $hot_conven['All'][$k]['name'] = $conven['name'];
-            //获取关注数量
-            $fav_count = $FavoriteHelper->favCount(array(
-                '`related_id` = ?' => $v['detail_id'],
-                '`sort` = ?' => 2
-            ));
-            //获取价格2016-06-03
-            $area = $ConventionHelper->getAreaRow(array('`detail_id` = ?' =>$v['detail_id']));
-            $hot_conven['All'][$k]['area'] = $area;
-
-            $hot_conven['All'][$k]['focus_number'] = $fav_count;
-            if($hot_conven['All'][$k]['start_time'] - time() < 0)
-            {
-                unset($hot_conven['All'][$k]);
+//        }
+        $hot_conven = $ConventionHelper->GetAllnewWhere(array(),20,1,$this->Param);
+            if(!empty($hot_conven['All'])) foreach($hot_conven['All'] as $k=>$v){
+                $hot_conven['All'][$k]['cover'] = unserialize($v['imgurl'])['0'];
+                //echo $v['start_time'];exit();
             }
 
-        }
-        $this->Assign('hot_con',$hot_conven);
+        $this->Assign('hot_conven',$hot_conven);
         //var_dump($hot_conven);exit();
 
         //获取最新展会

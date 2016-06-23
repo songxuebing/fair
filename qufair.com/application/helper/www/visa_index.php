@@ -18,6 +18,9 @@ $MemberDetailHelper =  new MemberDetailHelper();
 $this->LoadHelper('region/RegionHelper');
 $RegionHelper = new RegionHelper();
 
+$this->LoadHelper('route/RouteHelper');
+$RouteHelper = new RouteHelper();
+
 //banner
 $this->LoadHelper('adv/AdvHelper');
 $AdvHelper = new AdvHelper();
@@ -201,8 +204,14 @@ if (empty($this->Param['option'])) {
                 //'`is_delete` = ?' => 0,
                 //'`is_online` = ?' => 0
             ));
-            //var_dump($visa_row);exit();
+            $reg_where['`countries` = ?'] = $visa_row['visa_countries'];
+            //var_dump($reg_where);exit();
+            $route_row = $RouteHelper->routenewAll($reg_where,5);
+
+            $this->Assign('route_row',$route_row);
+
             $this->Assign('visa_row',$visa_row);
+            //获取相关国家的行程
 
             echo $this->GetView('visa_detail_new.php');
 //            if(empty($visa_row)){

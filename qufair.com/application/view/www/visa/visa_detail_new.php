@@ -39,13 +39,11 @@ $webtitle = $this->visa_row['visa_title'].'签证 - 去展网'
             <!--右栏目start-->
             <li class="detial-right fr">
                 <h1 style="color: #555"><?php echo $this->visa_row['visa_title'];?></h1>
-                <p>洲域：<i>欧洲</i><em></em>国家：<i>法国</i></p>
-                <p>有效期：<i>90</i><em></em>提前预订天数：<i>12</i></p>
-
-                <p>最长停留：<i>12</i><em></em>办理时长：<i>12</i> </p>
-
-                <p>签证类型：<i>商务签证</i></p>
-                <p>可签地点：<i>浙江、 江苏   或 全国</i></p>
+                <p>洲域：<i><?php echo $this->visa_row['visa_state'];?></i><em></em>国家：<i><?php echo $this->visa_row['visa_countries'];?></i></p>
+                <p>有效期：<i><?php echo $this->visa_row['visa_lasts'];?></i><em></em>提前预订天数：<i><?php echo $this->visa_row['visa_book'];?></i></p>
+                <p>最长停留：<i><?php echo $this->visa_row['visa_stay'];?></i><em></em>办理时长：<i><?php echo $this->visa_row['visa_handle'];?></i> </p>
+                <p>签证类型：<i><?php echo $this->visa_row['visa_type'];?></i></p>
+                <p>可签地点：<i><?php echo $this->visa_row['visa_place'];?></i></p>
                 <div class="clearfix">
                     <span><em><?php echo $this->visa_row['visa_price'];?>元</em>起</span>
                     <a href="##" title="" class="now01">立即订展</a>
@@ -181,36 +179,17 @@ $webtitle = $this->visa_row['visa_title'].'签证 - 去展网'
                 <div class="related-stroke">
                     <h3>相关行程</h3>
                     <ul>
+                        <?php
+                        foreach($this->route_row as $k_ro => $val_ro){?>
                         <li>
                             <a href="##" target="_blank">
-                                <img src="images/80.jpg" width="232" height="145" alt="" />
-                                <i>国内国外布展便携式特装</i>
+                                <img src="<?php echo STYLE_URL;?>/style/no2/images/80.jpg" width="232" height="145" alt="" />
+                                <i>
+                                    <?php echo StringCode::GetCsubStr($val_ro['title'],0,15);?>
+                                </i>
                             </a>
                         </li>
-                        <li>
-                            <a href="##" target="_blank">
-                                <img src="images/80.jpg" width="232" height="145" alt="" />
-                                <i>国内国外布展便携式特装</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##" target="_blank">
-                                <img src="images/80.jpg" width="232" height="145" alt="" />
-                                <i>国内国外布展便携式特装</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##" target="_blank">
-                                <img src="images/80.jpg" width="232" height="145" alt="" />
-                                <i>国内国外布展便携式特装</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##" target="_blank">
-                                <img src="images/80.jpg" width="232" height="145" alt="" />
-                                <i>国内国外布展便携式特装</i>
-                            </a>
-                        </li>
+                        <?php }?>
                     </ul>
                 </div>
                 <!--相关行程end-->

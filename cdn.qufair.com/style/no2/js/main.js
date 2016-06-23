@@ -100,7 +100,31 @@ $(document).ready(function(){
   MyMar = setInterval(next, SleepTime);
 
  });
- 
+$(document).ready(function(){ 
+      var MyMar = null;
+        var SleepTime = 2000;
+          $(function () {
+                $(".sroll-img1").jCarouselLite({
+                      btnNext: ".next1",
+                        btnPrev: ".prev1",
+                          visible:1,
+                            speed:1000,
+                              scroll:1
+                                    });
+                  $(".sroll-img1").bind('mouseover', function (event) {
+                        clearInterval(MyMar);
+                          })
+                    .bind('mouseout', function (event) {
+                          MyMar = setInterval(next, SleepTime);
+
+                            });
+                      });
+            function next() {
+                  $(".next1").click();
+                    }
+              MyMar = setInterval(next, SleepTime);
+
+               });
  
  
  

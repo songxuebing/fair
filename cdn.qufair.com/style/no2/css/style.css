@@ -137,6 +137,10 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 .scroll img.prev{ left:0;}
 .scroll img.next{ right:0;}
 
+.scroll img.prev1,.scroll img.next1{ display:block; position:absolute; top:50%; margin-top:-30px; cursor:pointer; z-index:999;}
+.scroll img.prev1{ left:0;}
+.scroll img.next1{ right:0;}
+
 .sroll-img{ height:309px; border:1px #e5e5e5 solid; overflow:hidden;}
 .sroll-img ul li{ float:left; width:252px; border-right:1px #e5e5e5 solid; height:309px; overflow:hidden;}
 .sroll-img div.img{ height:195px; overflow:hidden; text-align:center;}
@@ -149,6 +153,8 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 .sroll-img .order b i{ padding-left:2px; color:#222;}
 .sroll-img .order a{ float:left; display:block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; font-size:14px; overflow:hidden; background-color:#fd4d0a; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px;}
 .sroll-img .order a:hover{ color:#fff !important; text-decoration:none;}
+
+.sroll-img1 ul li{ float:left; width:490px !important; border-right:1px #e5e5e5 solid; height:309px; overflow:hidden; margin-right :auto !important;}
 
 /*登录*/
 .login{ height:157px; border:1px #e5e5e5 solid; overflow:hidden; background-color:#fff;}

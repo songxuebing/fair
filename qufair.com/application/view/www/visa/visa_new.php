@@ -33,10 +33,10 @@
             <?php foreach($val as $k => $va){?>
             <li>
                 <a href="/visa/<?php echo date('Y/m/d', $v['update_time']).'/'.$va['visa_id'];?>.shtml" target="_blank">
-                    <div class="fl"><img src="images/81.jpg" alt="" /></div>
+                    <div class="fl"><img src="<?php echo $va['visa_cover']?>" alt="<?php echo $va['visa_title']?>" width="110px" height="90px" /></div>
                     <div class="fr">
                         <b><?php echo $va['visa_countries']?></b>
-                        <p><i>签证费: ¥<?php echo $va['visa_price']?> 起/人</i></p>
+                        <p><i>¥<?php echo $va['visa_price']?>起</i></p>
                     </div>
                 </a>
             </li>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="line10"></div>
-    <div><a href="##" target="_blank"><img src="images/56.jpg" alt="" /></a></div>
+    <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/56.jpg" alt="" /></a></div>
     <div class="line10"></div>
     <?php }?>
 

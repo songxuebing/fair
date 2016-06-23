@@ -1065,9 +1065,25 @@
                     <ul class="list clearfix">
 
                         <li>
-                            <div><a target="_blank" href="##"><img alt="" src="http://cdn.qufair.com/style/no2/images/route/8.jpg"></a></div>
-                            <p><a target="_blank" href="##">搭建价格</a><i>9850.88元</i>起</p>
-                            <h4><a target="_blank" href="##">加拿大温哥华国际建材展6天行程安排</a></h4>
+<!--                            <div>-->
+<!--                                <a target="_blank" href="##">-->
+<!--                                    <img alt="" src="http://cdn.qufair.com/style/no2/images/route/8.jpg" height="322px" width="490px">-->
+<!--                                </a>-->
+<!--                            </div>-->
+
+                            <div class="scroll">
+                                <img src="<?php echo STYLE_URL;?>/style/no2/images/7.png" alt="" class="prev1" />
+                                <img src="<?php echo STYLE_URL;?>/style/no2/images/8.png" alt="" class="next1" />
+                                <div class="sroll-img1">
+                                    <ul>
+                                        <?php if(!empty($this->hot_con['All'])) foreach($this->hot_con['All'] as $key=>$val_hot){?>
+                                            <li>
+                                                <img alt="" src="http://cdn.qufair.com/style/no2/images/route/8.jpg" height="322px" width="490px">
+                                            </li>
+                                        <?php }?>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
                         <?php if(!empty($this->hot_route)) foreach($this->hot_route as $kk => $val_route){?>
 

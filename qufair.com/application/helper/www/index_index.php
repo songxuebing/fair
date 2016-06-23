@@ -214,7 +214,24 @@
         $this->Assign('new_hot',$new_hot);
 
         //调用推荐的新闻
-        $new_re = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  WHERE dyhl_forum.is_show = 1 and dyhl_forum.delete = 0  and dyhl_forum.recommend = 1 ORDER BY `dyhl_forum`.`clicks` DESC LIMIT 3');
+        //echo $this->UserConfig['Id'];
+        if(!empty($this->UserConfig['Id']))
+        {
+            if(!empty($forum_id))
+            {
+                $new_re = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  WHERE dyhl_forum.cat_id in('.$forum_id.') and dyhl_forum.is_show = 1 and dyhl_forum.delete = 0 ORDER BY `dyhl_forum`.`clicks` DESC LIMIT 3');
+                if(empty($new_re)){
+                    $new_re = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  WHERE dyhl_forum.is_show = 1 and dyhl_forum.delete = 0  and dyhl_forum.recommend = 1 ORDER BY `dyhl_forum`.`clicks` DESC LIMIT 3');
+                }
+            }
+            else{
+                $new_re = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  WHERE dyhl_forum.is_show = 1 and dyhl_forum.delete = 0  and dyhl_forum.recommend = 1 ORDER BY `dyhl_forum`.`clicks` DESC LIMIT 3');
+            }
+
+        }
+        else {
+            $new_re = $ForumHelper->queryDetail('SELECT id,title,dateline,cover,content FROM `dyhl_forum`  WHERE dyhl_forum.is_show = 1 and dyhl_forum.delete = 0  and dyhl_forum.recommend = 1 ORDER BY `dyhl_forum`.`clicks` DESC LIMIT 3');
+        }
         //var_dump($new_re);exit();
         foreach($new_re as $k_re => $val_re)
         {

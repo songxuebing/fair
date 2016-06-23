@@ -1,3 +1,6 @@
+<?php
+$webtitle = $this->visa_row['visa_title'].'签证 - 去展网'
+?>
 <?php include $this->Render('header_no2.php'); ?>
 
 <!--当前位置start-->

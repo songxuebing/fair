@@ -45,129 +45,148 @@ if(empty($pos_row)){
 
 $this->Assign('script',$script);
 if (empty($this->Param['option'])) {
-    $limit = 10;
-    $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
-    /***
-    //筛选国家 地区 时间
-    $country = $this->Param['country'];
-    $city = $this->Param['city'];
-    $year = $this->Param['year'];
-    $this->Assign('country',$country);
-    $this->Assign('city',$city);
-    $this->Assign('year',$year);
-    //筛选所有国家
-    $country_all = $RegionHelper->regionAll(array('`parent_id` = ?' => 0), array(0,100));
-    $country_all = Common::arrayExplode($country_all, 8);
-    $this->Assign('country_all',$country_all);
-    //筛选所有地区
-    $city_where = array('`parent_id` > ?' => 0);
-    if(!empty($country)){
-        $country_row = $RegionHelper->regionRow(array('`name` = ?' => urldecode($country)));
-        $city_where['`parent_id` = ?'] = $country_row['id'];
-    }
-    $city_all = $RegionHelper->regionAll($city_where,array(0,100));
-    $city_all = Common::arrayExplode($city_all, 8);
-    $this->Assign('city_all',$city_all);
-    //筛选所有年份
-    $year_all = $RouteHelper->routeAll(array('`delete` = ?' => 0),NULL,array('leave_year'),array('leave_year DESC'));
-    $year_all = Common::arrayExplode($year_all, 8);
-    $this->Assign('year_all',$year_all);
-
-
-**/
-
-    //筛选城市 年份 月份
-    $country = empty($this->Param['country']) ? '' : urldecode($this->Param['country']);
-    $city = urldecode($this->Param['city']);
-    $year = urldecode($this->Param['year']);
-    $month = urldecode($this->Param['month']);
-    $this->Assign('country',$country);
-    $this->Assign('city',$city);
-    $this->Assign('year',$year);
-    $this->Assign('month',$month);
-
-    //筛选 城市 面积 年份 月份
-    //筛选所有城市
-    $city_where = array('`parent_id` > ?' => 0);
-    if(!empty($country)){
-        $country_row = $RegionHelper->regionRow(array('`name` = ?' => urldecode($country)));
-        $city_where['`parent_id` = ?'] = $country_row['id'];
-
-    }else{
-        $country_row = $RegionHelper->regionRow(array('`name` = ?' => '中国'));
-        $city_where['`parent_id` = ?'] = $country_row['id'];
-    }
-    $city_all = $RegionHelper->regionAll($city_where,array(0,100));
-    $city_all = Common::arrayExplode($city_all, 8);
-    $this->Assign('city_all',$city_all);
-
-    //筛选所有年份
-    $year_all = $RouteHelper->GetGroupAll(array('txt_year'), array('`delete` = ?' => 0,'`is_sale` = ?' => 1), 500, 0, array('txt_year'));
-    $year_all = Common::arrayExplode($year_all, 8);
-    $this->Assign('year_all',$year_all);
-
-    //筛选 月份
-    $month_all = $RouteHelper->GetGroupAll(array('txt_month'), array('`delete` = ?' => 0,'`is_sale` = ?' => 1), 500, 0, array('txt_month'));
-    $month_all = Common::arrayExplode($month_all, 8);
-    $this->Assign('month_all',$month_all);
-
-    
-    $where = array(
-        '`delete` = ?' => 0,
-        '`is_sale` = ?' => 1
-    );
-    
-    $con_where = array();
-    if(!empty($country)){
-        $con_where['`countries` = ?'] = $country;
-    }
-    if(!empty($city)){
-        $con_where['`city` = ?'] = $city;
-    }
-    if(!empty($con_where)){
-        $conven_all = $ConventionHelper->conventionAll($con_where);
-        $in_id = array(0);
-        if(!empty($conven_all)) foreach($conven_all as $k=>$v){
-            $in_id[] = $v['id'];
+    //获取行程下的国家
+    $delta_route = array("欧洲","美洲","亚洲","非洲","大洋洲");
+    $data_ro = $RegionHelper->routeAll(null);
+    //var_dump($data_ro);exit();
+    foreach($delta_route as $k => $v) {
+        foreach ($data_ro as $key => $val) {
+            if ($val['delta'] == $v)
+            {
+                $da_ro[$k][$key] = $data_ro[$key];
+            }
         }
-        $where['`con_id` IN (?)'] = $in_id;
     }
-    if(!empty($year)){
-        //$where['`leave_year` = ?'] = $year;
-        $where['locate(?,`txt_year`)>0'] = $year;
-    }
-    if(!empty($this->Param['month'])){
-        $where['locate(?,`txt_month`)>0'] = urldecode($this->Param['month']);
-    }
-    $data = $RouteHelper->routePageList($where, $limit, $page, $this->Param);
-    if(!empty($data['All'])) foreach($data['All'] as $k=>$v){
-		//获取类型
-		$typeArr = $RouteHelper->getVisaRow(array(
-			'`visa_id` = ?' => $v['hotel_star']
-		));
-		
-		$data['All'][$k]['hotel_star'] = $typeArr['visa_name'];
-		
-        $fav_count = $FavoriteHelper->favCount(array(
-            '`related_id` = ?' => $v['id'],
-            '`sort` = ?' => 3
-        ));
-        $data['All'][$k]['favcount'] = $fav_count;
-        //统计打分平均分值
-        $average = $CommentHelper->detailConAverage(array(
-            '`is_type` = ?' => 3,
-            '`con_id` = ?' => $v['id'],
-            '`delete` = ?' => 0
-        ));
-        $data['All'][$k]['average'] = $average;
-    }
+    //var_dump($da_ro);exit();
+    $this->Assign('delta_route',$da_ro);
+    echo $this->GetView('route.php');
 
-    $data['attr'] = array('country' => $country,'city' =>$city,'year'=>$year,'month'=>$month);
+    //2016-06-23新改版
 
-    $this->Assign('data', $data);
-    $this->Assign('param', $this->Param);
+//    $limit = 10;
+//    $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
+//    /***
+//    //筛选国家 地区 时间
+//    $country = $this->Param['country'];
+//    $city = $this->Param['city'];
+//    $year = $this->Param['year'];
+//    $this->Assign('country',$country);
+//    $this->Assign('city',$city);
+//    $this->Assign('year',$year);
+//    //筛选所有国家
+//    $country_all = $RegionHelper->regionAll(array('`parent_id` = ?' => 0), array(0,100));
+//    $country_all = Common::arrayExplode($country_all, 8);
+//    $this->Assign('country_all',$country_all);
+//    //筛选所有地区
+//    $city_where = array('`parent_id` > ?' => 0);
+//    if(!empty($country)){
+//        $country_row = $RegionHelper->regionRow(array('`name` = ?' => urldecode($country)));
+//        $city_where['`parent_id` = ?'] = $country_row['id'];
+//    }
+//    $city_all = $RegionHelper->regionAll($city_where,array(0,100));
+//    $city_all = Common::arrayExplode($city_all, 8);
+//    $this->Assign('city_all',$city_all);
+//    //筛选所有年份
+//    $year_all = $RouteHelper->routeAll(array('`delete` = ?' => 0),NULL,array('leave_year'),array('leave_year DESC'));
+//    $year_all = Common::arrayExplode($year_all, 8);
+//    $this->Assign('year_all',$year_all);
+//
+//
+//**/
+//
+//    //筛选城市 年份 月份
+//    $country = empty($this->Param['country']) ? '' : urldecode($this->Param['country']);
+//    $city = urldecode($this->Param['city']);
+//    $year = urldecode($this->Param['year']);
+//    $month = urldecode($this->Param['month']);
+//    $this->Assign('country',$country);
+//    $this->Assign('city',$city);
+//    $this->Assign('year',$year);
+//    $this->Assign('month',$month);
+//
+//    //筛选 城市 面积 年份 月份
+//    //筛选所有城市
+//    $city_where = array('`parent_id` > ?' => 0);
+//    if(!empty($country)){
+//        $country_row = $RegionHelper->regionRow(array('`name` = ?' => urldecode($country)));
+//        $city_where['`parent_id` = ?'] = $country_row['id'];
+//
+//    }else{
+//        $country_row = $RegionHelper->regionRow(array('`name` = ?' => '中国'));
+//        $city_where['`parent_id` = ?'] = $country_row['id'];
+//    }
+//    $city_all = $RegionHelper->regionAll($city_where,array(0,100));
+//    $city_all = Common::arrayExplode($city_all, 8);
+//    $this->Assign('city_all',$city_all);
+//
+//    //筛选所有年份
+//    $year_all = $RouteHelper->GetGroupAll(array('txt_year'), array('`delete` = ?' => 0,'`is_sale` = ?' => 1), 500, 0, array('txt_year'));
+//    $year_all = Common::arrayExplode($year_all, 8);
+//    $this->Assign('year_all',$year_all);
+//
+//    //筛选 月份
+//    $month_all = $RouteHelper->GetGroupAll(array('txt_month'), array('`delete` = ?' => 0,'`is_sale` = ?' => 1), 500, 0, array('txt_month'));
+//    $month_all = Common::arrayExplode($month_all, 8);
+//    $this->Assign('month_all',$month_all);
+//
+//
+//    $where = array(
+//        '`delete` = ?' => 0,
+//        '`is_sale` = ?' => 1
+//    );
+//
+//    $con_where = array();
+//    if(!empty($country)){
+//        $con_where['`countries` = ?'] = $country;
+//    }
+//    if(!empty($city)){
+//        $con_where['`city` = ?'] = $city;
+//    }
+//    if(!empty($con_where)){
+//        $conven_all = $ConventionHelper->conventionAll($con_where);
+//        $in_id = array(0);
+//        if(!empty($conven_all)) foreach($conven_all as $k=>$v){
+//            $in_id[] = $v['id'];
+//        }
+//        $where['`con_id` IN (?)'] = $in_id;
+//    }
+//    if(!empty($year)){
+//        //$where['`leave_year` = ?'] = $year;
+//        $where['locate(?,`txt_year`)>0'] = $year;
+//    }
+//    if(!empty($this->Param['month'])){
+//        $where['locate(?,`txt_month`)>0'] = urldecode($this->Param['month']);
+//    }
+//    $data = $RouteHelper->routePageList($where, $limit, $page, $this->Param);
+//    if(!empty($data['All'])) foreach($data['All'] as $k=>$v){
+//		//获取类型
+//		$typeArr = $RouteHelper->getVisaRow(array(
+//			'`visa_id` = ?' => $v['hotel_star']
+//		));
+//
+//		$data['All'][$k]['hotel_star'] = $typeArr['visa_name'];
+//
+//        $fav_count = $FavoriteHelper->favCount(array(
+//            '`related_id` = ?' => $v['id'],
+//            '`sort` = ?' => 3
+//        ));
+//        $data['All'][$k]['favcount'] = $fav_count;
+//        //统计打分平均分值
+//        $average = $CommentHelper->detailConAverage(array(
+//            '`is_type` = ?' => 3,
+//            '`con_id` = ?' => $v['id'],
+//            '`delete` = ?' => 0
+//        ));
+//        $data['All'][$k]['average'] = $average;
+//    }
+//
+//    $data['attr'] = array('country' => $country,'city' =>$city,'year'=>$year,'month'=>$month);
+//
+//    $this->Assign('data', $data);
+//    $this->Assign('param', $this->Param);
     
-    echo $this->GetView('route_index.php');
+    //echo $this->GetView('route_index.php');
+
 } else {
     switch($this->Param['option']){
         case 'detail':

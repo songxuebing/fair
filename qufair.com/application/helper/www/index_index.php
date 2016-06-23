@@ -32,6 +32,9 @@
     $this->LoadHelper('visa/VisaHelper');
     $VisaHelper = new VisaHelper();
 
+    $this->LoadHelper('region/RegionHelper');
+    $RegionHelper = new RegionHelper();
+
     $id = 9;
     $pos_row = $AdvHelper->posRow($id);
     if(empty($pos_row)){
@@ -276,6 +279,22 @@
         }
         //var_dump($da);exit();
         $this->Assign('delta_visa',$da);
+
+        //获取行程下的国家
+        $delta_route = array("欧洲","美洲","亚洲","非洲","大洋洲");
+        $data_ro = $RegionHelper->routeAll(null);
+        //var_dump($data_de);exit();
+        foreach($delta_route as $k => $v) {
+            foreach ($data_ro as $key => $val) {
+                if ($val['delta'] == $v)
+                {
+                    $da_ro[$k][$key] = $data_ro[$key];
+                }
+            }
+        }
+        //var_dump($da_ro);exit();
+        $this->Assign('delta_route',$da_ro);
+
         echo $this->GetView('index_index_no2.php');
     }else{
 

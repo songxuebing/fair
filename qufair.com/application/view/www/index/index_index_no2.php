@@ -71,8 +71,6 @@
             }
             ?>
             <span>|</span>
-            <a href="javascript:void(0)" target="_self" class="bg01">商户入驻</a>
-            <span>|</span>
             <i>咨询热线：40006-2345-1</i>
             <span>|</span>
             <a href="/about/index/id/4" target="_blank">帮助中心</a>
@@ -821,8 +819,9 @@
                                 <!--欧洲start-->
                                 <div>
                                 <ul class="clearfix">
-                                    <?php //var_dump($this->delta);exit();?>
-                                <?php foreach($this->delta['0']['next'] as $k => $val_de){?>
+                                <?php //var_dump($this->delta);exit();?>
+
+                                <?php foreach($this->delta_route['0'] as $k => $val_de){?>
                                 <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                 <?php }?>
                                 </ul>
@@ -843,7 +842,7 @@
                                 <!--美洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['4']['next'] as $k => $val_de){?>
+                                        <?php foreach($this->delta_route['1'] as $k => $val_de){?>
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
@@ -864,7 +863,7 @@
                                 <!--亚洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['1']['next'] as $k => $val_de){?>
+                                        <?php foreach($this->delta_route['2'] as $k => $val_de){?>
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
@@ -885,7 +884,7 @@
                                 <!--非洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['8']['next'] as $k => $val_de){?>
+                                        <?php foreach($this->delta_route['3'] as $k => $val_de){?>
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
@@ -905,7 +904,7 @@
                                 <!--大洋洲start-->
                                 <div class="disable">
                                     <ul class="clearfix">
-                                        <?php foreach($this->delta['8']['next'] as $k => $val_de){?>
+                                        <?php foreach($this->delta_route['4'] as $k => $val_de){?>
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>

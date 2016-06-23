@@ -131,6 +131,65 @@ class RegionHelper extends Helper {
         }
         return $this->RegionModel->visaAll($where,$limit, $group, $order, $output);
     }
+    public function routePageList($where,$limit,$page,$Param){
+        if(!empty($Param['delta'])){
+            $where['`delta` = ?'] = urldecode($Param['delta']);
+        }
+        $data['One']=$this->RegionModel->routeOne($where);
+        if(!empty($data['One'])){
+            $data['All']=$this->RegionModel->routeAll($where,array($page,$limit),NULL,array('id asc'));
+            Pagination::SetUrl($Param);
+            $data['Page'] = Pagination::GetHtml($limit,$page,$data['One']);
+        }
+        return $data;
+    }
 
+    public function routeSave($data, $where = array()) {
+        if (empty($where)) {
+            return $this->RegionModel->routeSave($data);
+        } else {
+            if (is_numeric(($where))) {
+                $where = array(
+                    '`id` = ?' => $where
+                );
+            }
+            return $this->RegionModel->routeUpdate($data, $where);
+        }
+    }
+
+    public function routeRemove($where){
+        if (is_numeric(($where))) {
+            $where = array(
+                '`id` = ?' => $where
+            );
+        }
+        return $this->RegionModel->routeDelete($where);
+    }
+    public function routeOne($where) {
+        if (is_numeric($where)) {
+            $where = array(
+                '`id` = ?' => $where
+            );
+        }
+        return $this->RegionModel->routeOne($where);
+    }
+
+    public function routeRow($where) {
+        if (is_numeric($where)) {
+            $where = array(
+                '`id` = ?' => $where
+            );
+        }
+        return $this->RegionModel->routeRow($where);
+    }
+
+    public function routeAll($where,$limit = null, $group = null, $order = null, $output = false) {
+        if (is_numeric($where)) {
+            $where = array(
+                '`id` = ?' => $where
+            );
+        }
+        return $this->RegionModel->routeAll($where,$limit, $group, $order, $output);
+    }
 
 }

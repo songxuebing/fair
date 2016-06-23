@@ -3,11 +3,44 @@
 <head>
     <meta charset="utf-8">
     <link type="text/css" href="<?php echo STYLE_URL;?>/style/no2/css/style.css" rel="stylesheet" />
+    <link type="text/css" href="<?php echo STYLE_URL;?>/style/no2/css/fltb.css" rel="stylesheet" />
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/main.js"></script>
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/slider.js"></script>
     <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/jcarousellite_1.0.1.js"></script>
-    <title>首页</title>
+    <?php
+    if(empty($webtitle)){
+        ?>
+        <title>2016年国际展会_国外展览会平台-去展网</title>
+    <?php
+    }else{
+        ?>
+        <title><?php echo $webtitle?></title>
+    <?php
+    }
+    ?>
+    <?php
+    if(empty($webkeywords)){
+        ?>
+        <meta name="keywords" content="国际展览会|国外展览会|外贸展览会|国内展览会|行业展览会" />
+    <?php
+    }else{
+        ?>
+        <meta name="keywords" content="<?php echo $webkeywords?>"/>
+    <?php
+    }
+    ?>
+    <?php
+    if(empty($webdescription)){
+        ?>
+        <meta name="description" content="去展网_提供国际国外展会|行程|签证|物流|展览装修设计|展览订展一站式服务,提供2016最新最全的国际汽配展，电子展，五金展，服装展，礼品展等行业展览会资讯" />
+    <?php
+    }else{
+        ?>
+        <meta name="description" content="<?php echo $webdescription?>"/>
+    <?php
+    }
+    ?>
 </head>
 
 <body>
@@ -20,14 +53,25 @@
         </li>
         <li class="fr">
             <i>嗨，欢迎您！</i>
-            <a href="javascript:void(0)" target="_self" style="color:#ff4b05;" class="zoomIn dialog" id="login">请登录!</a>
-            <a href="javascript:void(0)" target="_self" class="zoomIn dialog" id="resiger">免费注册</a>
+            <?php
+            if(empty($this->UserConfig['Id'])){
+                ?>
+                <a href="/login/index/" target="_blank" class="font01">请登录!</a>&nbsp;
+                <a href="/register/index" target="_blank">免费注册</a>
+            <?php
+            }else{
+                ?>
+                <a href="<?php echo MEMBER_URL;?>/user/index/" class="font01">
+                    <?php echo $this->UserConfig['Name'];?></a>&nbsp;
+                <a href="/login/Logout/option/refer">退出</a>
+            <?php
+            }
+            ?>
             <span>|</span>
-            <a href="javascript:void(0)" target="_self" class="bg01">商户入驻</a>
-            <span>|</span>
+
             <i>咨询热线：40006-2345-1</i>
             <span>|</span>
-            <a href="##" target="_blank">帮助中心</a>
+            <a href="/about/index/id/4" target="_blank">帮助中心</a>
         </li>
     </ul>
 </div>
@@ -41,30 +85,36 @@
 
         <li class="search-type fr">
             <div class="con01">
-                <a href="##" target="_blank" class="current">全球展会</a>
+                <a href="/convention" target="_blank" class="current">全球展会</a>
             </div>
 
             <div class="con02">
-                <input type="text" value=""  class="fl" placeholder="输入关键词内容" id="type" onClick="searchs(true)"/>
-                <input type="submit" value="搜  索" class="fr" />
+                <form class="J-search-box" action="/convention/index/" method="post">
+                    <input type="text" value=""  class="fl" name="key" placeholder="输入关键词内容" id="type" onClick="searchs(true)"/>
+                    <input type="submit" value="搜  索" class="fr" />
+                    <input type="hidden" name="type" value="convention" />
                 <div id="type-list">
                     <p pl="美国食品科技展IFT">美国食品科技展IFT</p>
                     <p pl="美国夏季特色食品展">美国夏季特色食品展</p>
                     <p pl="美国安全及劳保用品博览会">美国安全及劳保用品博览会</p>
                 </div>
+                </form>
             </div>
 
             <div class="con03">
                 <p>
                     <span>热门搜索：</span>
-                    <a href="##" target="_blank">港展</a>
-                    <a href="##" target="_blank" class="font01">礼品展</a>
-                    <a href="##" target="_blank">广交会</a>
-                    <a href="##" target="_blank">世博</a>
-                    <a href="##" target="_blank">德国玩具展</a>
-                    <a href="##" target="_blank" class="font01">日本性文化展</a>
-                    <a href="##" target="_blank">韩国服装展</a>
-                    <a href="##" target="_blank">家居展</a>
+                    <?php
+                    if(!empty($this->keyword)){
+                        ?>
+                        <?php
+                        foreach($this->keyword as $key => $val){
+                            ?>
+                            <a href="javascript:;" class="J-hot-key"><?php echo $val['keyword'];?></a>
+                        <?php
+                        }
+                    }
+                    ?>
                 </p>
             </div>
 
@@ -72,6 +122,66 @@
 
     </ul>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(e) {
+
+        $(".J-hot-key").on('click',function(){
+            var $this = $(this);
+            $("input[name='key']").val($this.html());
+            $(".fr").click();
+        });
+
+        $(".nav p").click(function(){
+            var ul=$(".new");
+            if(ul.css("display")=="none"){
+                ul.slideDown();
+            }else{
+                ul.slideUp();
+            }
+        });
+
+        $(".set").click(function(){
+            var _name = $(this).attr("name");
+            if( $("[name="+_name+"]").length > 1 ){
+                $("[name="+_name+"]").removeClass("select");
+                $(this).addClass("select");
+            } else {
+                if( $(this).hasClass("select") ){
+                    $(this).removeClass("select");
+                } else {
+                    $(this).addClass("select");
+                }
+            }
+        });
+
+        $(".nav li").click(function(){
+            var li=$(this).text();
+            $(".nav p").html(li);
+            $(".new").hide();
+            /*$(".set").css({background:'none'});*/
+            $("p").removeClass("select") ;
+            //获取搜索类型
+            var searchType = $(this).data('id');
+            $('input[name="type"]').val(searchType);
+
+            //构建搜索地址
+            $(".J-search-box").attr({"action":"/"+searchType+"/index/"});
+
+
+        });
+
+        $(".mm_dianji img").click(function(){
+            if($(this).hasClass('on')){
+                $(this).closest('.J-mm_zhanhui_list_fenlei1').find('.J-mm_zhanhui_list_xuanze:not(:eq(0))').addClass('mm_show');
+                $(this).removeClass('on');
+            }else{
+                $(this).closest('.J-mm_zhanhui_list_fenlei1').find('.J-mm_zhanhui_list_xuanze').removeClass('mm_show');
+                $(this).addClass('on');
+            }
+        });
+    });
+
+</script>
 <!--搜索end-->
 
 <script>
@@ -110,1718 +220,72 @@
      <span class="hot-product">热门行业
        <div class="hot-list">
            <ul id="nav">
+
                <!--纺织服饰鞋革start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">纺织服饰鞋革<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display: none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
+               <?php
 
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
+               if(!empty($this->nav))
+                   $new_nav = array_chunk($this->nav, 16, true);
+               //var_dump($new_nav);exit();
+               foreach($new_nav['0'] as $k=>$v){
+                   ?>
+                   <div class="nav-item">
+                       <a href="/convention" title="" class="nav-link <?php echo $v['name_en'];?>"><?php echo $v['name'];?><i class="ico"></i></a>
+                       <div class="nav-dropdown" style="display:none;">
+                           <div class="jjjz">
+                               <ul class="clearfix">
+                                   <!--左start-->
+                                   <li class="type-list fl">
+                                       <?php
+                                       if(!empty($v['next'])) foreach($v['next'] as $key=>$val){
+                                           ?>
+                                           <div class="type">
+                                               <ul class="title">
+                                                   <b><a href="/<?php echo $val['name_en']?>" target="_blank"><?php echo $val['name'];?></a></b>
+                                               </ul>
+                                               <ul class="list clearfix">
+                                                   <?php
+                                                   if(!empty($val['next2'])) foreach($val['next2'] as $key=>$val_next2){
+                                                       ?>
+                                                       <li><a href="<?php echo $val['name_en']?>" target="_blank"><?php echo $val_next2['name']?></a></li>
+                                                   <?php }?>
+                                               </ul>
+                                           </div>
+                                       <?php }?>
+
+                                   </li>
+                                   <!--左end-->
+                                   <!--右start-->
+                                   <li class="type-list fl">
+
+                                       <div class="img-list">
+                                           <ul>
+                                               <?php
+                                               $adv_i = 0;
+                                               if(!empty($this->industry_adv)) foreach($this->industry_adv as $k => $val_in_adv){?>
+                                                   <?php if(($v['id'] == $val_in_adv['industry_id']) && $adv_i < 4){?>
+                                                       <li>
+                                                           <a href="<?php echo $val_in_adv['url'];?>" target="_blank">
+                                                               <img src="<?php echo $val_in_adv['file'];?>" alt="<?php echo $val_in_adv['title'];?>" width="330" height="140" />
+                                                           </a>
+                                                       </li>
+                                                       <?php
+                                                       $adv_i++;}}
+                                               ?>
+                                           </ul>
+                                       </div>
+                                   </li>
+                                   <!--右end-->
+                               </ul>
+                           </div>
                        </div>
                    </div>
-               </div>
-               <!--纺织服饰鞋革end-->
-               <!--安防劳保公共start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">安防劳保公共<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
+                   <!--纺织服饰鞋革end-->
+               <?php
+               }
 
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--安防劳保公共end-->
-               <!--酒店及旅游用品start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">酒店及旅游用品<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
+               ?>
 
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--酒店及旅游用品end-->
-               <!--首饰美容化妆品start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">首饰美容化妆品<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--首饰美容化妆品end-->
-               <!--食品饮料烟酒start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">食品饮料烟酒<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display: none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--食品饮料烟酒end-->
-               <!--机械五金工业start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">机械五金工业<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--机械五金工业end-->
-               <!--印刷包装广告start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">印刷包装广告<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--印刷包装广告end-->
-               <!--化工环保能源start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">化工环保能源<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display: none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--化工环保能源end-->
-               <!--计算机软件网络start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">计算机软件网络<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--计算机软件网络end-->
-               <!--生物医疗保健start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">生物医疗保健<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--生物医疗保健end-->
-               <!--体育户外影视start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">体育户外影视<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--体育户外影视end-->
-               <!--汽配摩配自行车start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">汽配摩配自行车<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--汽配摩配自行车end-->
-               <!--建材石材暖通start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">建材石材暖通<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--建材石材暖通end-->
-               <!--运输物流start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">运输物流<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--运输物流end-->
-               <!--宠物用品钓具start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">宠物用品钓具<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--宠物用品钓具end-->
-               <!--宠物用品钓具start-->
-               <div class="nav-item">
-                   <a href="javascript:void(0);" title="" class="nav-link">宠物用品钓具<i class="ico"></i></a>
-                   <div class="nav-dropdown" style="display:none;">
-                       <div class="jjjz">
-                           <ul class="clearfix">
-                               <!--左start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--左end-->
-                               <!--右start-->
-                               <li class="type-list fl">
-                                   <div class="type">
-                                       <ul class="title">
-                                           <b><a href="##" target="_blank">纺织</a></b>
-                                           <p><a href="##" target="_blank">女装</a></p>
-                                       </ul>
-                                       <ul class="list clearfix">
-                                           <li><a href="##" target="_blank">连衣裙</a></li>
-                                           <li><a href="##" target="_blank">衬衫</a></li>
-                                           <li><a href="##" target="_blank">雪纺纱</a></li>
-                                           <li><a href="##" target="_blank">T恤</a></li>
-                                           <li><a href="##" target="_blank">针织衫</a></li>
-                                           <li><a href="##" target="_blank">牛仔裤</a></li>
-                                           <li><a href="##" target="_blank">打底裤</a></li>
-                                           <li><a href="##" target="_blank">休闲裤</a></li>
-                                       </ul>
-                                   </div>
-
-                                   <div class="img-list">
-                                       <ul>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                           <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                       </ul>
-                                   </div>
-                               </li>
-                               <!--右end-->
-                           </ul>
-                       </div>
-                   </div>
-               </div>
-               <!--宠物用品钓具end-->
                <!--更多start-->
                <div class="more">
                    <p class="more-up"><a href="javascript:void(0)">More +</a></p>
@@ -1833,433 +297,62 @@
                <div id="box" class="disable">
                    <ul>
                        <!--电子电力通讯start-->
-                       <div class="nav-item">
-                           <a href="javascript:void(0);" title="" class="nav-link">电子电力通讯<i class="ico"></i></a>
-                           <div class="nav-dropdown" style="display:none;">
-                               <div class="jjjz">
-                                   <ul class="clearfix">
-                                       <!--左start-->
-                                       <li class="type-list fl">
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">电子电力通讯</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                       </li>
-                                       <!--左end-->
-                                       <!--右start-->
-                                       <li class="type-list fl">
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
+                       <?php
+                       foreach($new_nav['1'] as $k=>$v){
+                           ?>
+                           <div class="nav-item">
+                               <a href="/convention" title="" class="nav-link <?php echo $v['name_en'];?>"><?php echo $v['name'];?><i class="ico"></i></a>
+                               <div class="nav-dropdown" style="display:none;">
+                                   <div class="jjjz">
+                                       <ul class="clearfix">
+                                           <!--左start-->
+                                           <li class="type-list fl">
+                                               <?php
+                                               if(!empty($v['next'])) foreach($v['next'] as $key=>$val){
+                                                   ?>
+                                                   <div class="type">
+                                                       <ul class="title">
+                                                           <b><a href="/<?php echo $val['name_en'];?>" target="_blank"><?php echo $val['name'];?></a></b>
+                                                       </ul>
+                                                       <ul class="list clearfix">
+                                                           <?php
+                                                           if(!empty($val['next2'])) foreach($val['next2'] as $key=>$val_next2){
+                                                               ?>
+                                                               <li><a href="<?php echo $val['name_en'];?>" target="_blank"><?php echo $val_next2['name']?></a></li>
+                                                           <?php }?>
+                                                       </ul>
+                                                   </div>
+                                               <?php }?>
 
-                                           <div class="img-list">
-                                               <ul>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                               </ul>
-                                           </div>
-                                       </li>
-                                       <!--右end-->
-                                   </ul>
+                                           </li>
+                                           <!--左end-->
+                                           <!--右start-->
+                                           <li class="type-list fl">
+                                               <div class="img-list">
+                                                   <ul>
+                                                       <?php
+                                                       $adv_i = 0;
+                                                       if(!empty($this->industry_adv)) foreach($this->industry_adv as $k => $val_in_adv){?>
+                                                           <?php if(($v['id'] == $val_in_adv['industry_id']) && $adv_i < 4){?>
+                                                               <li>
+                                                                   <a href="<?php echo $val_in_adv['url'];?>" target="_blank">
+                                                                       <img src="<?php echo $val_in_adv['file'];?>" alt="<?php echo $val_in_adv['title'];?>" width="330" height="140" />
+                                                                   </a>
+                                                               </li>
+                                                               <?php
+                                                               $adv_i++;}}
+                                                       ?>
+                                                   </ul>
+                                               </div>
+                                           </li>
+                                           <!--右end-->
+                                       </ul>
+                                   </div>
                                </div>
                            </div>
-                       </div>
+                       <?php }?>
                        <!--电子电力通讯end-->
-                       <!--礼品及消费品start-->
-                       <div class="nav-item">
-                           <a href="javascript:void(0);" title="" class="nav-link">礼品及消费品<i class="ico"></i></a>
-                           <div class="nav-dropdown" style="display:none;">
-                               <div class="jjjz">
-                                   <ul class="clearfix">
-                                       <!--左start-->
-                                       <li class="type-list fl">
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">礼品及消费品</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                       </li>
-                                       <!--左end-->
-                                       <!--右start-->
-                                       <li class="type-list fl">
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
 
-                                           <div class="img-list">
-                                               <ul>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                               </ul>
-                                           </div>
-                                       </li>
-                                       <!--右end-->
-                                   </ul>
-                               </div>
-                           </div>
-                       </div>
-                       <!--礼品及消费品end-->
-                       <!--海洋航空航天start-->
-                       <div class="nav-item">
-                           <a href="javascript:void(0);" title="" class="nav-link">海洋航空航天<i class="ico"></i></a>
-                           <div class="nav-dropdown" style="display:none;">
-                               <div class="jjjz">
-                                   <ul class="clearfix">
-                                       <!--左start-->
-                                       <li class="type-list fl">
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">海洋航空航天</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                       </li>
-                                       <!--左end-->
-                                       <!--右start-->
-                                       <li class="type-list fl">
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-
-                                           <div class="img-list">
-                                               <ul>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                               </ul>
-                                           </div>
-                                       </li>
-                                       <!--右end-->
-                                   </ul>
-                               </div>
-                           </div>
-                       </div>
-                       <!--海洋航空航天end-->
-                       <!--照明及综合start-->
-                       <div class="nav-item">
-                           <a href="javascript:void(0);" title="" class="nav-link">照明及综合<i class="ico"></i></a>
-                           <div class="nav-dropdown" style="display:none;">
-                               <div class="jjjz">
-                                   <ul class="clearfix">
-                                       <!--左start-->
-                                       <li class="type-list fl">
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">照明及综合</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-                                       </li>
-                                       <!--左end-->
-                                       <!--右start-->
-                                       <li class="type-list fl">
-                                           <div class="type">
-                                               <ul class="title">
-                                                   <b><a href="##" target="_blank">纺织</a></b>
-                                                   <p><a href="##" target="_blank">女装</a></p>
-                                               </ul>
-                                               <ul class="list clearfix">
-                                                   <li><a href="##" target="_blank">连衣裙</a></li>
-                                                   <li><a href="##" target="_blank">衬衫</a></li>
-                                                   <li><a href="##" target="_blank">雪纺纱</a></li>
-                                                   <li><a href="##" target="_blank">T恤</a></li>
-                                                   <li><a href="##" target="_blank">针织衫</a></li>
-                                                   <li><a href="##" target="_blank">牛仔裤</a></li>
-                                                   <li><a href="##" target="_blank">打底裤</a></li>
-                                                   <li><a href="##" target="_blank">休闲裤</a></li>
-                                               </ul>
-                                           </div>
-
-                                           <div class="img-list">
-                                               <ul>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/2.jpg" alt=""></a></li>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/3.jpg" alt=""></a></li>
-                                                   <li><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/4.jpg" alt=""></a></li>
-                                               </ul>
-                                           </div>
-                                       </li>
-                                       <!--右end-->
-                                   </ul>
-                               </div>
-                           </div>
-                       </div>
-                       <!--照明及综合end-->
                    </ul>
                </div>
                <!--弹窗end-->
@@ -2268,13 +361,13 @@
      </span>
 
         <ul class="fr">
-            <li><a href="##" target="_self" class="current">首页</a></li>
-            <li><a href="##" target="_blank">展会</a></li>
-            <li><a href="##" target="_blank">行程</a></li>
-            <li><a href="##" target="_blank">签证</a></li>
-<!--            <li><a href="##" target="_blank">物流</a></li>-->
-            <li><a href="##" target="_blank">特装</a></li>
-            <li><a href="##" target="_blank">社区资讯</a></li>
+            <li><a href="/" target="_self" class="current">首页</a></li>
+            <li><a href="/convention" target="_blank">展会</a></li>
+            <li><a href="/route" target="_blank">行程</a></li>
+            <li><a href="/visa" target="_blank">签证</a></li>
+            <!--            <li><a href="/logistics" target="_blank">物流</a></li>-->
+            <li><a href="/decoration" target="_blank">特装</a></li>
+            <li><a href="/news" target="_blank">社区资讯</a></li>
         </ul>
     </div>
     <!--导航end-->

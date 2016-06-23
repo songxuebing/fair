@@ -28,39 +28,63 @@
       <file leaf-file-name="index_index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/helper/www/index_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.7" vertical-offset="5226" max-vertical-offset="6069">
-              <caret line="277" column="38" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
+            <state vertical-scroll-proportion="-15.5" vertical-offset="5478" max-vertical-offset="6468">
+              <caret line="283" column="56" selection-start-line="283" selection-start-column="56" selection-end-line="283" selection-end-column="56" />
               <folding>
-                <marker date="1466650133250" expanded="true" signature="4859:4959" placeholder="SELECT * FRO..." />
-                <marker date="1466650133250" expanded="true" signature="7752:8000" placeholder="SELECT id,ti..." />
-                <marker date="1466650133250" expanded="true" signature="8149:8393" placeholder="SELECT id,ti..." />
-                <marker date="1466650133250" expanded="true" signature="8985:9181" placeholder="SELECT id,ti..." />
-                <marker date="1466650133250" expanded="true" signature="9278:9464" placeholder="SELECT id,ti..." />
-                <marker date="1466650133250" expanded="true" signature="9571:9757" placeholder="SELECT id,ti..." />
-                <marker date="1466650133250" expanded="true" signature="9850:10036" placeholder="SELECT id,ti..." />
+                <marker date="1466672382620" expanded="true" signature="4946:5046" placeholder="SELECT * FRO..." />
+                <marker date="1466672382620" expanded="true" signature="7839:8087" placeholder="SELECT id,ti..." />
+                <marker date="1466672382620" expanded="true" signature="8236:8480" placeholder="SELECT id,ti..." />
+                <marker date="1466672382620" expanded="true" signature="9072:9268" placeholder="SELECT id,ti..." />
+                <marker date="1466672382620" expanded="true" signature="9365:9551" placeholder="SELECT id,ti..." />
+                <marker date="1466672382620" expanded="true" signature="9658:9844" placeholder="SELECT id,ti..." />
+                <marker date="1466672382620" expanded="true" signature="9937:10123" placeholder="SELECT id,ti..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index_index_no2.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index_index_no2.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index_no2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46619216" vertical-offset="21153" max-vertical-offset="26208">
-              <caret line="1026" column="0" selection-start-line="1026" selection-start-column="0" selection-end-line="1026" selection-end-column="0" />
+            <state vertical-scroll-proportion="-21.8" vertical-offset="17952" max-vertical-offset="26187">
+              <caret line="886" column="40" selection-start-line="886" selection-start-column="40" selection-end-line="886" selection-end-column="98" />
               <folding>
-                <element signature="e#22000#22046#0#PHP" expanded="true" />
+                <element signature="e#21895#21941#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visa_index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/helper/www/visa_index.php">
+      <file leaf-file-name="route_index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/helper/www/route_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4" vertical-offset="0" max-vertical-offset="5754">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="31" />
+            <state vertical-scroll-proportion="-32.9" vertical-offset="252" max-vertical-offset="5397">
+              <caret line="59" column="30" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="convention_index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/helper/www/convention_index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8505338" vertical-offset="3756" max-vertical-offset="6048">
+              <caret line="213" column="60" selection-start-line="213" selection-start-column="60" selection-end-line="213" selection-end-column="60" />
+              <folding>
+                <marker date="1466675255647" expanded="true" signature="8631:8756" placeholder="SELECT * FRO..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="route.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/view/www/route/route.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.1" vertical-offset="1152" max-vertical-offset="12117">
+              <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#li#1;n#ul#0;n#div#3;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,9 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/view/www/convention/convntio_order.php" />
-        <option value="$PROJECT_DIR$/library/ErrorMsg.php" />
-        <option value="$PROJECT_DIR$/application/view/crm/other/industry_index.php" />
         <option value="$PROJECT_DIR$/application/helper/crm/other_industry.php" />
         <option value="$PROJECT_DIR$/application/helper/crm/convention_index.php" />
         <option value="$PROJECT_DIR$/application/module/ConventionModel.php" />
@@ -83,10 +104,8 @@
         <option value="$PROJECT_DIR$/application/view/www/convention/convention_search.php" />
         <option value="$PROJECT_DIR$/application/helper/www/convention_search.php" />
         <option value="$PROJECT_DIR$/application/view/www/convention/convention.php" />
-        <option value="$PROJECT_DIR$/application/view/www/common/header_no2.php" />
         <option value="$PROJECT_DIR$/application/helper/www/convention_order.php" />
         <option value="$PROJECT_DIR$/application/view/www/convention/convention_order.php" />
-        <option value="$PROJECT_DIR$/application/helper/www/convention_index.php" />
         <option value="$PROJECT_DIR$/library/Controller.php" />
         <option value="$PROJECT_DIR$/application/view/crm/other/hot_add.php" />
         <option value="$PROJECT_DIR$/application/view/crm/other/keyword_edit.php" />
@@ -103,12 +122,9 @@
         <option value="$PROJECT_DIR$/application/view/crm/other/route_edit.php" />
         <option value="$PROJECT_DIR$/application/view/crm/other/region_index.php" />
         <option value="$PROJECT_DIR$/application/view/crm/other/visa.php" />
-        <option value="$PROJECT_DIR$/application/helper/region/RegionHelper.php" />
         <option value="$PROJECT_DIR$/application/view/crm/other/visa_index.php" />
-        <option value="$PROJECT_DIR$/application/module/RegionModel.php" />
         <option value="$PROJECT_DIR$/application/helper/crm/adv_index.php" />
         <option value="$PROJECT_DIR$/application/view/crm/other/visa_edit.php" />
-        <option value="$PROJECT_DIR$/application/helper/crm/other_region.php" />
         <option value="$PROJECT_DIR$/application/view/crm/visa/visa_new_edit.php" />
         <option value="$PROJECT_DIR$/application/helper/crm/visa_index.php" />
         <option value="$PROJECT_DIR$/application/view/crm/visa/visa_new_index.php" />
@@ -116,11 +132,19 @@
         <option value="$PROJECT_DIR$/application/module/VisaModel.php" />
         <option value="$PROJECT_DIR$/application/helper/visa/VisaHelper.php" />
         <option value="$PROJECT_DIR$/application/helper/www/visa_index.php" />
-        <option value="$PROJECT_DIR$/application/view/www/visa/visa_detail_new.php" />
         <option value="$PROJECT_DIR$/config/Db.php" />
         <option value="$PROJECT_DIR$/application/view/www/visa/visa_new.php" />
-        <option value="$PROJECT_DIR$/application/helper/www/index_index.php" />
+        <option value="$PROJECT_DIR$/application/view/www/common/header_no2.php" />
+        <option value="$PROJECT_DIR$/application/view/www/visa/visa_detail_new.php" />
+        <option value="$PROJECT_DIR$/application/helper/crm/other_region.php" />
+        <option value="$PROJECT_DIR$/application/helper/region/RegionHelper.php" />
+        <option value="$PROJECT_DIR$/application/module/RegionModel.php" />
         <option value="$PROJECT_DIR$/application/view/www/index/index_index_no2.php" />
+        <option value="$PROJECT_DIR$/application/helper/www/index_index.php" />
+        <option value="$PROJECT_DIR$/application/helper/www/route_index.php" />
+        <option value="$PROJECT_DIR$/application/view/www/route/route.php" />
+        <option value="$PROJECT_DIR$/application/helper/www/convention_index.php" />
+        <option value="$PROJECT_DIR$/application/view/www/convention/convention_index_detail.php" />
       </list>
     </option>
   </component>
@@ -217,7 +241,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="index" />
+              <option name="myItemId" value="convention" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -411,105 +435,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/view/crm/other/industry_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34875444" vertical-offset="63" max-vertical-offset="1554">
-          <caret line="17" column="97" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/crm/adv_pos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1113">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/crm/other_industry.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46004844" vertical-offset="1846" max-vertical-offset="3339">
-          <caret line="106" column="44" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/crm/index_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="886">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/crm/auth_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="273">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/login/LoginHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.633333" vertical-offset="734" max-vertical-offset="2898">
-          <caret line="63" column="19" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Cookie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.133333" vertical-offset="1475" max-vertical-offset="2688">
-          <caret line="99" column="45" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/register/register_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="88.2" vertical-offset="2646" max-vertical-offset="6804">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/login_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="843">
-          <caret line="0" column="36" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/convention_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-76.4" vertical-offset="2181" max-vertical-offset="6048">
-          <caret line="213" column="74" selection-start-line="213" selection-start-column="74" selection-end-line="213" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/register_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.098130845" vertical-offset="252" max-vertical-offset="4305">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/crm/other/hot_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.0" vertical-offset="279" max-vertical-offset="1323">
-          <caret line="39" column="71" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/crm/other/hot_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.8" vertical-offset="441" max-vertical-offset="1344">
-          <caret line="35" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/keyword/KeywordHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.733334" vertical-offset="2117" max-vertical-offset="3129">
-          <caret line="139" column="56" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/view/crm/other/route_edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.95" vertical-offset="378" max-vertical-offset="1848">
@@ -573,13 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/region/RegionHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.633333" vertical-offset="2084" max-vertical-offset="2961">
-          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controller/crm/AdvController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="886">
@@ -598,21 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37366548" vertical-offset="1134" max-vertical-offset="2373">
           <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/module/RegionModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19626169" vertical-offset="0" max-vertical-offset="1092">
-          <caret line="8" column="75" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/crm/other_region.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7301402" vertical-offset="2105" max-vertical-offset="3150">
-          <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,26 +584,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/visa/VisaHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3638" max-vertical-offset="4536">
-          <caret line="208" column="42" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/module/VisaModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2610" max-vertical-offset="3423">
           <caret line="141" column="29" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/www/visa/visa_detail_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="483" max-vertical-offset="6930">
-          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -761,22 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helper/www/index_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.7" vertical-offset="5226" max-vertical-offset="6069">
-          <caret line="277" column="38" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
-          <folding>
-            <marker date="1466650133250" expanded="true" signature="4859:4959" placeholder="SELECT * FRO..." />
-            <marker date="1466650133250" expanded="true" signature="7752:8000" placeholder="SELECT id,ti..." />
-            <marker date="1466650133250" expanded="true" signature="8149:8393" placeholder="SELECT id,ti..." />
-            <marker date="1466650133250" expanded="true" signature="8985:9181" placeholder="SELECT id,ti..." />
-            <marker date="1466650133250" expanded="true" signature="9278:9464" placeholder="SELECT id,ti..." />
-            <marker date="1466650133250" expanded="true" signature="9571:9757" placeholder="SELECT id,ti..." />
-            <marker date="1466650133250" expanded="true" signature="9850:10036" placeholder="SELECT id,ti..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/helper/www/visa_index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4" vertical-offset="0" max-vertical-offset="5754">
@@ -785,12 +656,187 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/common/header_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/common/header_fourm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3948">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/common/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.9" vertical-offset="42" max-vertical-offset="4221">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="41" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/common/header_no2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0" vertical-offset="522" max-vertical-offset="7938">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#span#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ul#0;n#div#2;n#ul#0;n#div#0;n#span#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/visa/visa_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="11802">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/visa/visa_detail_new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7" vertical-offset="0" max-vertical-offset="6993">
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/common/links2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="856">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/common/links_route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="886">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/module/RegionModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.3" vertical-offset="0" max-vertical-offset="2037">
+          <caret line="9" column="82" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/route/route_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.14946619" vertical-offset="252" max-vertical-offset="8358">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/visa/VisaHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.533333" vertical-offset="3650" max-vertical-offset="4536">
+          <caret line="206" column="5" selection-start-line="206" selection-start-column="5" selection-end-line="206" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/route/RouteHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="89.76667" vertical-offset="2693" max-vertical-offset="3549">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/crm/other_region.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1" vertical-offset="0" max-vertical-offset="4620">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/region/RegionHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.033333" vertical-offset="3344" max-vertical-offset="4200">
+          <caret line="185" column="20" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/view/www/index/index_index_no2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46619216" vertical-offset="21153" max-vertical-offset="26208">
-          <caret line="1026" column="0" selection-start-line="1026" selection-start-column="0" selection-end-line="1026" selection-end-column="0" />
+        <state vertical-scroll-proportion="-21.8" vertical-offset="17952" max-vertical-offset="26187">
+          <caret line="886" column="40" selection-start-line="886" selection-start-column="40" selection-end-line="886" selection-end-column="98" />
           <folding>
-            <element signature="e#22000#22046#0#PHP" expanded="true" />
+            <element signature="e#21895#21941#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/www/index_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.5" vertical-offset="5478" max-vertical-offset="6468">
+          <caret line="283" column="56" selection-start-line="283" selection-start-column="56" selection-end-line="283" selection-end-column="56" />
+          <folding>
+            <marker date="1466672382620" expanded="true" signature="4946:5046" placeholder="SELECT * FRO..." />
+            <marker date="1466672382620" expanded="true" signature="7839:8087" placeholder="SELECT id,ti..." />
+            <marker date="1466672382620" expanded="true" signature="8236:8480" placeholder="SELECT id,ti..." />
+            <marker date="1466672382620" expanded="true" signature="9072:9268" placeholder="SELECT id,ti..." />
+            <marker date="1466672382620" expanded="true" signature="9365:9551" placeholder="SELECT id,ti..." />
+            <marker date="1466672382620" expanded="true" signature="9658:9844" placeholder="SELECT id,ti..." />
+            <marker date="1466672382620" expanded="true" signature="9937:10123" placeholder="SELECT id,ti..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/route/route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.1" vertical-offset="1152" max-vertical-offset="12117">
+          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#li#1;n#ul#0;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/www/route_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.9" vertical-offset="252" max-vertical-offset="5397">
+          <caret line="59" column="30" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention_index_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8" vertical-offset="0" max-vertical-offset="5964">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/www/convention/convention.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2241993" vertical-offset="2457" max-vertical-offset="5229">
+          <caret line="126" column="53" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helper/www/convention_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8505338" vertical-offset="3756" max-vertical-offset="6048">
+          <caret line="213" column="60" selection-start-line="213" selection-start-column="60" selection-end-line="213" selection-end-column="60" />
+          <folding>
+            <marker date="1466675255647" expanded="true" signature="8631:8756" placeholder="SELECT * FRO..." />
           </folding>
         </state>
       </provider>

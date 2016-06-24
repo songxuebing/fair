@@ -187,12 +187,12 @@
             <!--右栏目end-->
         </ul>
     </div>
-        <div class="line10"></div>
-        <!--广告位start-->
-        <div>
-            <a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/56.jpg" alt="" /></a>
-        </div>
-        <!--广告位end-->
+<!--        <div class="line10"></div>-->
+<!--        <!--广告位start-->
+<!--        <div>-->
+<!--            <a href="##" target="_blank"><img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/56.jpg" alt="" /></a>-->
+<!--        </div>-->
+<!--        <!--广告位end-->
 
         <div class="line10"></div>
     <?php }?>

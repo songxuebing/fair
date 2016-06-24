@@ -51,6 +51,8 @@ if(empty($pos_row)){
 $this->Assign('script',$script);
 
 if(empty($this->Param['option'])){
+    $delta = array("欧洲","美洲","亚洲","非洲","大洋洲");
+    $this->Assign('delta', $delta);
     //var_dump($this->Param);exit();
     $one_level = $IndustryHelper->industryAll(array(
         '`parent_id` = ?' => 0
@@ -70,7 +72,7 @@ if(empty($this->Param['option'])){
     $where = array('`id` > ?' => 0);
 
     if(!empty($this->Param['industry'])){
-        $where['locate(?,`industry`)>0'] = urldecode($this->Param['industry']);
+        $where['locate(?,`main`)>0'] = urldecode($this->Param['industry']);
         $where_in['locate(?,`name`)>0'] = urldecode($this->Param['industry']);
         $data_industry = $ConventionHelper->GetInWhere($where_in);
     }

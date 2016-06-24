@@ -13,7 +13,7 @@
         <!--当前位置end-->
 
         <!--筛选内容start-->
-        <div class="all-select">
+        <div class="all-select J-tags" id="myTags">
             <ul>
                 <span>全部内容 ></span>
 <!--                <a href="javascript:void(0)">纺织机械设备<img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/19.png" alt="" /></a>-->
@@ -24,7 +24,8 @@ if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
     if(!empty($aVal)){
         ?>
         <a value="-1" title="<?php echo urldecode($aVal);?>" data-type="<?php echo $aKey;?>" href="javascript:void(0);">
-            <span><?php echo urldecode($aVal);?></span><em></em></a>
+            <?php echo urldecode($aVal);?><img src="<?php echo STYLE_URL;?>/style/no2/images/19.png" alt="" /></a>
+        </a>
     <?php
     }
 }
@@ -46,10 +47,9 @@ if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
                             <li class="J-attr" data-type="industry">
                                 <a value="-1" title="<?php echo $val_in['name'];?>" href="javascript:void(0);">
                                         <?php echo $val_in['name'];?>
+                                    </a>
                                 </li>
                             <?php }?>
-<!--                            <li><a href="##" title="">安防劳保公共</a></li>-->
-
                         </ul>
                     </div>
                 </li>
@@ -72,8 +72,8 @@ if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
                             foreach($this->delta as $k => $v){
                                 ?>
                                 <li class="J-attr" data-type="delta">
-                                    <a value="-1" title="<?php echo $v['name'];?>" href="javascript:void(0);">
-                                        <?php echo $v['name'];?>
+                                    <a value="-1" title="<?php echo $v;?>" href="javascript:void(0);">
+                                        <?php echo $v;?>
                                     </a>
                                     </li>
                             <?php

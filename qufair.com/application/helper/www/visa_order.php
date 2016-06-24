@@ -7,18 +7,23 @@ $this->LoadHelper('order/OrderHelper');
 $OrderHelper = new OrderHelper();
 
 if (empty($this->Param['option'])) {
-    
+
     $this->LoadHelper('public/usercheck');
     
     $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
-    $visa_row = $VisaHelper->getRow(array(
+    $visa_row = $VisaHelper->getnewRow(array(
         '`visa_id` = ?' => $id,
         '`is_delete` = ?' => 0,
         '`is_online` = ?' => 0
     ));
+
+
     if(empty($visa_row)){
         ErrorMsg::Debug('未找到当前签证或签证已下架');
     }
+    $this->Assign('data' , $visa_row);
+    echo $this->GetView('visa_order_new.php');
+    var_dump($visa_row);exit();
 
     //产品类型
     $pro_row = $VisaHelper->getProRow(array('`pro_id` = ?' => $visa_row['pro_type']));
@@ -34,6 +39,23 @@ if (empty($this->Param['option'])) {
 } else {
     switch($this->Param['option']){
         case 'submit':
+            $data['member_id'] = $this->UserConfig['Id'];
+            $data['visa_id'] = $this->Param['visa_id'];
+            $data['lq'] = serialize($this->Param['p1']);
+            $data['type'] = serialize($this->Param['p2']);
+            $data['name'] = serialize($this->Param['p3']);
+            $data['cid'] = serialize($this->Param['p4']);
+            $data['company'] = $this->Param['company'];
+            $data['contacts'] = $this->Param['name'];
+            $data['phone'] = $this->Param['phone'];
+            $data['email'] = $this->Param['email'];
+            $data['tel'] = $this->Param['tel'];
+            $data['content'] = $this->Param['content'];
+            $data['update_time'] = time();
+            $visaOrderId = $VisaHelper->ordernewVisaSave($data);
+            echo '<script>location.href="Http://www.qufair.com/";</script>';
+            exit();
+
             $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
             $visa_row = $VisaHelper->getRow(array(
                 '`visa_id` = ?' => $id,

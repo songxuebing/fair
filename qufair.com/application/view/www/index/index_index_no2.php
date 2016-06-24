@@ -98,7 +98,7 @@
             </div>
 
             <div class="con02">
-                <form class="J-search-box" action="/convention/index/" method="post">
+                <form class="J-search-box" action="/convention/search/" method="post">
                 <input type="text" value=""  class="fl" name="key" placeholder="输入关键词内容" id="type" onClick="searchs(true)"/>
                 <input type="submit" value="搜  索" class="fr" />
                 <input type="hidden" name="type" value="convention" />
@@ -174,7 +174,7 @@
             $('input[name="type"]').val(searchType);
 
             //构建搜索地址
-            $(".J-search-box").attr({"action":"/"+searchType+"/index/"});
+            $(".J-search-box").attr({"action":"/"+searchType+"/search/"});
 
 
         });
@@ -793,17 +793,6 @@
                                 <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                 <?php }?>
                                 </ul>
-<!--广告图                                   --><?php
-//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
                                 </div>
                                 <!--欧洲end-->
 
@@ -814,17 +803,7 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
+
                                 </div>
                                 <!--美洲end-->
 
@@ -835,17 +814,7 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
+
                                 </div>
                                 <!--亚洲end-->
 
@@ -856,17 +825,7 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
+
                                 </div>
                                 <!--非洲end-->
                                 <!--大洋洲start-->
@@ -876,17 +835,6 @@
                                             <li><a href="/route-<?php echo $val_de['name_en']?>" target="_blank"><?php echo $val_de['name']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->route_adv)) foreach($this->route_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
                                 </div>
                                 <!--大洋洲end-->
                             </li>
@@ -913,17 +861,7 @@
                                             <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
+
                                 </div>
                                 <!--欧洲end-->
                                 <!--美洲start-->
@@ -933,17 +871,7 @@
                                             <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
+
                                 </div>
                                 <!--美洲end-->
                                 <!--亚洲start-->
@@ -953,17 +881,7 @@
                                             <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
+
                                 </div>
                                 <!--亚洲end-->
                                 <!--非洲start-->
@@ -973,17 +891,7 @@
                                             <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
+
                                 </div>
                                 <!--非洲end-->
                                 <!--大洋洲start-->
@@ -993,17 +901,7 @@
                                             <li><a href="/visa/<?php echo date('Y/m/d', $val_de['update_time']).'/'.$val_de['visa_id'];?>.shtml" target="_blank"><?php echo $val_de['visa_countries']?></a></li>
                                         <?php }?>
                                     </ul>
-<!--                                   --><?php
-//                                    if(!empty($this->visa_adv)) foreach($this->visa_adv as $k=>$v){
-//                                        ?>
-<!--                                        <ul>-->
-<!--                                            <a href="--><?php //echo $v['url'];?><!--" target="_blank"  class="img">-->
-<!--                                                <img src="--><?php //echo $v['file'];?><!--" width="310" height="90" />-->
-<!--                                            </a>-->
-<!--                                        </ul>-->
-<!--                                    --><?php
-//                                    }
-//                                    ?>
+
                                 </div>
                                 <!--大洋洲end-->
                             </li>
@@ -1176,14 +1074,14 @@
                 <a href="/decoration" target="_blank">广州搭建</a>
             </li>
             <li>
-                <span>热门</span>
+                <span>设计</span>
                 <a href="/decoration" target="_blank">展会搭建</a>
                 <a href="/decoration" target="_blank">展览搭建</a>
                 <a href="/decoration" target="_blank">会展搭建</a>
                 <a href="/decoration" target="_blank">展览展示</a>
             </li>
             <li>
-                <span>热门</span>
+                <span>国家</span>
                 <a href="/decoration" target="_blank">美国设计</a>
                 <a href="/decoration" target="_blank">德国设计</a>
                 <a href="/decoration" target="_blank">香港设计</a>
@@ -1191,7 +1089,7 @@
             </li>
 
             <li>
-                <span>热门</span>
+                <span>搭建</span>
                 <a href="/decoration" target="_blank">美国搭建</a>
                 <a href="/decoration" target="_blank">德国搭建</a>
                 <a href="/decoration" target="_blank">香港搭建</a>

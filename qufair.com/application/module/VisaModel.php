@@ -155,4 +155,8 @@ class VisaModel extends Module {
         return $this->Db->insert($this->_table.'_new',$data,$returnid,$output);
     }
 
+    //新的
+    public function ordernewVisaSave($data, $returnid = TRUE, $output = false) {
+        return $this->Db->insert($this->_table . '_order_new', $data, $returnid, $output);
+    }
 }

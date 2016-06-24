@@ -118,80 +118,38 @@ $webtitle = $this->visa_row['visa_title'].'签证 - 去展网'
             <li class="detial-info-right-other fr">
 
                 <!--常见问题start-->
-                <div class="question-all">
-                    <h4>常见问题</h4>
-                    <ul>
-                        <li>
-                            <div class="fl"><img src="images/79.jpg" alt="" /></div>
-                            <div class="fr">
-                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>
-                                <p>给大家介绍一下，如何才.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl"><img src="images/79.jpg" alt="" /></div>
-                            <div class="fr">
-                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>
-                                <p>给大家介绍一下，如何才.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl"><img src="images/79.jpg" alt="" /></div>
-                            <div class="fr">
-                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>
-                                <p>给大家介绍一下，如何才.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl"><img src="images/79.jpg" alt="" /></div>
-                            <div class="fr">
-                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>
-                                <p>给大家介绍一下，如何才.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl"><img src="images/79.jpg" alt="" /></div>
-                            <div class="fr">
-                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>
-                                <p>给大家介绍一下，如何才.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl"><img src="images/79.jpg" alt="" /></div>
-                            <div class="fr">
-                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>
-                                <p>给大家介绍一下，如何才.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl"><img src="images/79.jpg" alt="" /></div>
-                            <div class="fr">
-                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>
-                                <p>给大家介绍一下，如何才.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+<!--                <div class="question-all">-->
+<!--                    <h4>常见问题</h4>-->
+<!--                    <ul>-->
+<!--                        <li>-->
+<!--                            <div class="fl"><img src="images/79.jpg" alt="" /></div>-->
+<!--                            <div class="fr">-->
+<!--                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>-->
+<!--                                <p>给大家介绍一下，如何才.</p>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
                 <!--常见问题end-->
 
                 <div class="line10"></div>
                 <!--相关行程start-->
-                <div class="related-stroke">
-                    <h3>相关行程</h3>
-                    <ul>
-                        <?php
-                        foreach($this->route_row as $k_ro => $val_ro){?>
-                        <li>
-                            <a href="##" target="_blank">
-                                <img src="<?php echo STYLE_URL;?>/style/no2/images/80.jpg" width="232" height="145" alt="" />
-                                <i>
-                                    <?php echo StringCode::GetCsubStr($val_ro['title'],0,15);?>
-                                </i>
-                            </a>
-                        </li>
-                        <?php }?>
-                    </ul>
-                </div>
+<!--                <div class="related-stroke">-->
+<!--                    <h3>相关行程</h3>-->
+<!--                    <ul>-->
+<!--                        --><?php
+//                        foreach($this->route_row as $k_ro => $val_ro){?>
+<!--                        <li>-->
+<!--                            <a href="##" target="_blank">-->
+<!--                                <img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/80.jpg" width="232" height="145" alt="" />-->
+<!--                                <i>-->
+<!--                                    --><?php //echo StringCode::GetCsubStr($val_ro['title'],0,15);?>
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        --><?php //}?>
+<!--                    </ul>-->
+<!--                </div>-->
                 <!--相关行程end-->
 
 

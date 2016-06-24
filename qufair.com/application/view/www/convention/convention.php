@@ -145,7 +145,7 @@
                                     </div>
                                     <span><?php echo $val['start_time']?> 至 <?php echo $val['end_time']?> </span>
                                     <b><?php echo StringCode::GetCsubStr($val['name'],0,10);?></b>
-                                    <div><a href="/convention/<?php echo date('Y/m/d', $val['update_dateline']).'/'.$val['id'];?>.shtml" target="_blank">立即订购</a></div>
+                                    <div><a href="/convention/order/id/<?php echo $val['id'];?>" target="_blank">立即订购</a></div>
                                 </ul>
                             </div>
                             <div class="spin-total">

@@ -2,7 +2,7 @@
 // amespace Library\ErrorMsgClass;
 class ErrorMsg{
 	public static function Debug($msg='',$success=false,$url=false){
-		if(XML_R==true){
+		if($success==true){
 			self::Json($msg,$success,$url);
 		}else{
 			self::Html($msg,$success,$url);

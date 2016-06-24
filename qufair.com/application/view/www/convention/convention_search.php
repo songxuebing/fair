@@ -63,11 +63,6 @@ if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
                     <div class="detial-case" id="detial-case02" data-type="industry">
                         <ul class="clearfix">
 <!--                            <li><a href="##" title="">美洲</a></li>-->
-<!--                            <li><a href="##" title="">亚洲</a></li>-->
-<!--                            <li><a href="##" title="">非洲</a></li>-->
-<!--                            <li><a href="##" title="">大洋洲</a></li>-->
-<!--                            <li><a href="##" title="">北美洲</a></li>-->
-<!--                            <li><a href="##" title="">南美洲</a></li>-->
                             <?php
                             foreach($this->delta as $k => $v){
                                 ?>
@@ -82,7 +77,7 @@ if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
                         </ul>
                     </div>
                 </li>
-                <li class="list_product_tpar"  id="list_product_tpar02"><a href="javascript:void(0)">+</a></li>
+<!--                <li class="list_product_tpar"  id="list_product_tpar02"><a href="javascript:void(0)">+</a></li>-->
             </ul>
 
 
@@ -163,7 +158,7 @@ if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
 
     <div class="line9"></div>
     <!--排行start-->
-    <div class="charts">
+    <div class="charts" style="display: none;">
         <ul class="fl charts-tar fl">
             <a href="javascript:void(0)" class="current">综合排序</a>
             <a href="javascript:void(0)">热门</a>
@@ -257,7 +252,7 @@ if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
 
                         <span><?php echo $v['start_time']?> 至 <?php echo $v['end_time']?> </span>
                         <b><?php echo StringCode::GetCsubStr($v['name'],0,10);?></b>
-                        <div><a href="/convention/<?php echo date('Y/m/d', $v['update_dateline']).'/'.$v['id'];?>.shtml" target="_blank">立即订购</a></div>
+                        <div><a href="/convention/order/id/<?php echo $v['id'];?>" target="_blank">立即订购</a></div>
                     </ul>
                 </div>
             </li>

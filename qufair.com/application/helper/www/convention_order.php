@@ -18,37 +18,44 @@
     $UserInfo = $this->UserConfig;
     //var_dump($this->Param);
     if(empty($this->Param['option'])){
-        //echo "123";exit();
         
-        //$this->LoadHelper('public/usercheck');
+        $this->LoadHelper('public/usercheck');
         
-        $detailid = empty($this->Param['detailid']) ? 0 : $this->Param['detailid'];
-        $areaid = empty($this->Param['areaid']) ? 0 :$this->Param['areaid'];
-        $is_group = $this->Param['is_group'];
-        $is_advance_payment = $this->Param['is_advance_payment'];//是否预付款
-
-        $data['area'] = $ConventionHelper->getAreaRow(array('`area_id` = ?' =>$areaid,'`detail_id` = ?' =>$detailid));
-        $data['detail'] = $ConventionHelper->getDetailRow(array('`detail_id` = ?'=> $detailid));
-        $data['con'] = $ConventionHelper->getRow(array('`id` = ?' => $data['detail']['con_id']));
-
-        //获取之前的收货地址
-        $address_row = $ConventionHelper->orderRow(array(
-            '`member_id` = ?' => $UserInfo['Id']
-        ));
-
-        $receiving = unserialize($address_row['receiving']);
-
-        $memberRow = $MemberListHelper->GetMemberRow(array('`id` = ?' => $this->UserConfig['Id']));
-
-        if(empty($menberInfo['mobile'])){
-            $menberInfo['mobile'] = $memberRow['mobile'];
-        }
-        $menberInfo['list'] = $memberRow;
-        $this->Assign('receiving',$receiving);
-        $this->Assign('menberInfo',$menberInfo);
+        $con_id = empty($this->Param['id']) ? 0 : $this->Param['id'];
+        $con_data = $ConventionHelper->GetId($con_id);
+        $data['con_name'] =  $con_data['name'];
+        $data['user_id']  = $this->UserConfig['Id'];
+        //var_dump($data);exit();
         $this->Assign('data', $data);
-        $this->Assign('isGroup', $is_group);
+
         echo $this->GetView('convention_order.php');
+
+//        $areaid = empty($this->Param['areaid']) ? 0 :$this->Param['areaid'];
+//        $is_group = $this->Param['is_group'];
+//        $is_advance_payment = $this->Param['is_advance_payment'];//是否预付款
+//
+//        $data['area'] = $ConventionHelper->getAreaRow(array('`area_id` = ?' =>$areaid,'`detail_id` = ?' =>$detailid));
+//        $data['detail'] = $ConventionHelper->getDetailRow(array('`detail_id` = ?'=> $detailid));
+//        $data['con'] = $ConventionHelper->getRow(array('`id` = ?' => $data['detail']['con_id']));
+//
+//        //获取之前的收货地址
+//        $address_row = $ConventionHelper->orderRow(array(
+//            '`member_id` = ?' => $UserInfo['Id']
+//        ));
+//
+//        $receiving = unserialize($address_row['receiving']);
+//
+//        $memberRow = $MemberListHelper->GetMemberRow(array('`id` = ?' => $this->UserConfig['Id']));
+//
+//        if(empty($menberInfo['mobile'])){
+//            $menberInfo['mobile'] = $memberRow['mobile'];
+//        }
+//        $menberInfo['list'] = $memberRow;
+//        $this->Assign('receiving',$receiving);
+//        $this->Assign('menberInfo',$menberInfo);
+//        $this->Assign('data', $data);
+//        $this->Assign('isGroup', $is_group);
+//        echo $this->GetView('convention_order.php');
     }else{
         switch($this->Param['option']){
             case 'submit':
@@ -59,13 +66,12 @@
                         'area' => $this->Param['p3'],
                         'is_group' => ($this->Param['p4'] == "是") ? 1 : 0,
                         'con_name' => $this->Param['p5'],
-
                         'company' => $this->Param['wd01'],
                         'contacts' => $this->Param['wd02'],
                         'phone' => $this->Param['wd03'],
-                        //'company' => $this->Param['wd04'],
                         'email' => $this->Param['wd05'],
                         'content' => $this->Param['wd06'],
+                        'member_id' => $this->Param['wd07'],
                         'update_time' => NOW_TIME,
                     )
                 );

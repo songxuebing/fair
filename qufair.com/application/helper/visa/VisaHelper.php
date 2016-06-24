@@ -208,4 +208,11 @@ class VisaHelper extends Helper {
     public function getnewRow($where) {
         return $this->VisaModel->GetnewRow($where);
     }
+
+    //新的
+
+    public function ordernewVisaSave($data) {
+        return $this->VisaModel->ordernewVisaSave($data);
+    }
+
 }

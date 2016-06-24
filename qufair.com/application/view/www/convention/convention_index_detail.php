@@ -44,15 +44,15 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                             <?php
                               if(!empty($this->data['info']['cover'])){
                             ?>
-                                <li><div><a href="##" target="_blank">
-                                <img src="<?php echo Common::AttachUrl($this->data['info']['cover']);?>" alt="" /></a></div></li>
+                                <li><div><a href="##">
+                                <img src="<?php echo Common::AttachUrl($this->data['info']['cover']);?>" alt="<?php echo $this->data['info']['name'];?>" title="<?php echo $this->data['info']['name'];?>" /></a></div></li>
                             <?php }?>
                     <?php
                         if(!empty($this->data['info']['imgarr'])) foreach($this->data['info']['imgarr'] as $k => $v){
 
                         if(!empty($v)){
                         ?>
-                        <li><div><a href="##" target="_blank"><img src="<?php echo Common::AttachUrl($v);?>" alt="" /></a></div></li>
+                        <li><div><a href="##" ><img src="<?php echo Common::AttachUrl($v);?>" alt="<?php echo $this->data['info']['name'];?>"  title="<?php echo $this->data['info']['name'];?>"/></a></div></li>
                         <?php
                         }
 
@@ -84,8 +84,8 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                 </p>
                 <div class="clearfix">
                     <span><em><?php echo $this->data['info']['price'];?>元</em>起</span>
-                    <a href="##" title="">立即订展</a>
-                    <a href="##" title=""><i>联系客服</i></a>
+                    <a href="/convention/order/id/<?php echo $this->data['info']['id'];?>" title="">立即订展</a>
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=3238396027&site=qq&menu=yes" target="_blank" title=""><i>联系客服</i></a>
                 </div>
             </li>
             <!--右栏目end-->
@@ -199,13 +199,13 @@ $webtitle = $this->data['info']['name'].' - 去展网'
                         <?php if(!empty($this->data_con['All'])) foreach($this->data_con['All'] as $key => $val_con){?>
 
                         <li>
-                            <div><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>" target="_blank">
+                            <div><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>">
                                     <img src="<?php echo Common::AttachUrl($val_con['imgarr_1']);?>" alt="<?php echo $val_con['name']?>" title="<?php echo $val_con['name']?>" style="max-height: 300px; max-width: 232px;" /></a></div>
                             <div class="list-total">
                                 <i>摊位特价</i>
                                 <p><em><?php echo $val_con['price']?>元</em>起</p>
                             </div>
-                            <h4><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>" target="_blank"><?php echo StringCode::GetCsubStr($val_con['name'],0,13);?></a></h4>
+                            <h4><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>"><?php echo StringCode::GetCsubStr($val_con['name'],0,13);?></a></h4>
                         </li>
                         <?php }?>
                     </ul>

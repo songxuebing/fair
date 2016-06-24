@@ -7,7 +7,7 @@ class IndustryModel extends Module {
         $this->_table = 'industry';
         $this->_field = array('id', 'name', 'parent_id', 'name_en', 'title', 'keywords', 'description');
         $this->_table_adv = 'industry_adv';
-        $this->_field_adv = array('id', 'title', 'industry_id', 'media_type', 'start_time', 'end_time', 'url', 'file', 'code');;
+        $this->_field_adv = array('id', 'title', 'industry_id', 'media_type', 'start_time', 'end_time', 'url', 'position' ,'file', 'code');;
 
     }
     
@@ -41,5 +41,9 @@ class IndustryModel extends Module {
 
     public function advDelete($where, $output = false) {
         return $this->Db->delete($this->_table . '_adv', $where, $output);
+    }
+
+    public function update_adv($data, $where, $output = false) {
+        return $this->Db->update($this->_table . '_adv', $data, $where, $output);
     }
 }

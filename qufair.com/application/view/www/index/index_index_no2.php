@@ -1075,7 +1075,7 @@
                                 <img src="<?php echo STYLE_URL;?>/style/no2/images/8.png" alt="" class="next1" />
                                 <div class="sroll-img1">
                                     <ul>
-                                        <?php if(!empty($this->hot_con['All'])) foreach($this->hot_con['All'] as $key=>$val_hot){?>
+                                        <?php if(!empty($this->hot_conven['All'])) foreach($this->hot_conven['All'] as $key=>$val_hot){?>
                                             <li>
                                                 <img alt="" src="http://cdn.qufair.com/style/no2/images/route/8.jpg" height="322px" width="490px">
                                             </li>

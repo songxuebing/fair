@@ -21,6 +21,17 @@
                     </select>
                 </td>
             </tr>
+
+            <tr>
+                <td height="45" align="right">广告位置：</td>
+                <td style=" padding-top:5px; padding-bottom:5px;">
+                    <select name="position" id="position">
+                            <option value="0" <?php if($this->data['position'] == '0') echo 'selected="selected"'?>>左侧小广告</option>
+                            <option value="1" <?php if($this->data['position'] == '1') echo 'selected="selected"'?>>底部长广告</option>
+                    </select>
+                </td>
+            </tr>
+
             <tr>
                 <td height="45" align="right">开始时间：</td>
                 <td style=" padding-top:5px; padding-bottom:5px;"><input name="start_time" type="text" style="width:150px;" value="<?php echo empty($this->data['start_time']) ? date('Y-m-d') : date('Y-m-d',$this->data['start_time']);?>" class="input_01" readonly="readonly" onClick="WdatePicker();">

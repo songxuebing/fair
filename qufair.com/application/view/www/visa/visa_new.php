@@ -45,8 +45,8 @@
     </div>
 
     <div class="line10"></div>
-    <div><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/56.jpg" alt="" /></a></div>
-    <div class="line10"></div>
+<!--    <div><a href="##" target="_blank"><img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/56.jpg" alt="" /></a></div>-->
+<!--    <div class="line10"></div>-->
     <?php }?>
 
 

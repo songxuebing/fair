@@ -198,7 +198,8 @@
         $industry_adv_where = array(
             '`start_time` <= ?' => NOW_TIME,
             '`end_time` >= ?' => NOW_TIME,
-            '`industry_id` > ?' => 0
+            '`industry_id` > ?' => 0,
+            '`position` = ?' => 0,
         );
         $industry_adv = $IndustryHelper->advAll($industry_adv_where,NULL,NULL,array('id DESC'));
         //var_dump($industry_adv);exit();

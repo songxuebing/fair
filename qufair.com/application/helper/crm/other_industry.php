@@ -103,6 +103,8 @@ if (empty($this->Param['option'])) {
             $data['end_time'] = empty($this->Param['end_time']) ? ErrorMsg::Debug('请输入广告结束时间') : strtotime($this->Param['end_time']);
             $data['url'] = $this->Param['url'];
             $data['file'] = empty($this->Param['file']) ? ErrorMsg::Debug('请输入广告地址') : $this->Param['file'];
+            $data['position'] = $this->Param['position'];
+
             if($id == 0){
                 $data['dateline'] = NOW_TIME;
             }

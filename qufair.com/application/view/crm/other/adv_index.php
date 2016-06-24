@@ -36,10 +36,11 @@
 <div class="table_div_01">
     <ul>
         <li class="li_5">ID</li>
-        <li class="li_35">广告名称</li>
+        <li class="li_25">广告名称</li>
         <li class="li_15">所属行业</li>
         <li class="li_15">开始时间</li>
         <li class="li_15">结束时间</li>
+        <li class="li_10">广告位置</li>
         <li class="li_10">操作</li>
     </ul>
 </div>
@@ -50,10 +51,18 @@
         <div class="list_info">
             <ul class="row">
                 <li class="li_5"><?php echo $v['id'];?></li>
-                <li class="li_35"><?php echo $v['title'];?></li>
+                <li class="li_25"><?php echo $v['title'];?></li>
                 <li class="li_15"><?php echo $v['industry_name'];?></li>
                 <li class="li_15"><?php echo date('Y-m-d',$v['start_time']);?></li>
                 <li class="li_15"><?php echo date('Y-m-d',$v['end_time']);?></li>
+                <li class="li_10"><?php if($v['position'] == '0'){
+                        echo "左侧小广告";
+                    }
+                    elseif($v['position'] == '1')
+                    {
+                        echo "底部长广告";
+                    }
+                    ?></li>
                 <li class="li_10"><a href="/other/industry/option/add_adv/id/<?php echo $v['id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $v['id'];?>" data-title="修改广告">编辑</a>
                     <a href="#" class="RemoveLink_adv btn_05" data-id="<?php echo $v['id'];?>" data-url="/other/industry/option/adv/">删除</a></li>
             </ul>

@@ -12,7 +12,7 @@
 
 .stroke-list{ padding:0 30px 30px;}
 .stroke-list li{ float:left; width:260px; height:70px; overflow:hidden; margin-top:30px; margin-left:30px;}
-.stroke-list li img{ display:block; border:1px #ececec solid;}
+.stroke-list li img{ display:block; border:1px #ff4b05 solid;}
 .stroke-list li div.fr{ width:140px;}
 .stroke-list li div.fr b{ display:block; width:100%; font-size:18px; color:#333; line-height:25px; height:25px; overflow:hidden; font-weight:400;}
 .stroke-list li div.fr p{ font-size:14px; color:#333; line-height:23px;}

@@ -582,3 +582,14 @@ select::-ms-expand{ display:none; }
 .wd02{ width:129px;}
 .add-pinfo li input[type="button"]{ display:block; border:0; width:150px; height:50px; font-size:18px; color:#fff; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px;  background-color:#fc6908; margin:0 auto; margin-top:49px; cursor:pointer;}
 .add-pinfo li input[type="button"]:hover{ background-color:#ec6104;}
+
+
+        .intelligence{ background-color:#fff;}
+                .intelligence .title{ height:57px; border-bottom:1px #e5e5e5 solid;}
+                        .intelligence .title h2{ line-height:57px; font-weight:normal; font-size:18px; color:#333; background:url(images/17.jpg) no-repeat left center; padding-left:30px;}
+                                .intelligence-list{ padding:20px 43px;}
+                                        .intelligence-list div ul li{ float:left; width:204px; margin-right:20px; height:313px; overflow:hidden; background-color:#fafafa;}
+                                                .intelligence-list div ul li span{ display:block; overflow:hidden;}
+                                                        .intel{ width:174px; padding:0 14px; overflow:hidden; border:1px #ececec solid; border-top:none; height:108px; overflow:hidden;}
+                                                                .intel h4{ height:50px; border-bottom:1px #e5e5e5 solid; line-height:50px; font-weight:normal; color:#333; font-size:20px; margin-bottom:8px;}
+                                                                        .intel p{ color:#777;}

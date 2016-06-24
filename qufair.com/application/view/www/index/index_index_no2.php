@@ -103,9 +103,9 @@
                 <input type="submit" value="搜  索" class="fr" />
                 <input type="hidden" name="type" value="convention" />
                 <div id="type-list">
-                    <p pl="美国食品科技展IFT">美国食品科技展IFT</p>
-                    <p pl="美国夏季特色食品展">美国夏季特色食品展</p>
-                    <p pl="美国安全及劳保用品博览会">美国安全及劳保用品博览会</p>
+                    <p pl="挪威北海石油展览会">挪威北海石油展览会</p>
+                    <p pl="韩国国际海事展览会">韩国国际海事展览会</p>
+                    <p pl="印度国际水务展">印度国际水务展</p>
                 </div>
                 </form>
             </div>
@@ -405,7 +405,9 @@
                     <img src="<?php echo STYLE_URL;?>/style/no2/images/8.png" alt="" class="next" />
                     <div class="sroll-img">
                         <ul>
-                            <?php if(!empty($this->hot_conven['All'])) foreach($this->hot_conven['All'] as $key=>$val_hot){?>
+                            <?php if(!empty($this->hot_conven['All']))
+                                $hot_conven = array_chunk($this->hot_conven['All'], 15, true);
+                                foreach($hot_conven['1'] as $key=>$val_hot){?>
                                 <li>
                                     <div class="img"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" height="235" width="235" /></div>
                                     <h4><a href="convention/<?php echo date('Y/m/d', $val_hot['update_dateline']).'/'.$val_hot['id'];?>.shtml" target="_blank"><?php echo $val_hot['name']?></a></h4>
@@ -474,23 +476,7 @@
                                     <a href="convention/<?php echo date('Y/m/d', $v_new_con['update_dateline']).'/'.$v_new_con['id'];?>.shtml" target="_blank"><?php echo $v_new_con['name']?></a>
                                 </li>
                             <?php }?>
-<!--                            --><?php
-//                            $a = 0;
-//                            if(!empty($this->entrust['All'])) foreach($this->entrust['All'] as $kk => $vv){
-//                                ?>
-<!--                                <li>-->
-<!--                                        <a href="/news/--><?php //echo date('Y/m/d', $vv['dateline']).'/'.$vv['id'].'.shtml';?><!--" target="_blank">-->
-<!--                                            --><?php //echo StringCode::GetCsubStr($vv['title'],0,14);?>
-<!--                                        </a>-->
-<!--                                </li>-->
-<!--                            --><?php
-//                                if($a >= 3 )
-//                                {
-//                                    break;
-//                                }
-//                                $a++;
-//                            }
-//                            ?>
+
                     </ul>
                 </div>
                 <!--最新资讯end-->
@@ -652,10 +638,6 @@
                         <?php
                         }
                         ?>
-<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
-<!--                        <li><p><a href="##" target="_blank">会员中心能为大家带来什么？</a></p></li>-->
-<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
-<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
                     </ul>
                 </div>
                 <!--最新资讯end-->
@@ -682,20 +664,6 @@
                     </ul>
                 </div>
                 <!--最新政策end-->
-                <!--最新评论start-->
-<!--                <div class="new-news">-->
-<!--                    <ul class="title">-->
-<!--                        <h2 class="fl">最新评论</h2>-->
-<!--                        <p class="fr"><a href="##" target="_blank">更多 ></a></p>-->
-<!--                    </ul>-->
-<!--                    <ul class="list">-->
-<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
-<!--                        <li><p><a href="##" target="_blank">会员中心能为大家带来什么？</a></p></li>-->
-<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
-<!--                        <li><p><a href="##" target="_blank">慧聪商铺排名百度首页的秘密？</a></p></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-                <!--最新评论end-->
 
             </li>
             <!--中栏目start-->
@@ -789,7 +757,7 @@
 
     <div class="line10"></div>
     <!--旅行start-->
-    <div class="travel">
+    <div class="travel" style="display: none">
         <ul class="clearfix">
 
             <!--左栏目start-->
@@ -1103,7 +1071,7 @@
 
     <div class="line10"></div>
     <!--热门start-->
-    <div class="hot">
+    <div class="hot" style="display: none">
         <ul class="clearfix">
             <li>
                 <span>热门</span>
@@ -1155,83 +1123,140 @@
 
     <div class="line10"></div>
     <!--展装商城start-->
-<!--    <div class="supper">-->
-<!--        <ul class="title">-->
-<!--            <h2 class="fl">-->
-<!--                <a href="/decoration" target="_blank" class="current">展装商城</a><span>|</span><a href="/decoration" target="_blank">已有装修图，需找展装公司?</a>-->
-<!--            </h2>-->
-<!--            <p class="fr">热门展装：<a href="/decoration" target="_blank">电子展</a><span>|</span><a href="/decoration" target="_blank">法国五金展</a><span>|</span><a href="/decoration" target="_blank">韩国美发展</a></p>-->
-<!--        </ul>-->
-<!--        <ul class="list clearfix">-->
-<!--            --><?php
-//            if(!empty($this->recommend)) foreach($this->recommend as $k=>$v){
-//            ?>
-<!--            <li>-->
-<!--                <div><a href="/decoration/--><?php //echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?><!--" target="_blank">-->
-<!--                    <img src="--><?php //echo Common::AttachUrl($v['cover']);?><!--" alt="" height="280px" width="280px;"/>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="info">-->
-<!--                    <p><a href="/decoration/--><?php //echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?><!--" target="_blank">搭建价格</a><i>--><?php //echo $v['de_price']?><!--元</i>起</p>-->
-<!--                    <h4><a href="/decoration/--><?php //echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?><!--" target="_blank">--><?php //echo $v['title']?><!--</a></h4>-->
-<!--                </div>-->
-<!--            </li>-->
-<!--            --><?php //}?>
-<!--        </ul>-->
-<!--    </div>-->
+    <div class="supper">
+        <ul class="title">
+            <h2 class="fl">
+                <a href="/decoration" target="_blank" class="current">展装商城</a><span>|</span><a href="/decoration" target="_blank">已有装修图，需找展装公司?</a>
+            </h2>
+            <p class="fr">热门展装：<a href="/decoration" target="_blank">电子展</a><span>|</span><a href="/decoration" target="_blank">法国五金展</a><span>|</span><a href="/decoration" target="_blank">韩国美发展</a></p>
+        </ul>
+        <ul class="list clearfix">
+            <?php
+            if(!empty($this->recommend)) foreach($this->recommend as $k=>$v){
+            ?>
+            <li>
+                <div><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank">
+                    <img src="<?php echo Common::AttachUrl($v['cover']);?>" alt="" height="280px" width="280px;"/>
+                    </a>
+                </div>
+                <div class="info">
+                    <p><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank">搭建价格</a><i><?php echo $v['de_price']?>元</i>起</p>
+                    <h4><a href="/decoration/<?php echo date('Y/m/d',$v['de_time']).'/'.$v['id'].'.shtml';?>" target="_blank"><?php echo $v['title']?></a></h4>
+                </div>
+            </li>
+            <?php }?>
+        </ul>
+    </div>
     <!--展装商城end-->
 
     <div class="line10"></div>
 
     <!--热门start-->
-<!--    <div class="hot">-->
-<!--        <ul class="clearfix">-->
-<!--            <li>-->
-<!--                <span>热门</span>-->
-<!--                <a href="/decoration" target="_blank">展览设计</a>-->
-<!--                <a href="/decoration" target="_blank">展会设计</a>-->
-<!--                <a href="/decoration" target="_blank">会展设计</a>-->
-<!--                <a href="/decoration" target="_blank">展会展示</a>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <span>热门</span>-->
-<!--                <a href="/decoration" target="_blank">上海设计</a>-->
-<!--                <a href="/decoration" target="_blank">北京设计</a>-->
-<!--                <a href="/decoration" target="_blank">深圳设计</a>-->
-<!--                <a href="/decoration" target="_blank">广州设计</a>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <span>热门</span>-->
-<!--                <a href="/decoration" target="_blank">上海搭建</a>-->
-<!--                <a href="/decoration" target="_blank">北京搭建</a>-->
-<!--                <a href="/decoration" target="_blank">深圳搭建</a>-->
-<!--                <a href="/decoration" target="_blank">广州搭建</a>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <span>热门</span>-->
-<!--                <a href="/decoration" target="_blank">展会搭建</a>-->
-<!--                <a href="/decoration" target="_blank">展览搭建</a>-->
-<!--                <a href="/decoration" target="_blank">会展搭建</a>-->
-<!--                <a href="/decoration" target="_blank">展览展示</a>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <span>热门</span>-->
-<!--                <a href="/decoration" target="_blank">美国设计</a>-->
-<!--                <a href="/decoration" target="_blank">德国设计</a>-->
-<!--                <a href="/decoration" target="_blank">香港设计</a>-->
-<!--                <a href="/decoration" target="_blank">迪拜设计</a>-->
-<!--            </li>-->
-<!---->
-<!--            <li>-->
-<!--                <span>热门</span>-->
-<!--                <a href="/decoration" target="_blank">美国搭建</a>-->
-<!--                <a href="/decoration" target="_blank">德国搭建</a>-->
-<!--                <a href="/decoration" target="_blank">香港搭建</a>-->
-<!--                <a href="/decoration" target="_blank">迪拜搭建</a>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-    <!--热门end-->
+    <div class="hot">
+        <ul class="clearfix">
+            <li>
+                <span>热门</span>
+                <a href="/decoration" target="_blank">展览设计</a>
+                <a href="/decoration" target="_blank">展会设计</a>
+                <a href="/decoration" target="_blank">会展设计</a>
+                <a href="/decoration" target="_blank">展会展示</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="/decoration" target="_blank">上海设计</a>
+                <a href="/decoration" target="_blank">北京设计</a>
+                <a href="/decoration" target="_blank">深圳设计</a>
+                <a href="/decoration" target="_blank">广州设计</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="/decoration" target="_blank">上海搭建</a>
+                <a href="/decoration" target="_blank">北京搭建</a>
+                <a href="/decoration" target="_blank">深圳搭建</a>
+                <a href="/decoration" target="_blank">广州搭建</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="/decoration" target="_blank">展会搭建</a>
+                <a href="/decoration" target="_blank">展览搭建</a>
+                <a href="/decoration" target="_blank">会展搭建</a>
+                <a href="/decoration" target="_blank">展览展示</a>
+            </li>
+            <li>
+                <span>热门</span>
+                <a href="/decoration" target="_blank">美国设计</a>
+                <a href="/decoration" target="_blank">德国设计</a>
+                <a href="/decoration" target="_blank">香港设计</a>
+                <a href="/decoration" target="_blank">迪拜设计</a>
+            </li>
+
+            <li>
+                <span>热门</span>
+                <a href="/decoration" target="_blank">美国搭建</a>
+                <a href="/decoration" target="_blank">德国搭建</a>
+                <a href="/decoration" target="_blank">香港搭建</a>
+                <a href="/decoration" target="_blank">迪拜搭建</a>
+            </li>
+        </ul>
+    </div>
+<!--    热门end-->
+    <div class="line10"></div>
+    <!--智能推荐start-->
+    <div class="intelligence">
+        <ul class="title">
+            <h2>智能推荐</h2>
+        </ul>
+
+        <ul class="intelligence-list">
+            <div id="intelligence">
+                <a href="javascript:void(0)" class="next-intel"></a>
+                <a href="javascript:void(0)" class="prev-intel"></a>
+                <ul class="clearfix">
+
+            <?php foreach($hot_conven['0'] as $key=>$val_hot){?>
+                    <li>
+                        <span><a href="convention/<?php echo date('Y/m/d', $val_hot['update_dateline']).'/'.$val_hot['id'];?>.shtml" target="_blank"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" width="204px" height="204px"/></a></span>
+                            <span class="intel">
+                            <h4><a href="convention/<?php echo date('Y/m/d', $val_hot['update_dateline']).'/'.$val_hot['id'];?>.shtml" target="_blank"><?php echo StringCode::GetCsubStr($val_hot['name'],0,7);?></a></h4>
+                            <p><?php echo StringCode::GetCsubStr($val_hot['pavilion'],0,14);?></p>
+
+                                    <p><?php echo $val_hot['start_time']?> - <?php echo $val_hot['end_time']?></p>
+
+                            </span>
+                    </li>
+
+    <?php }?>
+                </ul>
+            </div>
+        </ul>
+
+    </div>
+    <!--智能推荐end-->
+    <script type="text/javascript" src="<?php echo STYLE_URL;?>/style/no2/js/scroll01.js"></script>
+    <script>
+        var MyMar = null;
+        var SleepTime = 2000;
+        $(function () {
+            $("#intelligence").jCarouselLite01({
+                btnNext: ".next-intel",
+                btnPrev: ".prev-intel",
+                visible:5,
+                speed:1000,
+                scroll:3
+            });
+            $("#intelligence").bind('mouseover', function (event) {
+                clearInterval(MyMar);
+            })
+                .bind('mouseout', function (event) {
+                    MyMar = setInterval(next, SleepTime);
+
+                });
+        });
+        function next() {
+            $(".next-intel").click();
+        }
+        MyMar = setInterval(next, SleepTime);
+    </script>
 
 
     <div class="line20"></div>

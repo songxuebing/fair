@@ -87,7 +87,7 @@
 //            }
 
 //        }
-        $hot_conven = $ConventionHelper->GetAllnewWhere(array(),20,1,$this->Param);
+        $hot_conven = $ConventionHelper->GetAllnewWhere(array(),24,1,$this->Param);
             if(!empty($hot_conven['All'])) foreach($hot_conven['All'] as $k=>$v){
                 $hot_conven['All'][$k]['cover'] = unserialize($v['imgurl'])['0'];
                 //echo $v['start_time'];exit();
@@ -165,7 +165,9 @@
             //评论统计
             $comment_count = $CommentHelper->commentCount(array('`is_type` = ?' => 6,'`con_id` = ?' => $v['id'],'`delete` = ?' => 0));
             $recommend[$k]['comment'] = $comment_count;
+            $recommend[$k]['cover'] = unserialize($v['style_type'])['0'];
         }
+        //var_dump($recommend);exit();
         $this->Assign('recommend',$recommend);
         //资讯轮播广告
         $adv_where = array(

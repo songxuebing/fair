@@ -16,9 +16,19 @@
         <div class="all-select">
             <ul>
                 <span>全部内容 ></span>
-                <a href="javascript:void(0)">纺织机械设备<img src="<?php echo STYLE_URL;?>/style/no2/images/19.png" alt="" /></a>
-                <a href="javascript:void(0)">美洲<img src="<?php echo STYLE_URL;?>/style/no2/images/19.png" alt="" /></a>
-                <a href="javascript:void(0)">丹麦<img src="<?php echo STYLE_URL;?>/style/no2/images/19.png" alt="" /></a>
+<!--                <a href="javascript:void(0)">纺织机械设备<img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/19.png" alt="" /></a>-->
+<!--                <a href="javascript:void(0)">美洲<img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/19.png" alt="" /></a>-->
+<!--                <a href="javascript:void(0)">丹麦<img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/19.png" alt="" /></a>-->
+<?php
+if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
+    if(!empty($aVal)){
+        ?>
+        <a value="-1" title="<?php echo urldecode($aVal);?>" data-type="<?php echo $aKey;?>" href="javascript:void(0);">
+            <span><?php echo urldecode($aVal);?></span><em></em></a>
+    <?php
+    }
+}
+?>
                 <em>收起筛选</em>
             </ul>
         </div>
@@ -30,24 +40,16 @@
                 <li class="clearfix">
                     <span>选择行业：</span>
                     <a href="javascript:void(0)" class="all fl current">不限</a>
-                    <div class="detial-case" id="detial-case01">
+                    <div class="detial-case" id="detial-case01" data-type="industry">
                         <ul class="clearfix">
                             <?php foreach($this->industry as $key => $val_in){?>
-                                <li><a value="-1" title="<?php echo $val_in['name'];?>" href="javascript:void(0);">
-                                        <span><?php echo $val_in['name'];?></span>
-                                        <em></em></a>
+                            <li class="J-attr" data-type="industry">
+                                <a value="-1" title="<?php echo $val_in['name'];?>" href="javascript:void(0);">
+                                        <?php echo $val_in['name'];?>
                                 </li>
                             <?php }?>
 <!--                            <li><a href="##" title="">安防劳保公共</a></li>-->
-<!--                            <li><a href="##" title="">酒店及旅游</a></li>-->
-<!--                            <li><a href="##" title="">品饮料烟洋洲酒</a></li>-->
-<!--                            <li><a href="##" title="">食品机械及包装</a></li>-->
-<!--                            <li><a href="##" title="">纺织纺织机</a></li>-->
-<!--                            <li><a href="##" title="">大牌云集</a></li>-->
-<!--                            <li><a href="##" title="">旅游用品</a></li>-->
-<!--                            <li><a href="##" title="">饮料烟酒洋洲</a></li>-->
-<!--                            <li><a href="##" title="">机械及包装</a></li>-->
-<!--                            <li><a href="##" title="">食品机械及包装</a></li>-->
+
                         </ul>
                     </div>
                 </li>
@@ -58,7 +60,7 @@
                 <li class="clearfix">
                     <span>选择洲际：</span>
                     <a href="javascript:void(0)" class="all fl current">不限</a>
-                    <div class="detial-case" id="detial-case02">
+                    <div class="detial-case" id="detial-case02" data-type="industry">
                         <ul class="clearfix">
 <!--                            <li><a href="##" title="">美洲</a></li>-->
 <!--                            <li><a href="##" title="">亚洲</a></li>-->
@@ -69,9 +71,10 @@
                             <?php
                             foreach($this->delta as $k => $v){
                                 ?>
-                                <li><a value="-1" title="<?php echo $v['name'];?>" href="javascript:void(0);">
-                                        <span><?php echo $v['name'];?></span>
-                                        <em></em></a>
+                                <li class="J-attr" data-type="delta">
+                                    <a value="-1" title="<?php echo $v['name'];?>" href="javascript:void(0);">
+                                        <?php echo $v['name'];?>
+                                    </a>
                                     </li>
                             <?php
                             }
@@ -90,27 +93,15 @@
                     <div class="detial-case bt" id="detial-case03">
                         <ul class="clearfix">
 <!--                            <li><a href="##" title="">丹麦</a></li>-->
-<!--                            <li><a href="##" title="">韩国</a></li>-->
-<!--                            <li><a href="##" title="">日本</a></li>-->
-<!--                            <li><a href="##" title="">法国</a></li>-->
-<!--                            <li><a href="##" title="">法国</a></li>-->
-<!--                            <li><a href="##" title="">意大利</a></li>-->
-<!--                            <li><a href="##" title="">丹麦</a></li>-->
-<!--                            <li><a href="##" title="">韩国</a></li>-->
-<!--                            <li><a href="##" title="">日本</a></li>-->
-<!--                            <li><a href="##" title="">法国</a></li>-->
-<!--                            <li><a href="##" title="">法国</a></li>-->
-<!--                            <li><a href="##" title="">意大利</a></li>-->
                             <?php
                             if(!empty($this->country_all)) foreach($this->country_all as $k => $v){
                                 ?>
                                     <?php
                                     foreach($v as $key => $val){
                                         ?>
-                                        <li>
+                                        <li class="J-attr" data-type="countries">
                                             <a value="-1" title="<?php echo $val['name'];?>" href="javascript:void(0);">
-                                                <span><?php echo $val['name'];?></span>
-                                                <em></em>
+                                              <?php echo $val['name'];?>
                                             </a>
                                         </li>
                                     <?php
@@ -126,7 +117,47 @@
 
         </div>
         <!--筛选条件end-->
+<input type="hidden" name="industry" value="<?php echo $this->Param['industry'];?>" >
+<input type="hidden" name="delta" value="" >
+<input type="hidden" name="countries" value="" >
+<input type="hidden" name="city" value="" >
+<script type="text/javascript">
+	jQuery(document).ready(function(e) {
+        //选择属性
+		jQuery(".J-attr").on('click','a',function(){
+			var $this = jQuery(this),
+				title = $this.attr('title'),
+				divObj = $this.parent('.J-attr'),
+				type = divObj.data('type');
 
+			jQuery('input[name="'+type+'"]').val(title);
+
+			var industry = jQuery('input[name="industry"]').val();
+			var delta = jQuery('input[name="delta"]').val();
+			var countries = jQuery('input[name="countries"]').val();
+			var city = jQuery('input[name="city"]').val();
+
+			window.location.href= '/convention/search/?industry='+industry+'&delta='+delta+'&countries='+countries+'&city='+city+'';
+
+		});
+
+		//取消属性
+		jQuery(".J-tags").on('click','a',function(){
+			var $this = jQuery(this),
+				title = $this.attr('title'),
+				type = $this.data('type');
+
+			jQuery('input[name="'+type+'"]').val('');
+
+			var industry = jQuery('input[name="industry"]').val();
+			var delta = jQuery('input[name="delta"]').val();
+			var countries = jQuery('input[name="countries"]').val();
+			var city = jQuery('input[name="city"]').val();
+
+			window.location.href= '/convention/search/?industry='+industry+'&delta='+delta+'&countries='+countries+'&city='+city+'';
+		});
+    });
+</script>
     </div>
     <!--展会头部end-->
 
@@ -202,11 +233,7 @@
     <div class="list-project spin">
         <ul class="clearfix">
             <?php
-            if(!empty($this->data['All'])) foreach($this->data['All'] as $k1 => $v_l){
-                if(strtotime($v_l['start_time'])-time() < 0)
-                {
-                    unset($this->data['All'][$k1]);
-                }
+            if(!empty($this->data['All']))
                 foreach($this->data['All'] as $k => $v){
                     $v['cover'] = unserialize($v['imgurl'])['0'];
             ?>
@@ -235,12 +262,12 @@
                 </div>
             </li>
             <?php
-            }}
+            }
             ?>
 
         </ul>
 
-        <ul class="img-banner"><a href="##" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/37.jpg" alt="" /></a></ul>
+<!--        <ul class="img-banner"><a href="##" target="_blank"><img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/37.jpg" alt="" /></a></ul>-->
 
 
 <style>
@@ -356,7 +383,7 @@
     $("#list_product_tpar03").click(function(){
         if(c==1){
             $(this).find("a").text("-");
-            $("#detial-case03 ul").animate({height:"1120"},500);
+            $("#detial-case03 ul").animate({height:"320"},500);
             c=0;
         }else{
             $(this).find("a").text("+");

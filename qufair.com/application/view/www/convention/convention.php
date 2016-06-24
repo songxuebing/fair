@@ -206,11 +206,17 @@
 <!--main end-->
 <link type="text/css" href="<?php echo STYLE_URL;?>/style/no2/css/1.css" rel="stylesheet" />
 <script>
+    $(".hot-product").hover(function(){
+        $(this).addClass("on");
+    },function(){
+        $(this).removeClass("on");
+    });
     $(".spin-img ul p em:nth-child(3n+1)").css("padding-left","0");
     $(".spin-list-info li:nth-child(3n+3)").css("margin-right","0");
 </script>
 
 <script>
+
     $(window).scroll(function(){
         if($(this).scrollTop()>341)
         {

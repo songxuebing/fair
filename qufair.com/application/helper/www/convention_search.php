@@ -84,7 +84,7 @@ if(empty($this->Param['option'])){
         $where['locate(?,`city`)>0'] = urldecode($this->Param['city']);
     }
     //获取展会列表
-    var_dump($where);//exit();
+    //var_dump($where);//exit();
     $data = $ConventionHelper->GetAllWhere($where, $limit, $page, $this->Param);
     $country_where = array('`parent_id` = ?' =>0);
     if(!empty($this->Param['delta'])){

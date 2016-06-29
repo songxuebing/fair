@@ -65,8 +65,12 @@ if(empty($this->Param['option'])){
         $where[$k] = array('`id` > ?' => 0);
         $where[$k]['locate(?,`main`)>0'] = urldecode($v['name']);
         $data[$k] = $ConventionHelper->GetAll_new_Where($where[$k], $limit, $page, $this->Param);
-                    $data[$k]['name'] = $v['name'];
-            $data[$k]['name_en'] = $v['name_en'];
+        $data[$k]['name'] = $v['name'];
+        $data[$k]['name_en'] = $v['name_en'];
+        $data[$k]['in_id'] = $v['id'];
+        //$v['id']= 14;
+        $data[$k]['in_adv'] = $IndustryHelper->advPageList(array(),$limit,$page,array( 'industry_id'=> $v['id']));
+        //var_dump($data[$k]['in_adv']);exit();
         //var_dump($data);exit();
 //        foreach($one_level[$k]['next'] as $kk => $val_in) {
 //            //var_dump($val_in);echo "<br />".$kk."<br />";

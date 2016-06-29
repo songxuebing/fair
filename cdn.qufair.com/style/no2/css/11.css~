@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+.detial-top01{ border:1px #efefef solid; padding:0 23px;}
+.detial-title{ height:87px; border-bottom:1px #e7e7e7 dashed; overflow:hidden;}
+.detial-title h1{ font-size:24px; line-height:87px; font-weight:normal; color:#222;}
+.detial-title div{ line-height:87px;}
+.detial-title div span,.detial-title div a{ margin:0 2px; display:inline-block; vertical-align:middle; height:20px; line-height:20px; font-size:15px; color:#333;}
+
+.detial-con{ padding:20px 0;}
+.detial-left{ width:350px; overflow:hidden;}
+.detial-right01{ width:635px;}
+.detial-scroll{position:relative; width:100%; overflow:hidden; zoom:1; z-index:1;}
+.detial-scroll .slides{zoom:1;}
+.detial-scroll .slides a{ display:block; width:100%;}
+.detial-scroll .slides a img{ display:block; width:100%;}
+.detial-scroll .flex-direction-nav{ display:none;}
+.detial-scroll .flex-control-nav{width:100%; position:absolute; bottom:12px; text-align:center; line-height:25px; height:25px; overflow:hidden;}
+.detial-scroll .flex-control-nav li{ margin:0 3px; display:inline-block; zoom:1; *display:inline; overflow:hidden; vertical-align:middle;}
+.detial-scroll .flex-control-paging li a{ display:block; height:10px; overflow:hidden; text-indent:-99em; width:10px; cursor:pointer; background-color:#ccc; border-radius:3px; -webkit-border-radius:3px%; -moz-border-radius:3px%;}
+.detial-scroll .flex-control-paging li a.flex-active{ background-color:#fff;}
+
+.detial-right01 p{ font-size:16px; color:#7f7f7f; line-height:38px; overflow:hidden;}
+.detial-right01 p i{ color:#555;}
+.detial-right01 p em{ padding-left:2em;}
+.detial-right01 p span{ padding-right:60px;}
+.bt01{ border-bottom:1px #e8e8e8 dotted; padding-bottom:7px; font-size:18px;}
+.detial-right01 p b{ font-weight:normal; color:#fb870e;}
+.detial-right01 div.clearfix{ border-top:1px #e8e8e8 dotted; margin-top:25px; padding-top:11px; height:44px; overflow:hidden; line-height:44px;}
+.detial-right01 div.clearfix span{ display:block; float:left; font-size:13px; color:#e35252;}
+.detial-right01 div.clearfix span em{ font-size:28px; padding-right:10px;}
+.detial-right01 div.clearfix a{ text-align:center; display:block; float:left; width:110px; height:44px; overflow:hidden; margin-left:20px; color:#fff; font-size:16px; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px;}
+.detial-right01 div.clearfix a i{ display:inline-block; padding:0 0 0 25px; background:url(../images/22.png) no-repeat left center;}
+.detial-right01 div.clearfix a:hover{ color:#fff !important;}
+
+.detial-info-left{ width:940px; overflow:hidden;}
+.detial-tab{ border:1px #e6e6e6 solid; width:938px; height:44px; background-color:#f6f6f6;}
+.detial-tab a{ display:block; float:left; width:170px; height:44px; border-bottom:1px #e6e6e6 solid; text-align:center; line-height:44px; font-size:16px; color:#6b6b6b;}
+.detial-tab a:hover,.detial-tab a.current{ background-color:#fff; color:#fd4703 !important; border-bottom-color:#fff; border-right:1px #e6e6e6 solid; border-top:2px #fd4703 solid; margin-top:-1px; height:43px; line-height:42px;}
+.detial-tab.on{ position:fixed; left:50%; margin-left:-600px; top:0; z-index:9999;}
+
+.detial-intro{ border:1px #e6e6e6 solid; overflow:hidden;}
+.detial-intro ul{ border-top:1px #e6e6e6 solid; padding:20px 30px;}
+.detial-intro ul p{ font-size:16px; color:#696969; line-height:28px;}
+.detial-intro h3,.read-title h3{ height:44px; line-height:44px; font-size:18px; color:#333; font-weight:normal; padding:0 30px; background:url(../images/45.jpg) no-repeat 19px center;}
+
+.read-link{ background:url(../images/47.jpg) no-repeat left top;}
+.read-title{ height:40px; padding:0 1px;}
+
+.read-list{ padding:20px;}
+.read-list li{ float:left; width:207px; overflow:hidden; padding-right:20px;}
+.read-list li h4{ font-size:16px; color:#636363; font-weight:normal; line-height:25px; padding-top:10px;}
+
+.detial-info-right-other{ width:246px; overflow:hidden;}
+.question-all{ border:1px #e6e6e6 solid; overflow:hidden;}
+.question-all h4{ font-size:16px; color:#222; font-weight:normal; line-height:44px; height:44px; background-color:#f6f6f6; padding:0 12px; border-bottom:1px #e6e6e6 solid;}
+.question-all ul{ padding:0 5px;}
+.question-all ul li{ height:42px; padding:14px 0; border-bottom:1px #d9d9d9 dotted;}
+.question-all ul li img{ border:1px #e6e6e6 solid;}
+.question-all ul li div.fr{ width:177px; overflow:hidden;}
+.question-all ul li div.fr h5{ font-size:14px; color:#333; line-height:20px; height:20px; overflow:hidden; font-weight:400;}
+.question-all ul li div.fr p{ color:#666; font-size:14px;}
+.question-all ul li div.fr p em{ color:#fe7404;}
+.question-all ul li div.fr p a{ display:inline; color:#fe7404; margin-left:30px;}
+
+.question-img{ border-top:1px #d9d9d9 dotted; padding:10px 5px !important;}
+
+.detial-left01{ width:480px;}
+.detial-right01 .detial-title{ height:26px; border-bottom:none; position:relative;}
+.detial-right01 .detial-title h1{ line-height:26px; font-size:24px; color:#333; font-weight:normal;}
+.detial-right01 .detial-title div{ height:26px; line-height:26px; position:absolute; right:0; top:0;}
+
+.now01:hover{ background-color:#ec6104 !important;}
+.now02:hover{ background-color:#0074c9 !important;}
+
+.detial-intros{ display:block; padding:7px 6px; line-height:28px; font-size:14px; color:#7f7f7f; background-color:#f6f6f6; margin:15px 0 6px;}
+
+.meal{ height:40px; margin-top:6px;}
+.meal li{ float:left; height:40px; position:relative;}
+.meal li label{ display:block; font-size:16px; color:#7f7f7f; line-height:40px;}
+.meal li a{ display:block; width:78px; height:38px; line-height:38px; font-size:14px; color:#555; border:1px #ebebeb solid; margin:0 5px 0 4px; text-align:center; overflow:hidden;}
+.meal li a:hover,.meal li a.current{ color:#fc6c2f !important; border-color:#fc6c2f;}
+
+.meal li div{ display:none; width:412px; border:1px #fc6c2f solid; background-color:#fff; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; position:absolute; left:4px; top:44px;}
+.meal li div ul{ padding:19px 15px; overflow:hidden;}
+.meal li div ul p{ font-size:13px; color:#868686; font-family:"宋体"; line-height:23px;}
+.meal li.on div{ display:block;margin:0;}

@@ -118,18 +118,56 @@ $webtitle = $this->visa_row['visa_title'].'签证 - 去展网'
             <li class="detial-info-right-other fr">
 
                 <!--常见问题start-->
-<!--                <div class="question-all">-->
-<!--                    <h4>常见问题</h4>-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            <div class="fl"><img src="images/79.jpg" alt="" /></div>-->
-<!--                            <div class="fr">-->
-<!--                                <h5><a href="##" target="_blank">签证之前需要准备什么？</a></h5>-->
-<!--                                <p>给大家介绍一下，如何才.</p>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
+                <div class="question-all">
+                    <h4>常见问题</h4>
+                    <ul>
+                        <li style="height: 22px;">
+                            <div class="">
+                                <a href="http://www.qufair.com/news/2016/06/27/4511.shtml" target="_blank">办理签证是不是都要去领馆面试的？？</a>
+                            </div>
+                        </li>
+                        <li style="height: 22px;">
+                            <div class="">
+                               <a href="http://www.qufair.com/news/2016/06/27/4512.shtml" target="_blank">落地签什么意思？</a>
+                            </div>
+                        </li>
+                        <li style="height: 22px;">
+                            <div class="">
+                                <a href="http://www.qufair.com/news/2016/06/27/4513.shtml" target="_blank">签证是否能保证通过？</a>
+                            </div>
+                        </li>
+                        <li style="height: 22px;">
+                            <div class="">
+                               <a href="http://www.qufair.com/news/2016/06/27/4514.shtml" target="_blank">申根签国家包含哪些？</a>
+                            </div>
+                        </li>
+
+                        <li style="height: 22px;">
+                            <div class="">
+                                <a href="http://www.qufair.com/news/2016/06/27/4515.shtml" target="_blank">什么是拒签？</a>
+                            </div>
+                        </li>
+
+                        <li style="height: 22px;">
+                            <div class="">
+                                <a href="http://www.qufair.com/news/2016/06/27/4518.shtml" target="_blank">签证为什么要尽可能多提供资产证明？</a>
+                            </div>
+                        </li>
+
+
+                        <li style="height: 22px;">
+                            <div class="">
+                               <a href="http://www.qufair.com/news/2016/06/27/4517.shtml" target="_blank">什么是申根签？</a>
+                            </div>
+                        </li>
+                        <li style="height: 22px;">
+                            <div class="">
+                              <a href="http://www.qufair.com/news/2016/06/27/4516.shtml" target="_blank">什么是签证？</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
                 <!--常见问题end-->
 
                 <div class="line10"></div>

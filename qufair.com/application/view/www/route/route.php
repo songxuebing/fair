@@ -336,4 +336,4 @@ $webdescription = "2016年最新国内外展会行程，包含展会行程出发
     </ul>
 </div>
 <!--友情链接end-->
-<?php include $this->Render('footer2.php'); ?>>
+<?php include $this->Render('footer2.php'); ?>

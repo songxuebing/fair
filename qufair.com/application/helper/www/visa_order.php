@@ -23,19 +23,19 @@ if (empty($this->Param['option'])) {
     }
     $this->Assign('data' , $visa_row);
     echo $this->GetView('visa_order_new.php');
-    var_dump($visa_row);exit();
-
-    //产品类型
-    $pro_row = $VisaHelper->getProRow(array('`pro_id` = ?' => $visa_row['pro_type']));
-    $visa_row['type_name'] = $pro_row['type_name'];
-    //签证类型
-    $visa_type = $VisaHelper->getVisaRow(array('`visa_id` = ?' => $visa_row['visa_type']));
-    $visa_row['visa_name'] = $visa_type['visa_name'];
-
-    //print_r($visa_row);
-
-    $this->Assign('data' , $visa_row);
-    echo $this->GetView('visa_order.php');
+//    var_dump($visa_row);exit();
+//
+//    //产品类型
+//    $pro_row = $VisaHelper->getProRow(array('`pro_id` = ?' => $visa_row['pro_type']));
+//    $visa_row['type_name'] = $pro_row['type_name'];
+//    //签证类型
+//    $visa_type = $VisaHelper->getVisaRow(array('`visa_id` = ?' => $visa_row['visa_type']));
+//    $visa_row['visa_name'] = $visa_type['visa_name'];
+//
+//    //print_r($visa_row);
+//
+//    $this->Assign('data' , $visa_row);
+//    echo $this->GetView('visa_order.php');
 } else {
     switch($this->Param['option']){
         case 'submit':

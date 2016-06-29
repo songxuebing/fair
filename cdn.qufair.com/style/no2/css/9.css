@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+.case{ padding:0 25px; overflow:hidden; background-color:#fff;}
+.list_product_con_nav{ padding:7px 0; position:relative; }
+.case span{ display:block; float:left; height:40px; line-height:40px; font-size:16px; color:#aeaeae;}
+.case a.all{ display:block; font-size:16px; color:#555; height:40px; overflow:hidden; line-height:40px; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; width:70px; text-align:center;}
+.detial-case{ float:right; width:800px; padding-right:175px; border-bottom:1px #e5e5e5 dashed; padding-bottom:7px;}
+.detial-case ul{ height:40px; overflow:hidden;}
+.detial-case li{ float:left; width:160px; height:40px; overflow:hidden;}
+.detial-case li a{ display:inline-block; padding:0 10px; height:40xp; line-height:40px; font-size:16px; color:#555; overflow:hidden; line-height:40px; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; }
+.detial-case a:hover,.detial-case a.current,.case a.all:hover,.case a.all.current{ color:#fff !important; background-color:#fc6c2f;}
+.list_product_tpar{ position:absolute; right:10px; top:7px; font-size:30px; height:40px; line-height:40px;}
+.list_product_tpar a{ color:#969696; display:inline-block; width:23px; text-align:center;}
+.bt{ border-bottom:none;}
+
+
+.charts{ height:48px; border:1px #e7e7e7 solid; overflow:hidden; background-color:#f5f5f5;}
+.charts-tar{ height:48px;}
+.charts-tar a{ display:block; float:left; width:103px; height:48px; border-right:1px #f5f5f5 solid; text-align:center; line-height:48px; font-size:14px; color:#555;}
+.charts-tar a:hover{ color:#555 !important;}
+.charts-tar a.current{ background-color:#fff; border-right-color:#e7e7e7; color:#fc6c2f;}
+.charts-money{ padding-top:6px;}
+.charts-money input{ display:inline-block; border:1px #d1d1d1 solid; background-color:#fff; width:87px; padding-left:12px; height:34px; line-height:34px; font-size:14px; color:#d0d0d0;}
+.charts-money span{ display:inline-block; padding:0 10px; font-size:14px; line-height:34px; color:#000;}
+.charts-page{ padding-right:43px; line-height:48px;}
+.charts-page img{ display:inline-block; vertical-align:middle;}
+.charts-page a{ display:inline-block; line-height:48px; height:48px; overflow:hidden;}
+.charts-page span{ padding:0 10px; font-size:14px; color:#d0d0d0; display:inline-block; line-height:51px; height:48px; overflow:hidden;}
+.charts-page span i{ color:#fc6c2f;}
+
+
+.stroke{ padding:0 28px; border:1px #e5e5e5 solid; background-color:#fff;}
+.pt30{ padding-bottom:30px;}
+.stroke ul li{ height:200px; padding:33px 0; border-bottom:1px #e5e5e5 dotted; overflow:hidden;}
+.stroke .con{ margin-left:30px; width:500px; overflow:hidden;}
+.stroke .con h4{ font-size:20px; font-weight:normal; line-height:22px; color:#000; margin-bottom:15px;}
+.stroke .con h4 a{ color:#000;}
+.stroke .con p{ font-size:16px; color:#7f7f7f; line-height:42px;}
+.stroke .con p em{ color:#fb870e;}
+.stroke .con p i{ color:#555;}
+.stroke .stroke-right{ width:250px;}
+.share div{ height:22px; overflow:hidden; line-height:22px;}
+.share div span,.share div a{ display:inline-block; margin:0 2px; height:22px; line-height:22px; vertical-align:middle; font-size:15px; color:#333;}
+.stroke .stroke-right p{ font-size:13px; color:#e35252; line-height:65px; text-align:right; margin-top:53px;}
+.stroke .stroke-right p em{ font-size:24px; padding-right:10px;}
+.stroke .stroke-right a.order-stroke{ display:block; width:110px; height:44px; background-color:#fe9905; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; text-align:center; line-height:44px; color:#fff; font-size:16px;}
+.stroke .stroke-right a.order-stroke:hover{ background-color:#ec6104; color:#fff !important;}

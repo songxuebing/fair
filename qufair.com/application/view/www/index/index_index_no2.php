@@ -84,10 +84,14 @@
     <ul class="wrap">
         <li class="logo fl">
             <a href="/" title="">
-                <img src="<?php echo STYLE_URL;?>/style/no2/images/LOGO.jpg" alt="" />
+                <img src="<?php echo STYLE_URL;?>/style/no2/images/LOGO.jpg" alt="" title="去展网" />
             </a>
         </li>
-
+        <li style="padding-top: 53px; float: left;">
+            <a href="/" title="">
+                <img src="<?php echo STYLE_URL;?>/style/no2/images/201606271122110.png" alt="" title="让出国参展更简单" />
+            </a>
+        </li>
         <li class="search-type fr">
             <div class="con01">
                 <a href="/convention" target="_blank" class="current">全球展会</a>
@@ -99,7 +103,7 @@
 
             <div class="con02">
                 <form class="J-search-box" action="/convention/search/" method="post">
-                <input type="text" value=""  class="fl" name="key" placeholder="输入关键词内容" id="type" onClick="searchs(true)"/>
+                <input type="text" value=""  class="fl" name="key" placeholder="输入关键词内容" id="type" onClick="searchs(true)" onblur="hanshu(this)"/>
                 <input type="submit" value="搜  索" class="fr" />
                 <input type="hidden" name="type" value="convention" />
                 <div id="type-list">
@@ -197,6 +201,9 @@
         document.getElementById('type-list').style.visibility= f ? 'visible' : 'hidden';
         document.getElementById('type').onclick = function () {searchs(!f)};
     }
+        function hanshu() {
+            //document.getElementById('type-list').style.visibility='hidden';
+        }
     function c_cleanLiA1(idx) {
         var lis = document.getElementById('type-list').getElementsByTagName('p');
         for (var i = 0;i < lis.length;i++) {
@@ -411,7 +418,7 @@
                                 <li>
                                     <div class="img"><img src="<?php echo Common::AttachUrl($val_hot['cover']);?>" alt="" height="235" width="235" /></div>
                                     <h4><a href="convention/<?php echo date('Y/m/d', $val_hot['update_dateline']).'/'.$val_hot['id'];?>.shtml" target="_blank"><?php echo $val_hot['name']?></a></h4>
-                                    <p>时间:<?php echo $val_hot['start_time']?> - <?php echo $val_hot['end_time']?></p>
+                                    <p><?php echo $val_hot['start_time']?> - <?php echo $val_hot['end_time']?></p>
                                     <div class="order clearfix">
                                         <b>￥:<?php echo $val_hot['price']?><i>起</i></b>
                                         <a href="convention/<?php echo date('Y/m/d', $val_hot['update_dateline']).'/'.$val_hot['id'];?>.shtml" target="_blank">展会价格</a>
@@ -473,6 +480,7 @@
                         <ul class="list">
                             <?php if(!empty($this->new_con)) foreach($this->new_con as $key=>$v_new_con){?>
                                 <li>
+                                    <img src="http://cdn.qufair.com/style/no2/images/5-120601152321-50.gif" style="float: left; padding: 9px 5px;">
                                     <a href="convention/<?php echo date('Y/m/d', $v_new_con['update_dateline']).'/'.$v_new_con['id'];?>.shtml" target="_blank"><?php echo $v_new_con['name']?></a>
                                 </li>
                             <?php }?>
@@ -628,7 +636,8 @@
                         if(!empty($this->new_hot)) foreach($this->new_hot as $kk => $vv){
 
                             ?>
-                            <li>
+                            <li class="list_new">
+<!--                                <img src="http://cdn.qufair.com/style/no2/images/new.png" style="float: left;padding-top: 2px;">-->
                                 <p>
                                     <a href="/news/<?php echo date('Y/m/d', $vv['dateline']).'/'.$vv['id'].'.shtml';?>" target="_blank">
                                         <?php echo StringCode::GetCsubStr($vv['title'],0,17);?>
@@ -651,7 +660,8 @@
                         <?php
                         if(!empty($this->new_ke)) foreach($this->new_ke as $kk => $vv_ke){
                             ?>
-                            <li>
+                            <li class="list_new">
+<!--                                <img src="http://cdn.qufair.com/style/no2/images/new.png" style="float: left;padding-top: 2px;">-->
                                 <p>
                                     <a href="/news/<?php echo date('Y/m/d', $vv_ke['dateline']).'/'.$vv_ke['id'].'.shtml';?>" target="_blank">
                                         <?php echo StringCode::GetCsubStr($vv_ke['title'],0,17);?>

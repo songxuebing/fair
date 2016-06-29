@@ -59,6 +59,7 @@ if (empty($this->Param['option'])) {
             $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
             $where = array();
             $where = array('`id` > ?' => 0);
+            //var_dump($this->Param);exit();
             $data = $IndustryHelper->advPageList($where,$limit,$page,$this->Param);
 
             //var_dump($data);exit();

@@ -175,12 +175,42 @@ class RouteHelper extends Helper {
         return $this->RouteModel->routenewRow($where);
     }
 
-    public function routenewAll($where,$limit = null, $group = null, $order = null, $output = false) {
+    public function routenewAll($where,$limit = null, $group = null, $order = null, $output = FALSE) {
         if (is_numeric($where)) {
             $where = array(
                 '`id` = ?' => $where
             );
         }
         return $this->RouteModel->routenewAll($where,array(0,$limit), $group, $order, $output);
+    }
+
+
+
+    public function routenewPageList($where, $limit, $page, $Param) {
+        $join = $this->joinWhere($Param);
+        $where = array_merge($where, $join);
+        $data['One'] = $this->RouteModel->routenewOne($where);
+        if (!empty($data['One'])) {
+            $data['All'] = $this->RouteModel->routenewAll($where, array($page, $limit), NULL, array('id desc'));
+
+            Pagination::SetUrl($Param);
+            $data['Page'] = Pagination::GetHtml($limit, $page, $data['One']);
+        }
+        return $data;
+    }
+
+
+    public function routenewdetailAll($where,$limit = null, $group = null, $order = null, $output = FALSE) {
+        if (is_numeric($where)) {
+            $where = array(
+                '`route_id` = ?' => $where
+            );
+        }
+        return $this->RouteModel->routenewdetailAll($where,array(0,$limit), $group, $order, $output);
+    }
+
+
+    public function routeUpdate($data, $where) {
+        return $this->RouteModel->routeUpdate($data, $where);
     }
 }

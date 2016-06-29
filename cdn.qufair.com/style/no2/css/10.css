@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+.tel p{ text-align:center; height:125px; line-height:125px; font-size:35px; color:#333;}
+.tel p i{ color:#ff4a00;}
+.demand{ border:1px #e5e5e5 solid; overflow:hidden;}
+.demand h2{ height:44px; border-bottom:1px #e5e5e5 solid; line-height:44px; font-size:16px; color:#333; font-weight:normal; padding:0 30px; background:url(../images/45.jpg) no-repeat 18px center;}
+.demand .list01{ padding:40px 52px 15px; overflow:hidden;}
+.demand .list01 li{ height:44px; overflow:hidden; margin-bottom:25px;}
+.demand .list01 li label,.contact-demand label{ display:block; float:left; font-size:17px; color:#333; line-height:44px; height:44px; padding-right:10px;}
+.demand .list01 li label em,.contact-demand label em{ color:#ff4800; padding-right:5px;}
+.demand .list01 li span,.contact-demand span{ display:block; float:left; line-height:44px; height:44px; color:#333; font-size:17px; padding:0 8px;}
+.demand .list01 li div,.contact-demand div{ float:left; border:1px #e5e5e5 solid; overflow:hidden;}
+.info-demand01{ height:22px; padding:10px 12px;}
+.info-demand01 select{ display:block; width:165px; border:0; font-size:17px; color:#aaa; -webkit-appearance:none; -moz-appearance:none; appearance:none; background:url(../images/51.jpg) no-repeat no-repeat right center transparent; font-family:"微软雅黑";}
+.info-demand02{ height:42px; padding:0 12px;}
+.info-demand02 input[type="text"]{ height:42px; border:0; line-height:42px; font-size:17px; color:#aaa; font-family:"微软雅黑"; display:block; width:165px;}
+.info-demand03 input[type="text"]{ display:block; float:left; width:145px;}
+.info-demand03 p{ float:left; width:20px; text-align:center; font-size:17px; color:#aaa; line-height:42px; height:42px;}
+.info-demand04 p{ float:left; font-size:17px; color:#aaa; line-height:42px; height:42px;}
+.info-demand04 input[type="text"]{ width:327px;}
+
+
+.demand .list02{ padding:17px 17px 0; overflow:hidden;}
+.demand .list02 div{ float:left; width:162px; height:162px; border:1px #eee solid; overflow:hidden; text-align:center; line-height:159px; margin-right:16px; margin-bottom:16px; vertical-align:bottom;}
+.demand .list02 div img{ display:inline-block; vertical-align:middle;}
+
+.upload-demand{ border:1px #eee solid; overflow:hidden; padding:10px;}
+.upload-demand textarea{ display:block; border:0; width:100%; font-size:16px; color:#aaa; line-height:25px; height:100px;}
+
+.demand-button{ padding:100px 0;}
+.demand-button input[type="button"]{ display:block; border:0; width:150px; height:50px; margin:0 auto; color:#fff; font-size:18px; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; background-color:#fc6908; cursor:pointer;}
+.demand-button input[type="button"]:hover{ color:#fff !important; background-color:#ec6104;}

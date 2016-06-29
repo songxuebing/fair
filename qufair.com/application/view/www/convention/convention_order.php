@@ -63,6 +63,7 @@
                 <div>
                     <select>
                         <option>开口类型</option>
+                        <option>单口</option>
                         <option>两口</option>
                         <option>三口</option>
                     </select>
@@ -73,7 +74,7 @@
                     <select>
                         <option>面积大小</option>
                         <option>3*3</option>
-                        <option>2*2</option>
+                        <option>3*4</option>
                     </select>
                 </div>
             </li>

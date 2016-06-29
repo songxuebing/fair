@@ -102,7 +102,9 @@
 
     <?php
     if(!empty($this->data))
-    foreach($this->data as $k => $v){?>
+    foreach($this->data as $k => $v){
+        //var_dump($v);exit();
+        ?>
     <div class="spin" style="<?php if($k>0){?>border:none;<?php }?>">
         <ul class="clearfix">
 
@@ -179,20 +181,49 @@
 
                 <div class="spin-news-img">
                     <ul>
-                        <li><a href="#" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/58.jpg" alt="" /></a></li>
-                        <li><a href="#" target="_blank"><img src="<?php echo STYLE_URL;?>/style/no2/images/59.jpg" alt="" /></a></li>
+                        <?php
+                        if(!empty($v['in_adv']['All']))
+                        {
+                            $i_adv_0 = 0;
+                            foreach($v['in_adv']['All'] as $k_adv_0 => $v_adv_0){
+                                if($v_adv_0['position'] == '0' && $i_adv_0 < 2){
+                                    $i_adv_0++;
+                                    ?>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="<?php echo STYLE_URL;?>/style/no2/images/58.jpg" alt="" />
+                                        </a>
+                                    </li>
+                                    <?php
+
+                                }
+                            }
+                        }?>
                     </ul>
                 </div>
             </li>
             <!--右栏目end-->
         </ul>
     </div>
-<!--        <div class="line10"></div>-->
-<!--        <!--广告位start-->
-<!--        <div>-->
-<!--            <a href="##" target="_blank"><img src="--><?php //echo STYLE_URL;?><!--/style/no2/images/56.jpg" alt="" /></a>-->
-<!--        </div>-->
-<!--        <!--广告位end-->
+        <div class="line10"></div>
+        <!--广告位start-->
+        <div>
+            <?php
+
+            if(!empty($v['in_adv']['All']))
+            {
+            $i_adv = 0;
+            foreach($v['in_adv']['All'] as $k_adv => $v_adv){
+                if($v_adv['position'] == '1' && $i_adv < 1){
+                    $i_adv++;
+                ?>
+                <a href="<?php echo $v_adv['url'];?>" target="_blank"><img src="<?php echo $v_adv['file'];?>" alt="<?php echo $v_adv['title'];?>" title="<?php echo $v_adv['title'];?>" /></a>
+            <?php
+                }
+            }
+            }?>
+        </div>
+        <!--广告位end-->
 
         <div class="line10"></div>
     <?php }?>

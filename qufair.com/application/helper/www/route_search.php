@@ -28,6 +28,7 @@ $VisaHelper = new VisaHelper();
 
 $this->Assign('script',$script);
 if (empty($this->Param['option'])) {
+    //var_dump($this->Param);
     $delta = array("欧洲","美洲","亚洲","非洲","大洋洲");
     $this->Assign('delta', $delta);
 

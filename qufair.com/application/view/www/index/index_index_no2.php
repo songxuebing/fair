@@ -94,11 +94,11 @@
         </li>
         <li class="search-type fr">
             <div class="con01">
-                <a href="/convention" target="_blank" class="current">全球展会</a>
-                <a href="/route" target="_blank">行程</a>
-                <a href="/visa" target="_blank">签证</a>
-                <a href="/decoration" target="_blank">特装</a>
-                <a href="/news" target="_blank">新闻资讯</a>
+                <a href="javascript:;" target="_blank" class="current" data-id="convention">全球展会</a>
+                <a href="javascript:;" target="_blank" data-id="route">行程</a>
+                <a href="javascript:;" target="_blank" data-id="visa">签证</a>
+                <a href="javascript:;" target="_blank" data-id="decoration">特装</a>
+                <a href="javascript:;" target="_blank" data-id="forum">新闻资讯</a>
             </div>
 
             <div class="con02">
@@ -136,6 +136,29 @@
     </ul>
 </div>
 <script type="text/javascript">
+    jQuery(document).ready(function(e) {
+        //选择属性
+        jQuery(".con01").on('click', 'a', function () {
+            var $this = jQuery(this),
+                title = $this.attr('title'),
+                divObj = $this.parent('.J-attr'),
+                type = $this.data('id');
+
+                $(".con01 a").removeClass("current");
+
+                alert(type);
+                var searchType = $(this).data('id');
+                $('input[name="type"]').val(searchType);
+                $(this).addClass("current");
+                if(searchType == "forum") {
+                    $(".J-search-box").attr({"action": "/" + searchType + "/index/"});
+                }
+
+            return false;
+
+        });
+    });
+
     $(document).ready(function(e) {
 
         $(".J-hot-key").on('click',function(){

@@ -187,7 +187,7 @@ class RouteHelper extends Helper {
 
 
     public function routenewPageList($where, $limit, $page, $Param) {
-        $join = $this->joinWhere($Param);
+        $join = $this->joinrouteWhere($Param);
         $where = array_merge($where, $join);
         $data['One'] = $this->RouteModel->routenewOne($where);
         if (!empty($data['One'])) {
@@ -212,5 +212,24 @@ class RouteHelper extends Helper {
 
     public function routeUpdate($data, $where) {
         return $this->RouteModel->routeUpdate($data, $where);
+    }
+
+
+    public function joinrouteWhere($Param) {
+
+        $condition = array();
+        if(!empty($Param['key'])){
+            $key = explode(' ', $Param['key']);
+            if(!empty($key)) foreach($key as $k=>$v){
+                $condition['LOCATE("'.$v.'",`title`) > ?'] = 0;
+            }
+        }
+        if (!empty($Param['st'])) {
+            $condition['`dateline` >= ?'] = strtotime($Param['st']);
+        }
+        if (!empty($Param['et'])) {
+            $condition['`dateline` <= ?'] = strtotime($Param['et']);
+        }
+        return $condition;
     }
 }

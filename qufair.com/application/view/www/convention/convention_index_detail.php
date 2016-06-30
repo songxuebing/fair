@@ -191,27 +191,43 @@ $webtitle = $this->data['info']['name'].' - 去展网'
             <!--左栏目end-->
 
             <!--右栏目start-->
-            <li class="detial-info-right fr">
-                <h3>相关展览会</h3>
+            <li class="detial-info-right-other fr">
 
-                <div class="list-picture">
+                <!--相关展览会start-->
+                <div class="related-stroke related-stroke01">
+                    <h3>相关展览会</h3>
                     <ul>
-                        <?php if(!empty($this->data_con['All'])) foreach($this->data_con['All'] as $key => $val_con){?>
+                        <?php
+                        $c_i = 0;
+                        if(!empty($this->data_con['All']))
+                        {
+                            foreach($this->data_con['All'] as $key => $val_con)
+                            {
+                                if($c_i == 0){?>
 
-                        <li>
-                            <div><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>">
-                                    <img src="<?php echo Common::AttachUrl($val_con['imgarr_1']);?>" alt="<?php echo $val_con['name']?>" title="<?php echo $val_con['name']?>" style="max-height: 300px; max-width: 232px;" /></a></div>
-                            <div class="list-total">
-                                <i>摊位特价</i>
-                                <p><em><?php echo $val_con['price']?>元</em>起</p>
-                            </div>
-                            <h4><a href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>"><?php echo StringCode::GetCsubStr($val_con['name'],0,13);?></a></h4>
+                        <li style="margin-top: 0px;">
+                            <?php }else{?>
+                                    <li>
+                                    <?php }?>
+                            <a target="_blank" href="/convention/<?php echo date('Y/m/d', $val_con['update_dateline']).'/'.$val_con['id'].'.shtml';?>">
+                                <img style="max-width: 232px;" src="<?php echo Common::AttachUrl($val_con['imgarr_1']);?>" alt="<?php echo $val_con['name']?>" title="<?php echo $val_con['name']?>">
+                                <i style="height: 45px; line-height: 23px;">
+                                    <?php echo StringCode::GetCsubStr($val_con['name'],0,13);?>
+                                    <br />
+                                    <?php echo $val_con['start_time'].' - '.$val_con['end_time'];?>
+                                </i>
+                            </a>
                         </li>
-                        <?php }?>
+                        <?php
+                            $c_i++;
+                            }
+                        }?>
+
                     </ul>
                 </div>
-
+                <!--相关展览会end-->
             </li>
+
             <!--右栏目end-->
 
         </ul>
@@ -225,7 +241,7 @@ $webtitle = $this->data['info']['name'].' - 去展网'
 </div>
 <!--main end-->
 
-
+<link type="text/css" href="<?php echo STYLE_URL;?>/style/no2/css/12.css" rel="stylesheet" />
 <script>
     $(".hot-product").hover(function(){
         $(this).addClass("on");

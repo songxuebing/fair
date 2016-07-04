@@ -385,10 +385,10 @@ select{ height:22px; line-height:18px; padding:2px 0; outline:none;}
 
 /*.project02 ul{ padding-top:85px;}*/
 
-.project02 p{ text-align:center; font-size:20px; color:#fff; line-height:45px;}
+.project02 p{ text-align:center; font-size:16px; color:#fff; line-height:45px;}
 .project02 p em{ padding:0 19px; color:#2f9aff;}
 .project02 span{ display:block; width:100%; font-size:18px; color:#f4f4f4; line-height:40px; padding-top:15px; text-align:center;}
-.project02 b{ display:block; width:100%; text-align:center; font-size:25px; color:#f4f4f4; font-weight:normal; line-height:60px;}
+.project02 b{ display:block; width:100%; text-align:center; font-size:20px; color:#f4f4f4; font-weight:normal; line-height:60px;}
 .project02 a{ display:block; width:217px; height:52px; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; background-color:#fc6424; overflow:hidden; text-align:center; line-height:52px; font-size:22px; color:#f4f4f4; margin:0 auto;}
 .project02 a:hover{ color:#f4f4f4 !important;}
 .project02 div{ padding-top:30px;}

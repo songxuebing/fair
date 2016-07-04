@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+.pd01{ padding:0;}
+
+/*左栏目*/
+.center-left{ width:213px; overflow:hidden;}
+.menus{ border:1px #e5e5e5 solid; overflow:hidden; background-color:#fff;}
+.type-menus{ display:block; padding:0 33px 0 73px; height:48px; line-height:48px; font-size:16px; color:#777; position:relative; overflow:hidden; border-bottom:1px #e5e5e5 solid; background-position:33px  center; background-repeat:no-repeat;}
+.type-menus i{ display:block; position:absolute; right:33px; top:0; height:48px; line-height:48px; width:10px; text-align:center; font-family:"宋体"; font-size:17px; color:#777; font-weight:600;}
+.type-menus:hover{ color:#777 !important;}
+.ico01{ background-image:url(../images/60.jpg);}
+.ico02{ background-image:url(../images/61.jpg);}
+.ico03{ background-image:url(../images/62.jpg);}
+.menus li.infos div{ display:none;}
+.menus li.infos div ul li{ height:48px; border-bottom:1px #e5e5e5 solid; overflow:hidden;}
+.menus li.infos div ul li a{ display:block; padding-left:73px; font-size:13px; color:#7e7e7e; line-height:48px; position:relative;}
+.menus li.infos div ul li a img{ display:none; position:absolute; left:0; top:0;}
+.menus li.infos div ul li a em{ display:block; position:absolute; right:33px; top:0; width:10px; height:48px; background:url(../images/64.jpg) no-repeat center center;}
+.menus li.infos div ul li a:hover,.menus li.infos div ul li a.current{ color:#ff4b05 !important; background-color:#fdfdfd;}
+.menus li.infos div ul li a:hover img,.menus li.infos div ul li a.current img{ display:block;}
+.menus li.infos div ul li a:hover em,.menus li.infos div ul li a.current em{ background-image:url(../images/65.jpg);}
+
+
+/*右栏目*/
+.center-right{ width:980px;}
+.right-box{ border:1px #e5e5e5 solid;}
+
+.center-title{ height:44px; border-bottom:1px #e5e5e5 solid; padding:0 19px; line-height:44px; }
+.center-title h2{ padding-left:12px; background:url(../images/45.jpg) no-repeat left center;font-size:16px; color:#333; font-weight:normal;}
+
+ 
+#menus-position.on{ position:fixed; left:50%; top:0; margin-left:-600px; z-index:9999;}
+
+.add-company-news{ position:relative; padding:25px 40px 40px;}
+.add-company-news div{ display:block; width:198px; height:198px; border:1px #e5e5e5 solid; line-height:198px; text-align:center; position:absolute; right:86px; top:46px;}
+.add-company-news div ul{ position:relative;}
+.add-company-news div img{ display:inline-block; vertical-align:middle;}
+.add-company-news div ul a{ display:none; width:100px; height:40px; background:url(../images/34.png) no-repeat; position:absolute; left:50%; margin-left:-50px; bottom:16px;}
+.add-company-news div:hover a{ display:block;}
+
+.add-company-news ul li{ height:40px; line-height:40px; overflow:hidden; margin-top:15px;}
+.add-company-news ul li label{ display:block; float:left; font-size:16px; color:#7f7f7f; line-height:40px;}
+.add-company-news ul li label em{ padding-left:0.5em;}
+.add-company-news ul li input{ display:block; float:left; height:38px; border:1px #e2e2e2 solid; font-size:16px; color:#7f7f7f; line-height:38px; padding-left:19px;}
+.in-wd01{ width:395px;}
+.in-wd02{ width:130px;}
+.in-wd03{ width:185px;}
+.add-company-news ul li a{ display:block; float:left; width:120px; height:40px; text-align:center; line-height:40px; color:#fff; font-size:16px; background-color:#1eadf5; margin-left:10px;}
+.add-company-news ul li a:hover{ color:#fff !important; background-color:#0074c9;}
+
+.add-button{ display:block; border:0;font-size:18px; color:#fff; width:150px; height:50px; margin:0 auto; background-color:#fc6908; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; margin-top:44px; cursor:pointer;}
+.add-button:hover{ background-color:#ec6104;}

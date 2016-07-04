@@ -37,7 +37,7 @@
                 <li class="li_20"><?php echo $v['url'];?></li>
                 <li class="li_10"><?php if($v['type'] == 0 ) {echo 展会;}elseif($v['type'] == 1 ) {echo "新闻";}elseif($v['type'] == 2 ) {echo "行程/签证";}elseif($v['type'] == 3 ) {echo "特装";}?></li>
                 <li class="li_10"><?php echo $v['sort'];?></li>
-                <li class="li_10"><a href="/other/keyword/option/route_edit/id/<?php echo $v['id'];?>" class="btn_05 AjaxWindow" href-id="<?php echo $v['id'];?>" data-title="修改关键词">编辑</a><a href="#" class="btn_05 RemoveLink_hot" data-id="<?php echo $v['id'];?>" data-url="/other/keyword/">删除</a></li>
+                <li class="li_10"><a href="/other/keyword/option/hot_edit/id/<?php echo $v['id'];?>" class="btn_05 AjaxWindow" href-id="<?php echo $v['id'];?>" data-title="修改关键词">编辑</a><a href="#" class="btn_05 RemoveLink_hot" data-id="<?php echo $v['id'];?>" data-url="/other/keyword/">删除</a></li>
             </ul>
         </div>
         <!--/条-->

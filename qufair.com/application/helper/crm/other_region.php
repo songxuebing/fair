@@ -44,6 +44,9 @@ if (empty($this->Param['option'])) {
         case 'submit':
             $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
             $data['name'] = empty($this->Param['name']) ? ErrorMsg::Debug('请输入名称') : $this->Param['name'];
+            $data['name_en'] = $this->Param['name_en'];
+            $data['title'] = $this->Param['title'];
+            $data['description'] = $this->Param['description'];
             $data['parent_id'] = !is_numeric($this->Param['parent_id']) ? ErrorMsg::Debug('请选择所属区域') : $this->Param['parent_id'];
             $data['delta'] = $this->Param['parent_id'] > 0 ? '' : $this->Param['delta'];
             if($id > 0){

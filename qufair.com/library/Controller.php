@@ -259,13 +259,13 @@ class Controller{
         }
         foreach($industry as $key => $val_in)
         {
-            if(!empty($val_in['name_en']) && ($url === "/".$val_in['name_en']))
-                $url = "/convention/index/industry/".$val_in['name'];
+            if(!empty($val_in['name_en']) && ($url === "/convention-".$val_in['name_en']))
+                $url = "/convention/search/industry/".$val_in['name'];
             if(!empty($val_in['next']))
                 foreach($val_in['next'] as $k => $val_ne)
                 {
-                    if(!empty($val_ne['name_en']) && ($url === "/".$val_ne['name_en']))
-                        $url = "/convention/index/industry/".$val_ne['name'];
+                    if(!empty($val_ne['name_en']) && ($url === "/convention-".$val_ne['name_en']))
+                        $url = "/convention/search/industry2/".$val_ne['name'];
                 }
         }
         //var_dump($industry);exit();
@@ -290,6 +290,9 @@ class Controller{
                 'next' => $country
             );
         }
+        $city = $RegionHelper->regionAll(array(
+            '`parent_id` != ?' => 0
+        ));
         //var_dump($delta);exit();
         foreach($delta as $key => $val_delta)
         {
@@ -304,14 +307,23 @@ class Controller{
 
                     if(!empty($val_ne['name_en']) && ($url === "/convention-".$val_ne['name_en']))
                     {
-                        $url = "/convention/search/?industry=&delta=%E6%AC%A7%E6%B4%B2&countries=%E4%B8%B9%E9%BA%A6&city=";
+                        $url = "/convention/search/?industry=&delta=&countries=".$val_ne['name'];
                         if(empty($this->Param['countries']))
                         $this->Param['countries'] = $val_ne['name'];
                     }
                 }
         }
-        //echo $url.'<br />';//exit();
 
+            if(!empty($city))
+                foreach($city as $k => $val_ne)
+                {
+                    if(!empty($val_ne['name_en']) && ($url === "/convention-".$val_ne['name_en']))
+                    {
+                        $url = "/convention/search/?industry=&delta=&countries=&city=".$val_ne['name'];
+                        if(empty($this->Param['city']))
+                            $this->Param['city'] = $val_ne['name'];
+                    }
+                }
 
         //var_dump($this->Param);exit();
         //exit();

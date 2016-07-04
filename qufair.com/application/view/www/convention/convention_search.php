@@ -1,3 +1,26 @@
+<?php
+if(!empty($this->web_information))
+{
+    if(!empty($this->web_information['title']))
+    {
+        $webtitle = $this->web_information['title'];
+    }
+    else{
+        $webtitle = "2016最新国外展会|提供汽配展|礼品展|五金展|服装展等展会信息" . ' - 去展网';
+    }
+    if(!empty($this->web_information['description']))
+    {
+        $webdescription = $this->web_information['description'];
+    }
+    else{
+        $webdescription = "2016最新国外展会|提供汽配展|礼品展|五金展|服装展等展会信息" . ' - 去展网';
+    }
+}
+else {
+    $webtitle = "2016最新国外展会|提供汽配展|礼品展|五金展|服装展等展会信息" . ' - 去展网';
+    $webdescription = "提供最新2016德国展会、香港展会、上海展会等全球展会及行业信息。包含最全汽配展|礼品展|服装展|五金展等展览资讯";
+}
+?>
 <?php include $this->Render('header_no2.php'); ?>
     <div class="line10"></div>
 
@@ -242,8 +265,9 @@ if(!empty($this->data['attr'])) foreach($this->data['attr'] as $aKey => $aVal){
                     <h4><a href="/convention/<?php echo date('Y/m/d', $v['update_dateline']).'/'.$v['id'];?>.shtml" target="_blank"><?php echo $v['name'];?></a></h4>
                     <p>时间:<?php echo $v['start_time']?>至<?php echo $v['end_time']?></p>
                 </div>
-                <div class="project02">
+                    <div class="project02">
                     <ul>
+                        <p style="padding-top: 20px;"></p>
                         <p>距离展会开幕时间</p>
 <!--                        <p><em>126</em>天<em>8</em>小时<em>32</em>分</p>-->
                         <div data-type="order_expire_time" class="top_countdown" style="padding-top: 0px;">

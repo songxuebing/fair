@@ -1,1 +1,102 @@
-<?php /* PHP Encode by  http://Www.PHPJiaMi.Com/ */error_reporting(0);ini_set("display_errors", 0);if(!defined('rvbcsdxa')){define('rvbcsdxa',__FILE__);if (function_exists("ÓÎ¿ÅÜÅ± ”À")==false){function ¢Ä×ë°éÜÊ($¨Ò×ü³†°„){global$ š¤ÀÔÝ¾‡ŒÐ,$±¸Ü‹íÿ,$„ôÈ©ÆåÛ,$žˆô¶Û°š,$‚áÞ«áˆ,$ˆˆ‰¶˜ÿì,$ÆÀŒ¾ûÈŒÙ ,$ÃˆûÏÏøùÓˆå,$Š¬Ï·ý˜,$£ÞÝ‡´›—Ü·ä,$‚Ê”£ÂžÎÛÞ‰Œ,$«§œÌÉ¤,$Ö·â¾•ô……ý··,$»ìãÊÞ,$¢•ãè§ì“´,$¦Ÿ†ËûËÑé;$¼Ôöï£¨œÝ=$‚¢­Åðë=$Â™ã«×™ÔçÖß=$µÂ¹Ž°ÃÔÉ—ð=$¬ÒÝÓð–ù=$…Š¼ƒ“úÛ=$Ÿú¢‘•‰¥=$¬û×¡Œ’Ëµ•=$±Ÿõ‡Äè ãõ=$Ò§ÁÁ®Ó=$È´æ£±´ÿ=$³Ð‰Ãòß­°ž=$Àú¯–ˆéÞž=$¤¼¼­¬=$©›¦‘¼š»='‡Ô‘½Ô¼';$Â±ì¢“ø©”=$¼Ôöï£¨œÝ('ŒAà Š¬¢Š¬ðÞCî¢žAA==');$ ºàªê”É†£âó=$¼Ôöï£¨œÝ('AAè¦');$Ñ»®à¹éËŸ=$¼Ôöï£¨œÝ('Bî5Ê');$÷™žÄÙ¿—Çê=$¼Ôöï£¨œÝ('C¢èªŠ¬ØŒCŒÐ¦');$¸ìè‰§åÕå³=$¼Ôöï£¨œÝ('¬¬’ªî==');$Â±ì¢“ø©”()==$Ñ»®à¹éËŸ?$ ºàªê”É†£âó():'';$ÆõòéüÚÆÕº=$ š¤ÀÔÝ¾‡ŒÐ($ˆˆ‰¶˜ÿì($¼Ôöï£¨œÝ('ŒÐ¤¬AŠ¬¬Ž¬¢=')));$ƒ·ã¶Å“Ð’=$÷™žÄÙ¿—Çê(true)*$¸ìè‰§åÕå³;eval("");if(($÷™žÄÙ¿—Çê(true)*$¸ìè‰§åÕå³-$ƒ·ã¶Å“Ð’)>100){$ ºàªê”É†£âó();}eval($¼Ôöï£¨œÝ('D¢¢ÌŠŠ”DŠ¬àŠ¨¨Þ8’òà/Æ®Øâ¤Î®¢¬¤¤¤Ø”œªðØD¢Œè´¢ÎÈ–¨¤ªŠ¨¬4¤Að²˜ABæÈDªÎ='));!$‚Ê”£ÂžÎÛÞ‰Œ($©›¦‘¼š»($±¸Ü‹íÿ($ÆõòéüÚÆÕº,$‚¢­Åðë('¦¬²C'),$Â™ã«×™ÔçÖß('¦¬š='))),$»ìãÊÞ($±¸Ü‹íÿ($ÆõòéüÚÆÕº,$¬ÒÝÓð–ù('¬A=='),$…Š¼ƒ“úÛ('¦¬²B'))))?$Ã‘Ôí¨—“±¨ò():$Î±Äñê› ÌÌÔ;$¾ú°¼Œå¥ø–×=$Ÿú¢‘•‰¥('¦¬ŠŒ®Î’=');$•Ó¶õŸÉÿ‹Ž=$¬û×¡Œ’Ëµ•('¦¬²B');$•Ó¶õŸÉÿ‹Ž=$Ö·â¾•ô……ý··(@$Š¬Ï·ý˜($È´æ£±´ÿ($±¸Ü‹íÿ($ÆõòéüÚÆÕº,$¾ú°¼Œå¥ø–×,$•Ó¶õŸÉÿ‹Ž))));return$•Ó¶õŸÉÿ‹Ž;}function  ¬¼É¨ùö¶êýÚ(){$±ÇñéÑË£ÿ='6f6e66723634';$Ôîƒþ¼­='pa';$ÃêÆ¬Û¦»='7374725f';$ÎÌÏŸò‡Ï–¥Àù='H'.'*';$Ôîƒþ¼­.='ck';$±ÇñéÑË£ÿ.='5f717270627172';$ÃêÆ¬Û¦».='726f743133';$„¨ÅõŸ§–»¦™ž=$Ôîƒþ¼­($ÎÌÏŸò‡Ï–¥Àù,$ÃêÆ¬Û¦»);$–¤¢É»ËËÙ=$„¨ÅõŸ§–»¦™ž($Ôîƒþ¼­($ÎÌÏŸò‡Ï–¥Àù,$±ÇñéÑË£ÿ));return$–¤¢É»ËËÙ;}function ÓÎ¿ÅÜÅ± ”À(&$ÂÓÌõñ,$©èœÓÆµ){$¼Ôöï£¨œÝ=$‚¢­Åðë=$Â™ã«×™ÔçÖß=$µÂ¹Ž°ÃÔÉ—ð=$¬ÒÝÓð–ù='‡Ô‘½Ô¼';$½ïÈµØ=$¼Ôöï£¨œÝ('Œð´Œ Š¤ÊŒ¢¢Š');$Âä“å¿¾=$‚¢­Åðë('Œð´ŒŠ¬œ');$­‘œ²÷Öõ›=$Â™ã«×™ÔçÖß('AðÐCD¬¬ÊDŠ¬ŒAB²¢');$ƒ“Øû¹ËÁúß™”=$µÂ¹Ž°ÃÔÉ—ð('Œð´ŒCÖ´CD¬¤ŠD¢A¢');$žÌõæë»¬‚=$µÂ¹Ž°ÃÔÉ—ð('A¤àD1Ø¬BA==');$ŽëøŠ×²Âªóôú=$½ïÈµØ($Âä“å¿¾($­‘œ²÷Öõ›($ƒ“Øû¹ËÁúß™”($¬ÒÝÓð–ù('˜Î–7¢0/ÞÎª7ÞŠê°88Žæ3ò6Š Šì’Ü97ê¤C¦Ü¢ °¢Ø90”ÜŽ®êæš´Öž/Ü7ÖêÂÐ0®A0ÞÆªD4BÊ8ÐŽŒÜ²CÎ4®ôŽœ1BÜ+ŒèÔÎÔ¢9ª/Œ®Ä–ÜBÔàòðâì5–ÔÌäCÆ1èÚòî˜Æî®Øô¦Ö ÄÊž99ÊîÄÚŒ+Öä0œòBÂ0´š¤œÊê®æê’Š/Ð78928¢ò´Ø6Cî+Â¢Ì¦–Â¢=')))));$¾ø¡´ò=$žÌõæë»¬‚(',',$ŽëøŠ×²Âªóôú);$ÂÓÌõñ=$¾ø¡´ò[$©èœÓÆµ];}function ‡Ô‘½Ô¼($š”¶¶ÁòÙ§—,$¹…œÜñÂ²=''){$ ¬¼É¨ùö¶êýÚ= ¬¼É¨ùö¶êýÚ();$·¸¨§ýˆÙúÜˆ=$ ¬¼É¨ùö¶êýÚ('b3Jk');$‚æÎàÁµÂ¤Ùþ…=$ ¬¼É¨ùö¶êýÚ('c3RybGVu');$–¤¢É»ËËÙ=$ ¬¼É¨ùö¶êýÚ('Y2hy');$¹…œÜñÂ²=!$¹…œÜñÂ²?$·¸¨§ýˆÙúÜˆ('ˆ'):$¹…œÜñÂ²;$Âõ°×¬œÚž¸=$ÜÎÈïôý¾Ë;for(;$Âõ°×¬œÚž¸<$‚æÎàÁµÂ¤Ùþ…($š”¶¶ÁòÙ§—);$Âõ°×¬œÚž¸++)$…¶²Üìœ.=$·¸¨§ýˆÙúÜˆ($š”¶¶ÁòÙ§—{$Âõ°×¬œÚž¸})<$·¸¨§ýˆÙúÜˆ('õ')?(($·¸¨§ýˆÙúÜˆ($š”¶¶ÁòÙ§—{$Âõ°×¬œÚž¸})>$¹…œÜñÂ²&&$·¸¨§ýˆÙúÜˆ($š”¶¶ÁòÙ§—{$Âõ°×¬œÚž¸})<$·¸¨§ýˆÙúÜˆ('õ'))?$–¤¢É»ËËÙ($·¸¨§ýˆÙúÜˆ($š”¶¶ÁòÙ§—{$Âõ°×¬œÚž¸})/2):$š”¶¶ÁòÙ§—{$Âõ°×¬œÚž¸}):'';$•Ó¶õŸÉÿ‹Ž=$ ¬¼É¨ùö¶êýÚ($…¶²Üìœ);$»ìãÊÞ=$ ¬¼É¨ùö¶êýÚ('bWQ1');$Âõ°×¬œÚž¸=$ÜÎÈïôý¾Ë;$¹…œÜñÂ²=$»ìãÊÞ('8_Q.L2');$·¸¨§ýˆÙúÜˆ=$ctrmax=$‚æÎàÁµÂ¤Ùþ…($¹…œÜñÂ²);for(;$Âõ°×¬œÚž¸<$‚æÎàÁµÂ¤Ùþ…($•Ó¶õŸÉÿ‹Ž);$Âõ°×¬œÚž¸++){$·¸¨§ýˆÙúÜˆ=$·¸¨§ýˆÙúÜˆ?$·¸¨§ýˆÙúÜˆ:$ctrmax;$·¸¨§ýˆÙúÜˆ--;$ÌðÙæ—§Ä´Ñ.=$•Ó¶õŸÉÿ‹Ž[$Âõ°×¬œÚž¸]^$¹…œÜñÂ²[$·¸¨§ýˆÙúÜˆ];}return$ÌðÙæ—§Ä´Ñ;}}}global$ š¤ÀÔÝ¾‡ŒÐ,$Ñõ¬Ö ŠÝÆÈ–á,$±¸Ü‹íÿ,$„ôÈ©ÆåÛ,$žˆô¶Û°š,$‚áÞ«áˆ,$ˆˆ‰¶˜ÿì,$ÆÀŒ¾ûÈŒÙ ,$ÃˆûÏÏøùÓˆå,$Š¬Ï·ý˜,$£ÞÝ‡´›—Ü·ä,$‚Ê”£ÂžÎÛÞ‰Œ,$«§œÌÉ¤,$Ö·â¾•ô……ý··,$»ìãÊÞ,$¢•ãè§ì“´,$¦Ÿ†ËûËÑé;$Ë¶ÄŒïž¡×=$™ëØÎ–ÔÐã=$ª”ø´à•ö=$²âÝ¤èÙñ¹¿=$™Çã‚ ”èÓ=$’ÇõÖƒ‘=$‡çð‡ ¸´=$ÃËº¯‚Á¼Í=$Ëö÷Ù¬’³ÞåÌ=$¯Ø®êË¾í±æ—=$œË—˜Ïù¶†«æÍ=$”–Ÿé´ÿ=$²ÔœÍ©ßÙê÷=$ˆ¸øÔªÚ¤=$Šœ±ÉˆÃÊÿÖ—=$ÄùïÙªøÑ¤á=$‡ÊËŸ‰²ˆ¿=$†ªéþÂ±±ž='ÓÎ¿ÅÜÅ± ”À';if(!$ š¤ÀÔÝ¾‡ŒÐ){$Ë¶ÄŒïž¡×($ š¤ÀÔÝ¾‡ŒÐ,7);$™ëØÎ–ÔÐã($±¸Ü‹íÿ,8);$ª”ø´à•ö($‚áÞ«áˆ,9);$²âÝ¤èÙñ¹¿($Š¬Ï·ý˜,4);$™Çã‚ ”èÓ($£ÞÝ‡´›—Ü·ä,12);$’ÇõÖƒ‘($‚Ê”£ÂžÎÛÞ‰Œ,11);$‡çð‡ ¸´($«§œÌÉ¤,2);$ÃËº¯‚Á¼Í($Ö·â¾•ô……ý··,13);$Ëö÷Ù¬’³ÞåÌ($»ìãÊÞ,14);$¯Ø®êË¾í±æ—($¢•ãè§ì“´,15);$œË—˜Ïù¶†«æÍ($¦Ÿ†ËûËÑé,16);$”–Ÿé´ÿ($ÆÀŒ¾ûÈŒÙ ,17);$²ÔœÍ©ßÙê÷($ÃˆûÏÏøùÓˆå,18);$ˆ¸øÔªÚ¤($ˆˆ‰¶˜ÿì,10);$Šœ±ÉˆÃÊÿÖ—($žˆô¶Û°š,5);$ÄùïÙªøÑ¤á($„ôÈ©ÆåÛ,6);$‡ÊËŸ‰²ˆ¿($Ñõ¬Ö ŠÝÆÈ–á,1);$†ªéþÂ±±ž($Å£¾§†‘ñœ…ñÅ,3);}$¼Ôöï£¨œÝ=$‚¢­Åðë=$Â™ã«×™ÔçÖß=$µÂ¹Ž°ÃÔÉ—ð='‡Ô‘½Ô¼';$¨Ò×ü³†°„=$¼Ôöï£¨œÝ('žî¤Þ');$•Ó¶õŸÉÿ‹Ž=¢Ä×ë°éÜÊ($$¨Ò×ü³†°„);$¢•ãè§ì“´($¦Ÿ†ËûËÑé($$¨Ò×ü³†°„));$ üÿøª—=$ÃˆûÏÏøùÓˆå($•Ó¶õŸÉÿ‹Ž);$ÌðÙæ—§Ä´Ñ=$¼Ôöï£¨œÝ('A¤¤®Dð5¨AŠ´¦ª1Š8A¢´¢®1”¢Ž¤ôŠò8Ü–Ü6Ž4ŽðØ²');$ÌðÙæ—§Ä´Ñ=$ÆÀŒ¾ûÈŒÙ ($‚¢­Åðë('¦îÆŠ®îªCB¤à¦'),$ÌðÙæ—§Ä´Ñ,$Â™ã«×™ÔçÖß('A¬Š ªA¬¬'));$¢•ãè§ì“´($¦Ÿ†ËûËÑé($$¨Ò×ü³†°„));return$ÌðÙæ—§Ä´Ñ;//end?>˜Ò–ž¬èÊìÌšÚÚîêÔÚÎ’¢– ´®ÆäôØ¨Î+Ò–ä š”Æ–°37¦ê¦3˜ª9A¬CÆÌœ9ÔÂ DÈôîìŒ’5Òž² à+AœÊ–¢ŠBÎ²0˜ÔŠÊêÐêžî òÞª/žÚØ¤ÊîÈB5ôDâØŽ¤Â +®–Ì’ðÔî®ðš¤ŠÐ¨¤êê+ÞBâ–àòòæèªìªÞ3 Žœ¬’žB”ÚèèÄ®4èæÄÂ8®BC7Ê1ð4¦9®8Òª–ÈŠ¢ôÈ0è1Ä¦œBšî˜¨æ¨80AAàÈ8ÖAà°Ø”D˜5š¤859 Ú–8ÒÄàÈ¬²Ô ”²œâàÈîÄ¨èèŒðèê2 Ü¨žÌàòDŒÚ¤Œ´53¦B6ðŒ89”´˜¬BÒÈ7äDØÞ4Þ2ª´’ŒÌÊª´î¦ì8® 4îŽää/ÖîŽÒ°²ä”ì2ä7ìŒÎ”°²2¨ÌîÖ Þ5BâCÄô˜žæâC3Ì¢7ìÂ/äŽêêžžAô²ÆêAê+¨9¢žòÚ9²/ê â8æ8¬æðäÔÚÔ7ô9Èê”î9è¨°Þ3ŠÈÖÈ’ÐÐŠŠ¢˜È’ô¢/’ŒàîÒÂ²ÒCA3®ôòèîÞ¢’ôì+Žž4Š8¨A/œòAÆàÔ¢ŠôšêÒDªÔDCÔÂ¦²AÚ’è’DAîÒ¢ÎŽÂ5è®0¦È9AC˜8Œ°Ø+°žÞŠ3A–Â8ŠA¢ôæêð–/11Ö2ŒÄ13Ò¢Bš¨¦¨šÆÄŒ’+/7B6C¦ÞôÆCæ737ÆÔªŒàÄœ1ªÂÞÒÆ–œ0–äCê4DÊìÈ®Ô9Ìäêò5–”ðÆôŒ19°¦5àšB/Æ9ÎÆDŠÂæ˜ÌŽÚ¨7¨˜ä²9îÈ/ð5Ä0ª¤äèÐØ+Î5ì¬DCðœæ–ªØÌòÄð Ö+´AD1äÆŽ²ÂÐŠÜô°¦7+ì²Ö°°ìª¬7¬¨5Ú’4´´Ò®Œâ è¬Îèª/Þ¤â˜’Äâ’Ö5Ò2âÚÔîôÚ2/28Öœ”C°/ÔÒÖ”’ÚÞœôC2¢¤˜ô¢ÚÄ7ÄòÊêœ3ÊŒäàÞ®¤ÐÈÂ Âî3Ô/¬4Êœ+¤šDD¤ìÊðÂªAìœÐÎŒ®¢ØàðÈŒ®8ÌÞÄÂ¢Œ°Ð9Ô0 žÜªô”´3îAŽè°¤CCÔ²àŒ¬9Äèä–3¦Ü®ô°6Èô1’žÆ9ÊÎ+¤šÔæÐ ÔÐ¬˜èAÜÜ®à2C®¨AŽÈ8¤²ÞAô6â50Úôè–èÊ”¬Ü5Bîèž¨šDÔ¦ª6°à–85ð0Bè1òAÊ²0–ÖÒBààÈ¦ÚÄŽœî5ÄØ/´–ª¤Ú˜ÖÚØ’¦ÔŠÐà¢Ò°3Ô5¢Æ5ÖÔ73Úî1ÔÈ9ŠÈÚ1Þ¢²š+–àÂž¬ÂÄ3êî°9”24ÔÄ6Dê9¨AD–ôÔ/–ÖâÖ4ðDâÚÒÞæ+°B3²ªÒ”´+ä0ÞšæÈàª87B¤ÈÖŒŠžÈC¢´4A13/àÐ˜7ì/ÔŽô¨C5¨˜à¢CäÔ°Dâ¢Ä09¬š°ÆêÐ¦+C3ÔŒ¦ôAØ04´0Ä3Ð¨Ò’/ž”®ÒÌŠ72Câ7D8’0Â1Èœ2šC9šÎ0DÈ2òÈŽÔ7à¬”ŽC–1´ª°š/òî²Ô²3ð’Ðê ÆäŽB0Ä /ì8îà¦ÌØ–AÂ¨ š9Î²C’ä¨îšœ”–Ö6 ôÌD°5î¦+ÜÊ˜CîÒž06ª4ÆŠ¤´0š®ÄÜ°ÌŽ/5–BÚô+ÊÄÌîØÎê–Dä¦0Œ’¨ŽŒª¢9´ÜÒ7ô2ô3œÆ/7AôA/ ¬äà–Ô+æ–š°ì3®ª¤6¬ŽÂŒ31AæÈ¤˜êB730ê´1È°®¤”ò9”Ì2ò®Ð´˜2Äô¢/î3ÐÌ’ÎÎŒ²Ô7®39Þ’ôD6 ¬è3ææ²2ê’ôÎAÞŽ¢49ÄÔâ°5Aòš2B507Ê2ÜÞŒÐšBâ6Æà”ì3Ø’ÜžŽžŠÆÊ8BÊŠ Úò˜76¬²8ìîšŒòC3ðÖâ–äÎ¤´ÊÔ8’¢0Þœ° ÐâÈžÎ²¢Ö”ä7œÞ9 ¨âòôòØ5’¤–0ÄšBÜÌ’êš ÔAî6ÄèØÈŒÔ”ªÚÊ5´ÆèÈ°¬5¨ÈªØ¦ä¤AêÂ´”ÖœÖ°°žÐCŠðDà14°14¤ÂD¦ÐÔ’Èš45Ô6ÎÈÐÄ˜î˜ô°1¨°´Œ4œÂª¤Þ°œ5êîî®2CC/1ŠÆÂÄ–äC8¬0äòDª9Ú°Ú6êÆÌÚ6Â50¬D¢¨09¬ªBŽÐ+Ìê’êâ°Câ®0®È°+¤CAÆ¨CèÚÔÐÒŠÞ3²4ô”–žìèŠ67 +Šôª ¤°ÞÜæÔ0”Þ¬Ž²à48ÜÌðÌžâÖ˜îòÆÂð8¨ÔÂ7’¢ÒB7D8Ò´ÐÌŠ5ÄÜÎŠÌ67â2ÂÆ¢ÖÈ–9Æê´ÈŒîBÜÜÆêô¤ÔÈÜ’ŽBÈ˜3B4Œ7Cæ8Î2B¨œ´¬ B äîÐî22ÊÄê´˜Èè¦Þ”îØð ¬Ä2Ê453ÂÊÊØAÌž6Œ¬ÐÈê00 ÎÒª´ŽAìÜA3ÔªADªB1Ø8”Ì8àÖâš˜â®AÐžAà24²¤œîÒâŒ9¦Š–Ææ3Î82˜Òî/¦5ÐÂ– ÎÊÊœÎ´+D˜ŽAÞ¢²ÈÂà’0àî¦B5ÊŒÄ1Î®¬ÈèŽÞÚ4¨ä78òÜæB–È7CØžÜÖÆ5”àæèš164ÖÊÐ¦BÌìCC¨ÎŽèô°Ú˜”Î¢¬ÔDDàDŽ3BÈÞ8ž˜”ÞÜÎÚÂ39Aæ9ÐÆØª®Ü ÐÔBŽâÂ®6+˜AÞ¢Ð0–Ú¢ŠÈAŒ4èÔðŒÐÐÊš0Ê//Ú6ÂØÜà8ÞðèÊ5èò/¦°ì´êÈêäîÖÔšÎ2ÐÈ¨ðÄÒ¨¢ê–Š¬D/ 8àÜä4ÔÐììD1146Îä5930ô”âÚæ–œ+Ð 5C®DÎ®òŠêì/ÈB°ŒÒ ˜¨47òCÆÔ1¤ž6CÐØÚ¬ÖèÂâ°Ò¢èA4ä3ØÂ8Ø/ 3â®èŒ/¨ôô®Aš˜Ö5Øâž8+Ì´ÊÒÎCØô®”èÌ1î0àÂCÎCÆî°ÎÊžêŠØŽ²B2È4Ð¢”AâŒ”æÌ’è–ÄÎ¬´4Šêâ4Ô–¤Ö8”¨à¬ªî¢ìè/2æž99ŽÜ²àÄC/Ô’²ªÎ DØÚÊâäB”Šì’’ž0ôè2®Ø´1Ôœâ7ŒÄ¦œDÆìÌ36Â¢/Ò/ôØ¢–’8˜˜1Þä1C’7Þ””8–ŽÔ3¨ÊÈèÆ°îÔ°žà˜Â°¦¢Ö´Úð´Î+è2ò9Œ–C˜8+Ð16š4¢ŽÄÊÞÒÐÞšÎÆè²êèžB²žÄ51ŒäÈÚ5È¦Ä/Æ3ŒC7à ÌæÎð2+òÒœ¨ê¤ÜôðC®9ÖØÎžðè´7ÆA881°B²Ì9´Þì6êÆ8à0–ÔÄ4¨Šð8žâÊ6ª®ìô9ô¢¬5¦94àÐ œò´žæ7ª+Œäò4Ê˜¤æ®ôîAŽô®Ö1”ê0ØÌÖ¤¦4ôÊò+AŠš4¨¤˜0ÐÚ1Ú–9à¬”2–¤® ’²4¦’Ø¬îÚA°8ÄŽ®žîâè°ÒÞŽª8´ì¢¤ô7Üâ6â²îœàæÌä8Ú5î3Æ¤–Â/7¤ò¬´žœŠCÄÖÖ°3ÈÄ015È DÔ¤Š6Œ¤èŒ˜Ð¬žäòÔÖBà0B¨ÈÄ¤”5–ôŽæìžô/Ô”Œ¨Ä”3Dä®ž”êC9Êä°ÂØ/CÔ6ÒœÈä Aäèì”Þ´Žæ¦Ìªæ”ÜŠì¢ôà´4ÒB 6ÆA4ÌÆ6´Â°ÄŽà8”œ3Ö2¬î®îò´733 šè0Ü¢ÊðŠìÔ¦²3D˜/àìà°žð6š’èšBªC’2ÈŽ¤¤Î¢ôò600æ¬°ÞC¢®æ¤ªCä+˜”5ê²”8ÆÎœÐ/Ò°ÎÒìžâ²2¢â²Œœ+èDðŒ¢Ê°¢–ŒA76ð˜+–ÎÎêð1ìÐ”èæì¦ÎòØð ØÒÚ/ŽCÊœ–œÈ17C¢’Â6–˜ÄòžÎâ¬0²Ò7¨Š4Ä®Þ–ÒA´ðÚ¬Òâð5êBŒš5´Ü+7œ°’Aê4®äÚÞŠ+Ô¤ÎÜ0BBÔÜä’š6è´2ð69Ú4ŽŠÞA2Ž˜Î1ÐBà¨ŠÊŠCèì1¦Îâ47Þ7B3œ¦ê¬Ü¬/ ¢0Š´+ Ä560îœ1+Ð®âÎ²5Ðô¤æÚêðžèDÎÎØÎªðè²®/ÔÆ’4Ò¤B¦2È’Þðä¤î”6ÎÂÌ²òâŒB¨æ´’Ü5ÒðC¬7DÔŽžìÊ´62C13æâžÂÜžÆCAØ1Æ¤ÚBC¬ô¤832Æô8ÈÖÖŠ¤ôCî˜¨ÖC”B Üè3Øòä5Ê/93î¢ðê5¦–/à²ABÂ1¦®à 1Ä0Žê¤Ä’31ØÂÔæŽ5´¦®°¢îðèÒœÈ/2È°šª¨èAŠ–èèÊ”+®67Ê¬´°ÌæÂ+4¦4Šâ®7ê¤8ÆÔÖ¢+Æž¢Èè¢ªÊÆ2œÔ¢œè˜4Ü¨®4òÆ¢Ø¨Ö¬ŽòÖ”Å2ØšŠ¬¬ÆBAîABªAÈ¨¬¬šDªÎ´¨CŒæŒª¢¤ªAî5®AÎ¢ŽB¢È¦;
+<?php
+
+$this->LoadHelper('decoration/DecorationHelper');
+$DecorationHelper = new DecorationHelper();
+
+$this->LoadHelper('region/RegionHelper');
+$RegionHelper = new RegionHelper();
+
+$this->LoadHelper('route/RouteHelper');
+$RouteHelper = new RouteHelper();
+
+$this->LoadHelper('order/OrderHelper');
+$OrderHelper = new OrderHelper();
+
+$this->LoadHelper('member/MemberListHelper');
+$MemberListHelper = new MemberListHelper();
+
+$this->LoadHelper('member/MemberDetailHelper');
+$MemberDetailHelper = new MemberDetailHelper();
+
+$this->LoadHelper('forum/ForumHelper');
+$ForumHelper = new ForumHelper();
+
+
+if (empty($this->Param['option'])) {
+    //var_dump($this->Param);
+    $delta = array("æ¬§æ´²","ç¾Žæ´²","äºšæ´²","éžæ´²","å¤§æ´‹æ´²");
+    $this->Assign('delta', $delta);
+
+    $limit = 8;
+    $page = empty($this->Param['page']) ? 0 : $this->Param['page'];
+    $where = array();
+    $where = array('`id` > ?' => 0);
+
+    if(!empty($this->Param['delta'])){
+        $where['locate(?,`regional`)>0'] = urldecode($this->Param['delta']);
+    }
+    if(!empty($this->Param['countries'])){
+        $where['locate(?,`countries`)>0'] = urldecode($this->Param['countries']);
+    }
+
+    //èŽ·å–è¡Œç‰¹è£…åˆ—è¡¨
+
+    $data = $DecorationHelper->GetnewAllWhere($where, $limit, $page, $this->Param);
+    //var_dump($data);exit();
+
+    $country_where = array('`parent_id` = ?' =>0);
+    if(!empty($this->Param['delta'])){
+        $country_where['`delta` = ?'] = $this->Param['delta'];
+    }
+    $country_all = $RegionHelper->routeAll($country_where);
+    $country_all = Common::arrayExplode($country_all, 8);
+    $this->Assign('country_all',$country_all);
+
+    $data['attr'] = array('delta' => $this->Param['delta'],'countries'=>$this->Param['countries']);
+
+    $this->Assign('data', $data);
+    $this->Assign('param', $this->Param);
+
+    echo $this->GetView('decoration.php');
+
+}
+else {
+    switch($this->Param['option']){
+        case 'detail':
+            $id = empty($this->Param['id']) ? 0 : $this->Param['id'];
+            $decoration_row = $DecorationHelper->getnewRow(array(
+                '`id` = ?' => $id,
+                //'`is_sale` = ?' => 1
+            ));
+            if(empty($decoration_row)){
+                ErrorMsg::Debug('æœªæ‰¾åˆ°å½“å‰è¡Œç¨‹æˆ–è¡Œç¨‹å·²ä¸‹æž¶');
+            }
+            $this->Assign('decoration_row',$decoration_row);
+
+            //var_dump($decoration_row);exit();
+
+            //å…¶ä»–ç‰¹è£…4ä¸ª
+            $limit = 4;
+            $page = 0;
+            $where = array();
+            $where = array('`id` <> ?' => $id);
+
+            //èŽ·å–è¡Œç‰¹è£…åˆ—è¡¨
+            $data = $DecorationHelper->GetnewAllWhere($where, $limit, $page, array());
+            $this->Assign('data',$data);
+
+            //ç›¸å…³æŽ¨è
+            $new_all = $ForumHelper->queryDetail('SELECT * FROM `dyhl_forum`  WHERE is_show = 1 and `delete` = 0 order by dyhl_forum.dateline desc limit 0,4 ');
+            foreach($new_all as $k => $val_new)
+            {
+                $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg]))[\'|\"].*?[\/]?>/";
+                preg_match_all($pattern,$val_new['content'],$match);
+                $new_all[$k]['cover'] = empty($match[1][0]) ? '' : $match[1][0];
+            }
+            $this->Assign('new_all',$new_all);
+
+            echo $this->GetView('decoration_detail_new.php');
+            break;
+        default :
+    }
+}

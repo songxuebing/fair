@@ -123,4 +123,19 @@ class DecorationHelper extends Helper {
         return $this->DecorationModel->GetGroupTypeAll($field, $where, array($page, $limit), $group, array('visa_id desc'));
     }
 
+    //新的特装
+    public function getnewRow($where) {
+        return $this->DecorationModel->GetnewRow($where);
+    }
+
+    public function GetnewAllWhere($where, $limit, $page, $Param) {
+        $data['One'] = $this->DecorationModel->GetnewOne($where);
+
+        if (!empty($data['One'])) {
+            $data['All'] = $this->DecorationModel->GetnewAll($where, array($page, $limit), NULL, array('id desc'));
+            Pagination::SetUrl($Param);
+            $data['Page'] = Pagination::GetHtml($limit, $page, $data['One']);
+        }
+        return $data;
+    }
 }

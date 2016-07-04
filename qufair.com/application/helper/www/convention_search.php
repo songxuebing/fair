@@ -76,17 +76,28 @@ if(empty($this->Param['option'])){
         $where_in['locate(?,`name`)>0'] = urldecode($this->Param['industry']);
         $data_industry = $ConventionHelper->GetInWhere($where_in);
     }
+
+    if(!empty($this->Param['industry2'])){
+        $where['locate(?,`industry`)>0'] = urldecode($this->Param['industry2']);
+        $where_in['locate(?,`name`)>0'] = urldecode($this->Param['industry2']);
+        $data_industry = $ConventionHelper->GetInWhere($where_in);
+    }
+
     if(!empty($this->Param['delta'])){
         $where['locate(?,`regional`)>0'] = urldecode($this->Param['delta']);
     }
     if(!empty($this->Param['countries'])){
         $where['locate(?,`countries`)>0'] = urldecode($this->Param['countries']);
+        $where_co['locate(?,`name`)>0'] = urldecode($this->Param['countries']);
+        $data_industry = $RegionHelper->regionnewRow($where_co);
     }
     if(!empty($this->Param['city'])){
         $where['locate(?,`city`)>0'] = urldecode($this->Param['city']);
+        $where_city['locate(?,`name`)>0'] = urldecode($this->Param['city']);
+        $data_industry = $RegionHelper->regionnewRow($where_city);
     }
     //获取展会列表
-    //var_dump($where);//exit();
+    //var_dump($data_industry);exit();
     $data = $ConventionHelper->GetAllWhere($where, $limit, $page, $this->Param);
     $country_where = array('`parent_id` = ?' =>0);
     if(!empty($this->Param['delta'])){

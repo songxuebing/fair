@@ -8,6 +8,26 @@
     <td height="45" align="right">区域名称：</td>
     <td style=" padding-top:5px; padding-bottom:5px;"><input name="name" type="text" style="width:300px;" value="<?php echo($this->data['name']);?>" class="input_01"></td>
   </tr>
+
+    <tr>
+        <td height="45" align="right">英文名称：</td>
+        <td style=" padding-top:5px; padding-bottom:5px;"><input name="name_en" type="text" style="width:300px;" value="<?php echo($this->data['name_en']);?>" class="input_01"></td>
+    </tr>
+
+
+    <tr>
+        <td height="45" align="right">网站title：</td>
+        <td style=" padding-top:5px; padding-bottom:5px;"><input name="title" type="text" style="width:300px;" value="<?php echo($this->data['title']);?>" class="input_01"></td>
+    </tr>
+
+
+    <tr>
+        <td height="45" align="right">网站description：</td>
+        <td style=" padding-top:5px; padding-bottom:5px;"><input name="description" type="text" style="width:300px;" value="<?php echo($this->data['description']);?>" class="input_01"></td>
+    </tr>
+
+
+
   <tr>
     <td width="160" height="45" align="right">上级区域：</td>
     <td width="440">

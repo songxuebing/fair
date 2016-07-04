@@ -9,6 +9,10 @@ class DecorationModel extends Module {
         $this->_orderField = array('id','order_sn','de_id','member_id','saler_id','de_title','de_style','price','money','num','detail','receiving','address_id','remarks','datetime','is_delete');
 		
 		$this->_typeField = array('visa_id','parent_id','visa_name','is_open','datetime','is_delete','sort_order');
+
+        $this->_table_new = 'de';
+        $this->_field_new = array('id', 'title', 'class', 'structure','area','open','style','tone','images');
+
     }
 
     public function GetOne($where, $output = false) {
@@ -97,5 +101,18 @@ class DecorationModel extends Module {
         return $this->Db->FetchAll($this->_table.'_type', $field, $where, $limit, $group, $order, $output);
     }
 
+
+    //新的特装
+    public function GetnewOne($where, $output = false) {
+        return $this->Db->FetchOne($this->_table_new, $where, 'COUNT(1)', $output);
+    }
+
+    public function GetnewRow($where, $group = null, $order = null, $output = false) {
+        return $this->Db->FetchRow($this->_table_new, $this->_field_new, $where, $group, $order, $output);
+    }
+
+    public function GetnewAll($where, $limit = null, $group = null, $order = null, $output = false) {
+        return $this->Db->FetchAll($this->_table_new, $this->_field_new, $where, $limit, $group, $order, $output);
+    }
 
 }

@@ -26,6 +26,10 @@ class RegionHelper extends Helper {
         return $this->RegionModel->regionRow($where);
     }
 
+    public function regionnewRow($where) {
+        return $this->RegionModel->regionRow($where);
+    }
+
     public function regionAll($where,$limit = null, $group = null, $order = null, $output = false) {
         if (is_numeric($where)) {
             $where = array(

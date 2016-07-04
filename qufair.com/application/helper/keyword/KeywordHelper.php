@@ -89,6 +89,15 @@ class KeywordHelper extends Helper {
         return $data;
     }
 
+    public function hot_All($where){
+        if(is_numeric($where)){
+            $where = array(
+                '`id` = ?' => $where
+            );
+        }
+        return $this->KeywordModel->hot_All($where,NULL,NULL,array('sort desc'));
+    }
+
     public function hot_Save($data,$where=array()){
         if(empty($where)){
             return $this->KeywordModel->hot_Save($data);

@@ -5,7 +5,7 @@ class RegionModel extends Module {
     public function __construct() {
         parent::__construct();
         $this->_table = 'region';
-        $this->_field = array('id', 'name', 'name_en', 'parent_id', 'delta');
+        $this->_field = array('id', 'name', 'name_en','title', 'description','parent_id', 'delta');
         $this->_field_visa = array('id', 'name', 'name_en', 'url', 'file', 'parent_id', 'delta');
         $this->_field_route = array('id', 'name', 'name_en','parent_id', 'delta');
     }

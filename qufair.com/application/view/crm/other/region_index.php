@@ -28,8 +28,11 @@
 	<div class="table_div_01">
 	  <ul>
 		<li class="li_5">ID</li>
-		<li class="li_50">区域名称</li>
-		<li class="li_25">子区域</li>
+		<li class="li_20">区域名称</li>
+          <li class="li_15">区域英文名称</li>
+          <li class="li_15">网站title</li>
+          <li class="li_15">网站description</li>
+		<li class="li_5">子区域</li>
 		<li class="li_15">操作</li>
 	  </ul>
 	</div>
@@ -41,8 +44,11 @@
 	  <div class="list_info">
 		<ul class="row">
 		  <li class="li_5"><?php echo $v['id'];?></li>
-          <li class="li_50"><?php echo $v['name'];?></li>
-		  <li class="li_25">
+          <li class="li_20"><?php echo $v['name'];?></li>
+            <li class="li_15"><?php echo $v['name_en'];?></li>
+            <li class="li_15"><?php echo $v['title'];?></li>
+            <li class="li_15"><?php echo $v['description'];?></li>
+		  <li class="li_5">
 		  <a href="javascript:;" class="J-nextclick on"><?php echo count($v['next']);?></a>
 		  </li>
 		  <li class="li_15"><a href="/other/region/option/edit/id/<?php echo $v['id'];?>" class="AjaxWindow btn_05" href-id="<?php echo $v['id'];?>" data-title="修改区域">编辑</a><a href="#" class="RemoveLink btn_05" data-id="<?php echo $v['id'];?>" data-url="/other/region/">删除</a></li>

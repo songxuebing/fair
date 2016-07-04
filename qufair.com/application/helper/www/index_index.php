@@ -35,6 +35,9 @@
     $this->LoadHelper('region/RegionHelper');
     $RegionHelper = new RegionHelper();
 
+    $this->LoadHelper('keyword/KeywordHelper');
+    $KeywordHelper = new KeywordHelper();
+
     $id = 9;
     $pos_row = $AdvHelper->posRow($id);
     if(empty($pos_row)){
@@ -203,6 +206,30 @@
             '`industry_id` > ?' => 0,
             '`position` = ?' => 0,
         );
+
+        //获取首页热门标签
+        $hot_label = $KeywordHelper->hot_All(array());
+        foreach($hot_label as $k_lab => $v_lab)
+        {
+            if($v_lab['type'] == 0)
+            {
+                $hot_label['con'][$k_lab] = $hot_label[$k_lab];
+            }
+            elseif($v_lab['type'] == 1)
+            {
+                $hot_label['new'][$k_lab] = $hot_label[$k_lab];
+            }
+            elseif($v_lab['type'] == 2)
+            {
+                $hot_label['route_visa'][$k_lab] = $hot_label[$k_lab];
+            }
+            elseif($v_lab['type'] == 3)
+            {
+                $hot_label['decoration'][$k_lab] = $hot_label[$k_lab];
+            }
+        }
+        //var_dump($hot_label['con']);exit();
+        $this->Assign('hot_label',$hot_label);
         $industry_adv = $IndustryHelper->advAll($industry_adv_where,NULL,NULL,array('id DESC'));
         //var_dump($industry_adv);exit();
         $this->Assign('industry_adv',$industry_adv);

@@ -9,6 +9,13 @@ class Common{
                         }
                         $url = ATTACH_IMAGE . $file;
                         break;
+
+                    case 'cdn':
+                        if(empty($file)){
+                            $file = '/attach/201508/16/143965918421061349.jpg';
+                        }
+                        $url = $file;
+                        break;
                 }
                 return $url;
         }
